@@ -6,11 +6,14 @@ module
 import SheafCohomology
 import SheafCohomologyExamples.AbelianForgetPullback
 import SheafCohomologyExamples.AbelianForgetFilteredColimits
+import SheafCohomologyExamples.SquareTransition
 
 /-!
 # Public-root sheaf cohomology examples
 
-These private, named clients use only the aggregate public import. They exercise
+The clients defined here use only the aggregate public import. Imported client
+modules also exercise focused public imports. All clients are private and named;
+they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change.
 The flasque and derived-colimit examples retain their universe-zero boundaries.

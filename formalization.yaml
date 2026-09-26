@@ -6,8 +6,9 @@ project:
   description: >-
     Compact-open section colimits, quasi-flasque exactness and acyclicity,
     resolution comparisons, local cohomology, right-derived pushforward
-    comparisons, pullback coherence, open base change and the forgetful
-    functor from abelian-group sheaves to Type-valued sheaves in Lean.
+    comparisons, pullback coherence, commuting-square transitions, open base
+    change and the forgetful functor from abelian-group sheaves to Type-valued
+    sheaves in Lean.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -64,7 +65,11 @@ status:
     zero. The additive-to-Type underlying-sheaf functor commutes with pullback
     through a canonical natural mate for arbitrary same-universe spaces and maps;
     it preserves same-universe filtered colimits with a literal colimit.post
-    comparison and its stage law. No new global preservation instance, full
+    comparison and its stage law. Generic commuting-square transitions use the
+    native concrete-category pullback adjunction and satisfy the forward strict
+    mate, target naturality, identity and arbitrary pasting laws; their
+    compatibility with the additive-to-Type forgetful functor is not asserted.
+    No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
@@ -86,6 +91,9 @@ review:
     transfer is a new destination candidate drawing on separately accepted
     incubator proofs; it requires its own independent promotion/release review.
     That earlier approval is not acceptance of this destination or its release.
+    The separate SquareTransition transfer likewise requires exact destination
+    promotion/release assessment; historical native documentation does not
+    include either transfer's new subjects.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

@@ -3,10 +3,11 @@
 Lake development package version `0.1.0`; analyzed source: `a9f1a38787d33205c469ff89710563fffb4974fd`; native doc-gen4: `97d4ecdfc8e09e7f511724c25e303d448de6a3db`.
 This frozen 556-site reference covers the original 24 subject modules and two
 root/client modules at the analyzed revision, not the later three
-`SheafCohomology.AbelianForget` subjects or their two client modules. Those
-new declarations have a [lightweight supplemental reference](AbelianForget.md).
+`SheafCohomology.AbelianForget` subjects, `SquareTransition`, or their three
+client modules. The new declarations have lightweight supplemental references
+for [AbelianForget](AbelianForget.md) and [SquareTransition](SquareTransition.md).
 The old source hashes and manifest are historical, not a fresh attestation of
-the current 31-module tree. Its `api_sha256` checks the original generated
+the current 33-module tree. Its `api_sha256` checks the original generated
 Markdown **before this explanatory introduction was updated**, not the bytes
 of this editorially amended file.
 These are native **display signatures**, not complete elaboration-ready declarations

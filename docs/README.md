@@ -17,8 +17,9 @@ original generated `docs/API.md` in the pre-transfer accepted tree, not this
 file's editorially updated introduction. The historical generated file can
 be checked in that old revision; do not relabel the old hash as a new current
 Markdown attestation.
-The current 31 Lean modules also include three new subjects and two private
-client leaves, covered by [AbelianForget.md](AbelianForget.md), not by this
+The current 33 Lean modules also include four new subjects and three private
+client leaves, covered by [AbelianForget.md](AbelianForget.md) and
+[SquareTransition.md](SquareTransition.md), not by this
 native batch. The old root and example-client source hashes do not match the
 current changed roots. Reproducing these historical records is
 distinct from accepting their mathematical meaning or auditing kernel proofs.
@@ -65,7 +66,7 @@ pins. Its C dependencies may require Lean's bundled `bin/cc` on `PATH`.
 The following **historical reproduction** is for a separate checkout of
 pre-transfer tree `3a7204971fbbbb0a130335eda04b9d9d2b157267`, which includes
 the frozen adapter and old 26 Lean modules, **not** the changed current
-31-module checkout. The `source_revision` below remains the older analyzed
+33-module checkout. The `source_revision` below remains the older analyzed
 `a9f1a38787d33205c469ff89710563fffb4974fd`, which is in that checkout's
 Git history. Use Bash, Python 3, git, elan and Lake. Install the pinned
 toolchain, fetch the **matching mathlib cache successfully before the project
@@ -106,9 +107,10 @@ python3 -O -B scripts/generate_api.py --native-data "$docs_work/rendered/doc-dat
 
 The native database's parent directory must exist before `single`. The frozen
 adapter and its hashes are historical reproduction checks; they do not generate
-a new 31-module reference, certify the current roots, or constitute a required
+a new 33-module reference, certify the current roots, or constitute a required
 new-generation release gate. For the current checkout, use the lightweight
-[new API supplement](AbelianForget.md), applicable proof/build evidence and
+[AbelianForget](AbelianForget.md) and [SquareTransition](SquareTransition.md)
+API supplements, applicable proof/build evidence and
 normal link/scope checks instead of inventing a regenerated receipt. Preserve
 its manifest, raw JSON and source HTML outside the published library when
 performing a review. The adapter refuses missing/extra modules and display

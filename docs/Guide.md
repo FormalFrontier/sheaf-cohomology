@@ -5,7 +5,8 @@ of a source. Import `SheafCohomology` for
 the aggregate public interface, or import a subject module directly. The native
 [historical API reference](API.md) supplies declaration-level displayed hypotheses
 for the original 26 modules; the [AbelianForget supplement](AbelianForget.md)
-covers the three new subjects. [Generation details](README.md) identify the
+and [SquareTransition supplement](SquareTransition.md) cover the four new
+subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
 
@@ -76,11 +77,20 @@ stage equation holds when both ordinary `HasColimit` instances are available.
 There is no global preservation instance, spectral-space premise or new
 arbitrary-universe wrapper. See [all declarations and hypotheses](AbelianForget.md).
 
+For a commuting square and a pullback stage morphism, `SquareTransition`
+constructs the canonical counit-defined transition and identifies its adjoint
+with the forward strict pushforward comparison. It proves target naturality,
+proof-irrelevance of square commutativity, identity, and arbitrary two-square
+pasting. Its concrete-category assumptions are those of the native pullback
+adjunction; space carriers, coefficient carriers and coefficient morphisms
+share a universe, while the coefficient object universe is independent.
+This does not itself supply the additive-to-Type forgetful square law.
+
 ## All shipped modules
 
 The original 24 subject leaves below are included in the frozen native API
-reference. Three new `AbelianForget` leaves are documented in the separate
-supplement; all 27 subjects and four roots/clients form the current 31-file
+reference. Three new `AbelianForget` leaves and `SquareTransition` are documented
+in separate supplements; all 28 subjects and five roots/clients form the current 33-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -114,10 +124,12 @@ the same hypotheses.
 | `QuasiFlasqueExactness` | Exactness, quotients, filtered colimits |
 | `SheafificationBasis` | Detecting sheafified isomorphisms on a basis |
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
+| `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named private downstream examples, including two imported AbelianForget clients |
+| `SheafCohomologyExamples` | Named private downstream examples, including three imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
+| `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
 
 ## Using the boundary
 

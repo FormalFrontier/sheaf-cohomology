@@ -98,6 +98,16 @@ stage-leg equation under the ordinary colimit instances. Neither result
 requires spectral or nonempty-space hypotheses. These theorems do not supply a
 universe-crossing wrapper or prove a complete source result.
 
+For a commuting square of continuous maps and a pullback stage morphism,
+the library constructs the canonical counit-defined transition between
+pushforwards. Its adjoint is the forward strict pushforward comparison;
+transitions are natural in the stage target and respect identities and
+arbitrary two-square pasting. Coefficients satisfy the native concrete-category
+pullback-adjunction assumptions, with the space universe containing their
+carriers and morphisms. No spectral or nonempty-space hypothesis is required.
+This generic square API does not yet assert compatibility with forgetting
+abelian structure.
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -124,6 +134,13 @@ hypotheses and links to shipped code. A root-import example in
 `SheafCohomologyExamples/AbelianForgetFilteredColimits.lean` specializes
 `preservesFilteredColimits` to `ℕ`. These are private named examples.
 
+For generic commuting-square transitions, import
+`SheafCohomology.SquareTransition` or the aggregate root. The
+[SquareTransition guide](docs/SquareTransition.md) documents the forward mate,
+target naturality, identities and arbitrary pasting with exact coefficient
+assumptions; eleven focused private examples cover Type, abelian groups and
+empty spaces.
+
 | Subject | Module and representative interface |
 | --- | --- |
 | Compact-open sections | `CompactOpenSections`: canonical section comparison and colimit preservation |
@@ -134,6 +151,7 @@ hypotheses and links to shipped code. A root-import example in
 | Positive derived comparison | `OpenCohomologyRightDerived`: `TopCat.Sheaf.RightDerivedPushforward.sheafifiedLocalCohomologyFunctorIsoRightDerived` |
 | Higher-image colimits | `HigherDirectImageFilteredColimit`: canonical comparison and stage equation in every natural degree |
 | Pullback and open base change | `PullbackCoherence`, `OpenBaseChange`: coherent comparisons and the open-square mate |
+| Commuting-square transitions | `SquareTransition`: canonical transition, forward strict mate, naturality and pasting |
 
 All module names in the table are prefixed by `SheafCohomology.`. Consult their
 declaration types for the precise category, sheafification, Ext and universe
@@ -145,8 +163,9 @@ terminal open to compact opens; it is weaker than flasqueness.
 The [module and assumptions guide](docs/Guide.md) covers all shipped subject
 modules. The [historical native-generated API signatures](docs/API.md) cover
 the original 26-module source snapshot (including the then-unmodified roots);
-the [lightweight AbelianForget guide](docs/AbelianForget.md)
-covers the three new subject modules. Of the old 556 native display sites,
+the [lightweight AbelianForget guide](docs/AbelianForget.md) and
+[SquareTransition guide](docs/SquareTransition.md) cover the four new subject
+modules. Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
 per-site explanations. These pointers do not certify complete semantic
@@ -156,7 +175,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports the two new example leaves. All examples use
+readiness assembly and imports the three additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.

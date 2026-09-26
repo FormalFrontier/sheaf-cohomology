@@ -9,6 +9,7 @@ public import SheafCohomology.LocalCohomology
 public import SheafCohomology.OpenCohomology
 public import SheafCohomology.OpenCohomologyRightDerived
 public import SheafCohomology.PullbackCoherence
+public import SheafCohomology.SquareTransition
 public import SheafCohomology.AbelianForget.Pullback
 public import SheafCohomology.AbelianForget.FilteredColimits
 public import SheafCohomology.OpenBaseChange
@@ -26,5 +27,5 @@ public import SheafCohomology.QuasiFlasqueExactness
 
 Public entry point for compact-open sections, Ext and flasque resolutions,
 local and open cohomology, filtered colimits, abelian-sheaf forgetful comparisons,
-and open base change.
+commuting-square transitions, and open base change.
 -/

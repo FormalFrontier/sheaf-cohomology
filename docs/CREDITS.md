@@ -14,8 +14,9 @@ release history. There is no new human-author or source-author approval claim.
 
 ## Original Lean contributors
 
-The following map identifies the **first-added expression** of every shipped
-mathematical module in this repository's Git history. All listed paths are
+The following map identifies the **first-added expression** of the original
+mathematical modules in this repository's development history. Later promoted
+modules have separate origin records below. All listed paths are
 under `SheafCohomology/` and end in `.lean`. Anchor authored the original
 commits in the first fifteen rows; grouped paths were first added together.
 The PR numbers identify their ordinary development review histories, not
@@ -131,3 +132,22 @@ is recorded in the ordinary PR and issue handoff. None of the source-specific
 correspondence, research or review logs is shipped with this library. The
 standing original-project Apache authorization concerns verified original
 contributions; it neither assigns ownership nor certifies third-party rights.
+
+## Generic square-transition origin
+
+`SheafCohomology/SquareTransition.lean` preserves the accepted coefficient-generic
+incubator proof expressions byte-for-byte. Anchor supplied the original
+source-local Type-valued expressions at `474d7f975dcc8560f4182a83f7b6bbe32cbf6762`
+and `6daac54906b30cd4be04aff2ab15b1718eaed9ed`. Worker A Hive Task
+`hive-request-416add33a92643818723dcd89e0c302ac3fc98ee` (UID
+`17ae3110-d3f0-4dbc-b21e-0824cce5b1e9`) generalized those expressions;
+its original contribution was `5747eff2fdefe3dd4231fb73b6925e67f7393b69`,
+assembled by Anchor at accepted incubator revision
+`a2c6e8b61dcb5984c47e2af9e9c5203dffd4a88a`.
+The destination transfer and eleven private clients are Worker A Hive Task
+`hive-request-7446c1ce80d48017bc2bb5c6319ed8a16b6f463e` (UID
+`727fdb1b-44a5-425e-87ed-10e2fb326d8a`), contribution
+`4c222183f2bd7790f78a92e8b8699938a3cc978b`. Anchor supplied the aggregate
+exports and documentation assembly. These are internal expression credits,
+not source correspondence or a claim that private development objects are
+published on GitHub. Research records and raw check transcripts are not shipped.
