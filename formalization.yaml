@@ -1,0 +1,88 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/v0.4.schema.json
+version: "v0.4"
+
+project:
+  name: "sheaf-cohomology"
+  description: >-
+    Compact-open section colimits, quasi-flasque exactness and acyclicity,
+    resolution comparisons, local cohomology, right-derived pushforward
+    comparisons, pullback coherence and open base change in Lean.
+  authors:
+    - "Formal Frontier Agents"
+  responsible_maintainers:
+    - "Formal Frontier source-maintainer team"
+  license: "Apache-2.0"
+
+sources:
+  - title: "Sheaf cohomology, compact-open colimits and open base change"
+    type: "folklore"
+    relationship: "independently-proves"
+    note: >-
+      Classical mathematical constructions implemented using native mathlib
+      sheaves, limits, Ext and derived-functor infrastructure. No mathematical
+      novelty or approval by human authors is claimed.
+  - title: "Foundations of Rigid Geometry I"
+    authors:
+      - "Kazuhiro Fujiwara"
+      - "Fumiharu Kato"
+    id: "https://arxiv.org/abs/1308.4734v5"
+    type: "book"
+    relationship: "background"
+    note: >-
+      Motivating compact-open, quasi-flasque and cohomological mathematics.
+      Detailed passage correspondence, hypotheses and remaining source gaps
+      are tracked separately; this metadata makes no source-coverage claim.
+
+related_formalizations:
+  - id: "https://github.com/leanprover-community/mathlib4"
+    relationship: "builds-on"
+    note: >-
+      Uses native category-theoretic limits, sheafification, stalks, Ext,
+      injective resolutions and right-derived functors at mathlib revision
+      83abb3e776bdefcbc447a1e44d0debe4010039e5, with Lean v4.34.0-rc2.
+
+automation:
+  methods:
+    - method: "agent"
+      tool_setup: >-
+        Formal Frontier AI agents using Lean, Lake, Git and the Hive task
+        environment for development, independent review and maintenance.
+  notes: >-
+    Different agent executions author and independently review substantive
+    candidates. No human peer review or source-author endorsement is inferred.
+    Unverified model identities, project-wide costs and performance measurements
+    are omitted.
+
+status:
+  scope: >-
+    Reusable sheaf-cohomological APIs under each declaration's actual category,
+    topology, sheafification, Ext and universe assumptions. The positive
+    local-cohomology/right-derived comparison has a shared universe parameter
+    and requires positive degree. Sheaf-specific functorial flasque-resolution
+    and higher-direct-image filtered-colimit assemblies are fixed at universe
+    zero. No full theory, arbitrary-universe wrapper or whole-source completion
+    is asserted.
+
+review:
+  status: "other: independently reviewed mathematical development; release decisions are revision-specific"
+  notes: >-
+    Accepted development main a9f1a38787d33205c469ff89710563fffb4974fd
+    integrates independently reviewed mathematical units and the bounded
+    module/public-use and metadata readiness work in issue 34 (ordinary review
+    3006, owner record 34-40581 and integration 40588, main verification
+    40654/40674). These historical checks are distinct from revision-specific
+    release assessment: an applicable successful pinned build and complete
+    transitive standard-axiom audit, including private declarations and examples,
+    combined with lightweight independent source/API/documentation/metadata,
+    rights, dependency and release-tree/history review. Only propext,
+    Classical.choice and Quot.sound are permitted axioms. The ordinary Lean
+    build checks the proofs; separate stored-body replay is not required.
+    Publication and exact mirror verification are separate operations; this
+    metadata makes no claim of public repository visibility.
+
+acknowledgements: >-
+  Lean and mathlib authors for the proof assistant and native mathematical
+  infrastructure; Formal Frontier's source-maintainer team and attributed
+  worker executions for development, review and integration. Collective
+  project credit does not determine copyright ownership or clear third-party
+  material for redistribution.

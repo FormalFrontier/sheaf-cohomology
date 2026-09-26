@@ -1,0 +1,108 @@
+# Credits, provenance and redistribution boundary
+
+Formal Frontier Agents are the project-wide author credit for original
+sheaf-cohomology Lean development and documentation. Repository history and
+the issue/ordinary review records attribute work to actual executions; this
+collective label neither fabricates individual human contributors nor asserts
+copyright ownership. The original project material is distributed under the
+official [Apache License 2.0](../LICENSE) text (SHA256
+`cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`).
+Formal Frontier's 2026-09-25 standing Apache authorization applies to
+verified original project contributions; it does not automatically settle
+concrete third-party rights, authenticity of a notice, or an entire public
+release history. There is no new human-author or source-author approval claim.
+
+## Original Lean contributors
+
+The following map identifies the **first-added expression** of every shipped
+mathematical module in this repository's Git history. All listed paths are
+under `SheafCohomology/` and end in `.lean`. Anchor authored the original
+commits in the first fifteen rows; grouped paths were first added together.
+The PR numbers identify their ordinary development review histories, not
+first-release clearance. Some modules gained additional results in later
+commits, so a first addition does not assign every later line to one author.
+
+| Mathematical module(s) | First-added commit | Development PR |
+| --- | --- | --- |
+| `CompactOpenSections` | `80c6f1035781ba7849bfa2d88f1978e25a94597b` | #2 |
+| `DegreeZero` | `b761738639c5f40079133eafe6eec9e72327ba74` | #4 |
+| `QuasiFlasque` | `03bc6cb8c55e6e271db1564ba2303f921193e7a4` | #6 |
+| `QuasiFlasqueExactness` | `5e4271cff4eea7ffd28dd701898c7187290d975b` | #8 |
+| `QuasiFlasqueAcyclicity` | `d6a8c88901c08812a00df2391e29029f4156dbdb` | #10 |
+| `FlasqueResolution` | `b77bb906b0603493cade08def9c54fc361056bab` | #12 |
+| `AcyclicResolution` | `1c84221e7b9ecafbb8bc2e4f02434113876df1ad` | #14 |
+| `FlasqueAcyclicResolution` | `a94bad1582dccaafd038672866a093915228e2f5` | #16 |
+| `FlasqueAcyclicSections` | `585388cf2dd944d015ecd89a684f30047a79beee` | #18 |
+| `FilteredColimitFunctorH` | `3f59b05045b9c04ebd9ce9dc1ef9dd09e8872724` | #20 |
+| `LocalCohomology` | `eb98f9bfa77e15fdbe28dc5e577e79891a0e9cc3` | #23 |
+| `OpenCohomology` | `d37a45dcdaeee00a714be3f82ebc8696545387b2` | #24 |
+| `InjectiveResolutionNaturality`, `OpenCohomologyPushforwardResolution`, `OpenCohomologyRightDerived` | `d312d1bd0e326a0afa5d01f1249ab4d95a8e116c` | #25 |
+| `PullbackCoherence` | `e22ab8aeb672640f8a0d9b0c5c38ed3204c86aa8` | #27 |
+| `ColimitPostApp`, `ColimitTransport`, `HigherDirectImageFilteredColimit`, `HigherDirectImageFilteredColimitPositive`, `LocalCohomologyFilteredColimit`, `SheafificationBasis`, `SpectralPreimage` | `47c42f1fda22327ad2b891cfe122d1629dd900c5` | #29 |
+| `OpenBaseChange` (Worker A) | `8dbc0e7bd455e561bd9e0b20860fcc697096b46e` | #33 |
+
+Anchor first added the aggregate `SheafCohomology.lean` with
+`CompactOpenSections` at `80c6f1035781ba7849bfa2d88f1978e25a94597b`;
+later accepted subject-module additions updated its imports. Anchor's
+`QuasiFlasque` later gained the set-valued generalization at
+`a9165b2dc424a0542e7cb4ad3c9526ef49f60bee` (PR #31).
+The `OpenBaseChange` author is Worker A Hive Task
+`hive-request-89f88273be11e82cd4925df7e75bc2866bda40dc` (UID
+`e946780e-83d8-4eee-85b7-03a72f9c3506`; issue #32 comment 32050,
+PR #33 review 2567). The module-system/public-import readiness work on
+the existing 25 Lean paths and the first expression of the named **private**
+`SheafCohomologyExamples.lean` client are Worker A commit
+`c74593442ab9aacc0b900f9c189e78a96c91fb05`, Hive Task
+`hive-request-afcf4270369d5826e41fa8de5e8d3ddf01f6f949` (UID
+`ce46d245-90e8-456a-8c2c-c8cb14b58f23`; issue #34 comment 40344).
+Anchor assembled the separate readiness documentation/metadata successor;
+PR #35 review 3006 and owner record #34/40581 accepted only ordinary
+development readiness. These Git and review identities establish project
+contributions, not underlying human identities or a new whole-proof review.
+
+## Documentation adapter origin
+
+The fixed-library adapter in `scripts/generate_api.py` and its data-only tests
+in `scripts/test_generate_api.py` adapt original-project expression and patterns
+from Anchor's ideal-completion adapter at
+`a6f4d9c9614c20fe05f947902373d60e05504291` and the ADL
+(algebraic-direct-limits) native adapter at
+`bbdcf43d28dd92312484adba53fe20b5b35a2f75`, especially native
+header parsing, fixed-site controls, immutable source URI/range and source/pin
+binding, source-only hash reproduction and Markdown rendering. The sheaf
+adapter adds its 26-module/556-site inventory, nested HTML site extraction,
+and its own checks; it is not a verbatim vendored doc-gen4 implementation or
+third-party generated website. The shared original-project adapter work is
+covered by the standing Apache authorization. These references identify actual
+reuse, not a claim that this documentation Task invented every adapter pattern.
+
+Lean 4, mathlib and the nine resolved manifest packages are declared external
+dependencies; their source code, caches and generated dependency websites are
+not vendored in this repository. The separate native doc-gen4 tool at commit
+`97d4ecdfc8e09e7f511724c25e303d448de6a3db` generates the display records.
+This library ships its own Markdown API rendering of those records, not the
+tool's generated website, CSS, scripts, fonts or compiled executable. The
+signatures and docstrings derive from this library's Lean files, and the
+generated reference links back to those files. Tool licensing and the exact
+resolved inputs must still be checked when distributing bundled binaries or
+third-party material; none is bundled here.
+
+Mathematical background includes native mathlib's category, sheaf, Ext and
+derived-functor interfaces and Fujiwara and Kato, *Foundations of Rigid
+Geometry I* (arXiv:1308.4734v5). The latter is a reference for mathematical
+ideas, not a claim of verbatim theorem correspondence, copied prose or human
+endorsement. No book PDF, figure, scan or substantial source excerpt is shipped.
+The source-specific correspondence and remaining coverage gaps belong in the
+source metadata, not this independent mathematical library.
+
+This documentation assembly is authored by Hive Task
+`hive-request-005cc1192de1d317fa08cbb47205c76f49a3dcf2` (UID
+`522b1a6f-e533-4c43-8411-2d6438d8a2b8`, request
+`6fef9e2a701d3cfa241a8b68d5f60a97`), starting from accepted development
+main `a9f1a38787d33205c469ff89710563fffb4974fd`. The bounded
+documentation/provenance successor is Worker B Hive Task
+`hive-request-6b499b4884d3f37633f4b86b64ccccaa6a5468da` (UID
+`f259b7c1-2916-4f77-8d61-626d6fd28821`), with sole parent
+`0462cd30a2047222e76996540f7ed719cc8b16ec`. Independent redistribution,
+provenance and semantic assessment of the complete artifact and its public
+history is separate from this credit record; this file alone is not acceptance.
