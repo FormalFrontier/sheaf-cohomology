@@ -106,3 +106,28 @@ documentation/provenance successor is Worker B Hive Task
 `0462cd30a2047222e76996540f7ed719cc8b16ec`. Independent redistribution,
 provenance and semantic assessment of the complete artifact and its public
 history is separate from this credit record; this file alone is not acceptance.
+
+## Abelian-sheaf forgetful comparison origin
+
+The three `SheafCohomology/AbelianForget/` modules and two private example
+clients retain actual originating expressions, not only collective credit.
+The canonical pullback mate and coherence construction originated with Worker A
+Hive Task `hive-request-69989e5f0656c9c3a172d5885b8421f7b778e824` (UID
+`b2938834-7079-41f8-89b9-48cd2ff03e56`, original source contribution
+`7edfb11d6c73afa3ca750104de5e874a5923b256`, original PR #264).
+The filtered-colimit development originated with Worker B Hive Task
+`hive-request-2f1e332761386974784954a2af9a56f1d3a63952` (UID
+`196336cd-b105-42e7-a64f-165eff075740`, original source contribution
+`ca2a03cd95000ae48c36bf2b592427633ff6560f`). The expressions were
+adapted into the incubator by Worker B Hive Task
+`hive-request-75271e0d032ad91de7edf45b55be683b44fbda68` (UID
+`80510ac9-3072-40c1-8775-7b674b6b0bd8`, adaptation
+`66fd36bade0aeb5a8be8a89a82122603483b35c1`, accepted incubator main
+`2dd64258efb1c625d42a21f8c0cfa80dd60c54cf`).
+The bounded destination import/client and documentation transfer is Worker B
+Hive Task `hive-request-0a302a17bb4dc6a1c08d2b391bafc71386213178`
+(UID `0aa564c2-3d8b-41cf-92cb-bdb369a229ce`); its exact contribution commit
+is recorded in the ordinary PR and issue handoff. None of the source-specific
+correspondence, research or review logs is shipped with this library. The
+standing original-project Apache authorization concerns verified original
+contributions; it neither assigns ownership nor certifies third-party rights.

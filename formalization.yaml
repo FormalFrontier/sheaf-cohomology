@@ -6,7 +6,8 @@ project:
   description: >-
     Compact-open section colimits, quasi-flasque exactness and acyclicity,
     resolution comparisons, local cohomology, right-derived pushforward
-    comparisons, pullback coherence and open base change in Lean.
+    comparisons, pullback coherence, open base change and the forgetful
+    functor from abelian-group sheaves to Type-valued sheaves in Lean.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -14,7 +15,7 @@ project:
   license: "Apache-2.0"
 
 sources:
-  - title: "Sheaf cohomology, compact-open colimits and open base change"
+  - title: "Sheaf cohomology, compact-open colimits, pullback and open base change"
     type: "folklore"
     relationship: "independently-proves"
     note: >-
@@ -60,8 +61,11 @@ status:
     local-cohomology/right-derived comparison has a shared universe parameter
     and requires positive degree. Sheaf-specific functorial flasque-resolution
     and higher-direct-image filtered-colimit assemblies are fixed at universe
-    zero. No full theory, arbitrary-universe wrapper or whole-source completion
-    is asserted.
+    zero. The additive-to-Type underlying-sheaf functor commutes with pullback
+    through a canonical natural mate for arbitrary same-universe spaces and maps;
+    it preserves same-universe filtered colimits with a literal colimit.post
+    comparison and its stage law. No new global preservation instance, full
+    theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
@@ -78,7 +82,10 @@ review:
     Classical.choice and Quot.sound are permitted axioms. The ordinary Lean
     build checks the proofs; separate stored-body replay is not required.
     Publication and exact mirror verification are separate operations; this
-    metadata makes no claim of public repository visibility.
+    metadata makes no claim of public repository visibility. The AbelianForget
+    transfer is a new destination candidate drawing on separately accepted
+    incubator proofs; it requires its own independent promotion/release review.
+    That earlier approval is not acceptance of this destination or its release.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

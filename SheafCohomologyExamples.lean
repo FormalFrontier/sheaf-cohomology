@@ -4,6 +4,8 @@ SPDX-License-Identifier: Apache-2.0
 -/
 module
 import SheafCohomology
+import SheafCohomologyExamples.AbelianForgetPullback
+import SheafCohomologyExamples.AbelianForgetFilteredColimits
 
 /-!
 # Public-root sheaf cohomology examples

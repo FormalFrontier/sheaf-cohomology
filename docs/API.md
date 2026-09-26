@@ -1,6 +1,14 @@
-# Native-generated sheaf-cohomology API
+# Historical native-generated sheaf-cohomology API (26 modules)
 
 Lake development package version `0.1.0`; analyzed source: `a9f1a38787d33205c469ff89710563fffb4974fd`; native doc-gen4: `97d4ecdfc8e09e7f511724c25e303d448de6a3db`.
+This frozen 556-site reference covers the original 24 subject modules and two
+root/client modules at the analyzed revision, not the later three
+`SheafCohomology.AbelianForget` subjects or their two client modules. Those
+new declarations have a [lightweight supplemental reference](AbelianForget.md).
+The old source hashes and manifest are historical, not a fresh attestation of
+the current 31-module tree. Its `api_sha256` checks the original generated
+Markdown **before this explanatory introduction was updated**, not the bytes
+of this editorially amended file.
 These are native **display signatures**, not complete elaboration-ready declarations
 or a proof/axiom census. Namespace resolution, inferred types and universes can be
 suppressed by native pretty-printing; follow each frozen source link for the exact
@@ -8,7 +16,7 @@ binders and proof. Private helpers/examples need a separate complete proof audit
 Twelve rows are marked **Source-local instance registration**: they are not
 globally registered typeclass instances, even if the native header says `theorem`.
 Explicit-name visibility is distinct from local typeclass registration.
-[Module guide](Guide.md) · [Generation contract](README.md) ·
+[Module guide](Guide.md) · [Historical reproduction](README.md) ·
 [Credits](CREDITS.md) · [Input manifest](api-manifest.json).
 
 ## `SheafCohomology.AcyclicResolution`

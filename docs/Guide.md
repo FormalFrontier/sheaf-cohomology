@@ -3,8 +3,10 @@
 This guide describes the shipped mathematical APIs, not a complete formalization
 of a source. Import `SheafCohomology` for
 the aggregate public interface, or import a subject module directly. The native
-[API reference](API.md) supplies declaration-level displayed hypotheses and
-[generation details](README.md) identify its exact analyzed source. The Lean
+[historical API reference](API.md) supplies declaration-level displayed hypotheses
+for the original 26 modules; the [AbelianForget supplement](AbelianForget.md)
+covers the three new subjects. [Generation details](README.md) identify the
+old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
 
 ## Compact opens and quasi-flasque sheaves
@@ -64,16 +66,30 @@ equation for sheaves of types. It makes no surjectivity assumption on the map.
 Its space-universe bound must also hold for the coefficient category's carriers
 and morphisms.
 
+For abelian-group sheaves, the underlying-Type-sheaf functor admits a canonical
+natural comparison with pullback. The arrow is **defined** by the native
+Type-adjunction mate of the forgotten additive unit, is invertible for any
+same-universe continuous map, and satisfies native identity and composition
+laws. For any small same-universe filtered shape, forgetting preserves colimits;
+the exhibited invertible comparison is the literal `colimit.post` and its
+stage equation holds when both ordinary `HasColimit` instances are available.
+There is no global preservation instance, spectral-space premise or new
+arbitrary-universe wrapper. See [all declarations and hypotheses](AbelianForget.md).
+
 ## All shipped modules
 
-Every subject leaf below is included in the native documentation and the
-shipped-file inventory, including support modules not imported explicitly by
-the aggregate root. Prefix subject names with `SheafCohomology.`. These
+The original 24 subject leaves below are included in the frozen native API
+reference. Three new `AbelianForget` leaves are documented in the separate
+supplement; all 27 subjects and four roots/clients form the current 31-file
+Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
 
 | Module | Purpose |
 | --- | --- |
+| `AbelianForget.Basic` | Underlying Type-valued sheaf functor |
+| `AbelianForget.Pullback` | Native mate, natural comparison, inverse and coherence |
+| `AbelianForget.FilteredColimits` | Filtered preservation, literal comparison and stage law |
 | `AcyclicResolution` | Ext/homology comparison from acyclic resolutions |
 | `ColimitPostApp` | Evaluation of canonical colimit maps at components |
 | `ColimitTransport` | Transport/naturality of canonical colimit comparisons |
@@ -99,7 +115,9 @@ the same hypotheses.
 | `SheafificationBasis` | Detecting sheafified isomorphisms on a basis |
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named private downstream examples using only the root |
+| `SheafCohomologyExamples` | Named private downstream examples, including two imported AbelianForget clients |
+| `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
+| `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 
 ## Using the boundary
 

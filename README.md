@@ -1,7 +1,7 @@
 # sheaf-cohomology
 
-Reusable Lean foundations for sheaf cohomology, compact-open sections, and
-cohomological functors.
+Reusable Lean foundations for sheaf cohomology, compact-open sections,
+cohomological functors, and forgetting abelian-group structure on sheaves.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -88,6 +88,16 @@ comparisons for sheaves of types. It proves that these comparisons are mates
 and exposes the resulting counit equation. No surjectivity assumption is made;
 the construction applies equally to empty and whole opens and spaces.
 
+For any continuous map between topological spaces in a common universe, the
+underlying-Type-sheaf functor commutes with additive-sheaf pullback via the
+canonical native-adjunction mate. This **particular** arrow is natural and
+invertible, and satisfies the native identity and composition equations. For
+any small filtered diagram in that universe, forgetting additive structure
+preserves its colimit: the comparison is the literal `colimit.post` with its
+stage-leg equation under the ordinary colimit instances. Neither result
+requires spectral or nonempty-space hypotheses. These theorems do not supply a
+universe-crossing wrapper or prove a complete source result.
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -102,6 +112,17 @@ public visibility.
 Use `import SheafCohomology` for the aggregate API, or a subject module for a
 smaller import. The module-system readiness assembly re-exports the existing
 interfaces; implementation helpers remain private.
+
+For the forgetful functor and its comparisons, import
+`SheafCohomology.AbelianForget.Pullback` and/or
+`SheafCohomology.AbelianForget.FilteredColimits`; both import
+`SheafCohomology.AbelianForget.Basic`. The
+[`AbelianForget` declaration guide](docs/AbelianForget.md) gives exact
+hypotheses and links to shipped code. A root-import example in
+`SheafCohomologyExamples/AbelianForgetPullback.lean` specializes
+`TopCat.Sheaf.AbelianForget.canonicalComponent_isIso` to the empty space;
+`SheafCohomologyExamples/AbelianForgetFilteredColimits.lean` specializes
+`preservesFilteredColimits` to `ℕ`. These are private named examples.
 
 | Subject | Module and representative interface |
 | --- | --- |
@@ -122,8 +143,10 @@ an all-degree comparison. Quasi-flasqueness only controls restriction from the
 terminal open to compact opens; it is weaker than flasqueness.
 
 The [module and assumptions guide](docs/Guide.md) covers all shipped subject
-modules; [native-generated API signatures](docs/API.md) give displayed headers
-and relative links to the source in this checkout. Of 556 native display sites,
+modules. The [historical native-generated API signatures](docs/API.md) cover
+the original 26-module source snapshot (including the then-unmodified roots);
+the [lightweight AbelianForget guide](docs/AbelianForget.md)
+covers the three new subject modules. Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
 per-site explanations. These pointers do not certify complete semantic
@@ -133,8 +156,9 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly. It uses named private declarations so example proof bodies
-can be included in verification without adding a second public mathematical API.
+readiness assembly and imports the two new example leaves. All examples use
+named private declarations so their proof bodies can be included in
+verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.
 
 ## Build and checks
