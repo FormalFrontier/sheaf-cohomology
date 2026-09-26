@@ -151,3 +151,21 @@ The destination transfer and eleven private clients are Worker A Hive Task
 exports and documentation assembly. These are internal expression credits,
 not source correspondence or a claim that private development objects are
 published on GitHub. Research records and raw check transcripts are not shipped.
+
+## Forgetful square-transition origin
+
+The four public bridge expressions in
+`SheafCohomology/AbelianForget/SquareTransition.lean` and the
+`SquareTransition.adjoint_eq_homEquiv` helper originate in the accepted
+incubator revision `d6135ec9832e5ff93d267fb2c1eaeb0aa2ea1eed` (ordinary
+incubator PR #22). Their original Worker A author was Hive Task
+`hive-request-86c6c966eb9b2f38ea3301684200792d9b071449` (UID
+`95cfe360-9cce-4918-b8c4-d71cf3b3cfca`); its preceding expression commits
+include `617ee2f` and `3c8e049`. The source's five public-import client
+expressions are retained as private destination examples. Worker A Hive Task
+`hive-request-ca9bade41d94586a071a4b71d29e1638d361c631` (UID
+`4521520d-7491-4854-b7c3-57437bc9ca4b`) transfers these expressions,
+adapts imports and presentation, and records the destination proof checks.
+The ordinary promotion PR identifies the exact destination revision. This
+expression history is not a claim of destination acceptance, release, source
+correspondence, third-party ownership or human endorsement.

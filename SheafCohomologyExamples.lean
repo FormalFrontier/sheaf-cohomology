@@ -7,6 +7,7 @@ import SheafCohomology
 import SheafCohomologyExamples.AbelianForgetPullback
 import SheafCohomologyExamples.AbelianForgetFilteredColimits
 import SheafCohomologyExamples.SquareTransition
+import SheafCohomologyExamples.AbelianForgetSquareTransition
 
 /-!
 # Public-root sheaf cohomology examples

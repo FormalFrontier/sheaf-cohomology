@@ -5,7 +5,7 @@ of a source. Import `SheafCohomology` for
 the aggregate public interface, or import a subject module directly. The native
 [historical API reference](API.md) supplies declaration-level displayed hypotheses
 for the original 26 modules; the [AbelianForget supplement](AbelianForget.md)
-and [SquareTransition supplement](SquareTransition.md) cover the four new
+and [SquareTransition supplement](SquareTransition.md) cover the five new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -84,13 +84,18 @@ proof-irrelevance of square commutativity, identity, and arbitrary two-square
 pasting. Its concrete-category assumptions are those of the native pullback
 adjunction; space carriers, coefficient carriers and coefficient morphisms
 share a universe, while the coefficient object universe is independent.
-This does not itself supply the additive-to-Type forgetful square law.
+The separate `AbelianForget.SquareTransition` imports this generic API and the
+canonical forgetful pullback mate. For arbitrary same-universe additive sheaves,
+an arbitrary commuting square and a stage map out of `p`-pullback, it identifies
+the forgotten *native* additive transition with the native Type-valued
+transition on the canonically compared stage. See the
+[forgetful square supplement](AbelianForget.md#commuting-squares).
 
 ## All shipped modules
 
 The original 24 subject leaves below are included in the frozen native API
-reference. Three new `AbelianForget` leaves and `SquareTransition` are documented
-in separate supplements; all 28 subjects and five roots/clients form the current 33-file
+reference. Four new `AbelianForget` leaves and `SquareTransition` are documented
+in separate supplements; all 29 subjects and six roots/clients form the current 35-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -100,6 +105,7 @@ the same hypotheses.
 | `AbelianForget.Basic` | Underlying Type-valued sheaf functor |
 | `AbelianForget.Pullback` | Native mate, natural comparison, inverse and coherence |
 | `AbelianForget.FilteredColimits` | Filtered preservation, literal comparison and stage law |
+| `AbelianForget.SquareTransition` | Forgetful comparison commutes with the native square transition |
 | `AcyclicResolution` | Ext/homology comparison from acyclic resolutions |
 | `ColimitPostApp` | Evaluation of canonical colimit maps at components |
 | `ColimitTransport` | Transport/naturality of canonical colimit comparisons |
@@ -126,10 +132,11 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named private downstream examples, including three imported client modules |
+| `SheafCohomologyExamples` | Named private downstream examples, including four imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
+| `SheafCohomologyExamples.AbelianForgetSquareTransition` | Five private stage, target, identity, empty-space and pasted-square examples |
 
 ## Using the boundary
 

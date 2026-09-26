@@ -125,14 +125,20 @@ interfaces; implementation helpers remain private.
 
 For the forgetful functor and its comparisons, import
 `SheafCohomology.AbelianForget.Pullback` and/or
-`SheafCohomology.AbelianForget.FilteredColimits`; both import
-`SheafCohomology.AbelianForget.Basic`. The
+`SheafCohomology.AbelianForget.FilteredColimits`, or import
+`SheafCohomology.AbelianForget.SquareTransition` for compatibility with the
+native square transition; these import the needed forgetful and square APIs. The
 [`AbelianForget` declaration guide](docs/AbelianForget.md) gives exact
 hypotheses and links to shipped code. A root-import example in
 `SheafCohomologyExamples/AbelianForgetPullback.lean` specializes
 `TopCat.Sheaf.AbelianForget.canonicalComponent_isIso` to the empty space;
 `SheafCohomologyExamples/AbelianForgetFilteredColimits.lean` specializes
 `preservesFilteredColimits` to `ℕ`. These are private named examples.
+Five further private clients in
+`SheafCohomologyExamples/AbelianForgetSquareTransition.lean` exercise arbitrary
+additive stages, target postcomposition, identity, the empty space and pasted
+squares. The square law compares the actual additive and Type-valued native
+transitions, not an arbitrary choice of transport or an additive endpoint.
 
 For generic commuting-square transitions, import
 `SheafCohomology.SquareTransition` or the aggregate root. The
@@ -152,6 +158,7 @@ empty spaces.
 | Higher-image colimits | `HigherDirectImageFilteredColimit`: canonical comparison and stage equation in every natural degree |
 | Pullback and open base change | `PullbackCoherence`, `OpenBaseChange`: coherent comparisons and the open-square mate |
 | Commuting-square transitions | `SquareTransition`: canonical transition, forward strict mate, naturality and pasting |
+| Forgetful square transitions | `AbelianForget.SquareTransition`: strict pushforward compatibility and additive-to-Type native transition equation |
 
 All module names in the table are prefixed by `SheafCohomology.`. Consult their
 declaration types for the precise category, sheafification, Ext and universe
@@ -164,7 +171,7 @@ The [module and assumptions guide](docs/Guide.md) covers all shipped subject
 modules. The [historical native-generated API signatures](docs/API.md) cover
 the original 26-module source snapshot (including the then-unmodified roots);
 the [lightweight AbelianForget guide](docs/AbelianForget.md) and
-[SquareTransition guide](docs/SquareTransition.md) cover the four new subject
+[SquareTransition guide](docs/SquareTransition.md) cover the five new subject
 modules. Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored

@@ -6,7 +6,8 @@ project:
   description: >-
     Compact-open section colimits, quasi-flasque exactness and acyclicity,
     resolution comparisons, local cohomology, right-derived pushforward
-    comparisons, pullback coherence, commuting-square transitions, open base
+    comparisons, pullback coherence, commuting-square transitions and their
+    additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
     sheaves in Lean.
   authors:
@@ -67,8 +68,11 @@ status:
     it preserves same-universe filtered colimits with a literal colimit.post
     comparison and its stage law. Generic commuting-square transitions use the
     native concrete-category pullback adjunction and satisfy the forward strict
-    mate, target naturality, identity and arbitrary pasting laws; their
-    compatibility with the additive-to-Type forgetful functor is not asserted.
+    mate, target naturality, identity and arbitrary pasting laws. For arbitrary
+    same-universe commuting squares and additive pullback stages, forgetting
+    commutes with the literal native transition to Type-valued sheaves through
+    the canonical pullback comparison; strict pushforward objects, maps and
+    square comparisons supply the bridge. No final additive endpoint is claimed.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
@@ -93,7 +97,11 @@ review:
     That earlier approval is not acceptance of this destination or its release.
     The separate SquareTransition transfer likewise requires exact destination
     promotion/release assessment; historical native documentation does not
-    include either transfer's new subjects.
+    include either transfer's new subjects. The forgetful-square successor
+    starts from frozen Square assembly dfc42b3001c29d9384532c489474b4c36dd6e069;
+    the accepted incubator source is d6135ec9832e5ff93d267fb2c1eaeb0aa2ea1eed.
+    This successor still needs independent exact-candidate review, responsible
+    maintainer acceptance and verified publication before it is delivered.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

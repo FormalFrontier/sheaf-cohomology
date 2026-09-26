@@ -12,6 +12,7 @@ public import SheafCohomology.PullbackCoherence
 public import SheafCohomology.SquareTransition
 public import SheafCohomology.AbelianForget.Pullback
 public import SheafCohomology.AbelianForget.FilteredColimits
+public import SheafCohomology.AbelianForget.SquareTransition
 public import SheafCohomology.OpenBaseChange
 public import SheafCohomology.FilteredColimitFunctorH
 public import SheafCohomology.HigherDirectImageFilteredColimit

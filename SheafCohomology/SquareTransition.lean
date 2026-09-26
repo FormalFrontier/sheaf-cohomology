@@ -49,6 +49,13 @@ def adjoint (p : Xj ⟶ Xi) {F : Xi.Sheaf A} {G : Xj.Sheaf A}
     F ⟶ (pushforward A p).obj G :=
   (pullbackPushforwardAdjunction A p).homEquiv F G a
 
+/-- Compute the adjoint via the native pullback/pushforward hom-bijection. -/
+theorem adjoint_eq_homEquiv (p : Xj ⟶ Xi) {F : Xi.Sheaf A} {G : Xj.Sheaf A}
+    (a : (pullback A p).obj F ⟶ G) :
+    adjoint A p a = (pullbackPushforwardAdjunction A p).homEquiv F G a := by
+  unfold adjoint
+  rfl
+
 /-- Canonical pullback transition along an identity map. -/
 def identity (F : Xi.Sheaf A) :
     (pullback A (𝟙 Xi)).obj F ⟶ F :=
@@ -493,6 +500,7 @@ theorem transition_composite
   rfl
 
 #print axioms adjoint
+#print axioms adjoint_eq_homEquiv
 #print axioms identity
 #print axioms composite
 #print axioms pullbackEqIso

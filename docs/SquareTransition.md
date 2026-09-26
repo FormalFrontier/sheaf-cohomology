@@ -62,13 +62,14 @@ comparisons are in
 
 ## Public API
 
-All 25 declarations below are in `TopCat.Sheaf.SquareTransition` and take
+All 26 declarations below are in `TopCat.Sheaf.SquareTransition` and take
 the coefficient category `A` explicitly. See the linked source for exact
 implicit arguments, statement types and available instances.
 
 | Declaration | Meaning |
 | --- | --- |
 | `adjoint` | Adjoints a map out of `p`-pullback to a map into `p`-pushforward. |
+| `adjoint_eq_homEquiv` | Computes `adjoint A p a` using the native pullback/pushforward hom-equivalence; useful when rewriting across a module boundary. |
 | `identity` | Canonical identity-pullback stage morphism. |
 | `composite` | Composes consecutive stage maps using the *inverse* canonical composite-pullback comparison. |
 | `pullbackEqIso` | Contravariant equality transport `pullback A b ≅ pullback A a` for `a = b`. |

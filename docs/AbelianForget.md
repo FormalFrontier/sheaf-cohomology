@@ -2,7 +2,9 @@
 
 Import `SheafCohomology.AbelianForget.Pullback` for the pullback comparison,
 `SheafCohomology.AbelianForget.FilteredColimits` for filtered colimits, or
-`SheafCohomology` for both. The functor alone lives in
+`SheafCohomology.AbelianForget.SquareTransition` for forgetful compatibility
+with the native square transition; `SheafCohomology` exports all three. The
+functor alone lives in
 `SheafCohomology.AbelianForget.Basic`. All names below are in
 `TopCat.Sheaf.AbelianForget`; the exact Lean signatures and proof dependencies
 are in the linked shipped files. This lightweight supplement covers the new
@@ -62,3 +64,44 @@ and [`AbelianForgetFilteredColimits`](../SheafCohomologyExamples/AbelianForgetFi
 clients use the aggregate `SheafCohomology` import. Their 15 named private
 examples exercise arbitrary maps and mates, identity, composition, empty spaces,
 and natural-number filtered diagrams; they are not a second public API.
+
+## Commuting squares
+
+Fix `p : Xj ⟶ Xi`, `q : Yj ⟶ Yi`, `fi : Xi ⟶ Yi`, `fj : Xj ⟶ Yj`
+in `TopCat.{v}`, `h : p ≫ fi = fj ≫ q`, additive sheaves
+`F : Xi.Sheaf AddCommGrpCat.{v}`, `G : Xj.Sheaf AddCommGrpCat.{v}` and an
+**arbitrary** stage morphism
+`a : (TopCat.Sheaf.pullback AddCommGrpCat.{v} p).obj F ⟶ G`.
+[`SquareTransition.lean`](../SheafCohomology/AbelianForget/SquareTransition.lean)
+uses the strict *native* pushforward and
+`TopCat.Sheaf.SquareTransition.transition`, without extra geometric assumptions.
+Its four public declarations in `TopCat.Sheaf.AbelianForget` are:
+
+| Declaration | Meaning |
+| --- | --- |
+| [`underlyingSheaf_pushforward_obj`](../SheafCohomology/AbelianForget/SquareTransition.lean#L29) | Forgetting an additive native pushforward object is definitionally equal to the Type-valued pushforward of the forgotten sheaf. |
+| [`underlyingSheaf_pushforward_map`](../SheafCohomology/AbelianForget/SquareTransition.lean#L36) | The same strict equality holds for pushforward of any additive sheaf arrow. |
+| [`underlyingSheaf_pushforwardSquareIso_hom_app`](../SheafCohomology/AbelianForget/SquareTransition.lean#L47) | Forgetting the forward strict square comparison at `G` equals its Type-valued component, including the square equality transport. |
+| [`canonicalComponent_transition`](../SheafCohomology/AbelianForget/SquareTransition.lean#L68) | The canonical pullback/forgetful mate preserves the literal square transition at `a`. |
+
+The last theorem's exact equation is
+
+```lean
+canonicalComponent q ((TopCat.Sheaf.pushforward AddCommGrpCat.{v} fi).obj F) ≫
+  (underlyingSheaf Yj).map
+    (TopCat.Sheaf.SquareTransition.transition AddCommGrpCat.{v} p q fi fj h a) =
+  TopCat.Sheaf.SquareTransition.transition (Type v) p q fi fj h
+    (canonicalComponent p F ≫ (underlyingSheaf Xj).map a)
+```
+
+The `q`-comparison is at the additive pushforward of `F`, while the right stage
+uses the comparison at `p` followed by the forgotten `a`. The codomain is
+**Type-valued**, not an additive pushforward endpoint. The adjacent generic
+[`adjoint_eq_homEquiv`](../SheafCohomology/SquareTransition.lean#L53) computes
+the native adjoint explicitly for rewriting across a module boundary.
+Import `SheafCohomology.AbelianForget.SquareTransition` for the focused API,
+or `SheafCohomology` for the aggregate. The five named private public-import
+clients in
+[`AbelianForgetSquareTransition.lean`](../SheafCohomologyExamples/AbelianForgetSquareTransition.lean)
+cover arbitrary stages, postcomposition in the target, identity, the empty
+space and genuinely pasted squares; they are not a new public API.
