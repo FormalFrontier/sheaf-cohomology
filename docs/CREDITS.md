@@ -601,3 +601,45 @@ text. No incubator ancestry enters the public release history. Original leaf
 acceptance and focused transfer checks do not establish combined-root
 acceptance, verified publication, source coverage, third-party ownership or
 human endorsement.
+
+## Chosen native-limit global-section comparison
+
+`SheafCohomology/NativeLimitGlobalSections.lean` and its private ordinary-import
+client are copied statement **and proof expressions**, narrowly transferred
+from accepted unregistered incubator leaf
+`00d551efc598b8252fbc694830523b830bf94a27`. Original author worker-b Task
+`hive-request-4c216dbec01d4be3c9179c965656f0054d638fb8` (UID
+`b5bc6fa6-d9ab-4cfa-bd79-3ec1cdf7265a`) supplied the implementation;
+fresh independent worker-a Task
+`hive-request-63bb28dd0ebca9eed6f1f8633171e93fdbe4cf95` (UID
+`ef75b120-2781-4310-bec4-25989baec649`) reviewed it in report
+`5de42c13795f2b53f09f3aaf3955a74832ebfa06`, followed by Anchor's
+incubator #4/comment 53518 leaf acceptance. The original `592629` candidate
+and evidence `cad6a92baed502c134939e6dabc7db6135dc1f6d` remain historical;
+`00d551` corrects one guide citation, not Lean expressions or earlier nonpasses.
+
+Worker-a adapter Task `hive-request-4a0c71a3b9ce2bd856ab1a6b47ce89a98433112e`
+(UID `eb69c4df-f917-40c5-b2c6-b5b1c344080f`) transferred the payloads at
+`68d837027efcd3e61dd5ef80ff9a0153f8e178e0`. Reversing one producer import,
+one ordinary-client import and its namespace/end recovers the original blobs
+`89e1bdca0160dc88665cc6a024bdb24422bebcbc` and
+`c4c386299561a77415f1825e55c51e0c38fe86c5`. Separate destination evidence is
+`0ce32352e38c75721ee011e132ea513d4c589a69`. Anchor's design
+`4c52c039a83ad2579e4978686c5bc2aac818992e` is not compiled proof evidence;
+Anchor separately registered the unchanged Lean leaves and updated lifecycle,
+navigation, metadata and this credit.
+
+The two compact/prespectral transfer helpers adapt proof expressions from
+worker-b Task `hive-request-e5e544a630e9b84215130384682791cdebd0aea0`
+(UID `3bb51737-f69e-4698-9538-9f0336c572d9`)'s native lifting implementation;
+the quasi-separated helper follows that pattern using a different official
+result. The original collector adapts worker-b Task
+`hive-request-bf36c0a2309835a3fdfa6d14f20ebde4191ab672` (UID
+`1addeab3-992e-4fed-aa4b-afcea8e2487c`)'s predecessor harness,
+evidence `0568c4e2f088f6b44727883bf564b095bf9c54b0`.
+The [standalone guide](NativeLimitGlobalSections.md) preserves these distinct
+contributions and actual projection/factorization semantics. Other published
+mathematics is invoked, not copied; no private source text is included.
+Original Apache notices remain. Leaf acceptance and focused checks do not
+establish combined-root acceptance, release, source coverage, third-party
+ownership or human endorsement.

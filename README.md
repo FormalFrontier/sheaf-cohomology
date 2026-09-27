@@ -27,16 +27,29 @@ Every global section of the cone-pullback sheaf at a stage also lifts from a
 native global section after one filtered transition, including empty-stage cases.
 Consequently, the actual `colimMap` of the native cone-section transformation
 is an isomorphism of types under the same spectral-limit hypotheses.
+For the native limit constructed over that actual underlying-space limit,
+its projection maps also identify the colimit of native stage global sections
+with global sections of the chosen native limit.
 
-At the 2026-09-27 16:39:24 UTC assembly snapshot, this source-only 71-module
-registration was not an accepted combined graph. Its frozen 69-module
-predecessor `7c0510d5c17de07b78b0bedce5f9b9783a72027e` then had separate
-acceptance and release gates. This records that snapshot, not live branch status.
-CI538 subsequently succeeded at 17:03:22 UTC; following complete owner evidence
-intake, that independently reviewed 69-module tree was accepted, integrated and
-verified on official GitHub as
-`062370b8657c0691a02bfd01d43f6095383f4487` at 17:28:53 UTC.
-That decision does not accept this 71-module successor. The earlier
+At the 2026-09-27 17:05 UTC assembly snapshot, this source-only 73-module
+registration was not an accepted combined graph. Its frozen 71-module predecessor
+`7aa59f0e087045625022cc448d14fa96458725ab` and the 69-module predecessor
+`7c0510d5c17de07b78b0bedce5f9b9783a72027e` still had separate acceptance
+and release gates. This paragraph records that snapshot, not live branch status.
+CI538 had succeeded at 17:03:22 UTC, but complete owner intake of its artifact
+was still pending at that snapshot. Following that later evidence intake, the
+independently reviewed 69-module tree was owner-accepted, integrated and verified
+on official GitHub at
+`062370b8657c0691a02bfd01d43f6095383f4487` on 2026-09-27 at 17:28:53 UTC.
+The corrected 71-module documentation snapshot
+`64efb52e27eba493fcf2f13123bb75cbe4929b87` subsequently passed CI566
+at 19:18:10 UTC and, after its separate owner evidence intake, acceptance
+and protected main/prep/public integration, was verified on official GitHub as
+`75d708bf56eeec2de6c599b16cb96c82c961c9fe` at 19:26:30 UTC.
+This 73-module successor normally merges that accepted ancestry and preserves
+all 73 Lean files, roots and eleven dependency objects of its original
+`e570bfbb0a56dd38c43e9ed1c10057205e6088aa` candidate. Neither predecessor
+decision accepts this successor. The earlier
 67-module tree at `e2b368027e83268263317b87bdd9b9e210db8021` was independently
 reviewed, accepted and integrated after complete CI524 build and private-inclusive
 standard-axiom evidence, and verified on official GitHub as
@@ -45,7 +58,7 @@ standard-axiom evidence, and verified on official GitHub as
 reviewed, accepted and integrated after complete CI492 build and private-inclusive
 standard-axiom evidence, and verified on official GitHub as
 `abf9086d46dcfe221e60bc6cf6884bd71ed0e2b6` with the same tree.
-The new native stage-colimit leaves have focused author checks against the
+The new chosen native-limit global-section leaves have focused author checks against the
 unchanged eleven-package graph; the aggregate imports are changed computational
 inputs. Neither those checks nor predecessor checks certify this combined graph.
 Final destination/release review, applicable combined checks, owner acceptance
@@ -331,6 +344,7 @@ empty spaces.
 | Native stage-section equality | `NativeStageSectionEquality`: equality under an actual limit-projection unit descends to one stage on compact opens and native global sections |
 | Native whole-stage section lifting | `NativeStageSectionLifting`: each cone-pullback global section lifts from a native global section after a filtered transition |
 | Native section-colimit comparison | `NativeStageSectionColimit`: the actual `colimMap` of `ConePullbackSections.coneSections` is an isomorphism under the spectral-limit hypotheses |
+| Global sections of a chosen native limit | `NativeLimitGlobalSections`: the actual native projection comparison factors through moving-stage and fixed-base section comparisons and is an isomorphism under spectral-limit hypotheses |
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
@@ -391,6 +405,14 @@ twenty-third subject: a named `IsIso` theorem for the literal `colimMap` from
 native stage global sections to cone-pullback sections. It combines the
 equality and lifting results, without a desired-isomorphism premise or global
 instance. This is not the separate chosen native-limit global-section comparison.
+The [chosen native-limit global-section guide](docs/NativeLimitGlobalSections.md)
+covers the twenty-fourth subject. For `Q = limitConeOfSpaceCone (Type v) N c hc`,
+the comparison is the actual `colimit.desc` of `Γ` applied to Q's projections.
+Its factorization uses the same locally installed sheaf-colimit instance as Q;
+the named `isIso_nativeGlobalSectionsComparison` combines moving-stage and
+fixed-base comparisons under the same-universe small filtered, actual-limit
+and spectral-stage/map hypotheses. It assumes no desired isomorphism or
+inhabited stage and adds no global instance or source endpoint claim.
 The section-transport supplement uses the existing `N.rightOp` composed with global sections and the
 actual unit at the top open; it supplies no colimit-map invertibility or
 finite-stage gluing theorem.
@@ -404,9 +426,9 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports twenty-two additional example leaves. The root
-and nineteen leaves use named private declarations, including the native
-stage-lifting and stage-colimit ordinary-import clients; the
+readiness assembly and imports twenty-three additional example leaves. The root
+and twenty leaves use named private declarations, including the native
+stage-lifting, stage-colimit and chosen native-limit ordinary-import clients; the
 `ConePullbackSections` leaf contains five named public ordinary-import clients,
 `PullbackLocalSections` contains four more named public ordinary-import clients,
 and `NativeStageSectionEquality` contains two public distinguishability clients.

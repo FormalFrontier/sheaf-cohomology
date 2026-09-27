@@ -22,7 +22,8 @@ project:
     equality neighborhoods and finite compact-source-open local covers,
     eventual native compact-open and global-section equality over spectral limits,
     native whole-stage section lifting and the actual cone-section colimit
-    comparison under spectral-limit hypotheses,
+    comparison under spectral-limit hypotheses, actual projection comparison
+    for global sections of a chosen native limit and its named invertibility,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -215,14 +216,56 @@ status:
     filtered, actual-limit and spectral-stage/map hypotheses. No inhabitance,
     transition injectivity or desired-isomorphism premise is added, and the
     theorem is not a global instance. Its ordinary-import clients are private.
-    The chosen native-limit global-section comparison, source endpoint and
-    additive extension remain separate.
+    NativeLimitGlobalSections then constructs the global-section cocone from
+    the actual projections of limitConeOfSpaceCone and its literal colimit.desc
+    comparison. Its stage law and factorization use the same local sheaf-colimit
+    instance as the native construction. The named
+    isIso_nativeGlobalSectionsComparison combines moving-stage and fixed-base
+    comparisons under the same-universe small filtered, actual-limit and
+    spectral-stage/map hypotheses, with no inhabited-stage or desired-IsIso
+    premise and no global instance. Its private ordinary-import client detects
+    coprojection equality by actual native projection images. Source endpoints,
+    additive extensions and arbitrary colimit-choice identifications remain separate.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Historical source-only 73-module assembly snapshot, 2026-09-27 17:05 UTC:
+    frozen predecessor
+    7aa59f0e087045625022cc448d14fa96458725ab and its 69-module predecessor
+    7c0510d5c17de07b78b0bedce5f9b9783a72027e were then unaccepted and had
+    separate acceptance and release gates. This snapshot is not live branch
+    status. CI538 had succeeded at 17:03:22 UTC, but full owner artifact intake
+    was still pending at that snapshot. Subsequently, that evidence intake and
+    the separate 69-module owner main/prep/public gates completed; it was verified on official GitHub
+    as 062370b8657c0691a02bfd01d43f6095383f4487 at 2026-09-27 17:28:53 UTC.
+    The corrected 71-module documentation snapshot
+    64efb52e27eba493fcf2f13123bb75cbe4929b87 subsequently passed CI566
+    at 19:18:10 UTC; after full owner evidence intake and separate main/prep/public
+    decisions and protected integration, its official GitHub release
+    75d708bf56eeec2de6c599b16cb96c82c961c9fe was verified at 19:26:30 UTC.
+    This 73-module successor normally merges that accepted ancestry, retaining
+    all 73 Lean blobs, roots, eleven pins and CI from original e570bfbb.
+    Neither predecessor decision accepts the 73-module graph.
+    This successor registers both
+    unchanged NativeLimitGlobalSections Lean leaves from adapter
+    68d837027efcd3e61dd5ef80ff9a0153f8e178e0, transferred from independently
+    reviewed and accepted unregistered incubator leaf
+    00d551efc598b8252fbc694830523b830bf94a27. All 69 older nonroot Lean files,
+    eleven package objects, toolchain and CI remain unchanged. Aggregate root
+    imports ARE changed computational inputs. Separate focused adapter evidence
+    0ce32352e38c75721ee011e132ea513d4c589a69 checks fifteen producer origins
+    and one private ordinary-client origin, including four private-prefix origins,
+    all standard-three; it does not certify this combined root graph. Exact
+    combined destination/release review, applicable complete build and
+    private-inclusive standard-axiom evidence, owner acceptance, integration
+    and verified publication are distinct revision-specific requirements.
+    The assembly snapshot certifies no later completion of those requirements,
+    source coverage or incubator dependency conversion.
+
+    Historical 71-module assembly state:
     Historical source-only 71-module assembly snapshot, 2026-09-27 16:39:24 UTC:
     frozen predecessor 7c0510d5c17de07b78b0bedce5f9b9783a72027e was then
     unaccepted with separate acceptance and release gates. CI538 subsequently
