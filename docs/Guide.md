@@ -11,8 +11,9 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [forgetful cocone supplement](AbelianForgetConePullbackCocone.md),
 [diagram-pushforward supplement](DiagramPushforward.md),
 [coefficient-diagram supplement](AbelianForgetDiagramPushforward.md),
-[cone-reconstruction supplement](ConeOfPullbackCocone.md), and
-[native cone-limit supplement](ConePullbackLimit.md) cover the fourteen new
+[cone-reconstruction supplement](ConeOfPullbackCocone.md),
+[native cone-limit supplement](ConePullbackLimit.md), and
+[limit-construction supplement](SheafedSpaceLimitConstruction.md) cover the fifteen new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -102,9 +103,10 @@ transition on the canonically compared stage. See the
 
 The original 24 subject leaves below are included in the frozen native API
 reference. Eight new `AbelianForget` leaves, `SquareTransition`,
-`ConePullback`, `ConePullbackCocone`, `ConeOfPullbackCocone`, `ConePullbackLimit`, and
+`ConePullback`, `ConePullbackCocone`, `ConeOfPullbackCocone`, `ConePullbackLimit`,
+`LimitConstruction`, and
 `DiagramPushforward` are documented in supplements;
-all 38 subjects and fifteen roots/clients form the current 53-file
+all 39 subjects and sixteen roots/clients form the current 55-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -126,6 +128,7 @@ the same hypotheses.
 | `ConePullbackCocone` | Cocone whose legs are the mates of actual native cone projections, without a colimiting assertion |
 | `ConeOfPullbackCocone` | Native cone reconstructed from actual space-cone and pullback-cocone data, with exact forgetting and transported recovery |
 | `ConePullbackLimit` | Native limit criterion from the actual underlying-space limit and projection-mate sheaf colimit, with derived lifts and uniqueness |
+| `LimitConstruction` | Actual pullback-sheaf colimit and native limiting cone over a chosen space limit; named HasLimit witness |
 | `DegreeZero` | Degree-zero cohomology and global sections |
 | `DiagramPushforward` | Native varying-base direct-image diagrams and compatible cones; stronger hypotheses only for mate formulas |
 | `AbelianForget.DiagramPushforward` | Strict varying-base diagram equality, identity-vertex transported-cone isomorphism and canonical mate compatibility |
@@ -150,7 +153,7 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named private downstream examples, including thirteen imported client modules |
+| `SheafCohomologyExamples` | Named private downstream examples, including fourteen imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
@@ -159,6 +162,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
 | `SheafCohomologyExamples.ConePullbackLimit` | Private Type/Ab Fin 3 lifts, projections and mates; empty-index reconstruction conditional on a genuine sheaf-colimit witness |
+| `SheafCohomologyExamples.LimitConstruction` | Private Type/Ab Fin 3 limiting cones and actual colimit-leg readbacks; genuine empty-index limit with a constructed initial sheaf |
 | `SheafCohomologyExamples.AbelianForgetSheafedSpace` | Private native arrow, chain, identity and empty-carrier examples |
 | `SheafCohomologyExamples.AbelianForgetConePullback` | Private cone-wise components, index-arrow naturality and actual empty-vertex cone |
 | `SheafCohomologyExamples.AbelianForgetConePullbackCocone` | Private native Fin 3 stages/triangles, desc compatibility, local filtered comparison and empty-carrier clients |
@@ -172,10 +176,17 @@ forgotten space cone and actual projection-mate sheaf cocone; it does not
 assume the native limit it proves. The coefficient category must satisfy the
 concrete-category, limits/colimits and forgetful preservation/reflection
 hypotheses of the native pullback adjunction. The index object and morphism
-universes are independent. The result provides no global `HasLimits` instance,
-unconditional empty native limit or Ringed/coefficient-changing extension.
-The separate `TopCat.Sheaf` wrapper's initial-object instance gap remains
-explicit in the [native cone-limit supplement](ConePullbackLimit.md).
+universes are independent. That criterion alone supplies neither a sheaf colimit
+nor a global `HasLimits` instance or Ringed/coefficient-changing extension.
+The separate [limit-construction supplement](SheafedSpaceLimitConstruction.md)
+supplies the actual sheaf colimit using coefficient shape-colimits and weak
+sheafification at the chosen vertex, explicitly installing the existing
+site-sheaf colimit instance locally for the `TopCat.Sheaf` wrapper. It constructs
+the native limit, with exact base and projection-mate readbacks, and a named
+`HasLimit` witness over a selected base limit. Its empty-index client constructs
+the sheaf colimit and initial sheaf rather than assuming them. This is not a
+global instance or a result for all unrestricted large diagrams; the explicit
+shape-colimit and sheafification hypotheses remain essential.
 
 The checked `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local

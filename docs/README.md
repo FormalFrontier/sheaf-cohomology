@@ -17,7 +17,7 @@ original generated `docs/API.md` in the pre-transfer accepted tree, not this
 file's editorially updated introduction. The historical generated file can
 be checked in that old revision; do not relabel the old hash as a new current
 Markdown attestation.
-The current 53 Lean modules also include fourteen new subjects and thirteen private
+The current 55 Lean modules also include fifteen new subjects and fourteen private
 client leaves, covered by [AbelianForget.md](AbelianForget.md),
 [SquareTransition.md](SquareTransition.md) and
 [SheafedSpace.md](SheafedSpace.md) and
@@ -26,7 +26,8 @@ client leaves, covered by [AbelianForget.md](AbelianForget.md),
 [DiagramPushforward.md](DiagramPushforward.md) and
 [AbelianForgetDiagramPushforward.md](AbelianForgetDiagramPushforward.md) and
 [ConeOfPullbackCocone.md](ConeOfPullbackCocone.md) and
-[ConePullbackLimit.md](ConePullbackLimit.md), not by this
+[ConePullbackLimit.md](ConePullbackLimit.md) and
+[SheafedSpaceLimitConstruction.md](SheafedSpaceLimitConstruction.md), not by this
 native batch. The old root and example-client source hashes do not match the
 current changed roots. Reproducing these historical records is
 distinct from accepting their mathematical meaning or auditing kernel proofs.
@@ -73,7 +74,7 @@ pins. Its C dependencies may require Lean's bundled `bin/cc` on `PATH`.
 The following **historical reproduction** is for a separate checkout of
 pre-transfer tree `3a7204971fbbbb0a130335eda04b9d9d2b157267`, which includes
 the frozen adapter and old 26 Lean modules, **not** the changed current
-53-module checkout. The `source_revision` below remains the older analyzed
+55-module checkout. The `source_revision` below remains the older analyzed
 `a9f1a38787d33205c469ff89710563fffb4974fd`, which is in that checkout's
 Git history. Use Bash, Python 3, git, elan and Lake. Install the pinned
 toolchain, fetch the **matching mathlib cache successfully before the project

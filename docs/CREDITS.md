@@ -329,3 +329,25 @@ review does not certify this destination or its later assembly; independent
 destination/release assessment, maintainer acceptance and verified publication
 are separate. These credits establish neither third-party ownership nor
 source correspondence or coverage.
+
+## Actual native sheafed-space limit construction
+
+`SheafCohomology/LimitConstruction.lean` retains the mathematical expressions
+of Worker A Hive Task
+`hive-request-700e4f0e3debb32b4538a1158e70ca099e66c254` (UID
+`02943c65-933d-4b1e-974b-decbd5d5f153`), original accepted revision
+`f30d2befa872ce170736d97a72444790847365e5`. The original independent
+mathematical reviewer is Worker B Task
+`hive-request-f56d422e9bac1b8c13465b1dc849cc5f891a493a` (UID
+`2eedc5aa-54f0-479d-a611-70a1049ec996`), report revision
+`c8a4369a1b025cd658807ebdaaa21084e6e5432c`. Worker A Hive Task
+`hive-request-6dd6bbaa5fa6642467da4af8d0dff8a12786d1c4` (UID
+`b6d76148-1649-49aa-943e-731466986081`) transferred the producer, private
+import-only clients and standalone guide at
+`b6d4464d6b38e0faa54d263ba653d8ebac0e69b2`. Only the producer's predecessor
+import and the client imports, namespace and visibility were adapted.
+Anchor registered the unchanged Lean leaves and updated navigation, guide
+lifecycle and metadata. The construction reuses the separately credited
+cone-reconstruction and limit-criterion expressions and mathlib's site-sheaf
+colimit instance. These credits do not certify destination acceptance,
+publication, third-party ownership or source coverage.

@@ -5,7 +5,9 @@ cohomological functors, and forgetting abelian-group structure on sheaves.
 It also provides native sheafed-space cone pullbacks and projection-mate
 cocones, an additive-to-Type forgetful functor and its canonical cone-wise
 natural isomorphism. A native cone-limit criterion derives a limit from the
-actual underlying-space limit and projection-mate sheaf colimit.
+actual underlying-space limit and projection-mate sheaf colimit. A named
+construction supplies that sheaf colimit from coefficient colimits and local
+sheafification, producing an actual native limiting cone.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -182,6 +184,19 @@ instance for the separate `TopCat.Sheaf` wrapper is supplied. See the
 [native cone-limit guide](docs/ConePullbackLimit.md) for exact assumptions,
 base-change transport and Type/Ab/private clients.
 
+`SheafCohomology.LimitConstruction` constructs a native `LimitCone` from an
+actual limiting cone of underlying spaces. In addition to the predecessor's
+concrete-coefficient hypotheses, it requires colimits of the actual index
+shape in the coefficient category and weak sheafification at the chosen cone
+vertex. It installs the existing site-sheaf colimit instance locally, constructs
+the actual pullback-sheaf colimit cocone and applies the limit criterion.
+The base, sheaf and projection-mate readbacks identify the actual selected
+objects and colimit legs. `hasLimitOfHasLimitForget` is a named witness, not
+a global instance. Private Type/Ab `Fin 3` clients and a genuine empty-index
+limit exercise the construction without assuming its conclusion. See the
+[limit-construction guide](docs/SheafedSpaceLimitConstruction.md) for the exact
+shape, sheafification and universe boundaries.
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -237,6 +252,7 @@ empty spaces.
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
+| Native limit construction | `LimitConstruction`: construct the sheaf colimit locally and a native limiting cone over an actual base limit |
 | Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
 | Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
 | Forgetful native cocones | `AbelianForget.ConePullbackCocone`: actual projection-mate legs and ordinary-colimit desc compatibility |
@@ -265,7 +281,9 @@ three public laws of the tenth new subject; the
 the [coefficient-diagram guide](docs/AbelianForgetDiagramPushforward.md)
 covers the twelfth; the [cone-reconstruction guide](docs/ConeOfPullbackCocone.md)
 covers the thirteenth; the [native cone-limit guide](docs/ConePullbackLimit.md)
-covers the fourteenth.
+covers the fourteenth; the
+[limit-construction guide](docs/SheafedSpaceLimitConstruction.md) covers the
+fifteenth.
 Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
@@ -276,7 +294,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports thirteen additional example leaves. All examples use
+readiness assembly and imports fourteen additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.

@@ -10,7 +10,8 @@ project:
     and their cone-wise additive-to-Type forgetting and ordinary-colimit desc
     compatibility, varying-base native diagram and cone pushforwards and their
     additive-to-Type coefficient transport, native cone reconstruction from
-    pullback cocones and conditional native sheafed-space limits,
+    pullback cocones, a conditional native sheafed-space limit criterion and
+    actual limit construction from coefficient colimits and local sheafification,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -125,10 +126,16 @@ status:
     satisfies the native pullback-adjunction limits/colimits and forgetful
     preservation/reflection hypotheses; index object and morphism universes
     remain independent. No filteredness, nonemptiness or stage isomorphism
-    is required. There is no global HasLimits, converse, Ringed extension or
-    unconditional empty native limit; the separate TopCat.Sheaf wrapper's
-    empty-colimit instance gap is explicitly distinguished from mathematical
-    nonexistence and from the available site sheaf-colimit instance.
+    is required. A further named construction supplies the actual sheaf colimit
+    from coefficient colimits of the index shape and weak sheafification at the
+    chosen space-cone vertex, installing the existing site-sheaf colimit
+    instance locally for the TopCat.Sheaf wrapper. It constructs a native
+    LimitCone over an actual base limit, with exact base, sheaf, projection and
+    colimit-leg readbacks, and a named HasLimit witness over a selected base
+    limit. Type and additive Fin 3 clients and a genuine empty-index limit
+    construct their sheaf colimits rather than assume them. There is no global
+    HasLimits instance, unrestricted-large-diagram result, converse, Ringed
+    extension or coefficient-forget compatibility for the limit construction.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
@@ -234,6 +241,21 @@ review:
     evidence. Predecessor integration and operator sequencing holds must
     clear before protected successor integration. Reviewed official release,
     verified publication and subsequent incubator conversion are distinct.
+
+    The actual-limit construction assembly preserves both Lean leaves of
+    destination b6d4464d6b38e0faa54d263ba653d8ebac0e69b2, transferred from
+    separately accepted original f30d2befa872ce170736d97a72444790847365e5.
+    Its frozen 53-module predecessor ce1675379e204c8d6d40a5f30b40942640ed25bd
+    and underlying 51-module CI-preserving registration were unaccepted at
+    assembly time. Existing mathematical bodies, pins and CI files are
+    unchanged; only aggregate imports, documentation, credit and metadata
+    are added. This exact 55-module candidate needs independent destination
+    and release assessment and applicable combined build and complete
+    private-inclusive standard-axiom evidence. Missing predecessor and
+    combined checks are not waived. Earlier leaf checks are reusable only
+    for their exact unchanged inputs; base drift may require rework.
+    Owner acceptance, ordered protected integration, reviewed official release
+    and verified publication remain distinct later steps.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical
