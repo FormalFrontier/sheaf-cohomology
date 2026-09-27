@@ -3,7 +3,9 @@
 Import `SheafCohomology.ConePullback` for cones of native sheafed spaces,
 `SheafCohomology.AbelianForget.SheafedSpace` for the additive-to-Type
 forgetful functor, `SheafCohomology.AbelianForget.ConePullback` for its
-cone-wise natural isomorphism, or `SheafCohomology` for all three. These are supplements to
+cone-wise natural isomorphism, and `SheafCohomology.ConePullbackCocone` for
+the projection-mate cocone of a native sheafed-space cone. The aggregate
+`SheafCohomology` imports all four. These are supplements to
 the [historical 26-module API reference](API.md), not part of its frozen
 generated inventory. Their namespaces are `AlgebraicGeometry.SheafedSpace`
 and `AlgebraicGeometry.SheafedSpace.AbelianForget`, with comparison lemmas
@@ -100,3 +102,16 @@ already supplied by the imported modules. It asserts no cone-level colimit compa
 final additive or Ringed endpoint, complete theory or source-level coverage.
 See [forgetting additive sheaves](AbelianForget.md) for the distinct pullback
 and filtered-colimit comparisons.
+
+## The cocone of an actual native cone
+
+The [projection-mate cocone module](ConePullbackCocone.md) takes
+`c : Cone S` for a native `S : Jᵒᵖ ⥤ SheafedSpace A`, not only a cone
+of underlying spaces. Its `conePullbackCocone A S c` lies over
+`conePullback A S ((SheafedSpace.forget A).mapCone c)`, has point
+`c.pt.sheaf`, and its leg at `i` is `sheafMate A (c.π.app (op i))`.
+The native cone equations prove the sheaf cocone triangles under the same
+coefficient assumptions as `conePullback`. No limiting, colimiting,
+filteredness, nonemptiness or stage-isomorphism premise is added.
+This does not assert that forgetting commutes with the whole cocone or its
+colimit, nor that a final endpoint map is invertible.

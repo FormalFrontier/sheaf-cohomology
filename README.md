@@ -2,8 +2,9 @@
 
 Reusable Lean foundations for sheaf cohomology, compact-open sections,
 cohomological functors, and forgetting abelian-group structure on sheaves.
-It also provides native sheafed-space cone pullbacks, an additive-to-Type
-forgetful functor and their canonical cone-wise natural isomorphism.
+It also provides native sheafed-space cone pullbacks and projection-mate
+cocones, an additive-to-Type forgetful functor and its canonical cone-wise
+natural isomorphism.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -127,6 +128,12 @@ spectral, geometric or stage-isomorphism premise. It claims no cone-level colimi
 comparison, final additive or Ringed endpoint or source coverage.
 See the [native sheafed-space guide](docs/SheafedSpace.md).
 
+`SheafCohomology.ConePullbackCocone` constructs the sheaf cocone induced by
+an actual native sheafed-space cone. Its point is the vertex sheaf and its
+legs are the inverse-image mates of the native projections. The cone need
+not be limiting; the resulting cocone is not asserted to be colimiting.
+See the [projection-mate cocone guide](docs/ConePullbackCocone.md).
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -179,6 +186,7 @@ empty spaces.
 | Commuting-square transitions | `SquareTransition`: canonical transition, forward strict mate, naturality and pasting |
 | Forgetful square transitions | `AbelianForget.SquareTransition`: strict pushforward compatibility and additive-to-Type native transition equation |
 | Native sheafed-space cones | `ConePullback`: arbitrary underlying-space cones and actual-arrow mates |
+| Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
 | Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
 
@@ -196,7 +204,8 @@ the [lightweight AbelianForget guide](docs/AbelianForget.md) and
 [SquareTransition guide](docs/SquareTransition.md) cover the five subjects
 in that historical supplement group; the
 [native sheafed-space guide](docs/SheafedSpace.md) documents three further
-subjects. Of the old 556 native display sites,
+subjects, and the [projection-mate cocone guide](docs/ConePullbackCocone.md)
+documents one more. Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
 per-site explanations. These pointers do not certify complete semantic
@@ -206,7 +215,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports seven additional example leaves. All examples use
+readiness assembly and imports eight additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.

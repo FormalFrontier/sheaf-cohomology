@@ -6,7 +6,7 @@ project:
   description: >-
     Compact-open section colimits, quasi-flasque exactness and acyclicity,
     resolution comparisons, local cohomology, right-derived pushforward
-    comparisons, pullback coherence, native sheafed-space cone pullbacks
+    comparisons, pullback coherence, native sheafed-space cone pullbacks and cocones
     and their cone-wise additive-to-Type forgetting, commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -77,7 +77,10 @@ status:
     sheafed-space underlying spaces induces a diagram of pullback sheaves,
     provided the coefficient category satisfies the concrete, limits/colimits,
     forgetful preservation and reflection assumptions of the native pullback
-    adjunction. Additive sheafed spaces forget to Type-valued ones through
+    adjunction. An actual native sheafed-space cone induces a sheaf cocone
+    with vertex sheaf as point and projection mates as legs, without a
+    limiting-cone or colimiting-cocone assertion. Additive sheafed spaces
+    forget to Type-valued ones through
     the native mapPresheaf functor, with strict underlying-space/presheaf
     equalities and an actual-arrow pullback mate. The native Type-valued
     pullback diagram of the forgotten additive sheafed-space diagram is
@@ -128,6 +131,16 @@ review:
     or source correspondence. The successor requires fresh independent
     destination and release assessment, owner acceptance and verified
     official publication in dependency order.
+    The native projection-mate cocone assembly preserves the Lean leaves of
+    destination 9e548ad99e4abf08c757cc382562c0709a584ca9, transferred from
+    separately accepted original e32952df2893d49f76b8fe96a63db3defd3a4381,
+    on accepted cone-wise-forget revision 4d4ed7c4dcf43418aaaf4e54138b3e811ec60aea.
+    It registers the new production/private-client imports and updates current
+    documentation without changing proofs, pins or the historical API batch.
+    The exact combined build and applicable complete standard-axiom evidence,
+    independent destination/release review, owner acceptance and ordered
+    verified publication remain revision-specific requirements; neither input
+    candidate's existence nor this metadata certifies their completion.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

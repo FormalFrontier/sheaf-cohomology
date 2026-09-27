@@ -9,6 +9,7 @@ import SheafCohomologyExamples.AbelianForgetFilteredColimits
 import SheafCohomologyExamples.SquareTransition
 import SheafCohomologyExamples.AbelianForgetSquareTransition
 import SheafCohomologyExamples.ConePullback
+import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.AbelianForgetSheafedSpace
 import SheafCohomologyExamples.AbelianForgetConePullback
 

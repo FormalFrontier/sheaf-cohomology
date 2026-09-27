@@ -215,3 +215,20 @@ metadata. The ordinary promotion PR records the destination revision and
 its separate checks. This credit records expression and transfer, not a new
 copyright claim, original third-party rights, destination acceptance,
 official publication, source correspondence or coverage.
+
+## Native projection-mate cocones
+
+`SheafCohomology/ConePullbackCocone.lean` retains the mathematical expressions
+of Worker B Hive Task `hive-request-b5d71038ee1c27e92bd1d66f62b21001a79f2069`
+(UID `001c2dd6-70cd-4f36-92a3-0bee18fb582a`), original commit
+`e32952df2893d49f76b8fe96a63db3defd3a4381`. Worker A Hive Task
+`hive-request-314f8ea55794f67df587aaab888cb76a998d3007` (UID
+`285a5ea5-e220-4df1-8088-816b66f61521`) transferred these expressions and
+the Type/additive/empty-carrier client to destination commit
+`9e548ad99e4abf08c757cc382562c0709a584ca9`, adapting only imports, header,
+client visibility/names and standalone documentation. The clients remain
+private; the conditional `colimit.desc` example is a private definition.
+Anchor assembled the unchanged Lean leaves into the aggregate roots and
+updated public documentation and metadata. Exact destination assessment,
+acceptance and publication are separate revision-specific records; this
+credit establishes neither third-party ownership nor source coverage.

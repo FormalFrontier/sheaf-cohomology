@@ -10,6 +10,7 @@ public import SheafCohomology.OpenCohomology
 public import SheafCohomology.OpenCohomologyRightDerived
 public import SheafCohomology.PullbackCoherence
 public import SheafCohomology.ConePullback
+public import SheafCohomology.ConePullbackCocone
 public import SheafCohomology.SquareTransition
 public import SheafCohomology.AbelianForget.Pullback
 public import SheafCohomology.AbelianForget.FilteredColimits
