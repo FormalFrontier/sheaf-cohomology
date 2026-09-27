@@ -12,6 +12,7 @@ import SheafCohomologyExamples.ConePullback
 import SheafCohomologyExamples.ConePullbackSections
 import SheafCohomologyExamples.PullbackLocalSections
 import SheafCohomologyExamples.NativeStageSectionEquality
+import SheafCohomologyExamples.NativeStageSectionLifting
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
 import SheafCohomologyExamples.ConePullbackLimit
@@ -34,6 +35,8 @@ and named; imported modules additionally include named public section-transport
 clients. The local-pullback leaf additionally provides four named public clients
 for actual-unit germs, local representation, equality neighborhoods and finite covers.
 The native stage-equality leaf gives two public distinguishability clients.
+The native stage-lifting leaf gives two private ordinary-import clients for
+eventual native-section inhabitation and persistence along later arrows.
 Together they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change,

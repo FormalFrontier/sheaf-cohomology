@@ -200,12 +200,37 @@ status:
     underlying-space cone, spectral stage spaces and spectral transition maps.
     Stages need not be inhabited and maps need not be surjective. This unit
     proves no gluing, finite simultaneous equality or colimit-map invertibility.
+    NativeStageSectionLifting separately lifts each global section of the actual
+    cone-pullback sheaf to a native global section after one filtered transition
+    under those same spectral-limit hypotheses. It uses literal projection-unit
+    and transition maps, finite whole-stage descent and sheaf gluing, including
+    empty stages and empty finite covers. It adds no inhabitedness or desired
+    comparison premise and does not assert colimMap or endpoint invertibility.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Current source-only 69-module registration, 2026-09-27: frozen predecessor
+    e2b368027e83268263317b87bdd9b9e210db8021 was unaccepted at assembly and
+    retains its separate acceptance and release gates. This successor registers
+    both unchanged NativeStageSectionLifting Lean leaves from adapter
+    62cfed9272084323871d7ffc0a47284bbf3b1985, transferred from independently
+    reviewed and accepted unregistered incubator leaf
+    055857c06b98686dfc9f33f77f401f1dda2cc150. All 65 older nonroot Lean files,
+    all eleven package objects, toolchain and CI remain unchanged. Aggregate
+    root imports ARE changed computational inputs. Focused destination evidence
+    feaaa5f651550e78e695f6d09a7428a874c962a7 checks the producer and private
+    ordinary clients, with fourteen actual standard-axiom origins, not this
+    combined root graph. Exact combined destination/release review, applicable
+    complete build and private-inclusive standard-axiom evidence, owner
+    acceptance, integration and verified publication remain required. No full 69-module
+    pass, release, coverage or incubator conversion is asserted here. Earlier
+    evidence applies only to its recorded inputs. The following paragraphs
+    preserve historical review and assembly states.
+
+    Historical 67-module assembly state:
     Current source-only 67-module registration, 2026-09-27: the actual
     65-module base 4a3e01420c1a15e74019eeca96a50d07dd8a0348 was independently
     reviewed, owner-accepted and integrated after complete CI492 build and

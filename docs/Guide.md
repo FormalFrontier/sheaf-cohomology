@@ -18,9 +18,10 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [cofiltered coefficient-forgetting supplement](AbelianSheafedSpaceCofilteredLimits.md),
 [fixed-base converse supplement](SheafedSpaceConePullbackLimitConverse.md),
 [cone-pullback sections supplement](ConePullbackSections.md),
-[local-pullback supplement](PullbackLocalSections.md), and
-[native stage-equality supplement](NativeStageSectionEquality.md)
-cover the twenty-one new
+[local-pullback supplement](PullbackLocalSections.md),
+[native stage-equality supplement](NativeStageSectionEquality.md), and
+[native stage-lifting supplement](NativeStageSectionLifting.md)
+cover the twenty-two new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -112,10 +113,10 @@ The original 24 subject leaves below are included in the frozen native API
 reference. Nine new `AbelianForget` leaves, `SquareTransition`,
 `ConePullback`, `ConePullbackCocone`, `ConeOfPullbackCocone`, `ConePullbackLimit`,
 `ConePullbackLimitConverse`, `LimitConstruction`, `LimitPreservation`, and
-`DiagramPushforward`, `ConePullbackSections`, `PullbackLocalSections` and
-`NativeStageSectionEquality`
+`DiagramPushforward`, `ConePullbackSections`, `PullbackLocalSections`,
+`NativeStageSectionEquality` and `NativeStageSectionLifting`
 are documented in supplements;
-all 45 subjects and twenty-two roots/clients form the current 67-file
+all 46 subjects and twenty-three roots/clients form the current 69-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -138,6 +139,7 @@ the same hypotheses.
 | `ConePullbackSections` | Literal section units, restricted adjoint triangles and native global-section transport to the cone-pullback diagram |
 | `PullbackLocalSections` | Native inverse-image stalk comparison, local representations, equality neighborhoods and finite compact-source-open covers |
 | `NativeStageSectionEquality` | Literal limit-projection unit equality reflected at one native stage on compact opens and global sections |
+| `NativeStageSectionLifting` | Actual cone-pullback global sections lift from native global sections after a filtered transition, using finite whole-stage descent and gluing |
 | `ConePullbackCocone` | Cocone whose legs are the mates of actual native cone projections, without a colimiting assertion |
 | `ConeOfPullbackCocone` | Native cone reconstructed from actual space-cone and pullback-cocone data, with exact forgetting and transported recovery |
 | `ConePullbackLimit` | Native limit criterion from the actual underlying-space limit and projection-mate sheaf colimit, with derived lifts and uniqueness |
@@ -177,6 +179,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.ConePullbackSections` | Five named public ordinary-import clients for literal-unit triangles, cone components, naturality and colimit legs |
 | `SheafCohomologyExamples.PullbackLocalSections` | Four named public ordinary-import clients for native-unit germs, local representation, equality neighborhoods and finite germ covers |
 | `SheafCohomologyExamples.NativeStageSectionEquality` | Two public ordinary-import clients: compact-open and native global-section distinguishability |
+| `SheafCohomologyExamples.NativeStageSectionLifting` | Two private ordinary-import clients: eventual native-section inhabitation and persistence of a lift along later arrows |
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
 | `SheafCohomologyExamples.ConePullbackLimit` | Private Type/Ab Fin 3 lifts, projections and mates; empty-index reconstruction conditional on a genuine sheaf-colimit witness |
@@ -267,13 +270,23 @@ assumed. The proof combines native local-unit equality neighborhoods with the
 published spectral cylinder criterion; no gluing, finite simultaneous equality,
 colimit-map invertibility or source coverage follows from this leaf alone.
 
+The [native stage-lifting supplement](NativeStageSectionLifting.md) uses the
+same spectral-limit hypotheses to lift every global section of the actual
+cone-pullback sheaf to a native global section at a later stage. Its equation
+uses the literal `ConePullbackSections.coneSections` component and actual
+cone-pullback transition. Finite local representations, whole-stage cylinder
+descent, coherent overlap synchronization and sheaf gluing prove the lift;
+no nonempty-stage or nonempty-cover hypothesis is added. This element-level
+theorem does not itself assert a filtered-colimit comparison or endpoint IsIso.
+
 The `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local
 cohomology, higher direct images, open base change and native section transport.
-The current 67-module aggregate still needs applicable combined build and
-private-inclusive axiom evidence; accepted65 and focused leaf checks apply
-only to their recorded inputs. The older private example names are not public
-API; the section-transport, local-pullback and native stage-equality clients are public named examples. Inspect the sample's
+The current 69-module aggregate still needs applicable combined build and
+private-inclusive axiom evidence; predecessor and focused leaf checks apply
+only to their recorded inputs. Private example names are not public
+API, including the two native stage-lifting clients; the section-transport,
+local-pullback and native stage-equality clients are public named examples. Inspect the sample's
 actual binders when adapting a result:
 the positive/zero-degree split and universe-zero restrictions are essential.
 Review actual source hypotheses and typeclass instances rather than guessing

@@ -536,3 +536,34 @@ their own notices; neither incubator ancestry nor source research is imported.
 Original leaf approval and focused transfer checks do not approve this
 registered destination graph, establish release or source coverage, identify
 a third-party copyright holder, or imply human endorsement.
+
+## Native whole-stage section lifting
+
+`SheafCohomology/NativeStageSectionLifting.lean` and its two private
+ordinary-import clients copy the **full original Lean statements and proof
+expressions**, not merely mathematical ideas, of Worker B Hive Task
+`hive-request-e5e544a630e9b84215130384682791cdebd0aea0` (UID
+`3bb51737-f69e-4698-9538-9f0336c572d9`), accepted unregistered incubator leaf
+`055857c06b98686dfc9f33f77f401f1dda2cc150`. Original fresh independent review
+was by Worker A Task `hive-request-9639b5e9869b8855e5090d224960c07301b3aa4e`
+(UID `7a8d0f31-e6c4-47d6-95e2-ac99a9886260`), report
+`3759f8ed0fb4c2c07b330916a7448acad51ee7d5`. Original Apache notices remain.
+
+Worker A Task `hive-request-ed4ccda04a6ba2607731fe00b73853080a0f5761`
+(UID `9aa315b6-c463-47b1-a6cb-7cd8989f4f72`) supplied the narrow destination
+adapter and guide at `62cfed9272084323871d7ffc0a47284bbf3b1985`. Its only Lean
+changes are one producer import, one ordinary-client import and the client
+namespace/end. Reverse substitutions recover original blobs
+`9b11134348177180ad1855660691d87ac52ffe71` and
+`cd56b7c16a5fdb68977b7db20ec0c32506235d63`. Anchor registered these unchanged
+Lean leaves and updated navigation, lifecycle and credit; this is distinct
+from the original proof implementation and independent review.
+
+Anchor supplied the mathematical motivation and whole-stage descent design.
+The [lifting guide](NativeStageSectionLifting.md) records the separate native
+local-unit, equality, cone-section transport, finite-cylinder cover and
+synchronization/gluing design contributors. Their credits and dependency
+notices remain applicable. No incubator ancestry is imported into the public
+release history. Original leaf acceptance and focused destination evidence do
+not establish acceptance of this combined graph, verified publication,
+source coverage, third-party ownership or human endorsement.
