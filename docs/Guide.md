@@ -15,9 +15,10 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [native cone-limit supplement](ConePullbackLimit.md),
 [limit-construction supplement](SheafedSpaceLimitConstruction.md),
 [limit-preservation supplement](SheafedSpaceLimitPreservation.md),
-[cofiltered coefficient-forgetting supplement](AbelianSheafedSpaceCofilteredLimits.md), and
-[fixed-base converse supplement](SheafedSpaceConePullbackLimitConverse.md)
-cover the eighteen new
+[cofiltered coefficient-forgetting supplement](AbelianSheafedSpaceCofilteredLimits.md),
+[fixed-base converse supplement](SheafedSpaceConePullbackLimitConverse.md), and
+[cone-pullback sections supplement](ConePullbackSections.md)
+cover the nineteen new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -109,8 +110,8 @@ The original 24 subject leaves below are included in the frozen native API
 reference. Nine new `AbelianForget` leaves, `SquareTransition`,
 `ConePullback`, `ConePullbackCocone`, `ConeOfPullbackCocone`, `ConePullbackLimit`,
 `ConePullbackLimitConverse`, `LimitConstruction`, `LimitPreservation`, and
-`DiagramPushforward` are documented in supplements;
-all 42 subjects and nineteen roots/clients form the current 61-file
+`DiagramPushforward` and `ConePullbackSections` are documented in supplements;
+all 43 subjects and twenty roots/clients form the current 63-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -130,6 +131,7 @@ the same hypotheses.
 | `ColimitTransport` | Transport/naturality of canonical colimit comparisons |
 | `CompactOpenSections` | Compact-open section and sheafification colimits |
 | `ConePullback` | Pull native sheafed-space diagrams to arbitrary cones of their underlying spaces |
+| `ConePullbackSections` | Literal section units, restricted adjoint triangles and native global-section transport to the cone-pullback diagram |
 | `ConePullbackCocone` | Cocone whose legs are the mates of actual native cone projections, without a colimiting assertion |
 | `ConeOfPullbackCocone` | Native cone reconstructed from actual space-cone and pullback-cocone data, with exact forgetting and transported recovery |
 | `ConePullbackLimit` | Native limit criterion from the actual underlying-space limit and projection-mate sheaf colimit, with derived lifts and uniqueness |
@@ -160,12 +162,13 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named private downstream examples, including seventeen imported client modules |
+| `SheafCohomologyExamples` | Named downstream examples, including eighteen imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
 | `SheafCohomologyExamples.AbelianForgetSquareTransition` | Five private stage, target, identity, empty-space and pasted-square examples |
 | `SheafCohomologyExamples.ConePullback` | Private Type/Ab Fin 3 chains, actual-arrow mates and empty-cone examples |
+| `SheafCohomologyExamples.ConePullbackSections` | Five named public ordinary-import clients for literal-unit triangles, cone components, naturality and colimit legs |
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
 | `SheafCohomologyExamples.ConePullbackLimit` | Private Type/Ab Fin 3 lifts, projections and mates; empty-index reconstruction conditional on a genuine sheaf-colimit witness |
@@ -227,12 +230,23 @@ or global instance follows. Three private clients genuinely use a supplied
 native limiting witness; their separate composition equations are ordinary
 mapped-cone `.w` laws and hold even without that witness.
 
+The [cone-pullback sections supplement](ConePullbackSections.md) concerns
+Type-valued sheaves on spaces in the same universe and an arbitrary small
+index category. Its restricted triangle identifies the actual adjunction unit
+and restrictions on arbitrary opens. The natural transformation has domain
+exactly `N.rightOp` composed with native global sections, not a separately
+postulated stage system. Its ordinary `colimMap` stage law requires just the
+two indicated individual colimits. No limiting, spectral, filtered or nonempty
+assumption is used, and no IsIso, finite-stage equality or gluing follows here.
+
 The `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local
-cohomology, higher direct images and open base change. The current 61-module
-aggregate has no combined build or private-inclusive axiom pass yet; earlier
-checks apply only to their unchanged inputs. Private example names
-are not public API. Inspect the sample's actual binders when adapting a result:
+cohomology, higher direct images, open base change and native section transport.
+The current 63-module aggregate still needs applicable combined build and
+private-inclusive axiom evidence; accepted61 and focused leaf checks apply
+only to their recorded inputs. The older private example names are not public
+API; the new section clients are public named examples. Inspect the sample's
+actual binders when adapting a result:
 the positive/zero-degree split and universe-zero restrictions are essential.
 Review actual source hypotheses and typeclass instances rather than guessing
 them from the abstract's subject labels. External research records are not

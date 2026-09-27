@@ -16,6 +16,8 @@ project:
     native-limit preservation under additive-to-Type coefficient forgetting,
     a fixed-base converse from actual native and underlying-space limits
     to the actual projection-mate sheaf colimit,
+    literal section units and restricted adjoint triangles inducing native
+    global-section transport to cone-pullback sections,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -166,27 +168,38 @@ status:
     and independent index universes remain; this adds no filteredness,
     nonemptiness, sheaf-colimit existence or weak-sheafification premise and
     does not reflect native limits without the separate base-limit witness.
+    Separately, ConePullbackSections constructs actual unit and restricted
+    adjoint section maps and their arbitrary-open triangle equation for
+    Type-valued sheaves. For any small native diagram and any cone of its
+    underlying spaces, it gives a natural transformation from N.rightOp
+    composed with native global sections to top-open sections of conePullback.
+    Under the two individual HasColimit hypotheses it gives the ordinary
+    colimMap stage-leg equation. No spectrality, limiting cone, filteredness
+    or nonempty index is required. No invertibility, finite-stage equality,
+    descent or gluing is asserted by this section-transport unit.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
-    Current source-only 61-module registration, 2026-09-27: the actual
-    55-module ancestor 4baa42e7eb4336e0691501953f5273aefe229506 was independently
-    reviewed, owner-accepted and integrated after complete CI368 build and
-    private-inclusive standard-axiom evidence. This later graph preserves
-    both converse Lean blobs from c01a006d2199d6ffd9ef2713731323c29c60c67a and
-    combines the separate 59-module evidence-wording correction
-    605acadce2c090f7a3b5828dc3bb5ab3d2cf3d93. That correction's scoped
-    noncomputational registration review does not accept the final graph.
-    All non-root Lean bodies, dependency pins and CI workflow/checker files
-    remain unchanged; aggregate root imports ARE changed computational inputs.
-    Exact destination and registered-graph review, applicable combined build
-    and complete private-inclusive standard-axiom evidence are still required.
-    The later 57/59/61-module registrations are not fully accepted, and no
-    final combined pass, official release or source coverage is asserted.
-    Earlier applicable leaf evidence may be reused for unchanged inputs only.
+    Current source-only 63-module registration, 2026-09-27: the actual
+    61-module base 36bcd67d72079ce6f27ed918443bba900e83ba77 was independently
+    reviewed, owner-accepted and integrated after complete CI405 build and
+    private-inclusive standard-axiom evidence, then released at official
+    e4c7d681e0913fc1dde266cfcfc37763f1d47785 with the same tree.
+    This successor registers the two unchanged ConePullbackSections Lean
+    leaves from e770f0fa714c83bc735b7ed22f3abeb853fe7cdb, adapted from
+    independently reviewed and accepted incubator leaf
+    dd4ba173e5dda37074b47a16c4fa7647305149fe. Its focused destination author
+    builds and complete 29-origin census do not certify the changed roots.
+    All old non-root Lean bodies, dependency pins and CI workflow/checker files
+    remain unchanged; aggregate root imports are changed computational inputs.
+    Exact final destination/release review, applicable combined build and
+    complete private-inclusive standard-axiom evidence, owner acceptance,
+    integration and verified publication remain required for this successor.
+    No combined63 pass, acceptance, release or source coverage is asserted.
+    Earlier applicable evidence may be reused for unchanged inputs only.
     The following paragraphs preserve historical review and assembly states.
 
     Accepted development main a9f1a38787d33205c469ff89710563fffb4974fd

@@ -14,13 +14,18 @@ For additive coefficients, named witnesses show that forgetting to Type-valued
 sheafed spaces preserves same-universe cofiltered limits.
 The fixed-base converse recovers the actual projection-mate sheaf colimit
 from an actual native limit whose underlying-space cone is also limiting.
+For Type-valued sheaves, section units and restricted adjoint triangles induce
+a natural transformation from native stage global sections to sections of the
+cone-pullback diagram, without requiring a limiting or spectral cone.
 
-This source-only 61-module registration is not yet an accepted combined graph.
-Its 55-module ancestor `4baa42e7eb4336e0691501953f5273aefe229506` is
-accepted and integrated; the later preservation, coefficient-forgetting and
-converse registrations still need applicable combined checks and final review.
-The aggregate imports are changed computational inputs. Earlier leaf checks
-and scoped registration reviews do not certify this final tree or publication.
+This source-only 63-module registration is not yet an accepted combined graph.
+Its 61-module base `36bcd67d72079ce6f27ed918443bba900e83ba77` was independently
+reviewed, accepted and integrated, and published as official commit
+`e4c7d681e0913fc1dde266cfcfc37763f1d47785` with the same tree.
+The new section-transport leaves have focused author checks; the aggregate
+imports are changed computational inputs. Final destination/release review,
+applicable combined checks, owner acceptance and verified publication remain
+separate requirements for this successor.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -296,6 +301,7 @@ empty spaces.
 | Commuting-square transitions | `SquareTransition`: canonical transition, forward strict mate, naturality and pasting |
 | Forgetful square transitions | `AbelianForget.SquareTransition`: strict pushforward compatibility and additive-to-Type native transition equation |
 | Native sheafed-space cones | `ConePullback`: arbitrary underlying-space cones and actual-arrow mates |
+| Sections across native cones | `ConePullbackSections`: literal units, restricted adjoint triangles, the native global-section transformation and ordinary colimit stage law |
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
@@ -339,7 +345,11 @@ sixteenth; the
 [cofiltered coefficient-forgetting guide](docs/AbelianSheafedSpaceCofilteredLimits.md)
 covers the seventeenth; and the
 [fixed-base converse guide](docs/SheafedSpaceConePullbackLimitConverse.md)
-covers the eighteenth.
+covers the eighteenth; the
+[cone-pullback sections guide](docs/ConePullbackSections.md) covers the nineteenth.
+The latter uses the existing `N.rightOp` composed with global sections and the
+actual unit at the top open; it supplies no colimit-map invertibility or
+finite-stage gluing theorem.
 Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
@@ -350,9 +360,10 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports seventeen additional example leaves. All examples use
-named private declarations so their proof bodies can be included in
-verification without adding a second public mathematical API.
+readiness assembly and imports eighteen additional example leaves. The root
+and seventeen older leaves use named private declarations; the new
+`ConePullbackSections` leaf contains five named public ordinary-import clients.
+All are included in proof verification, with no duplicate implementation API.
 No client should import or unfold private implementation helpers.
 
 ## Build and checks

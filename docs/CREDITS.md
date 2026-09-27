@@ -422,3 +422,45 @@ The original independent review is not approval of this destination or final
 graph. Native cone reconstruction, projection mates, pullback coherence and
 the forward criterion retain their separate credits. No human endorsement,
 third-party rights clearance, publication or source coverage is inferred.
+
+## Native cone-pullback section transport
+
+`SheafCohomology/ConePullbackSections.lean` and its five named public
+ordinary-import clients retain the expressions of Worker A Hive Task
+`hive-request-56a0f46868a5a666cdc4e1ce2d7423802e462456` (UID
+`6168c7bc-d47b-4305-a538-58d1350272d0`), repaired by Worker A Hive Task
+`hive-request-6d526071fadec30d7ff2b4abfed7d988d35a78da` (UID
+`d4885694-78ac-4ce2-bc13-f81029f15673`) at accepted incubator leaf
+`dd4ba173e5dda37074b47a16c4fa7647305149fe`. The repaired leaf's fresh
+independent reviewer is Worker B Hive Task
+`hive-request-71f983a9268c32fce086bf8f2f49cddf5c6eeb15` (UID
+`45597500-b870-4e33-b97f-ca2408f918fb`), report
+`f2cab0cb921b5cf81a3db9e99377a13903fbbbb4`. The original superseded
+candidate's review objections remain recorded; this is not a waiver of them.
+
+The private `adjoint_comp` proof expression closely adapts Anchor's
+`adjointTransition_pullbackTransitionComposite` in
+`Research/fk-proposition-3-1-10-pullback-coherence-scratch.lean` at source
+revision `e266a5076df34934171cc284ba8f2834e56f8c78`, including its
+adjunction-uniqueness comparison, `change` and successive rewriting steps.
+It also follows the separately credited `mateComp` proof in this library's
+`ConePullback.lean`, published at
+`e4c7d681e0913fc1dde266cfcfc37763f1d47785`.
+The source/target restriction proofs closely adapt Anchor's
+`Research/fk-proposition-3-1-10-adjoint-transition-naturality-scratch.lean`
+at that source revision. The old stage-section-transport probe supplies
+mathematical motivation, not an imported stage-system implementation.
+[The section guide](ConePullbackSections.md) gives the expression-level
+distinctions. No source research files or source PDF are shipped or imported.
+
+Worker A Hive Task
+`hive-request-8a7211e66bf0303b4ffc778195cdf17b95093b09` (UID
+`e1cd2f5b-de9b-4f1a-b4a9-6e7df9d766dd`) transferred these expressions at
+`e770f0fa714c83bc735b7ed22f3abeb853fe7cdb`, adapting only producer
+namespace, ordinary client import and qualified names, and standalone guide.
+Anchor added aggregate registration, truthful example visibility, navigation,
+credit and lifecycle metadata without changing either Lean leaf. Source-leaf
+acceptance and focused destination checks do not establish final destination
+review, combined-graph acceptance, publication, third-party ownership or source
+coverage. The destination depends on mathlib, not on an incubator or source
+revision; development ancestry is not part of the public release history.

@@ -9,6 +9,7 @@ import SheafCohomologyExamples.AbelianForgetFilteredColimits
 import SheafCohomologyExamples.SquareTransition
 import SheafCohomologyExamples.AbelianForgetSquareTransition
 import SheafCohomologyExamples.ConePullback
+import SheafCohomologyExamples.ConePullbackSections
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
 import SheafCohomologyExamples.ConePullbackLimit
@@ -26,11 +27,13 @@ import SheafCohomologyExamples.AbelianForgetLimitPreservation
 # Public-root sheaf cohomology examples
 
 The clients defined here use only the aggregate public import. Imported client
-modules also exercise focused public imports. All clients are private and named;
-they exercise
+modules also exercise focused public imports. The root's clients are private
+and named; imported modules additionally include named public section-transport
+clients. Together they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change,
-including native sheafed-space cones, the conditional native-limit criterion,
+including native sheafed-space cones, literal section units and restricted
+triangle transport, the conditional native-limit criterion,
 its fixed-base converse with actual native and underlying-space limits,
 actual limit construction, genuine empty-index limits and native-to-space
 limit preservation,
