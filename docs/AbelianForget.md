@@ -9,9 +9,11 @@ functor alone lives in
 `TopCat.Sheaf.AbelianForget`; the exact Lean signatures and proof dependencies
 are in the linked shipped files. This lightweight supplement covers the new
 modules, **not** the historical 26-module native [API reference](API.md).
-For the separate native **sheafed-space** additive-to-Type functor and its
-actual-arrow mate, see [SheafedSpace.md](SheafedSpace.md); its declarations
-are in `AlgebraicGeometry.SheafedSpace.AbelianForget`, not this namespace.
+For the separate native **sheafed-space** additive-to-Type functor, its
+actual-arrow mate and its cone-wise diagram isomorphism, see
+[SheafedSpace.md](SheafedSpace.md). The cone-wise comparison has declarations
+in both `TopCat.Sheaf.AbelianForget` and
+`AlgebraicGeometry.SheafedSpace.AbelianForget`.
 
 ## Underlying sheaf
 

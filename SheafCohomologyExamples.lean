@@ -10,6 +10,7 @@ import SheafCohomologyExamples.SquareTransition
 import SheafCohomologyExamples.AbelianForgetSquareTransition
 import SheafCohomologyExamples.ConePullback
 import SheafCohomologyExamples.AbelianForgetSheafedSpace
+import SheafCohomologyExamples.AbelianForgetConePullback
 
 /-!
 # Public-root sheaf cohomology examples

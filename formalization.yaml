@@ -6,8 +6,8 @@ project:
   description: >-
     Compact-open section colimits, quasi-flasque exactness and acyclicity,
     resolution comparisons, local cohomology, right-derived pushforward
-    comparisons, pullback coherence, native sheafed-space cone pullbacks,
-    additive-to-Type forgetting on sheafed spaces, commuting-square transitions
+    comparisons, pullback coherence, native sheafed-space cone pullbacks
+    and their cone-wise additive-to-Type forgetting, commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
     sheaves in Lean.
@@ -79,8 +79,13 @@ status:
     forgetful preservation and reflection assumptions of the native pullback
     adjunction. Additive sheafed spaces forget to Type-valued ones through
     the native mapPresheaf functor, with strict underlying-space/presheaf
-    equalities and an actual-arrow pullback mate. No cone/forgetful diagram
-    isomorphism, colimit comparison or final additive endpoint is claimed.
+    equalities and an actual-arrow pullback mate. The native Type-valued
+    pullback diagram of the forgotten additive sheafed-space diagram is
+    naturally isomorphic to the forgotten additive pullback diagram over
+    the same literal cone vertex and projections, through the canonical
+    forward and inverse components, without a limiting, filtered,
+    nonempty, geometric or stage-isomorphism premise. No cone-level colimit
+    comparison, Ringed result or final additive endpoint is claimed.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
@@ -112,10 +117,17 @@ review:
     maintainer acceptance and verified publication before it is delivered.
     The new native sheafed-space cone and additive-forget modules derive from
     separately accepted incubator expressions. Their destination transfer,
-    clients and metadata require fresh author-distinct exact-candidate review,
-    responsible-maintainer acceptance and separately verified publication;
-    the upstream assembly acceptance does not certify this destination
-    candidate or establish source coverage.
+    clients and metadata were independently reviewed and owner-accepted at
+    7b1b6f90508626bf25397fe000d617dae751fa3f, now integrated unchanged.
+    Separately verified official publication remains required; acceptance
+    of the upstream assembly alone did not certify this transfer or establish
+    source coverage.
+    The cone-wise forgetful successor copies the separately accepted original
+    expression 7ea63759ddf4dfaecee2ecb01336e181fd2d4f54 on that frozen
+    parent. Original acceptance does not certify this successor's integration
+    or source correspondence. The successor requires fresh independent
+    destination and release assessment, owner acceptance and verified
+    official publication in dependency order.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

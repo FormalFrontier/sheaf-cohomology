@@ -2,8 +2,8 @@
 
 Reusable Lean foundations for sheaf cohomology, compact-open sections,
 cohomological functors, and forgetting abelian-group structure on sheaves.
-It also provides native sheafed-space cone pullbacks and an additive-to-Type
-forgetful functor on sheafed spaces.
+It also provides native sheafed-space cone pullbacks, an additive-to-Type
+forgetful functor and their canonical cone-wise natural isomorphism.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -119,8 +119,12 @@ including limits and colimits, forgetful preservation of limits and filtered
 colimits, and reflection of isomorphisms. The native
 `SheafCohomology.AbelianForget.SheafedSpace` functor forgets additive structure
 via `mapPresheaf` and proves the actual-arrow mate law for same-universe
-additive sheafed spaces. Neither API claims a cone/forgetful diagram
-isomorphism, colimit comparison, final geometric endpoint or source coverage.
+additive sheafed spaces. `SheafCohomology.AbelianForget.ConePullback`
+identifies the two resulting native pullback diagrams by a natural
+isomorphism over the **same** cone vertex and projections, with the canonical
+forward and inverse components. This needs no limiting, filtered, nonempty,
+spectral, geometric or stage-isomorphism premise. It claims no cone-level colimit
+comparison, final additive or Ringed endpoint or source coverage.
 See the [native sheafed-space guide](docs/SheafedSpace.md).
 
 This repository is organized around reusable mathematics. Source-specific
@@ -176,6 +180,7 @@ empty spaces.
 | Forgetful square transitions | `AbelianForget.SquareTransition`: strict pushforward compatibility and additive-to-Type native transition equation |
 | Native sheafed-space cones | `ConePullback`: arbitrary underlying-space cones and actual-arrow mates |
 | Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
+| Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
 
 All module names in the table are prefixed by `SheafCohomology.`. Consult their
 declaration types for the precise category, sheafification, Ext and universe
@@ -190,7 +195,7 @@ the original 26-module source snapshot (including the then-unmodified roots);
 the [lightweight AbelianForget guide](docs/AbelianForget.md) and
 [SquareTransition guide](docs/SquareTransition.md) cover the five subjects
 in that historical supplement group; the
-[native sheafed-space guide](docs/SheafedSpace.md) documents two further
+[native sheafed-space guide](docs/SheafedSpace.md) documents three further
 subjects. Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
@@ -201,7 +206,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports six additional example leaves. All examples use
+readiness assembly and imports seven additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.

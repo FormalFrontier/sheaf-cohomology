@@ -2,10 +2,12 @@
 
 Import `SheafCohomology.ConePullback` for cones of native sheafed spaces,
 `SheafCohomology.AbelianForget.SheafedSpace` for the additive-to-Type
-forgetful functor, or `SheafCohomology` for both. These are supplements to
+forgetful functor, `SheafCohomology.AbelianForget.ConePullback` for its
+cone-wise natural isomorphism, or `SheafCohomology` for all three. These are supplements to
 the [historical 26-module API reference](API.md), not part of its frozen
 generated inventory. Their namespaces are `AlgebraicGeometry.SheafedSpace`
-and `AlgebraicGeometry.SheafedSpace.AbelianForget`, respectively.
+and `AlgebraicGeometry.SheafedSpace.AbelianForget`, with comparison lemmas
+also in `TopCat.Sheaf.AbelianForget`.
 
 ## Sheaves over any underlying-space cone
 
@@ -60,7 +62,41 @@ The [private import-only clients](../SheafCohomologyExamples/AbelianForgetSheafe
 exercise actual arrows, composable chains, identities, and arrows over
 explicit empty carriers.
 
-These APIs make no assertion of a cone/forgetful diagram isomorphism, a
-colimit comparison, a final geometric endpoint, a complete theory, or
-source-level coverage. See [forgetting additive sheaves](AbelianForget.md)
-for the existing pullback and filtered-colimit comparisons.
+## Forgetting a whole cone-pullback diagram
+
+In [`AbelianForget/ConePullback.lean`](../SheafCohomology/AbelianForget/ConePullback.lean),
+take any `J : Type wj` with `[Category.{vj} J]`, an arbitrary diagram
+`S : Jᵒᵖ ⥤ SheafedSpace AddCommGrpCat.{v}`, and any cone
+`c : Cone (S ⋙ SheafedSpace.forget AddCommGrpCat.{v})`. The strict equation
+`underlyingDiagram_forget S` identifies the two underlying-space diagrams;
+`underlyingCone S c` keeps **the same literal vertex and every projection**.
+The simp lemmas `underlyingCone_pt`, `underlyingCone_π_app` and the triangle
+equality `underlyingCone_w` expose these equalities without choosing a new cone.
+
+`conePullbackIso S c` is an actual natural isomorphism of native functors:
+
+```lean
+SheafedSpace.conePullback (Type v) (S ⋙ underlying) (underlyingCone S c) ≅
+  SheafedSpace.conePullback AddCommGrpCat.{v} S c ⋙ underlyingSheaf c.pt
+```
+
+Its forward component at `i : J` is *exactly*
+`canonicalComponent (c.π.app (op i)) (S.obj (op i)).sheaf`, as
+`conePullbackIso_hom_app` states; `conePullbackIso_inv_app` identifies the
+inverse with the corresponding `canonicalComparisonIso` inverse component.
+The equation `conePullback_naturality S c a` checks both actual native
+diagram maps for every `a : i ⟶ j`. It follows from
+`canonicalComponent_comp_inv`, the triangle compatibility lemmas
+`canonicalComponent_triangleMap` and `canonicalComponent_triangleMap_of_comp`,
+and `underlying_sheafMate` for each actual forgotten arrow. The
+[private import-only client](../SheafCohomologyExamples/AbelianForgetConePullback.lean)
+tests two index arrows, their composite and an identity, the canonical
+forward/inverse components and a concrete empty-vertex cone. Arbitrary
+diagram images need not be nonidentity; an empty vertex need not be a limit.
+
+The comparison needs no limiting, filtered, nonempty, spectral, geometric or
+stage-isomorphism premise beyond the native additive/Type pullback interfaces
+already supplied by the imported modules. It asserts no cone-level colimit comparison,
+final additive or Ringed endpoint, complete theory or source-level coverage.
+See [forgetting additive sheaves](AbelianForget.md) for the distinct pullback
+and filtered-colimit comparisons.

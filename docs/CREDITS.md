@@ -197,3 +197,21 @@ this guide and metadata. Its exact contribution and checks are identified
 in the ordinary promotion PR and issue record. This attribution does not
 assert destination acceptance, publication, private source correspondence,
 third-party ownership or source-level coverage.
+
+## Cone-wise additive forgetting
+
+`SheafCohomology/AbelianForget/ConePullback.lean` retains the accepted
+original mathematical and proof expressions of Worker B Hive Task
+`hive-request-a2fbf59ac6e1d618dc6baa300d551b97d9789398` (UID
+`49bde45c-5637-4b6b-9e67-d5139ae02188`), original commit
+`7ea63759ddf4dfaecee2ecb01336e181fd2d4f54`. Its corresponding
+two-arrow, component and empty-vertex client expressions are retained as
+private examples in
+`SheafCohomologyExamples/AbelianForgetConePullback.lean`.
+Worker A Hive Task `hive-request-62a0fc45132ac8b59317baec3bdca816c4c1f829`
+(UID `19773a55-4aec-44bc-b843-6cf22fbb1a0c`) transfers these expressions,
+adapts local imports and private client names, and updates public guide and
+metadata. The ordinary promotion PR records the destination revision and
+its separate checks. This credit records expression and transfer, not a new
+copyright claim, original third-party rights, destination acceptance,
+official publication, source correspondence or coverage.

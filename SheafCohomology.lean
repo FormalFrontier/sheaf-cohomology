@@ -15,6 +15,7 @@ public import SheafCohomology.AbelianForget.Pullback
 public import SheafCohomology.AbelianForget.FilteredColimits
 public import SheafCohomology.AbelianForget.SquareTransition
 public import SheafCohomology.AbelianForget.SheafedSpace
+public import SheafCohomology.AbelianForget.ConePullback
 public import SheafCohomology.OpenBaseChange
 public import SheafCohomology.FilteredColimitFunctorH
 public import SheafCohomology.HigherDirectImageFilteredColimit
