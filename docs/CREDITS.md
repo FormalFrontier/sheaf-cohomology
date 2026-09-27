@@ -169,3 +169,31 @@ adapts imports and presentation, and records the destination proof checks.
 The ordinary promotion PR identifies the exact destination revision. This
 expression history is not a claim of destination acceptance, release, source
 correspondence, third-party ownership or human endorsement.
+
+## Native sheafed-space cones and additive forgetting
+
+`SheafCohomology/ConePullback.lean` retains the native cone-pullback
+expressions of Worker B Hive Task
+`hive-request-a5c686fef9733b91207a12bdbe674244008553c9` (UID
+`f70328b3-10f7-4bbc-a451-4678e9530731`), accepted original incubator
+expression `f954278ddb91c98cd814c8494c923ef42fcffb2c`. Its Type/Ab
+`Fin 3` and empty-cone client expressions are retained privately in
+`SheafCohomologyExamples/ConePullback.lean`.
+
+`SheafCohomology/AbelianForget/SheafedSpace.lean` retains the native
+additive-to-Type sheafed-space expressions of Worker A Hive Task
+`hive-request-b07c9e71ff00cd01911a5a32362418e37d0e7c7d` (UID
+`43d607ff-d0f5-4973-98a2-424b5c9e09db`), accepted original incubator
+expression `0a8d9c5283e1f973e59bb23aa1894f374e03d137`. Its actual-arrow,
+chain and empty-carrier client expressions are retained privately in
+`SheafCohomologyExamples/AbelianForgetSheafedSpace.lean`. These results
+build on mathlib's native sheafed-space interfaces and the separately
+attributed `PullbackCoherence` and `AbelianForget.Pullback` expressions above.
+
+Worker A Hive Task `hive-request-a9348957aad244ebb6858654af192eb53fbae664`
+(UID `38cf99b0-2bd7-420f-864d-07924d7f26ba`) transfers both accepted
+expressions, adapts only the local import and private clients, and supplies
+this guide and metadata. Its exact contribution and checks are identified
+in the ordinary promotion PR and issue record. This attribution does not
+assert destination acceptance, publication, private source correspondence,
+third-party ownership or source-level coverage.

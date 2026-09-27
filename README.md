@@ -2,6 +2,8 @@
 
 Reusable Lean foundations for sheaf cohomology, compact-open sections,
 cohomological functors, and forgetting abelian-group structure on sheaves.
+It also provides native sheafed-space cone pullbacks and an additive-to-Type
+forgetful functor on sheafed spaces.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -108,6 +110,19 @@ carriers and morphisms. No spectral or nonempty-space hypothesis is required.
 This generic square API does not yet assert compatibility with forgetting
 abelian structure.
 
+For any native contravariant sheafed-space diagram and **any** cone of its
+underlying spaces, `SheafCohomology.ConePullback` pulls the stage sheaves back
+to the cone vertex; stage maps are mates of the diagram's actual arrows.
+This does not require a limiting, filtered or nonempty cone, but does require
+the concrete coefficient category's native pullback-adjunction assumptions,
+including limits and colimits, forgetful preservation of limits and filtered
+colimits, and reflection of isomorphisms. The native
+`SheafCohomology.AbelianForget.SheafedSpace` functor forgets additive structure
+via `mapPresheaf` and proves the actual-arrow mate law for same-universe
+additive sheafed spaces. Neither API claims a cone/forgetful diagram
+isomorphism, colimit comparison, final geometric endpoint or source coverage.
+See the [native sheafed-space guide](docs/SheafedSpace.md).
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -159,6 +174,8 @@ empty spaces.
 | Pullback and open base change | `PullbackCoherence`, `OpenBaseChange`: coherent comparisons and the open-square mate |
 | Commuting-square transitions | `SquareTransition`: canonical transition, forward strict mate, naturality and pasting |
 | Forgetful square transitions | `AbelianForget.SquareTransition`: strict pushforward compatibility and additive-to-Type native transition equation |
+| Native sheafed-space cones | `ConePullback`: arbitrary underlying-space cones and actual-arrow mates |
+| Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
 
 All module names in the table are prefixed by `SheafCohomology.`. Consult their
 declaration types for the precise category, sheafification, Ext and universe
@@ -171,8 +188,10 @@ The [module and assumptions guide](docs/Guide.md) covers all shipped subject
 modules. The [historical native-generated API signatures](docs/API.md) cover
 the original 26-module source snapshot (including the then-unmodified roots);
 the [lightweight AbelianForget guide](docs/AbelianForget.md) and
-[SquareTransition guide](docs/SquareTransition.md) cover the five new subject
-modules. Of the old 556 native display sites,
+[SquareTransition guide](docs/SquareTransition.md) cover the five subjects
+in that historical supplement group; the
+[native sheafed-space guide](docs/SheafedSpace.md) documents two further
+subjects. Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
 per-site explanations. These pointers do not certify complete semantic
@@ -182,7 +201,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports the three additional example leaves. All examples use
+readiness assembly and imports six additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.

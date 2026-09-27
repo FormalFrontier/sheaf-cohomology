@@ -6,8 +6,9 @@ project:
   description: >-
     Compact-open section colimits, quasi-flasque exactness and acyclicity,
     resolution comparisons, local cohomology, right-derived pushforward
-    comparisons, pullback coherence, commuting-square transitions and their
-    additive-to-Type forgetful compatibility, open base
+    comparisons, pullback coherence, native sheafed-space cone pullbacks,
+    additive-to-Type forgetting on sheafed spaces, commuting-square transitions
+    and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
     sheaves in Lean.
   authors:
@@ -72,7 +73,14 @@ status:
     same-universe commuting squares and additive pullback stages, forgetting
     commutes with the literal native transition to Type-valued sheaves through
     the canonical pullback comparison; strict pushforward objects, maps and
-    square comparisons supply the bridge. No final additive endpoint is claimed.
+    square comparisons supply the bridge. An arbitrary cone of native
+    sheafed-space underlying spaces induces a diagram of pullback sheaves,
+    provided the coefficient category satisfies the concrete, limits/colimits,
+    forgetful preservation and reflection assumptions of the native pullback
+    adjunction. Additive sheafed spaces forget to Type-valued ones through
+    the native mapPresheaf functor, with strict underlying-space/presheaf
+    equalities and an actual-arrow pullback mate. No cone/forgetful diagram
+    isomorphism, colimit comparison or final additive endpoint is claimed.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
@@ -102,6 +110,12 @@ review:
     the accepted incubator source is d6135ec9832e5ff93d267fb2c1eaeb0aa2ea1eed.
     This successor still needs independent exact-candidate review, responsible
     maintainer acceptance and verified publication before it is delivered.
+    The new native sheafed-space cone and additive-forget modules derive from
+    separately accepted incubator expressions. Their destination transfer,
+    clients and metadata require fresh author-distinct exact-candidate review,
+    responsible-maintainer acceptance and separately verified publication;
+    the upstream assembly acceptance does not certify this destination
+    candidate or establish source coverage.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

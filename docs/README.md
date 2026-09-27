@@ -17,9 +17,10 @@ original generated `docs/API.md` in the pre-transfer accepted tree, not this
 file's editorially updated introduction. The historical generated file can
 be checked in that old revision; do not relabel the old hash as a new current
 Markdown attestation.
-The current 35 Lean modules also include five new subjects and four private
-client leaves, covered by [AbelianForget.md](AbelianForget.md) and
-[SquareTransition.md](SquareTransition.md), not by this
+The current 39 Lean modules also include seven new subjects and six private
+client leaves, covered by [AbelianForget.md](AbelianForget.md),
+[SquareTransition.md](SquareTransition.md) and
+[SheafedSpace.md](SheafedSpace.md), not by this
 native batch. The old root and example-client source hashes do not match the
 current changed roots. Reproducing these historical records is
 distinct from accepting their mathematical meaning or auditing kernel proofs.
