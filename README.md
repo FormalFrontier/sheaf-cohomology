@@ -20,14 +20,18 @@ cone-pullback diagram, without requiring a limiting or spectral cone.
 The actual inverse-image sheaf also has a native stalk comparison, local
 section representations and equality neighborhoods. Compact source opens
 in prespectral spaces admit finite compact-open local representations.
+Over an actual limit of spectral stages with spectral transition maps,
+equality under a projection's literal pullback unit is reflected at one stage,
+both on compact opens and for the existing native global-section functor.
 
-This source-only 65-module registration is not yet an accepted combined graph.
-Its 63-module base `6ec75cd4c22f74e2607adf92d85b5caa30087ca7` was independently
-reviewed, accepted and integrated after complete CI469 build and private-inclusive
+This source-only 67-module registration is not yet an accepted combined graph.
+Its 65-module base `4a3e01420c1a15e74019eeca96a50d07dd8a0348` was independently
+reviewed, accepted and integrated after complete CI492 build and private-inclusive
 standard-axiom evidence, and verified on official GitHub as
-`32b1fb7787d5036c8b7181565a22a460b160f91d` with the same tree.
-The new local-pullback leaves have focused author checks; the aggregate
-imports are changed computational inputs. Final destination/release review,
+`abf9086d46dcfe221e60bc6cf6884bd71ed0e2b6` with the same tree.
+The new native stage-equality leaves have focused author checks against the
+expanded eleven-package graph; the aggregate imports are changed computational
+inputs. Neither those checks nor CI492 certify this combined graph. Final destination/release review,
 applicable combined checks, owner acceptance and verified publication remain
 separate requirements for this successor.
 
@@ -307,6 +311,7 @@ empty spaces.
 | Native sheafed-space cones | `ConePullback`: arbitrary underlying-space cones and actual-arrow mates |
 | Sections across native cones | `ConePullbackSections`: literal units, restricted adjoint triangles, the native global-section transformation and ordinary colimit stage law |
 | Native inverse-image local sections | `PullbackLocalSections`: actual-unit stalk comparison, local representations, equality neighborhoods and finite compact-source-open covers |
+| Native stage-section equality | `NativeStageSectionEquality`: equality under an actual limit-projection unit descends to one stage on compact opens and native global sections |
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
@@ -352,7 +357,12 @@ covers the seventeenth; and the
 [fixed-base converse guide](docs/SheafedSpaceConePullbackLimitConverse.md)
 covers the eighteenth; the
 [cone-pullback sections guide](docs/ConePullbackSections.md) covers the nineteenth;
-the [local-pullback guide](docs/PullbackLocalSections.md) covers the twentieth.
+the [local-pullback guide](docs/PullbackLocalSections.md) covers the twentieth;
+the [native stage-equality guide](docs/NativeStageSectionEquality.md) covers
+the twenty-first. The latter uses a same-universe small filtered index category,
+an actual limiting underlying-space cone, spectral stages and spectral transition
+maps. It assumes no inhabited stage or surjective map, and proves neither
+gluing nor invertibility of a colimit comparison.
 The section-transport supplement uses the existing `N.rightOp` composed with global sections and the
 actual unit at the top open; it supplies no colimit-map invertibility or
 finite-stage gluing theorem.
@@ -366,21 +376,26 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports nineteen additional example leaves. The root
+readiness assembly and imports twenty additional example leaves. The root
 and seventeen older leaves use named private declarations; the
 `ConePullbackSections` leaf contains five named public ordinary-import clients,
-and `PullbackLocalSections` contains four more named public ordinary-import clients.
+`PullbackLocalSections` contains four more named public ordinary-import clients,
+and `NativeStageSectionEquality` contains two public distinguishability clients.
 All are included in proof verification, with no duplicate implementation API.
 No client should import or unfold private implementation helpers.
 
 ## Build and checks
 
 Use elan with `leanprover/lean4:v4.34.0-rc2`, exactly as recorded in
-`lean-toolchain`. The direct dependency is mathlib at
-`83abb3e776bdefcbc447a1e44d0debe4010039e5`; `lake-manifest.json` pins its complete
-nine-package graph. There is no dependency on another Formal Frontier library
-or on a source-research checkout. A distributed checkout needs no internal
-service or VPN to build; the declared mathlib dependencies use upstream URLs.
+`lean-toolchain`. Direct dependencies are mathlib at
+`83abb3e776bdefcbc447a1e44d0debe4010039e5` and the official published
+`spectral-stone-duality` at `452b7b7be1bea76434cd083b1019a26f96b4ab30`.
+The latter brings official `ideal-completion` at
+`001e3b7508184ecd51e0d86177cb1d54508bf59d`; `lake-manifest.json` pins the
+complete eleven-package graph. No incubator or source-research checkout is
+required. Dependency URLs are upstream GitHub URLs, not internal services;
+access to the currently private Formal Frontier dependencies requires authorized
+GitHub access and does not imply public visibility.
 
 From the repository root, fetch the matching dependency cache successfully before
 building. Do not use a source rebuild as an implicit substitute for a failed cache

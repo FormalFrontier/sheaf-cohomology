@@ -10,6 +10,7 @@ public import SheafCohomology.OpenCohomology
 public import SheafCohomology.OpenCohomologyRightDerived
 public import SheafCohomology.PullbackCoherence
 public import SheafCohomology.PullbackLocalSections
+public import SheafCohomology.NativeStageSectionEquality
 public import SheafCohomology.ConePullback
 public import SheafCohomology.ConePullbackSections
 public import SheafCohomology.ConePullbackCocone
@@ -43,7 +44,8 @@ public import SheafCohomology.QuasiFlasqueExactness
 
 Public entry point for compact-open sections, Ext and flasque resolutions,
 local and open cohomology, filtered colimits, abelian-sheaf forgetful comparisons,
-native inverse-image stalks and local sections, sheafed-space cones and their section-unit transport,
+native inverse-image stalks and local sections, eventual native stage-section
+equality over spectral limits, sheafed-space cones and their section-unit transport,
 a conditional native-limit criterion and its
 fixed-base converse, actual limit
 construction from coefficient colimits, native-to-space limit preservation, and

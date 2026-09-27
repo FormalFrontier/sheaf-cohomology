@@ -20,6 +20,7 @@ project:
     global-section transport to cone-pullback sections,
     actual inverse-image stalk comparisons, local section representations,
     equality neighborhoods and finite compact-source-open local covers,
+    eventual native compact-open and global-section equality over spectral limits,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -57,6 +58,12 @@ related_formalizations:
       Uses native category-theoretic limits, sheafification, stalks, Ext,
       injective resolutions and right-derived functors at mathlib revision
       83abb3e776bdefcbc447a1e44d0debe4010039e5, with Lean v4.34.0-rc2.
+  - id: "https://github.com/FormalFrontier/spectral-stone-duality"
+    relationship: "builds-on"
+    note: >-
+      Uses the spectral limit-cylinder criterion at official published commit
+      452b7b7be1bea76434cd083b1019a26f96b4ab30, with inherited official
+      ideal-completion commit 001e3b7508184ecd51e0d86177cb1d54508bf59d.
 
 automation:
   methods:
@@ -186,12 +193,42 @@ status:
     assumes a prespectral source and compact source open; target opens need
     not be compact. It supplies no global section surjectivity, stage equality,
     finite-stage gluing or colimit endpoint.
+    Separately, NativeStageSectionEquality reflects equality under the literal
+    limit-projection pullback unit at one native stage, on compact opens and
+    global sections of the existing N.rightOp composed with SheafedSpace.Γ.
+    It assumes a same-universe small filtered category, an actual limiting
+    underlying-space cone, spectral stage spaces and spectral transition maps.
+    Stages need not be inhabited and maps need not be surjective. This unit
+    proves no gluing, finite simultaneous equality or colimit-map invertibility.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Current source-only 67-module registration, 2026-09-27: the actual
+    65-module base 4a3e01420c1a15e74019eeca96a50d07dd8a0348 was independently
+    reviewed, owner-accepted and integrated after complete CI492 build and
+    private-inclusive standard-axiom evidence, then verified on official GitHub
+    at abf9086d46dcfe221e60bc6cf6884bd71ed0e2b6 with the same tree.
+    This successor registers the unchanged NativeStageSectionEquality Lean
+    leaves from corrected adapter a8d55b29bd54372d8e480bd3b8f9eef9b34ec9d2,
+    transferred from independently reviewed and accepted incubator leaf
+    c7818152bd5ebef3d768de238962bf9fc04fb7fc. The nine previous package objects
+    are preserved; official spectral-stone-duality and ideal-completion bring
+    the graph to eleven packages. The focused destination builds and complete
+    six-origin census do not certify the changed aggregate roots. All 63 old
+    non-root Lean blobs, both new Lean blobs, all eleven final package objects,
+    toolchain and CI workflow/checker files remain unchanged in registration;
+    aggregate root imports are changed computational inputs. Exact final
+    independent destination/release review, applicable combined build and
+    complete private-inclusive standard-axiom evidence, owner acceptance,
+    integration and verified publication remain required. No combined67 pass,
+    release, source coverage or incubator conversion is asserted here.
+    Earlier evidence applies only to its recorded inputs. The following
+    paragraphs preserve historical review and assembly states.
+
+    Historical 65-module assembly state before its later acceptance:
     Current source-only 65-module registration, 2026-09-27: the actual
     63-module base 6ec75cd4c22f74e2607adf92d85b5caa30087ca7 was independently
     reviewed, owner-accepted and integrated after complete CI469 build and

@@ -17,8 +17,8 @@ original generated `docs/API.md` in the pre-transfer accepted tree, not this
 file's editorially updated introduction. The historical generated file can
 be checked in that old revision; do not relabel the old hash as a new current
 Markdown attestation.
-The current 65 Lean modules also include twenty new subjects and nineteen
-client leaves (seventeen private-client modules and two named public-client modules),
+The current 67 Lean modules also include twenty-one new subjects and twenty
+client leaves (seventeen private-client modules and three named public-client modules),
 covered by [AbelianForget.md](AbelianForget.md),
 [SquareTransition.md](SquareTransition.md) and
 [SheafedSpace.md](SheafedSpace.md) and
@@ -33,7 +33,8 @@ covered by [AbelianForget.md](AbelianForget.md),
 [AbelianSheafedSpaceCofilteredLimits.md](AbelianSheafedSpaceCofilteredLimits.md) and
 [SheafedSpaceConePullbackLimitConverse.md](SheafedSpaceConePullbackLimitConverse.md) and
 [ConePullbackSections.md](ConePullbackSections.md) and
-[PullbackLocalSections.md](PullbackLocalSections.md), not by this
+[PullbackLocalSections.md](PullbackLocalSections.md) and
+[NativeStageSectionEquality.md](NativeStageSectionEquality.md), not by this
 native batch. The old root and example-client source hashes do not match the
 current changed roots. Reproducing these historical records is
 distinct from accepting their mathematical meaning or auditing kernel proofs.
@@ -68,9 +69,12 @@ names before rendering the annotation.
 
 ## Toolchain and separate inputs
 
-Use the library's pinned Lean `v4.34.0-rc2`, mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5` and nine-package
-`lake-manifest.json`. Use an **unchanged**, separate doc-gen4 checkout at
+The current library pins Lean `v4.34.0-rc2`, mathlib
+`83abb3e776bdefcbc447a1e44d0debe4010039e5` and an eleven-package
+`lake-manifest.json`, including official spectral-stone-duality and
+ideal-completion. Historical reproduction instead uses the old checkout's
+unchanged nine-package manifest; the current graph must not be substituted
+for those historical inputs. Use an **unchanged**, separate doc-gen4 checkout at
 `97d4ecdfc8e09e7f511724c25e303d448de6a3db`, including its own
 manifest. Its `single` command records each module with an explicit immutable
 `sourceUri`; `fromDb` emits both declaration JSON and HTML. Building doc-gen4
@@ -80,7 +84,7 @@ pins. Its C dependencies may require Lean's bundled `bin/cc` on `PATH`.
 The following **historical reproduction** is for a separate checkout of
 pre-transfer tree `3a7204971fbbbb0a130335eda04b9d9d2b157267`, which includes
 the frozen adapter and old 26 Lean modules, **not** the changed current
-65-module checkout. The `source_revision` below remains the older analyzed
+67-module checkout. The `source_revision` below remains the older analyzed
 `a9f1a38787d33205c469ff89710563fffb4974fd`, which is in that checkout's
 Git history. Use Bash, Python 3, git, elan and Lake. Install the pinned
 toolchain, fetch the **matching mathlib cache successfully before the project
@@ -121,7 +125,7 @@ python3 -O -B scripts/generate_api.py --native-data "$docs_work/rendered/doc-dat
 
 The native database's parent directory must exist before `single`. The frozen
 adapter and its hashes are historical reproduction checks; they do not generate
-a new 65-module reference, certify the current roots, or constitute a required
+a new 67-module reference, certify the current roots, or constitute a required
 new-generation release gate. For the current checkout, use the lightweight
 [AbelianForget](AbelianForget.md) and [SquareTransition](SquareTransition.md)
 API supplements, applicable proof/build evidence and

@@ -11,6 +11,7 @@ import SheafCohomologyExamples.AbelianForgetSquareTransition
 import SheafCohomologyExamples.ConePullback
 import SheafCohomologyExamples.ConePullbackSections
 import SheafCohomologyExamples.PullbackLocalSections
+import SheafCohomologyExamples.NativeStageSectionEquality
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
 import SheafCohomologyExamples.ConePullbackLimit
@@ -32,6 +33,7 @@ modules also exercise focused public imports. The root's clients are private
 and named; imported modules additionally include named public section-transport
 clients. The local-pullback leaf additionally provides four named public clients
 for actual-unit germs, local representation, equality neighborhoods and finite covers.
+The native stage-equality leaf gives two public distinguishability clients.
 Together they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change,

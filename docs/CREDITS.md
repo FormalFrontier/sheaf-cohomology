@@ -500,3 +500,39 @@ Lean leaf. [The local-sections guide](PullbackLocalSections.md) states the
 precise APIs and boundaries. Source-leaf acceptance and focused destination
 checks do not establish final registered-graph review, code acceptance, release,
 source coverage or third-party ownership. Original Apache notices are retained.
+
+## Native stage-section equality
+
+`SheafCohomology/NativeStageSectionEquality.lean` and its two public ordinary-
+import clients copy the full Lean statements and proof expressions of Worker B
+Hive Task `hive-request-83333dedd640d855f159f1c115a70d659ba2c7dc` (UID
+`ce8bbfcb-4d1f-4e5f-b043-5ec831bc6bcd`), accepted unregistered incubator leaf
+`c7818152bd5ebef3d768de238962bf9fc04fb7fc`. Original fresh independent
+review was by Worker A Hive Task
+`hive-request-a44553406806c535fda284689c5428b6e55f00ff` (UID
+`54ee6779-5591-4608-b802-3906536cc1a7`), full report
+`9419e5f00d105a682c613d75ec6f42f724e7aa05`. Original Apache notices remain.
+
+Worker A Hive Task
+`hive-request-ff998c4cc73fa7cfcec2d169e68b78c8e14c7e0a` (UID
+`d11b0afb-7e2c-44a8-b31c-78fe5a3637f7`) mechanically transferred the full
+producer and client expressions, changing only one producer import, one client
+import and two client namespace occurrences. The corrected adapter is
+`a8d55b29bd54372d8e480bd3b8f9eef9b34ec9d2`, retaining its predecessor
+`30586e92446453bb4c53a88f2cb68318fdf6d92b`. Reverse substitutions recover the
+original Lean blobs `cbc6ebe0b1de22a941f373c550d92d6d2579259a` and
+`e14d0b3ada7690fb1d43f9704d472afc10712203`. Anchor added root registration,
+navigation, lifecycle metadata and credit without changing either Lean blob.
+
+Anchor's earlier source-local whole-stage equality probe at source revision
+`e266a5076df34934171cc284ba8f2834e56f8c78` supplied mathematical motivation,
+not a copied proof expression for the original native implementation. This is
+distinct from the full expression-level copying in the destination transfer.
+[The stage-equality guide](NativeStageSectionEquality.md) identifies that
+probe and the original native proof's local-unit, spectral-cylinder and
+naturality ingredients. Their separate contributor credits remain applicable.
+Official spectral-stone-duality and its ideal-completion dependency retain
+their own notices; neither incubator ancestry nor source research is imported.
+Original leaf approval and focused transfer checks do not approve this
+registered destination graph, establish release or source coverage, identify
+a third-party copyright holder, or imply human endorsement.
