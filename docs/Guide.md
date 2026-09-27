@@ -6,8 +6,9 @@ the aggregate public interface, or import a subject module directly. The native
 [historical API reference](API.md) supplies declaration-level displayed hypotheses
 for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [SquareTransition supplement](SquareTransition.md),
-[native sheafed-space supplement](SheafedSpace.md), and
-[projection-mate cocone supplement](ConePullbackCocone.md) cover the nine new
+[native sheafed-space supplement](SheafedSpace.md),
+[projection-mate cocone supplement](ConePullbackCocone.md), and
+[forgetful cocone supplement](AbelianForgetConePullbackCocone.md) cover the ten new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -96,9 +97,9 @@ transition on the canonically compared stage. See the
 ## All shipped modules
 
 The original 24 subject leaves below are included in the frozen native API
-reference. Six new `AbelianForget` leaves, `SquareTransition`,
+reference. Seven new `AbelianForget` leaves, `SquareTransition`,
 `ConePullback`, and `ConePullbackCocone` are documented in supplements;
-all 33 subjects and ten roots/clients form the current 43-file
+all 34 subjects and eleven roots/clients form the current 45-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -111,6 +112,7 @@ the same hypotheses.
 | `AbelianForget.SquareTransition` | Forgetful comparison commutes with the native square transition |
 | `AbelianForget.SheafedSpace` | Forget additive structure on native sheafed spaces, preserving actual arrow mates |
 | `AbelianForget.ConePullback` | Natural isomorphism between native cone pullbacks before and after additive-to-Type forgetting |
+| `AbelianForget.ConePullbackCocone` | Actual projection-mate leg comparison and ordinary-colimit desc compatibility |
 | `AcyclicResolution` | Ext/homology comparison from acyclic resolutions |
 | `ColimitPostApp` | Evaluation of canonical colimit maps at components |
 | `ColimitTransport` | Transport/naturality of canonical colimit comparisons |
@@ -139,7 +141,7 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named private downstream examples, including eight imported client modules |
+| `SheafCohomologyExamples` | Named private downstream examples, including nine imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
@@ -148,6 +150,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.AbelianForgetSheafedSpace` | Private native arrow, chain, identity and empty-carrier examples |
 | `SheafCohomologyExamples.AbelianForgetConePullback` | Private cone-wise components, index-arrow naturality and actual empty-vertex cone |
+| `SheafCohomologyExamples.AbelianForgetConePullbackCocone` | Private native Fin 3 stages/triangles, desc compatibility, local filtered comparison and empty-carrier clients |
 
 ## Using the boundary
 

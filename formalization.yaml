@@ -7,7 +7,8 @@ project:
     Compact-open section colimits, quasi-flasque exactness and acyclicity,
     resolution comparisons, local cohomology, right-derived pushforward
     comparisons, pullback coherence, native sheafed-space cone pullbacks and cocones
-    and their cone-wise additive-to-Type forgetting, commuting-square transitions
+    and their cone-wise additive-to-Type forgetting and ordinary-colimit desc
+    compatibility, commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
     sheaves in Lean.
@@ -87,8 +88,12 @@ status:
     naturally isomorphic to the forgotten additive pullback diagram over
     the same literal cone vertex and projections, through the canonical
     forward and inverse components, without a limiting, filtered,
-    nonempty, geometric or stage-isomorphism premise. No cone-level colimit
-    comparison, Ringed result or final additive endpoint is claimed.
+    nonempty, geometric or stage-isomorphism premise. For an actual native
+    additive cone, the Type-valued projection-mate legs agree with the
+    forgotten additive legs. With precisely three ordinary colimit witnesses,
+    the canonical comparison commutes with desc to the vertex sheaves.
+    Neither desc invertibility nor colimitingness, a Ringed result or a
+    final additive endpoint is claimed.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
@@ -141,6 +146,16 @@ review:
     independent destination/release review, owner acceptance and ordered
     verified publication remain revision-specific requirements; neither input
     candidate's existence nor this metadata certifies their completion.
+    The forgetful native cocone registration preserves both Lean leaves of
+    destination 953ab20b8d960e4955962fa870b56d6f5a809226, transferred from
+    separately accepted original 3af55bc102c0c81f20271560877d11d786e7ca43,
+    on accepted and integrated destination 15c2e06a74e423728bbc745429325d8bdfc65b95.
+    Its standalone guide is updated to describe registration; aggregate imports,
+    navigation and contributor credit are added without proof or pin changes.
+    This new assembly still requires an applicable combined build and complete
+    standard-axiom evidence, exact independent destination/release review,
+    owner acceptance and ordered verified publication. Earlier evidence and
+    approvals apply only to their recorded unchanged inputs and scope.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

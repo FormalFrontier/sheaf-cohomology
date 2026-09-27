@@ -134,6 +134,15 @@ legs are the inverse-image mates of the native projections. The cone need
 not be limiting; the resulting cocone is not asserted to be colimiting.
 See the [projection-mate cocone guide](docs/ConePullbackCocone.md).
 
+`SheafCohomology.AbelianForget.ConePullbackCocone` identifies the Type-valued
+projection-mate legs with the forgotten additive legs through the canonical
+cone-wise comparison. With precisely three ordinary colimit witnesses, it
+proves that this comparison commutes with the two desc maps to the vertex
+sheaves. Neither desc map is asserted invertible, and neither cocone is
+asserted colimiting. See the
+[forgetful cocone guide](docs/AbelianForgetConePullbackCocone.md) for the exact
+equation, universes and private Fin 3/empty-carrier clients.
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -189,6 +198,7 @@ empty spaces.
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
 | Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
+| Forgetful native cocones | `AbelianForget.ConePullbackCocone`: actual projection-mate legs and ordinary-colimit desc compatibility |
 
 All module names in the table are prefixed by `SheafCohomology.`. Consult their
 declaration types for the precise category, sheafification, Ext and universe
@@ -205,7 +215,9 @@ the [lightweight AbelianForget guide](docs/AbelianForget.md) and
 in that historical supplement group; the
 [native sheafed-space guide](docs/SheafedSpace.md) documents three further
 subjects, and the [projection-mate cocone guide](docs/ConePullbackCocone.md)
-documents one more. Of the old 556 native display sites,
+documents one more. The
+[forgetful cocone guide](docs/AbelianForgetConePullbackCocone.md) covers the
+three public laws of the tenth new subject. Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
 per-site explanations. These pointers do not certify complete semantic
@@ -215,7 +227,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports eight additional example leaves. All examples use
+readiness assembly and imports nine additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.

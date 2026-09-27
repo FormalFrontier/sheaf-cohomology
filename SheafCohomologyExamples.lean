@@ -12,6 +12,7 @@ import SheafCohomologyExamples.ConePullback
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.AbelianForgetSheafedSpace
 import SheafCohomologyExamples.AbelianForgetConePullback
+import SheafCohomologyExamples.AbelianForgetConePullbackCocone
 
 /-!
 # Public-root sheaf cohomology examples

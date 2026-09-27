@@ -232,3 +232,21 @@ Anchor assembled the unchanged Lean leaves into the aggregate roots and
 updated public documentation and metadata. Exact destination assessment,
 acceptance and publication are separate revision-specific records; this
 credit establishes neither third-party ownership nor source coverage.
+
+## Forgetful native cocones
+
+`SheafCohomology/AbelianForget/ConePullbackCocone.lean` retains the three
+public laws and private canonical transport of Worker B Hive Task
+`hive-request-411a3aeeefaf41c928ba5dd589f2d14811f0a38e` (UID
+`8a86b77b-9e0d-48a9-9bda-4d79884fb698`), original expression revision
+`3af55bc102c0c81f20271560877d11d786e7ca43`. Worker B Hive Task
+`hive-request-fadb8a219b9546f83011af5ec4651e9475d1c1de` (UID
+`a79502b5-a697-474a-b3f5-1e42c062fe22`) transferred the production module,
+private import-only clients and standalone guide at
+`953ab20b8d960e4955962fa870b56d6f5a809226`. Only two production import
+paths changed; client mathematical statements and proofs were retained with
+destination imports, namespace and private visibility. Anchor added aggregate
+registration and updated navigation, credit and lifecycle wording without
+changing either Lean leaf. These expression credits do not assert third-party
+ownership, destination acceptance, publication, endpoint invertibility or
+source coverage; the guide states the exact colimit hypotheses and boundaries.
