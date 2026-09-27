@@ -10,6 +10,7 @@ import SheafCohomologyExamples.SquareTransition
 import SheafCohomologyExamples.AbelianForgetSquareTransition
 import SheafCohomologyExamples.ConePullback
 import SheafCohomologyExamples.ConePullbackSections
+import SheafCohomologyExamples.PullbackLocalSections
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
 import SheafCohomologyExamples.ConePullbackLimit
@@ -29,7 +30,9 @@ import SheafCohomologyExamples.AbelianForgetLimitPreservation
 The clients defined here use only the aggregate public import. Imported client
 modules also exercise focused public imports. The root's clients are private
 and named; imported modules additionally include named public section-transport
-clients. Together they exercise
+clients. The local-pullback leaf additionally provides four named public clients
+for actual-unit germs, local representation, equality neighborhoods and finite covers.
+Together they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change,
 including native sheafed-space cones, literal section units and restricted

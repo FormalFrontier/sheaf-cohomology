@@ -464,3 +464,39 @@ acceptance and focused destination checks do not establish final destination
 review, combined-graph acceptance, publication, third-party ownership or source
 coverage. The destination depends on mathlib, not on an incubator or source
 revision; development ancestry is not part of the public release history.
+
+## Native inverse-image local sections
+
+`SheafCohomology/PullbackLocalSections.lean` retains the byte-exact native
+implementation of Worker B Hive Task
+`hive-request-c862e7aa8f5b10a37f55dbfbfcc07250a83772cd` (UID
+`0b29aa2c-31b4-4085-b8ae-dfec0cb71756`), accepted as unregistered incubator
+leaf `9cba716e58ac499e102abfadeccd811d1b0c23cf`. Its fresh independent
+source/leaf reviewer was Worker A Hive Task
+`hive-request-7708ef819d1da79f05079e569149a3a3b5fbcfe5` (UID
+`10306134-381d-434b-ab66-8077fb2a93da`), report
+`af4468a1593d2c2a75320324352d51b0e4a886b0`. Superseded warning-option
+defects are not retrospectively accepted by that corrected-leaf review.
+
+The private `constructed_unit_hom` closely adapts the **proof expression**
+(`change`/`simp`/`rfl`) of Anchor's
+`sheafPullbackConstruction_unit_app_hom` in
+`Research/fk-proposition-3-1-10-stage-section-transport-probe.lean`, source
+revision `e266a5076df34934171cc284ba8f2834e56f8c78`, blob
+`939e35949d83eb00f63856f702ed93dd9c7fff66`, around line219. This is
+expression-level attribution, not merely mathematical motivation. The proof
+also reuses mathlib's native adjunction uniqueness, presheaf stalk comparison,
+sheafification stalk isomorphism and sheaf separatedness; no alternate
+inverse-image model or source-research file is imported.
+
+Worker A Hive Task
+`hive-request-6a01a72d5e80988d20b9716dc7419592c896c3a4` (UID
+`dcf69e1a-2f1d-43ba-8000-b176eb638e64`) transferred the producer unchanged
+at `f62df0bfdd7c93458c29fb8818fa16f72a1459fc`, adapting only the four-client
+module's public import and namespace and the standalone guide. This adapter
+execution is distinct from the earlier source reviewer. Anchor added aggregate
+imports, navigation, lifecycle metadata and this credit without changing either
+Lean leaf. [The local-sections guide](PullbackLocalSections.md) states the
+precise APIs and boundaries. Source-leaf acceptance and focused destination
+checks do not establish final registered-graph review, code acceptance, release,
+source coverage or third-party ownership. Original Apache notices are retained.

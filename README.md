@@ -17,12 +17,16 @@ from an actual native limit whose underlying-space cone is also limiting.
 For Type-valued sheaves, section units and restricted adjoint triangles induce
 a natural transformation from native stage global sections to sections of the
 cone-pullback diagram, without requiring a limiting or spectral cone.
+The actual inverse-image sheaf also has a native stalk comparison, local
+section representations and equality neighborhoods. Compact source opens
+in prespectral spaces admit finite compact-open local representations.
 
-This source-only 63-module registration is not yet an accepted combined graph.
-Its 61-module base `36bcd67d72079ce6f27ed918443bba900e83ba77` was independently
-reviewed, accepted and integrated, and published as official commit
-`e4c7d681e0913fc1dde266cfcfc37763f1d47785` with the same tree.
-The new section-transport leaves have focused author checks; the aggregate
+This source-only 65-module registration is not yet an accepted combined graph.
+Its 63-module base `6ec75cd4c22f74e2607adf92d85b5caa30087ca7` was independently
+reviewed, accepted and integrated after complete CI469 build and private-inclusive
+standard-axiom evidence, and verified on official GitHub as
+`32b1fb7787d5036c8b7181565a22a460b160f91d` with the same tree.
+The new local-pullback leaves have focused author checks; the aggregate
 imports are changed computational inputs. Final destination/release review,
 applicable combined checks, owner acceptance and verified publication remain
 separate requirements for this successor.
@@ -302,6 +306,7 @@ empty spaces.
 | Forgetful square transitions | `AbelianForget.SquareTransition`: strict pushforward compatibility and additive-to-Type native transition equation |
 | Native sheafed-space cones | `ConePullback`: arbitrary underlying-space cones and actual-arrow mates |
 | Sections across native cones | `ConePullbackSections`: literal units, restricted adjoint triangles, the native global-section transformation and ordinary colimit stage law |
+| Native inverse-image local sections | `PullbackLocalSections`: actual-unit stalk comparison, local representations, equality neighborhoods and finite compact-source-open covers |
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
@@ -346,8 +351,9 @@ sixteenth; the
 covers the seventeenth; and the
 [fixed-base converse guide](docs/SheafedSpaceConePullbackLimitConverse.md)
 covers the eighteenth; the
-[cone-pullback sections guide](docs/ConePullbackSections.md) covers the nineteenth.
-The latter uses the existing `N.rightOp` composed with global sections and the
+[cone-pullback sections guide](docs/ConePullbackSections.md) covers the nineteenth;
+the [local-pullback guide](docs/PullbackLocalSections.md) covers the twentieth.
+The section-transport supplement uses the existing `N.rightOp` composed with global sections and the
 actual unit at the top open; it supplies no colimit-map invertibility or
 finite-stage gluing theorem.
 Of the old 556 native display sites,
@@ -360,9 +366,10 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports eighteen additional example leaves. The root
-and seventeen older leaves use named private declarations; the new
-`ConePullbackSections` leaf contains five named public ordinary-import clients.
+readiness assembly and imports nineteen additional example leaves. The root
+and seventeen older leaves use named private declarations; the
+`ConePullbackSections` leaf contains five named public ordinary-import clients,
+and `PullbackLocalSections` contains four more named public ordinary-import clients.
 All are included in proof verification, with no duplicate implementation API.
 No client should import or unfold private implementation helpers.
 

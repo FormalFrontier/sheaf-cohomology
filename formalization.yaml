@@ -18,6 +18,8 @@ project:
     to the actual projection-mate sheaf colimit,
     literal section units and restricted adjoint triangles inducing native
     global-section transport to cone-pullback sections,
+    actual inverse-image stalk comparisons, local section representations,
+    equality neighborhoods and finite compact-source-open local covers,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -177,12 +179,38 @@ status:
     colimMap stage-leg equation. No spectrality, limiting cone, filteredness
     or nonempty index is required. No invertibility, finite-stage equality,
     descent or gluing is asserted by this section-transport unit.
+    PullbackLocalSections uses the actual inverse-image sheaf and adjunction
+    unit for arbitrary same-universe spaces and Type-valued sheaves. Its stalk
+    comparison, local representation and equality neighborhood require no
+    compactness or spectral-map hypothesis. Only finite local representation
+    assumes a prespectral source and compact source open; target opens need
+    not be compact. It supplies no global section surjectivity, stage equality,
+    finite-stage gluing or colimit endpoint.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Current source-only 65-module registration, 2026-09-27: the actual
+    63-module base 6ec75cd4c22f74e2607adf92d85b5caa30087ca7 was independently
+    reviewed, owner-accepted and integrated after complete CI469 build and
+    private-inclusive standard-axiom evidence, then verified on official GitHub
+    at 32b1fb7787d5036c8b7181565a22a460b160f91d with the same tree.
+    This successor preserves both Lean blobs
+    of local-pullback adapter f62df0bfdd7c93458c29fb8818fa16f72a1459fc,
+    from separately reviewed and accepted unregistered incubator leaf
+    9cba716e58ac499e102abfadeccd811d1b0c23cf. The adapter's focused builds
+    and complete 25-origin census do not certify changed aggregate roots.
+    All old nonroot Lean bodies, dependency pins and CI files remain unchanged.
+    Exact final destination/release review, applicable combined build and
+    complete private-inclusive standard-axiom evidence, owner acceptance,
+    integration and verified publication remain required for this successor.
+    No combined 65-module pass, acceptance, release or source coverage is asserted.
+    Earlier applicable evidence is reused only for its unchanged inputs.
+    The following paragraphs preserve historical review and assembly states.
+
+    Historical 63-module assembly state before its later acceptance:
     Current source-only 63-module registration, 2026-09-27: the actual
     61-module base 36bcd67d72079ce6f27ed918443bba900e83ba77 was independently
     reviewed, owner-accepted and integrated after complete CI405 build and
