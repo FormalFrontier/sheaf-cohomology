@@ -9,8 +9,9 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [native sheafed-space supplement](SheafedSpace.md),
 [projection-mate cocone supplement](ConePullbackCocone.md),
 [forgetful cocone supplement](AbelianForgetConePullbackCocone.md),
-[diagram-pushforward supplement](DiagramPushforward.md), and
-[coefficient-diagram supplement](AbelianForgetDiagramPushforward.md) cover the twelve new
+[diagram-pushforward supplement](DiagramPushforward.md),
+[coefficient-diagram supplement](AbelianForgetDiagramPushforward.md), and
+[cone-reconstruction supplement](ConeOfPullbackCocone.md) cover the thirteen new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -100,8 +101,9 @@ transition on the canonically compared stage. See the
 
 The original 24 subject leaves below are included in the frozen native API
 reference. Eight new `AbelianForget` leaves, `SquareTransition`,
-`ConePullback`, `ConePullbackCocone`, and `DiagramPushforward` are documented in supplements;
-all 36 subjects and thirteen roots/clients form the current 49-file
+`ConePullback`, `ConePullbackCocone`, `ConeOfPullbackCocone`, and
+`DiagramPushforward` are documented in supplements;
+all 37 subjects and fourteen roots/clients form the current 51-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -121,6 +123,7 @@ the same hypotheses.
 | `CompactOpenSections` | Compact-open section and sheafification colimits |
 | `ConePullback` | Pull native sheafed-space diagrams to arbitrary cones of their underlying spaces |
 | `ConePullbackCocone` | Cocone whose legs are the mates of actual native cone projections, without a colimiting assertion |
+| `ConeOfPullbackCocone` | Native cone reconstructed from actual space-cone and pullback-cocone data, with exact forgetting and transported recovery |
 | `DegreeZero` | Degree-zero cohomology and global sections |
 | `DiagramPushforward` | Native varying-base direct-image diagrams and compatible cones; stronger hypotheses only for mate formulas |
 | `AbelianForget.DiagramPushforward` | Strict varying-base diagram equality, identity-vertex transported-cone isomorphism and canonical mate compatibility |
@@ -145,13 +148,14 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named private downstream examples, including eleven imported client modules |
+| `SheafCohomologyExamples` | Named private downstream examples, including twelve imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
 | `SheafCohomologyExamples.AbelianForgetSquareTransition` | Five private stage, target, identity, empty-space and pasted-square examples |
 | `SheafCohomologyExamples.ConePullback` | Private Type/Ab Fin 3 chains, actual-arrow mates and empty-cone examples |
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
+| `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
 | `SheafCohomologyExamples.AbelianForgetSheafedSpace` | Private native arrow, chain, identity and empty-carrier examples |
 | `SheafCohomologyExamples.AbelianForgetConePullback` | Private cone-wise components, index-arrow naturality and actual empty-vertex cone |
 | `SheafCohomologyExamples.AbelianForgetConePullbackCocone` | Private native Fin 3 stages/triangles, desc compatibility, local filtered comparison and empty-carrier clients |

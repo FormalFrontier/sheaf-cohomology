@@ -285,3 +285,22 @@ the unchanged Lean leaves in the aggregate roots and updated navigation,
 lifecycle wording and metadata. These expression credits do not themselves
 establish third-party rights, destination acceptance, publication or source
 coverage; each requires its applicable evidence and decision.
+
+## Native cone reconstruction from pullback cocones
+
+`SheafCohomology/ConeOfPullbackCocone.lean` retains the mathematical
+expressions of Worker B Hive Task
+`hive-request-fd5f3464b7f33c612645847f878bb0e35e79de1e` (UID
+`817007ac-5825-4473-b0be-d3d40a32a445`), original revision
+`b8b80ce57222cdbb98c9d17dfca875ea35518a56`. Worker A Hive Task
+`hive-request-cbf45ce45ac31f854408fc48bfb3ee338b851bd1` (UID
+`8f66d5aa-4564-4c73-92b9-76eb5c62e516`) transferred the producer,
+private import-only clients and standalone guide at
+`b7746c1bfd3f1426737b40250cc6b8bf95011b3c`. Only the producer import
+path changed; client expressions retain their mathematical content with
+destination imports, namespace and private visibility. The guide records
+original and destination independent reviewer executions. Anchor registered
+the unchanged Lean leaves in the aggregate roots and updated navigation,
+lifecycle wording and metadata. These expression credits do not themselves
+establish third-party rights, final assembly acceptance, publication or source
+coverage.

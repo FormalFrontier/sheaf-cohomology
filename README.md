@@ -160,6 +160,14 @@ additive-to-Type comparison for actual mates. No limit, filteredness or stage-is
 needed. See the [coefficient-diagram guide](docs/AbelianForgetDiagramPushforward.md)
 for the exact equality transports, shared universe and private clients.
 
+`SheafCohomology.ConeOfPullbackCocone` constructs a native sheafed-space cone
+from an actual underlying-space cone and a cocone of its pullback sheaves.
+The adjunction-defined projections have exactly the supplied mates; forgetting
+recovers the whole space cone literally, and the forward construction recovers
+the supplied cocone after that equality transport. No limiting or colimiting
+property is asserted. See the [cone-reconstruction guide](docs/ConeOfPullbackCocone.md)
+for the base-equation converse, universes and private Type/Ab/empty-index clients.
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -213,6 +221,7 @@ empty spaces.
 | Forgetful square transitions | `AbelianForget.SquareTransition`: strict pushforward compatibility and additive-to-Type native transition equation |
 | Native sheafed-space cones | `ConePullback`: arbitrary underlying-space cones and actual-arrow mates |
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
+| Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
 | Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
 | Forgetful native cocones | `AbelianForget.ConePullbackCocone`: actual projection-mate legs and ordinary-colimit desc compatibility |
@@ -239,7 +248,8 @@ documents one more. The
 three public laws of the tenth new subject; the
 [diagram-pushforward guide](docs/DiagramPushforward.md) covers the eleventh;
 the [coefficient-diagram guide](docs/AbelianForgetDiagramPushforward.md)
-covers the twelfth.
+covers the twelfth; the [cone-reconstruction guide](docs/ConeOfPullbackCocone.md)
+covers the thirteenth.
 Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
@@ -250,7 +260,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports ten additional example leaves. All examples use
+readiness assembly and imports twelve additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.

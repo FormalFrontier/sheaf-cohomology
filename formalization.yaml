@@ -9,7 +9,8 @@ project:
     comparisons, pullback coherence, native sheafed-space cone pullbacks and cocones
     and their cone-wise additive-to-Type forgetting and ordinary-colimit desc
     compatibility, varying-base native diagram and cone pushforwards and their
-    additive-to-Type coefficient transport,
+    additive-to-Type coefficient transport, native cone reconstruction from
+    pullback cocones,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -109,6 +110,13 @@ status:
     mates. It uses a shared universe for spaces,
     additive groups and sets, and an arbitrary small indexing category;
     no limit, filteredness, nonemptiness or stage isomorphism is required.
+    An actual cone of underlying spaces and an actual cocone of its pullback
+    sheaves reconstruct a native sheafed-space cone. Its projections are the
+    adjoints of the supplied legs; the cocone equations prove cone coherence.
+    Forgetting recovers the whole space cone literally, and the forward
+    construction recovers the supplied cocone after that equality transport.
+    The mate converse uses an explicit base equation. No limiting/colimiting
+    property or sheafed-space limit theorem is asserted.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
@@ -190,6 +198,17 @@ review:
     Exact independent destination/release review, applicable combined build
     and complete standard-axiom evidence, owner acceptance and ordered
     verified official publication remain required for this new candidate.
+
+    The native cone-reconstruction assembly preserves both Lean leaves of
+    destination b7746c1bfd3f1426737b40250cc6b8bf95011b3c, transferred from
+    separately accepted original b8b80ce57222cdbb98c9d17dfca875ea35518a56,
+    on accepted and integrated destination dff308bf7bd21d1ddcceb2b02c13341685446f22.
+    The unregistered destination leaf was independently reviewed and accepted;
+    those decisions do not certify this new aggregate registration. Only root
+    imports, guide lifecycle wording, navigation, credit and scope metadata
+    are added. Exact independent assembly/release review, applicable combined
+    build and complete standard-axiom evidence, owner acceptance and ordered
+    verified official publication remain required.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical
