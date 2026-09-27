@@ -16,6 +16,7 @@ import SheafCohomologyExamples.NativeStageSectionLifting
 import SheafCohomologyExamples.NativeStageSectionColimit
 import SheafCohomologyExamples.NativeLimitGlobalSections
 import SheafCohomologyExamples.NativeOpenRestriction
+import SheafCohomologyExamples.NativeCylinderLimit
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
 import SheafCohomologyExamples.ConePullbackLimit
@@ -44,6 +45,8 @@ The native stage-colimit leaf gives two private ordinary-import clients for
 cancellation and recovery of a target coprojection through the actual comparison.
 The native open-restriction leaf composes two restricted arrows and reads back
 the original composite's section component, with explicit equality transports.
+The native cylinder-limit leaf applies the constructed restricted limit to an
+arbitrary restricted cone and recovers its original native projection equation.
 The chosen native-limit leaf gives a private ordinary-import client detecting
 coprojection equality through the actual native projection maps.
 Together they exercise

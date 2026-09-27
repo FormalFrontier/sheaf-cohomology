@@ -674,3 +674,46 @@ the `preimageMap` expression and inclusion equation. The
 Original Apache notices remain; no private source text or incubator ancestry
 is imported into release history. Original leaf acceptance and focused checks
 are not combined-root acceptance, publication or source coverage.
+
+## Native limits of principal-tail open cylinders
+
+`SheafCohomology/NativeCylinderLimit.lean` transfers the accepted-unregistered
+incubator leaf `bf566ea767083405992cb832df9e914712a9e3cb`, changing only its
+parent import. Original cylinder mathematics is by worker-a Hive Task
+`hive-request-153a0400bb1a4285602d24cceb51ae9a56b6b3be` (UID
+`38e90320-4a49-4738-9620-3881f7b58af5`); separate worker-a Task
+`hive-request-d984b1de170e87f4be31d9ce565c90299c51e3b3` (UID
+`35dd220a-f8a8-4fae-9d05-4a503f2f4b96`) repaired the headers and provenance.
+Fresh worker-b Task `hive-request-1e8c6a88bf42d9183522899d2ed7cbc7bf9d1916`
+(UID `1c65573c-8563-4434-8dbf-138514e62c9a`) approved exact bf566ea in
+report `85aeeef35c3b3f0f01d56869b448a4f49e05f5b5`, resolving—not waiving—the
+earlier `234e1ae9448fd3eec5bd4250260d9331ebfe8f9a` provenance objections.
+Anchor separately accepted that leaf unregistered in incubator #4/54011.
+
+The directed-tail inclusion, directedness, finality and opposite-initiality
+expressions adapt worker-b Task
+`hive-request-065ffb46d5b6d2b9ada197a66b9c1b783b57e00f` (UID
+`4720124c-2740-40ba-947d-5be3c681f64e`), original source commit
+`e827107b7a1c6a8cf187189bda816f08931e269a`, retained at
+`e266a5076df34934171cc284ba8f2834e56f8c78` in
+`FormalFrontier/source-fujiwara-kato-rigid-geometry-i`,
+`Research/fk-corollary-3-1-12-open-tail-restriction-scratch.lean:27–49`.
+The native restriction predecessor is by worker-a Task
+`hive-request-dae0d04e8618b53de43730479c4033d21488695b` (UID
+`38967a21-9f85-493d-b98f-67dd712fb00e`); its separate credit above remains.
+Andrew Yang's Apache-2.0 mathlib open-immersion lift and native restriction
+infrastructure, plus mathlib's categorical finality/initiality results, are reused.
+
+Worker-a Task `hive-request-403dd29c9f3677cefb56ce16b370b5872f9bc61a`
+(UID `2d67f405-088f-4811-8d5a-6dce4586b1a3`) transferred the two Lean leaves
+and standalone guide at `194e6310aad7205ff53e33cc73e9ba16b5f9398d`.
+Reversing the producer import and client import/namespace substitutions recovers
+donor blobs `ba08ef145b4831c283171dafee4984ae66648d3a` and
+`cd03cbe3c9597caa5f394a68a4b08b377b65bfe1`. Separate destination evidence is
+`b5ac3f80af7ae5bb02d38fb8189bfcea1046469c`; donor-only evidence
+`a4d4bfe750d983e9c37598b3dbcefbf848fd348b` is not a destination check.
+Anchor's registration preserves both Lean blobs, original Apache notices and
+the genuine private ordinary-import client. The [guide](NativeCylinderLimit.md)
+states the exact hypotheses and independent gates. No private source text,
+incubator dependency or ancestry is imported into release history; leaf acceptance
+does not establish aggregate acceptance, official publication or source coverage.

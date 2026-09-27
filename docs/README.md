@@ -17,8 +17,8 @@ original generated `docs/API.md` in the pre-transfer accepted tree, not this
 file's editorially updated introduction. The historical generated file can
 be checked in that old revision; do not relabel the old hash as a new current
 Markdown attestation.
-The current 75 Lean modules also include twenty-five new subjects and twenty-four
-client leaves (twenty-one private-client modules and three named public-client modules),
+The current 77 Lean modules also include twenty-six new subjects and twenty-five
+client leaves (twenty-two private-client modules and three named public-client modules),
 covered by [AbelianForget.md](AbelianForget.md),
 [SquareTransition.md](SquareTransition.md) and
 [SheafedSpace.md](SheafedSpace.md) and
@@ -38,7 +38,8 @@ covered by [AbelianForget.md](AbelianForget.md),
 [NativeStageSectionLifting.md](NativeStageSectionLifting.md) and
 [NativeStageSectionColimit.md](NativeStageSectionColimit.md) and
 [NativeLimitGlobalSections.md](NativeLimitGlobalSections.md) and
-[NativeOpenRestriction.md](NativeOpenRestriction.md), not by this
+[NativeOpenRestriction.md](NativeOpenRestriction.md) and
+[NativeCylinderLimit.md](NativeCylinderLimit.md), not by this
 native batch. The old root and example-client source hashes do not match the
 current changed roots. Reproducing these historical records is
 distinct from accepting their mathematical meaning or auditing kernel proofs.
@@ -129,7 +130,7 @@ python3 -O -B scripts/generate_api.py --native-data "$docs_work/rendered/doc-dat
 
 The native database's parent directory must exist before `single`. The frozen
 adapter and its hashes are historical reproduction checks; they do not generate
-a new 75-module reference, certify the current roots, or constitute a required
+a new 77-module reference, certify the current roots, or constitute a required
 new-generation release gate. For the current checkout, use the lightweight
 [AbelianForget](AbelianForget.md) and [SquareTransition](SquareTransition.md)
 API supplements, applicable proof/build evidence and

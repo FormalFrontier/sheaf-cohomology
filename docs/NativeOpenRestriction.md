@@ -72,14 +72,18 @@ At the original September 27, 2026 adapter handoff, its target was frozen
 accepted `main`. That is historical target status, not a claim about today's
 branches. Its corrected 73-module successor was later independently accepted
 and released as official `6aa8528f28264d9b44de0f31e72696d8d95ce97d`, verified
-at 21:19:58 UTC that day. This 75-module reconciliation normally merges the
+at 21:19:58 UTC that day. The 75-module reconciliation normally merged the
 accepted main ancestry, retaining both transferred Lean blobs unchanged.
 
 The full 75-module check on `c45c1713bf3e8457c02730fddf09d810dfae7027`
 succeeded at 19:45:26 UTC, and its complete build and private-inclusive
 standard-axiom evidence was inspected by the owner. Unchanged computational
-inputs permit reuse here, not a claim of a fresh successor build or audit.
-Current required CI, fresh final destination/release review, individual owner
-acceptance, protected integration and verified publication remain distinct
-gates for this candidate. Source coverage and any incubator conversion are
+inputs permitted reuse, not a claim of a fresh successor build or audit.
+The corrected candidate `efcfeae07fa909b9c1d20bdd665cf733eb11cb4d` later
+passed full CI621 at 22:20:06 UTC. After complete owner evidence intake,
+independent final review and individual main/prep/public decisions and protected
+integration, its official GitHub release
+`57decc6d5106fe32dc57f9684de38f6e10534de5` was verified at 22:30:32 UTC.
+Those decisions concern the 75-module contribution, not later successors.
+Source coverage and any incubator conversion are
 separate; none follows merely from the accepted source leaf or this adapter.

@@ -15,6 +15,7 @@ public import SheafCohomology.NativeStageSectionLifting
 public import SheafCohomology.NativeStageSectionColimit
 public import SheafCohomology.NativeLimitGlobalSections
 public import SheafCohomology.NativeOpenRestriction
+public import SheafCohomology.NativeCylinderLimit
 public import SheafCohomology.ConePullback
 public import SheafCohomology.ConePullbackSections
 public import SheafCohomology.ConePullbackCocone
@@ -52,6 +53,7 @@ native inverse-image stalks and local sections, eventual native stage-section
 equality, whole-stage section lifting and the native cone-section colimit
 comparison over spectral limits, global sections of the chosen native limit,
 native restriction to inverse-image opens and its actual section components,
+native limits of principal-tail open cylinders,
 sheafed-space
 cones and their section-unit transport,
 a conditional native-limit criterion and its
