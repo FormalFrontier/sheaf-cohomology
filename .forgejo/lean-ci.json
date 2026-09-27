@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "mode": "strict",
+  "projects": [
+    {
+      "path": ".",
+      "targets": [
+        "SheafCohomology",
+        "SheafCohomologyExamples"
+      ]
+    }
+  ],
+  "docs_only_paths": []
+}
