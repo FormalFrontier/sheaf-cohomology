@@ -12,12 +12,15 @@ import SheafCohomologyExamples.ConePullback
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
 import SheafCohomologyExamples.ConePullbackLimit
+import SheafCohomologyExamples.ConePullbackLimitConverse
 import SheafCohomologyExamples.LimitConstruction
+import SheafCohomologyExamples.LimitPreservation
 import SheafCohomologyExamples.DiagramPushforward
 import SheafCohomologyExamples.AbelianForgetSheafedSpace
 import SheafCohomologyExamples.AbelianForgetConePullback
 import SheafCohomologyExamples.AbelianForgetConePullbackCocone
 import SheafCohomologyExamples.AbelianForgetDiagramPushforward
+import SheafCohomologyExamples.AbelianForgetLimitPreservation
 
 /-!
 # Public-root sheaf cohomology examples
@@ -28,8 +31,10 @@ they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change,
 including native sheafed-space cones, the conditional native-limit criterion,
-actual limit construction and genuine empty-index limits,
-and additive-to-Type forgetting.
+its fixed-base converse with actual native and underlying-space limits,
+actual limit construction, genuine empty-index limits and native-to-space
+limit preservation,
+and additive-to-Type forgetting with same-universe cofiltered-limit preservation.
 The flasque and derived-colimit examples retain their universe-zero boundaries.
 -/
 

@@ -12,6 +12,10 @@ project:
     additive-to-Type coefficient transport, native cone reconstruction from
     pullback cocones, a conditional native sheafed-space limit criterion and
     actual limit construction from coefficient colimits and local sheafification,
+    named native-to-space limit preservation and same-universe cofiltered
+    native-limit preservation under additive-to-Type coefficient forgetting,
+    a fixed-base converse from actual native and underlying-space limits
+    to the actual projection-mate sheaf colimit,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -136,12 +140,55 @@ status:
     construct their sheaf colimits rather than assume them. There is no global
     HasLimits instance, unrestricted-large-diagram result, converse, Ringed
     extension or coefficient-forget compatibility for the limit construction.
+    Named native-to-space preservation witnesses use that genuine construction
+    and equality of its whole forgotten cone to derive ordinary PreservesLimit
+    for every limiting native cone of the diagram. One uses a supplied space
+    limit, and the other chooses it; coefficient shape-colimits and weak
+    sheafification at the actual selected vertex remain explicit. The native
+    space and coefficient-carrier universes agree, while index object and
+    morphism universes remain independent. This is not reflection of limits
+    or preservation under forgetting coefficients by those two generic witnesses.
+    Separately, for a same-universe small filtered J, additive-to-Type native
+    coefficient forgetting preserves limits of every diagram on J opposite.
+    The proof transports the actual projection-mate cocone through filtered
+    sheaf-colimit preservation and the cone-wise comparison, then uses a
+    genuine constructed native limit. Named per-diagram and shape witnesses
+    apply to all limiting cones; a chosen-space-cone helper states its local
+    weak sheafification assumption. No empty or arbitrary shape, reflection
+    or creation of limits is asserted by this coefficient-forgetting result.
+    Separately, AlgebraicGeometry.SheafedSpace.isColimit_conePullbackCocone_of_isLimit
+    in SheafCohomology/ConePullbackLimitConverse.lean derives IsColimit of the
+    actual projection-mate cocone from both IsLimit C and IsLimit of the actual
+    forgotten space cone. The same module's
+    AlgebraicGeometry.SheafedSpace.nonempty_isLimit_iff_isColimit_conePullbackCocone
+    gives the Nonempty equivalence under that actual base-limit hypothesis,
+    reusing the forward criterion. Native concrete-coefficient assumptions
+    and independent index universes remain; this adds no filteredness,
+    nonemptiness, sheaf-colimit existence or weak-sheafification premise and
+    does not reflect native limits without the separate base-limit witness.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Current source-only 61-module registration, 2026-09-27: the actual
+    55-module ancestor 4baa42e7eb4336e0691501953f5273aefe229506 was independently
+    reviewed, owner-accepted and integrated after complete CI368 build and
+    private-inclusive standard-axiom evidence. This later graph preserves
+    both converse Lean blobs from c01a006d2199d6ffd9ef2713731323c29c60c67a and
+    combines the separate 59-module evidence-wording correction
+    605acadce2c090f7a3b5828dc3bb5ab3d2cf3d93. That correction's scoped
+    noncomputational registration review does not accept the final graph.
+    All non-root Lean bodies, dependency pins and CI workflow/checker files
+    remain unchanged; aggregate root imports ARE changed computational inputs.
+    Exact destination and registered-graph review, applicable combined build
+    and complete private-inclusive standard-axiom evidence are still required.
+    The later 57/59/61-module registrations are not fully accepted, and no
+    final combined pass, official release or source coverage is asserted.
+    Earlier applicable leaf evidence may be reused for unchanged inputs only.
+    The following paragraphs preserve historical review and assembly states.
+
     Accepted development main a9f1a38787d33205c469ff89710563fffb4974fd
     integrates independently reviewed mathematical units and the bounded
     module/public-use and metadata readiness work in issue 34 (ordinary review
@@ -256,6 +303,43 @@ review:
     for their exact unchanged inputs; base drift may require rework.
     Owner acceptance, ordered protected integration, reviewed official release
     and verified publication remain distinct later steps.
+
+    The native-to-space preservation registration preserves both Lean leaves
+    of destination 8d587a97c5de06a3327d0720e237391e161610da, transferred from
+    separately accepted original 458297b9feef7fe8b838aa91db2944f53d23293a.
+    Its frozen 55-module predecessor 4baa42e7eb4336e0691501953f5273aefe229506
+    remains unaccepted at assembly time. The destination leaf received its
+    own fresh independent scoped approval in review 4030, report
+    ff72bdd17a803a20842c4bb564d4505ed8f01dc1; that decision does not approve
+    this registered graph. This source-only 57-module assembly
+    adds aggregate imports, navigation, credit and lifecycle metadata only.
+    Existing mathematical bodies, dependency pins and CI files are unchanged.
+    It has no new combined build or private-inclusive axiom pass. Exact
+    independent registered-graph and release assessment, applicable successful
+    checks, prerequisite and owner acceptance, protected integration and
+    ordered verified publication remain separate requirements. Earlier leaf
+    evidence is reusable only for its unchanged inputs; base drift may need
+    rework. No source-coverage or incubator-conversion decision is made here.
+
+    The cofiltered coefficient-forgetting registration preserves both Lean
+    leaves of destination 0e2502047fb6f4ae1fea71132cbe25d74aac2077, transferred
+    from separately accepted original bca0b7e2157ff42e7fee82a844a24ed64bd81957.
+    Its frozen 57-module predecessor 9264d1e7569dfe2ab4b026490c45cf39805c7f79
+    remains unreviewed and unaccepted at assembly time. The exact destination
+    leaf received fresh independent scoped approval in report
+    bf34ba8739f38b4196c7b6bc85ed778560efce2a; this report-only verdict is not
+    a native PR vote and does not certify this registered graph. This source-only
+    59-module assembly adds aggregate imports, navigation, contributor credit
+    and lifecycle metadata without changing any leaf proof, dependency pin or
+    CI workflow/checker file. The aggregate Lean root imports are changed CI
+    inputs and still require applicable combined evidence. Exact independent
+    registered-graph and release assessment,
+    applicable successful build and complete private-inclusive standard-axiom
+    evidence, prerequisite and owner acceptance, protected integration and
+    ordered verified official publication remain separate requirements.
+    No combined check has run on this registration; previous evidence is
+    reusable only for its unchanged inputs and base drift may require rework.
+    No source-coverage or incubator-conversion decision is made here.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

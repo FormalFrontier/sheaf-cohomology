@@ -351,3 +351,74 @@ lifecycle and metadata. The construction reuses the separately credited
 cone-reconstruction and limit-criterion expressions and mathlib's site-sheaf
 colimit instance. These credits do not certify destination acceptance,
 publication, third-party ownership or source coverage.
+
+## Native-to-space limit preservation
+
+`SheafCohomology/LimitPreservation.lean` and its private clients retain the
+mathematical expressions of Worker B Hive Task
+`hive-request-502206a7e28d7384c6a1ab57a9acf7a38c6a9eb4` (UID
+`5a505fe4-97ca-426f-8b06-9149e72762b3`), original accepted leaf
+`458297b9feef7fe8b838aa91db2944f53d23293a`. The original independent
+reviewer is Worker A Task
+`hive-request-7996da543adddee2f16c056f6551863372a81898` (UID
+`4f167d3a-f251-4072-b17f-edabe055d33b`), report revision
+`e7029896a2f9b3c22f0de6e118d6e6eb989f33a2`. Worker A Hive Task
+`hive-request-6d9e8f29fa46918f8089bb987efa7985c6f27b00` (UID
+`6a32dd01-a3e7-451f-a859-bd1347902e71`) transferred these expressions
+at destination `8d587a97c5de06a3327d0720e237391e161610da`, changing
+only one producer import and the client import and namespace. Anchor added
+aggregate registration, navigation, lifecycle wording and metadata while
+preserving both Lean leaf blobs. The prerequisite construction, criterion,
+cone reconstruction and mathlib preservation API retain their separate credit.
+Original review and these expression credits do not certify destination or
+aggregate acceptance, publication, third-party ownership or source coverage.
+
+## Cofiltered limits after forgetting additive coefficients
+
+`SheafCohomology/AbelianForget/LimitPreservation.lean` and its private clients
+retain the mathematical expressions of Worker B Hive Task
+`hive-request-13fb7168e78b10adc0a739488a5b88a5bad2cd58` (UID
+`9a8d7368-37db-444c-b740-2b889ce82678`), original accepted leaf
+`bca0b7e2157ff42e7fee82a844a24ed64bd81957`. The original independent
+reviewer is Worker A Task
+`hive-request-e191e9001fd91ccc94ac716347cfe494151b243a` (UID
+`e456f556-7b89-45ca-a633-7c5641bb1484`), report revision
+`012dbb7d96b8692316e94ba000e5d85108222cf2`. A distinct Worker A Task
+`hive-request-e5601633e037e2e255c65a2ce615260dafca7b25` (UID
+`08e5a83e-3ade-46bf-8ef3-64545240ab1c`) transferred the producer, private
+clients and guide at `0e2502047fb6f4ae1fea71132cbe25d74aac2077`, changing
+only three producer imports, one client import and its namespace, and adding
+explicit comment-only Apache/original-author notices to both Lean files.
+The fresh independent destination-leaf reviewer is Worker B Task
+`hive-request-50aefd26f24f869e97ac447c866866dfd7b401e5` (UID
+`eec8c8c6-7bf7-415d-a65a-0158821d942d`), report revision
+`bf34ba8739f38b4196c7b6bc85ed778560efce2a`; its scope excludes this registration
+and the inherited graph and does not constitute a native PR approval.
+Anchor registered the unchanged Lean leaves and updated navigation, lifecycle
+wording and metadata. Filtered sheaf-colimit preservation, native cocone
+transport, the actual-limit construction and their mathlib inputs retain
+their separate credits. Original leaf acceptance does not certify this
+destination or registered graph, clear third-party rights or publish a release.
+
+## Fixed-base converse for native sheafed-space limits
+
+`SheafCohomology/ConePullbackLimitConverse.lean` and its private clients retain
+the mathematical expressions of Worker B Hive Task
+`hive-request-5c0d008960ac42fcbe67c583368b2de1262bc7a6` (UID
+`1e7508ec-7d20-4c36-8393-f3d49db2f034`), original accepted leaf
+`04bbd0de0261b5a8700a37ac21709fa247c7ffe5`. The original independent
+reviewer is Worker A Task
+`hive-request-be8be110d4df284a21383c998c3f79eaa0e9d665` (UID
+`59ba953e-e1f3-423e-80c2-36cbce0bb980`), report revision
+`35a5466ea1b9e68b0eb50cdf3c5565a209dc2f34`. A distinct Worker A Task
+`hive-request-2db87e045f6161e5d842a9fbf578054eceb228a2` (UID
+`2d2da29d-c711-4c27-90b8-9f8f0a860f18`) transferred the producer, clients
+and standalone guide at `c01a006d2199d6ffd9ef2713731323c29c60c67a`.
+Only project imports, client namespace/visibility and expose presentation,
+an import-description comment and comment-only SPDX/credit notices changed;
+all mathematical statements and proof bodies were preserved. Anchor registered
+the unchanged Lean leaves and added navigation, lifecycle wording and metadata.
+The original independent review is not approval of this destination or final
+graph. Native cone reconstruction, projection mates, pullback coherence and
+the forward criterion retain their separate credits. No human endorsement,
+third-party rights clearance, publication or source coverage is inferred.

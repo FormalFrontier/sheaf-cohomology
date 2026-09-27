@@ -2,11 +2,11 @@
 
 Lake development package version `0.1.0`; analyzed source: `a9f1a38787d33205c469ff89710563fffb4974fd`; native doc-gen4: `97d4ecdfc8e09e7f511724c25e303d448de6a3db`.
 This frozen 556-site reference covers the original 24 subject modules and two
-root/client modules at the analyzed revision, not the fifteen later subjects or
-their fourteen private client modules. The new declarations have lightweight
+root/client modules at the analyzed revision, not the eighteen later subjects or
+their seventeen private client modules. The new declarations have lightweight
 supplemental references indexed in the [current module guide](Guide.md).
 The old source hashes and manifest are historical, not a fresh attestation of
-the current 55-module tree. Its `api_sha256` checks the original generated
+the current 61-module tree. Its `api_sha256` checks the original generated
 Markdown **before this explanatory introduction was updated**, not the bytes
 of this editorially amended file.
 These are native **display signatures**, not complete elaboration-ready declarations

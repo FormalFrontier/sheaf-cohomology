@@ -8,6 +8,19 @@ natural isomorphism. A native cone-limit criterion derives a limit from the
 actual underlying-space limit and projection-mate sheaf colimit. A named
 construction supplies that sheaf colimit from coefficient colimits and local
 sheafification, producing an actual native limiting cone.
+Named witnesses also show that forgetting to topological spaces preserves
+native limits under the construction's exact hypotheses.
+For additive coefficients, named witnesses show that forgetting to Type-valued
+sheafed spaces preserves same-universe cofiltered limits.
+The fixed-base converse recovers the actual projection-mate sheaf colimit
+from an actual native limit whose underlying-space cone is also limiting.
+
+This source-only 61-module registration is not yet an accepted combined graph.
+Its 55-module ancestor `4baa42e7eb4336e0691501953f5273aefe229506` is
+accepted and integrated; the later preservation, coefficient-forgetting and
+converse registrations still need applicable combined checks and final review.
+The aggregate imports are changed computational inputs. Earlier leaf checks
+and scoped registration reviews do not certify this final tree or publication.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -184,6 +197,18 @@ instance for the separate `TopCat.Sheaf` wrapper is supplied. See the
 [native cone-limit guide](docs/ConePullbackLimit.md) for exact assumptions,
 base-change transport and Type/Ab/private clients.
 
+`SheafCohomology.ConePullbackLimitConverse` supplies the converse over the
+**same actual base cone**. Given both `IsLimit C` and
+`IsLimit ((SheafedSpace.forget A).mapCone C)`, it constructs
+`IsColimit (SheafedSpace.conePullbackCocone A S C)` by descent to arbitrary
+competing cocones and native-limit uniqueness. The companion `Nonempty` iff
+reuses the forward criterion. This adds no sheaf-colimit existence,
+weak-sheafification, filteredness or nonemptiness premise, but retains the
+native concrete-coefficient assumptions and independent index universes.
+It does not reflect limits without the separate actual base-limit witness
+or install a global instance. See the
+[fixed-base converse guide](docs/SheafedSpaceConePullbackLimitConverse.md).
+
 `SheafCohomology.LimitConstruction` constructs a native `LimitCone` from an
 actual limiting cone of underlying spaces. In addition to the predecessor's
 concrete-coefficient hypotheses, it requires colimits of the actual index
@@ -196,6 +221,28 @@ a global instance. Private Type/Ab `Fin 3` clients and a genuine empty-index
 limit exercise the construction without assuming its conclusion. See the
 [limit-construction guide](docs/SheafedSpaceLimitConstruction.md) for the exact
 shape, sheafification and universe boundaries.
+
+`SheafCohomology.LimitPreservation` supplies the named witnesses
+`preservesLimitForgetOfSpaceCone` and `preservesLimitForgetOfHasLimit`.
+The first constructs a genuine native limit above an actual limiting space
+cone and identifies its whole forgotten cone with that base; mathlib's
+single-cone criterion then proves ordinary preservation for every limiting
+native cone of the diagram. The second chooses the space limit. Coefficient
+shape-colimits, local weak sheafification and the construction's universe
+boundaries remain explicit. No global instance, reflection or coefficient-
+forgetting preservation is claimed. See the
+[limit-preservation guide](docs/SheafedSpaceLimitPreservation.md).
+
+`SheafCohomology.AbelianForget.LimitPreservation` proves preservation of native
+limits for additive diagrams indexed by `Jᵒᵖ`, with same-universe
+`[SmallCategory J]` and `[IsFiltered J]`. The proof transports the actual
+projection-mate sheaf colimit through coefficient forgetting, then applies the
+native limit criterion to a genuinely constructed limit. The named
+`preservesCofilteredLimit` and `preservesCofilteredLimitsOfShape` witnesses
+apply to all limiting cones of those diagrams; neither is a global instance.
+The chosen-base helper keeps its local weak-sheafification hypothesis explicit.
+There is no claim for empty or arbitrary index shapes. See the
+[cofiltered coefficient-forgetting guide](docs/AbelianSheafedSpaceCofilteredLimits.md).
 
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
@@ -252,7 +299,10 @@ empty spaces.
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
+| Fixed-base native-limit converse | `ConePullbackLimitConverse`: actual native and underlying-space limits imply the actual projection-mate sheaf colimit |
 | Native limit construction | `LimitConstruction`: construct the sheaf colimit locally and a native limiting cone over an actual base limit |
+| Native-to-space limit preservation | `LimitPreservation`: named ordinary preservation witnesses over an actual or chosen limiting space cone |
+| Cofiltered coefficient-forgetting limits | `AbelianForget.LimitPreservation`: named preservation for same-universe additive diagrams on filtered `J` opposite |
 | Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
 | Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
 | Forgetful native cocones | `AbelianForget.ConePullbackCocone`: actual projection-mate legs and ordinary-colimit desc compatibility |
@@ -283,7 +333,13 @@ covers the twelfth; the [cone-reconstruction guide](docs/ConeOfPullbackCocone.md
 covers the thirteenth; the [native cone-limit guide](docs/ConePullbackLimit.md)
 covers the fourteenth; the
 [limit-construction guide](docs/SheafedSpaceLimitConstruction.md) covers the
-fifteenth.
+fifteenth; the
+[limit-preservation guide](docs/SheafedSpaceLimitPreservation.md) covers the
+sixteenth; the
+[cofiltered coefficient-forgetting guide](docs/AbelianSheafedSpaceCofilteredLimits.md)
+covers the seventeenth; and the
+[fixed-base converse guide](docs/SheafedSpaceConePullbackLimitConverse.md)
+covers the eighteenth.
 Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
@@ -294,7 +350,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports fourteen additional example leaves. All examples use
+readiness assembly and imports seventeen additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.
@@ -318,7 +374,7 @@ lake --wfail build
 lake --wfail build SheafCohomologyExamples
 ```
 
-The default build includes the library and checked example target. Exact check
+The default build includes the library and example target. Exact check
 results and independent review must bind the final combined revision; author
 checks of an earlier input are not independent approval of the assembly.
 

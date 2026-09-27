@@ -13,7 +13,9 @@ public import SheafCohomology.ConePullback
 public import SheafCohomology.ConePullbackCocone
 public import SheafCohomology.ConeOfPullbackCocone
 public import SheafCohomology.ConePullbackLimit
+public import SheafCohomology.ConePullbackLimitConverse
 public import SheafCohomology.LimitConstruction
+public import SheafCohomology.LimitPreservation
 public import SheafCohomology.DiagramPushforward
 public import SheafCohomology.SquareTransition
 public import SheafCohomology.AbelianForget.Pullback
@@ -23,6 +25,7 @@ public import SheafCohomology.AbelianForget.SheafedSpace
 public import SheafCohomology.AbelianForget.ConePullback
 public import SheafCohomology.AbelianForget.ConePullbackCocone
 public import SheafCohomology.AbelianForget.DiagramPushforward
+public import SheafCohomology.AbelianForget.LimitPreservation
 public import SheafCohomology.OpenBaseChange
 public import SheafCohomology.FilteredColimitFunctorH
 public import SheafCohomology.HigherDirectImageFilteredColimit
@@ -38,8 +41,9 @@ public import SheafCohomology.QuasiFlasqueExactness
 
 Public entry point for compact-open sections, Ext and flasque resolutions,
 local and open cohomology, filtered colimits, abelian-sheaf forgetful comparisons,
-native sheafed-space cones, a conditional native-limit criterion, actual limit
-construction from coefficient colimits and
-additive-to-Type forgetting,
+native sheafed-space cones, a conditional native-limit criterion and its
+fixed-base converse, actual limit
+construction from coefficient colimits, native-to-space limit preservation, and
+additive-to-Type forgetting with same-universe cofiltered-limit preservation,
 commuting-square transitions, and open base change.
 -/
