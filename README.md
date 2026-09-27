@@ -143,6 +143,15 @@ asserted colimiting. See the
 [forgetful cocone guide](docs/AbelianForgetConePullbackCocone.md) for the exact
 equation, universes and private Fin 3/empty-carrier clients.
 
+`SheafCohomology.DiagramPushforward` transports a native sheafed-space diagram
+along a natural family of continuous maps and transports compatible native
+cones. These direct-image constructors require only a coefficient category;
+the formulas for their inverse-image mates require the native pullback
+adjunction's stronger hypotheses. The stage and projection maps use their
+actual strict squares, with no Cartesian, limiting or invertibility premise.
+See the [diagram-pushforward guide](docs/DiagramPushforward.md) for the exact
+variance, universe assumptions and Type/Ab/empty-index clients.
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -199,6 +208,7 @@ empty spaces.
 | Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
 | Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
 | Forgetful native cocones | `AbelianForget.ConePullbackCocone`: actual projection-mate legs and ordinary-colimit desc compatibility |
+| Varying-base direct images | `DiagramPushforward`: native diagrams, compatible cones and actual-arrow mate formulas |
 
 All module names in the table are prefixed by `SheafCohomology.`. Consult their
 declaration types for the precise category, sheafification, Ext and universe
@@ -217,7 +227,9 @@ in that historical supplement group; the
 subjects, and the [projection-mate cocone guide](docs/ConePullbackCocone.md)
 documents one more. The
 [forgetful cocone guide](docs/AbelianForgetConePullbackCocone.md) covers the
-three public laws of the tenth new subject. Of the old 556 native display sites,
+three public laws of the tenth new subject; the
+[diagram-pushforward guide](docs/DiagramPushforward.md) covers the eleventh.
+Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
 per-site explanations. These pointers do not certify complete semantic
@@ -227,7 +239,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports nine additional example leaves. All examples use
+readiness assembly and imports ten additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.

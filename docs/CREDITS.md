@@ -250,3 +250,20 @@ registration and updated navigation, credit and lifecycle wording without
 changing either Lean leaf. These expression credits do not assert third-party
 ownership, destination acceptance, publication, endpoint invertibility or
 source coverage; the guide states the exact colimit hypotheses and boundaries.
+
+## Varying-base native diagram pushforward
+
+`SheafCohomology/DiagramPushforward.lean` retains the mathematical
+expressions of Worker B Hive Task
+`hive-request-3628aceedd705e9f2a33087597c31b7244ce8eae` (UID
+`5d89eac6-5b60-41a0-bb24-b0c348237cd7`), original revision
+`6c81996064d5679c45aac8864c8269a4e6795383`. Worker A Hive Task
+`hive-request-2be4e9b76c87d5c099ccb8d23c1ed738e7063fdc` (UID
+`47ed4e53-94f9-4a23-b8e6-db812145fea9`) transferred the producer,
+private import-only clients and standalone guide at
+`3cd4f7a396193bca86a97b50610986427bc01dba`. Only the two producer
+import paths changed; client statements and proofs retain their expressions
+with destination imports, namespace and private visibility. Anchor added
+aggregate registration and documentation/metadata navigation without changing
+either Lean leaf. This origin record does not itself approve the destination,
+clear third-party rights, establish source correspondence or publish a release.

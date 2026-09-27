@@ -8,7 +8,8 @@ project:
     resolution comparisons, local cohomology, right-derived pushforward
     comparisons, pullback coherence, native sheafed-space cone pullbacks and cocones
     and their cone-wise additive-to-Type forgetting and ordinary-colimit desc
-    compatibility, commuting-square transitions
+    compatibility, varying-base native diagram and cone pushforwards,
+    commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
     sheaves in Lean.
@@ -94,6 +95,12 @@ status:
     the canonical comparison commutes with desc to the vertex sheaves.
     Neither desc invertibility nor colimitingness, a Ringed result or a
     final additive endpoint is claimed.
+    A natural family of continuous maps induces a direct-image diagram of
+    native sheafed spaces, and actual compatible cones induce a native target
+    cone. These constructors need only a coefficient category; their stage
+    and projection mate characterizations require the stronger native
+    pullback-adjunction assumptions. No Cartesian or limiting square/cone,
+    stage isomorphism or coefficient-changing theorem is assumed or obtained.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
@@ -156,6 +163,16 @@ review:
     standard-axiom evidence, exact independent destination/release review,
     owner acceptance and ordered verified publication. Earlier evidence and
     approvals apply only to their recorded unchanged inputs and scope.
+    The diagram-pushforward assembly preserves both Lean leaves of destination
+    3cd4f7a396193bca86a97b50610986427bc01dba, transferred from separately
+    accepted original 6c81996064d5679c45aac8864c8269a4e6795383. Its frozen
+    predecessor 72d6ee9f6e9d37ba9675824bdded2dcb9625c99f was still unaccepted
+    when this successor was assembled. Only aggregate registration, guide
+    lifecycle wording, navigation, credit and metadata are added; existing
+    proof bodies and pins are unchanged. Exact successor review and affected
+    combined checks remain required, and predecessor acceptance must precede
+    protected successor integration. Ordered verified official publication
+    and subsequent reviewed incubator conversion are distinct later steps.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

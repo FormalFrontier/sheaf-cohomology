@@ -7,8 +7,9 @@ the aggregate public interface, or import a subject module directly. The native
 for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [SquareTransition supplement](SquareTransition.md),
 [native sheafed-space supplement](SheafedSpace.md),
-[projection-mate cocone supplement](ConePullbackCocone.md), and
-[forgetful cocone supplement](AbelianForgetConePullbackCocone.md) cover the ten new
+[projection-mate cocone supplement](ConePullbackCocone.md),
+[forgetful cocone supplement](AbelianForgetConePullbackCocone.md), and
+[diagram-pushforward supplement](DiagramPushforward.md) cover the eleven new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -98,8 +99,8 @@ transition on the canonically compared stage. See the
 
 The original 24 subject leaves below are included in the frozen native API
 reference. Seven new `AbelianForget` leaves, `SquareTransition`,
-`ConePullback`, and `ConePullbackCocone` are documented in supplements;
-all 34 subjects and eleven roots/clients form the current 45-file
+`ConePullback`, `ConePullbackCocone`, and `DiagramPushforward` are documented in supplements;
+all 35 subjects and twelve roots/clients form the current 47-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -120,6 +121,7 @@ the same hypotheses.
 | `ConePullback` | Pull native sheafed-space diagrams to arbitrary cones of their underlying spaces |
 | `ConePullbackCocone` | Cocone whose legs are the mates of actual native cone projections, without a colimiting assertion |
 | `DegreeZero` | Degree-zero cohomology and global sections |
+| `DiagramPushforward` | Native varying-base direct-image diagrams and compatible cones; stronger hypotheses only for mate formulas |
 | `FilteredColimitFunctorH` | Filtered colimits for the cohomology functor |
 | `FlasqueAcyclicResolution` | Flasque resolution as an Ext-acyclic resolution |
 | `FlasqueAcyclicSections` | Degree-zero Ext complex and resolution sections |
@@ -141,7 +143,7 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named private downstream examples, including nine imported client modules |
+| `SheafCohomologyExamples` | Named private downstream examples, including ten imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
@@ -151,6 +153,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.AbelianForgetSheafedSpace` | Private native arrow, chain, identity and empty-carrier examples |
 | `SheafCohomologyExamples.AbelianForgetConePullback` | Private cone-wise components, index-arrow naturality and actual empty-vertex cone |
 | `SheafCohomologyExamples.AbelianForgetConePullbackCocone` | Private native Fin 3 stages/triangles, desc compatibility, local filtered comparison and empty-carrier clients |
+| `SheafCohomologyExamples.DiagramPushforward` | Private Type/Ab Fin 3 stages, mates, compositions and compatible native cones, plus empty-index cones with arbitrary vertex map |
 
 ## Using the boundary
 
