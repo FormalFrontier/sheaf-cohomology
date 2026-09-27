@@ -11,6 +11,7 @@ import SheafCohomologyExamples.AbelianForgetSquareTransition
 import SheafCohomologyExamples.ConePullback
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
+import SheafCohomologyExamples.ConePullbackLimit
 import SheafCohomologyExamples.DiagramPushforward
 import SheafCohomologyExamples.AbelianForgetSheafedSpace
 import SheafCohomologyExamples.AbelianForgetConePullback
@@ -25,7 +26,8 @@ modules also exercise focused public imports. All clients are private and named;
 they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change,
-including native sheafed-space cones and additive-to-Type forgetting.
+including native sheafed-space cones, the conditional native-limit criterion
+and additive-to-Type forgetting.
 The flasque and derived-colimit examples retain their universe-zero boundaries.
 -/
 

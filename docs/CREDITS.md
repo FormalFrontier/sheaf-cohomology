@@ -304,3 +304,28 @@ the unchanged Lean leaves in the aggregate roots and updated navigation,
 lifecycle wording and metadata. These expression credits do not themselves
 establish third-party rights, final assembly acceptance, publication or source
 coverage.
+
+## Native sheafed-space limit criterion
+
+`SheafCohomology/ConePullbackLimit.lean` and the public
+`pullbackCompInv_assoc` wrapper in `ConePullback.lean` retain the mathematical
+expressions of Worker A Hive Task
+`hive-request-1ffb62254e0abad263d5c38689c61350e1754c8d` (UID
+`814f8840-45a3-4bc4-80b7-ad647577a977`), original revision
+`91beca03735ce5c91e9378bc79c5998f21d95eb9`. The original independent
+review is Worker B Task
+`hive-request-316714e9591cab45a00dfeac2201a1538e894773` (UID
+`c3c034f4-40d1-4d3e-9dad-d81fa269ef4d`), revision
+`4af64d66834fa2edf380a83e9685f5669911f6f6`.
+Worker A Hive Task `hive-request-591c0dc5ae5baa51942d167d38d6997286570e85`
+(UID `07e0359e-2ac4-46f4-ab6d-abda07d5d014`) transferred the producer,
+private clients, guide and unchanged wrapper at
+`02227d05e511c60af206413754591e559aed6cc5`. Only the producer import/header
+and client imports/namespace/visibility were adapted. The predecessor cone,
+cocone and native-reconstruction expressions retain their separate credits
+above. Anchor added aggregate registration and updated navigation, lifecycle
+wording and metadata without changing the three Lean leaf blobs. Original
+review does not certify this destination or its later assembly; independent
+destination/release assessment, maintainer acceptance and verified publication
+are separate. These credits establish neither third-party ownership nor
+source correspondence or coverage.

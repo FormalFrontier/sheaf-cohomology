@@ -167,6 +167,16 @@ private theorem compInv_assoc {W X Y Z : TopCat.{w}}
     hRight, hLeft, hAssociator, Category.id_comp, Category.comp_id]
     using hc.symm
 
+/-- Component associativity of the inverse comparison between direct and iterated
+inverse-image functors. -/
+theorem pullbackCompInv_assoc {W X Y Z : TopCat.{w}}
+    (r : W ⟶ X) (q : X ⟶ Y) (g : Y ⟶ Z) (F : Z.Sheaf A) :
+    TopCat.Sheaf.pullbackCompInv A r (q ≫ g) F ≫
+        (TopCat.Sheaf.pullback A r).map (TopCat.Sheaf.pullbackCompInv A q g F) =
+      TopCat.Sheaf.pullbackCompInv A (r ≫ q) g F ≫
+        TopCat.Sheaf.pullbackCompInv A r q ((TopCat.Sheaf.pullback A g).obj F) :=
+  compInv_assoc A r q g F
+
 set_option backward.isDefEq.respectTransparency.types false in
 private theorem triangleMap_comp_aux {W X Y Z : TopCat.{w}}
     (r : W ⟶ Z) (g : Z ⟶ Y) (f : Y ⟶ X)

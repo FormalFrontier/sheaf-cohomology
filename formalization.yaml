@@ -10,7 +10,7 @@ project:
     and their cone-wise additive-to-Type forgetting and ordinary-colimit desc
     compatibility, varying-base native diagram and cone pushforwards and their
     additive-to-Type coefficient transport, native cone reconstruction from
-    pullback cocones,
+    pullback cocones and conditional native sheafed-space limits,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -115,8 +115,20 @@ status:
     adjoints of the supplied legs; the cocone equations prove cone coherence.
     Forgetting recovers the whole space cone literally, and the forward
     construction recovers the supplied cocone after that equality transport.
-    The mate converse uses an explicit base equation. No limiting/colimiting
-    property or sheafed-space limit theorem is asserted.
+    The mate converse uses an explicit base equation. That reconstruction
+    alone asserts no limiting or colimiting property. A separate native-limit
+    criterion derives IsLimit of an actual native cone from IsLimit of its
+    actual forgotten space cone and IsColimit of its actual projection-mate
+    sheaf cocone. It derives native lifts, projection equations and uniqueness
+    through pullback composition comparisons and mapped-colimit uniqueness,
+    and applies to the reconstructed cone. The concrete coefficient category
+    satisfies the native pullback-adjunction limits/colimits and forgetful
+    preservation/reflection hypotheses; index object and morphism universes
+    remain independent. No filteredness, nonemptiness or stage isomorphism
+    is required. There is no global HasLimits, converse, Ringed extension or
+    unconditional empty native limit; the separate TopCat.Sheaf wrapper's
+    empty-colimit instance gap is explicitly distinguished from mathematical
+    nonexistence and from the available site sheaf-colimit instance.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
@@ -209,6 +221,19 @@ review:
     are added. Exact independent assembly/release review, applicable combined
     build and complete standard-axiom evidence, owner acceptance and ordered
     verified official publication remain required.
+
+    The native cone-limit assembly preserves the three Lean leaf blobs of
+    destination 02227d05e511c60af206413754591e559aed6cc5, transferred from
+    separately accepted original 91beca03735ce5c91e9378bc79c5998f21d95eb9.
+    Its frozen predecessor 11aa01d2684bae59b740742086c66ea14c9dccc1 was
+    owner-accepted but not integrated when the successor was assembled;
+    the destination leaf was still under its fresh independent review.
+    Only root imports, guide lifecycle wording, navigation, credit and scope
+    metadata are added. This exact assembly needs its own independent
+    assessment and applicable combined build and complete standard-axiom
+    evidence. Predecessor integration and operator sequencing holds must
+    clear before protected successor integration. Reviewed official release,
+    verified publication and subsequent incubator conversion are distinct.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

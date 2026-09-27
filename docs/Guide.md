@@ -10,8 +10,9 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [projection-mate cocone supplement](ConePullbackCocone.md),
 [forgetful cocone supplement](AbelianForgetConePullbackCocone.md),
 [diagram-pushforward supplement](DiagramPushforward.md),
-[coefficient-diagram supplement](AbelianForgetDiagramPushforward.md), and
-[cone-reconstruction supplement](ConeOfPullbackCocone.md) cover the thirteen new
+[coefficient-diagram supplement](AbelianForgetDiagramPushforward.md),
+[cone-reconstruction supplement](ConeOfPullbackCocone.md), and
+[native cone-limit supplement](ConePullbackLimit.md) cover the fourteen new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -101,9 +102,9 @@ transition on the canonically compared stage. See the
 
 The original 24 subject leaves below are included in the frozen native API
 reference. Eight new `AbelianForget` leaves, `SquareTransition`,
-`ConePullback`, `ConePullbackCocone`, `ConeOfPullbackCocone`, and
+`ConePullback`, `ConePullbackCocone`, `ConeOfPullbackCocone`, `ConePullbackLimit`, and
 `DiagramPushforward` are documented in supplements;
-all 37 subjects and fourteen roots/clients form the current 51-file
+all 38 subjects and fifteen roots/clients form the current 53-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -124,6 +125,7 @@ the same hypotheses.
 | `ConePullback` | Pull native sheafed-space diagrams to arbitrary cones of their underlying spaces |
 | `ConePullbackCocone` | Cocone whose legs are the mates of actual native cone projections, without a colimiting assertion |
 | `ConeOfPullbackCocone` | Native cone reconstructed from actual space-cone and pullback-cocone data, with exact forgetting and transported recovery |
+| `ConePullbackLimit` | Native limit criterion from the actual underlying-space limit and projection-mate sheaf colimit, with derived lifts and uniqueness |
 | `DegreeZero` | Degree-zero cohomology and global sections |
 | `DiagramPushforward` | Native varying-base direct-image diagrams and compatible cones; stronger hypotheses only for mate formulas |
 | `AbelianForget.DiagramPushforward` | Strict varying-base diagram equality, identity-vertex transported-cone isomorphism and canonical mate compatibility |
@@ -148,7 +150,7 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named private downstream examples, including twelve imported client modules |
+| `SheafCohomologyExamples` | Named private downstream examples, including thirteen imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
@@ -156,6 +158,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.ConePullback` | Private Type/Ab Fin 3 chains, actual-arrow mates and empty-cone examples |
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
+| `SheafCohomologyExamples.ConePullbackLimit` | Private Type/Ab Fin 3 lifts, projections and mates; empty-index reconstruction conditional on a genuine sheaf-colimit witness |
 | `SheafCohomologyExamples.AbelianForgetSheafedSpace` | Private native arrow, chain, identity and empty-carrier examples |
 | `SheafCohomologyExamples.AbelianForgetConePullback` | Private cone-wise components, index-arrow naturality and actual empty-vertex cone |
 | `SheafCohomologyExamples.AbelianForgetConePullbackCocone` | Private native Fin 3 stages/triangles, desc compatibility, local filtered comparison and empty-carrier clients |
@@ -163,6 +166,16 @@ the same hypotheses.
 | `SheafCohomologyExamples.AbelianForgetDiagramPushforward` | Twelve private coefficient-diagram clients: nonidentity Fin 3 arrows and composition, compatible projections and empty-index cones |
 
 ## Using the boundary
+
+The native cone-limit criterion takes the universal properties of the actual
+forgotten space cone and actual projection-mate sheaf cocone; it does not
+assume the native limit it proves. The coefficient category must satisfy the
+concrete-category, limits/colimits and forgetful preservation/reflection
+hypotheses of the native pullback adjunction. The index object and morphism
+universes are independent. The result provides no global `HasLimits` instance,
+unconditional empty native limit or Ringed/coefficient-changing extension.
+The separate `TopCat.Sheaf` wrapper's initial-object instance gap remains
+explicit in the [native cone-limit supplement](ConePullbackLimit.md).
 
 The checked `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local

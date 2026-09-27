@@ -4,7 +4,8 @@ Reusable Lean foundations for sheaf cohomology, compact-open sections,
 cohomological functors, and forgetting abelian-group structure on sheaves.
 It also provides native sheafed-space cone pullbacks and projection-mate
 cocones, an additive-to-Type forgetful functor and its canonical cone-wise
-natural isomorphism.
+natural isomorphism. A native cone-limit criterion derives a limit from the
+actual underlying-space limit and projection-mate sheaf colimit.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -168,6 +169,19 @@ the supplied cocone after that equality transport. No limiting or colimiting
 property is asserted. See the [cone-reconstruction guide](docs/ConeOfPullbackCocone.md)
 for the base-equation converse, universes and private Type/Ab/empty-index clients.
 
+`SheafCohomology.ConePullbackLimit` proves that an actual native cone is
+limiting when its actual underlying-space cone is limiting and its actual
+projection-mate sheaf cocone is colimiting. It also proves the corresponding
+criterion for the reconstructed cone above. The native lift, projection
+equations and uniqueness are derived, not assumed. Coefficients satisfy the
+native concrete-category pullback-adjunction hypotheses; the index object
+and morphism universes are independent. No filteredness, nonemptiness or
+stage-isomorphism premise is imposed. The empty-index client is conditional
+on an actual sheaf-colimit witness: no global `HasLimits` or initial-sheaf
+instance for the separate `TopCat.Sheaf` wrapper is supplied. See the
+[native cone-limit guide](docs/ConePullbackLimit.md) for exact assumptions,
+base-change transport and Type/Ab/private clients.
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -222,6 +236,7 @@ empty spaces.
 | Native sheafed-space cones | `ConePullback`: arbitrary underlying-space cones and actual-arrow mates |
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
+| Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
 | Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
 | Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
 | Forgetful native cocones | `AbelianForget.ConePullbackCocone`: actual projection-mate legs and ordinary-colimit desc compatibility |
@@ -249,7 +264,8 @@ three public laws of the tenth new subject; the
 [diagram-pushforward guide](docs/DiagramPushforward.md) covers the eleventh;
 the [coefficient-diagram guide](docs/AbelianForgetDiagramPushforward.md)
 covers the twelfth; the [cone-reconstruction guide](docs/ConeOfPullbackCocone.md)
-covers the thirteenth.
+covers the thirteenth; the [native cone-limit guide](docs/ConePullbackLimit.md)
+covers the fourteenth.
 Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
@@ -260,7 +276,7 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports twelve additional example leaves. All examples use
+readiness assembly and imports thirteen additional example leaves. All examples use
 named private declarations so their proof bodies can be included in
 verification without adding a second public mathematical API.
 No client should import or unfold private implementation helpers.
