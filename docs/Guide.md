@@ -19,9 +19,10 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [fixed-base converse supplement](SheafedSpaceConePullbackLimitConverse.md),
 [cone-pullback sections supplement](ConePullbackSections.md),
 [local-pullback supplement](PullbackLocalSections.md),
-[native stage-equality supplement](NativeStageSectionEquality.md), and
-[native stage-lifting supplement](NativeStageSectionLifting.md)
-cover the twenty-two new
+[native stage-equality supplement](NativeStageSectionEquality.md),
+[native stage-lifting supplement](NativeStageSectionLifting.md), and
+[native stage-colimit supplement](NativeStageSectionColimit.md)
+cover the twenty-three new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -114,9 +115,9 @@ reference. Nine new `AbelianForget` leaves, `SquareTransition`,
 `ConePullback`, `ConePullbackCocone`, `ConeOfPullbackCocone`, `ConePullbackLimit`,
 `ConePullbackLimitConverse`, `LimitConstruction`, `LimitPreservation`, and
 `DiagramPushforward`, `ConePullbackSections`, `PullbackLocalSections`,
-`NativeStageSectionEquality` and `NativeStageSectionLifting`
+`NativeStageSectionEquality`, `NativeStageSectionLifting` and `NativeStageSectionColimit`
 are documented in supplements;
-all 46 subjects and twenty-three roots/clients form the current 69-file
+all 47 subjects and twenty-four roots/clients form the current 71-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -140,6 +141,7 @@ the same hypotheses.
 | `PullbackLocalSections` | Native inverse-image stalk comparison, local representations, equality neighborhoods and finite compact-source-open covers |
 | `NativeStageSectionEquality` | Literal limit-projection unit equality reflected at one native stage on compact opens and global sections |
 | `NativeStageSectionLifting` | Actual cone-pullback global sections lift from native global sections after a filtered transition, using finite whole-stage descent and gluing |
+| `NativeStageSectionColimit` | Named invertibility of the actual native cone-section `colimMap`, using stage equality and lifting |
 | `ConePullbackCocone` | Cocone whose legs are the mates of actual native cone projections, without a colimiting assertion |
 | `ConeOfPullbackCocone` | Native cone reconstructed from actual space-cone and pullback-cocone data, with exact forgetting and transported recovery |
 | `ConePullbackLimit` | Native limit criterion from the actual underlying-space limit and projection-mate sheaf colimit, with derived lifts and uniqueness |
@@ -170,7 +172,7 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named downstream examples, including twenty imported client modules |
+| `SheafCohomologyExamples` | Named downstream examples, including twenty-two imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
@@ -180,6 +182,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.PullbackLocalSections` | Four named public ordinary-import clients for native-unit germs, local representation, equality neighborhoods and finite germ covers |
 | `SheafCohomologyExamples.NativeStageSectionEquality` | Two public ordinary-import clients: compact-open and native global-section distinguishability |
 | `SheafCohomologyExamples.NativeStageSectionLifting` | Two private ordinary-import clients: eventual native-section inhabitation and persistence of a lift along later arrows |
+| `SheafCohomologyExamples.NativeStageSectionColimit` | Two private ordinary-import clients: cancellation of the actual comparison and recovery of a target coprojection through its local inverse |
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
 | `SheafCohomologyExamples.ConePullbackLimit` | Private Type/Ab Fin 3 lifts, projections and mates; empty-index reconstruction conditional on a genuine sheaf-colimit witness |
@@ -279,13 +282,26 @@ descent, coherent overlap synchronization and sheaf gluing prove the lift;
 no nonempty-stage or nonempty-cover hypothesis is added. This element-level
 theorem does not itself assert a filtered-colimit comparison or endpoint IsIso.
 
+The [native stage-colimit supplement](NativeStageSectionColimit.md) then proves
+`AlgebraicGeometry.SheafedSpace.isIso_colimMap_coneSections` under those
+same-universe small filtered, actual-limit and spectral-stage/map hypotheses.
+Its map is literally `colimMap (ConePullbackSections.coneSections N c)`, from
+the colimit of `N.rightOp` composed with native `SheafedSpace.Γ` to the colimit
+of top-open sections of the actual cone-pullback diagram. Filtered equality
+and native stage equality prove injectivity; native lifting and the actual
+stage-leg equation prove surjectivity. No transition injectivity, inhabitance
+or desired-isomorphism premise is added, and the theorem is not a global
+instance. Two private clients cancel this map and use its locally installed
+inverse. It does not identify global sections of a chosen native limit,
+prove a source square endpoint, or extend the result to additive coefficients.
+
 The `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local
 cohomology, higher direct images, open base change and native section transport.
-The current 69-module aggregate still needs applicable combined build and
+The current 71-module aggregate still needs applicable combined build and
 private-inclusive axiom evidence; predecessor and focused leaf checks apply
 only to their recorded inputs. Private example names are not public
-API, including the two native stage-lifting clients; the section-transport,
+API, including the native stage-lifting and stage-colimit clients; the section-transport,
 local-pullback and native stage-equality clients are public named examples. Inspect the sample's
 actual binders when adapting a result:
 the positive/zero-degree split and universe-zero restrictions are essential.

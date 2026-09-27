@@ -25,20 +25,32 @@ equality under a projection's literal pullback unit is reflected at one stage,
 both on compact opens and for the existing native global-section functor.
 Every global section of the cone-pullback sheaf at a stage also lifts from a
 native global section after one filtered transition, including empty-stage cases.
+Consequently, the actual `colimMap` of the native cone-section transformation
+is an isomorphism of types under the same spectral-limit hypotheses.
 
-This source-only 69-module registration is not yet an accepted combined graph.
-Its frozen 67-module predecessor `e2b368027e83268263317b87bdd9b9e210db8021`
-remains subject to its own acceptance and release gates. The earlier
+At the 2026-09-27 16:39:24 UTC assembly snapshot, this source-only 71-module
+registration was not an accepted combined graph. Its frozen 69-module
+predecessor `7c0510d5c17de07b78b0bedce5f9b9783a72027e` then had separate
+acceptance and release gates. This records that snapshot, not live branch status.
+CI538 subsequently succeeded at 17:03:22 UTC; following complete owner evidence
+intake, that independently reviewed 69-module tree was accepted, integrated and
+verified on official GitHub as
+`062370b8657c0691a02bfd01d43f6095383f4487` at 17:28:53 UTC.
+That decision does not accept this 71-module successor. The earlier
+67-module tree at `e2b368027e83268263317b87bdd9b9e210db8021` was independently
+reviewed, accepted and integrated after complete CI524 build and private-inclusive
+standard-axiom evidence, and verified on official GitHub as
+`509357b3ba10be716b28d83b07c90831af1259a0` with the same tree. The earlier
 65-module base `4a3e01420c1a15e74019eeca96a50d07dd8a0348` was independently
 reviewed, accepted and integrated after complete CI492 build and private-inclusive
 standard-axiom evidence, and verified on official GitHub as
 `abf9086d46dcfe221e60bc6cf6884bd71ed0e2b6` with the same tree.
-The new native stage-lifting leaves have focused author checks against the
+The new native stage-colimit leaves have focused author checks against the
 unchanged eleven-package graph; the aggregate imports are changed computational
 inputs. Neither those checks nor predecessor checks certify this combined graph.
-Final destination/release review,
-applicable combined checks, owner acceptance and verified publication remain
-separate requirements for this successor.
+Final destination/release review, applicable combined checks, owner acceptance
+and verified publication are separate revision-specific requirements for this
+successor; the assembly snapshot does not certify their later completion.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -318,6 +330,7 @@ empty spaces.
 | Native inverse-image local sections | `PullbackLocalSections`: actual-unit stalk comparison, local representations, equality neighborhoods and finite compact-source-open covers |
 | Native stage-section equality | `NativeStageSectionEquality`: equality under an actual limit-projection unit descends to one stage on compact opens and native global sections |
 | Native whole-stage section lifting | `NativeStageSectionLifting`: each cone-pullback global section lifts from a native global section after a filtered transition |
+| Native section-colimit comparison | `NativeStageSectionColimit`: the actual `colimMap` of `ConePullbackSections.coneSections` is an isomorphism under the spectral-limit hypotheses |
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
@@ -373,6 +386,11 @@ gluing nor invertibility of a colimit comparison. The
 twenty-second subject. Under the same spectral-limit hypotheses, it proves a
 later-stage lift by finite whole-stage descent and native sheaf gluing, without
 assuming an inhabited stage or an invertible colimit comparison.
+The [native stage-colimit guide](docs/NativeStageSectionColimit.md) covers the
+twenty-third subject: a named `IsIso` theorem for the literal `colimMap` from
+native stage global sections to cone-pullback sections. It combines the
+equality and lifting results, without a desired-isomorphism premise or global
+instance. This is not the separate chosen native-limit global-section comparison.
 The section-transport supplement uses the existing `N.rightOp` composed with global sections and the
 actual unit at the top open; it supplies no colimit-map invertibility or
 finite-stage gluing theorem.
@@ -386,9 +404,9 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports twenty-one additional example leaves. The root
-and eighteen leaves use named private declarations, including the two
-ordinary-import native stage-lifting clients; the
+readiness assembly and imports twenty-two additional example leaves. The root
+and nineteen leaves use named private declarations, including the native
+stage-lifting and stage-colimit ordinary-import clients; the
 `ConePullbackSections` leaf contains five named public ordinary-import clients,
 `PullbackLocalSections` contains four more named public ordinary-import clients,
 and `NativeStageSectionEquality` contains two public distinguishability clients.

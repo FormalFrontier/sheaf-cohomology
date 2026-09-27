@@ -21,6 +21,8 @@ project:
     actual inverse-image stalk comparisons, local section representations,
     equality neighborhoods and finite compact-source-open local covers,
     eventual native compact-open and global-section equality over spectral limits,
+    native whole-stage section lifting and the actual cone-section colimit
+    comparison under spectral-limit hypotheses,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -206,12 +208,48 @@ status:
     and transition maps, finite whole-stage descent and sheaf gluing, including
     empty stages and empty finite covers. It adds no inhabitedness or desired
     comparison premise and does not assert colimMap or endpoint invertibility.
+    Separately, NativeStageSectionColimit proves the named IsIso theorem for
+    the literal colimMap of ConePullbackSections.coneSections, from native
+    stage global sections to top-open cone-pullback sections. It combines
+    native stage equality and lifting under those same-universe small
+    filtered, actual-limit and spectral-stage/map hypotheses. No inhabitance,
+    transition injectivity or desired-isomorphism premise is added, and the
+    theorem is not a global instance. Its ordinary-import clients are private.
+    The chosen native-limit global-section comparison, source endpoint and
+    additive extension remain separate.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Historical source-only 71-module assembly snapshot, 2026-09-27 16:39:24 UTC:
+    frozen predecessor 7c0510d5c17de07b78b0bedce5f9b9783a72027e was then
+    unaccepted with separate acceptance and release gates. CI538 subsequently
+    succeeded at 17:03:22 UTC; after complete owner evidence intake, that
+    independently reviewed predecessor was accepted, integrated and verified
+    on official GitHub as 062370b8657c0691a02bfd01d43f6095383f4487 at
+    17:28:53 UTC. This is historical chronology, not live branch status or
+    acceptance of the 71-module successor. This successor registers
+    both unchanged NativeStageSectionColimit Lean leaves from adapter
+    7dd9de3a3f8f8ab113fb6be8356df44b49e03c0a, transferred from independently
+    reviewed and accepted unregistered incubator leaf
+    1bad295cf6a96a5da13105442982a55e17efb5ec. All 67 older nonroot Lean files,
+    all eleven package objects, toolchain and CI remain unchanged. Aggregate
+    root imports ARE changed computational inputs. Focused destination evidence
+    06e9dbab113c651b06de411a991f09c531aba6ab checks the one public producer
+    theorem and two private ordinary-client origins, all standard-three, not
+    this combined root graph. Exact combined destination/release review,
+    applicable complete build and private-inclusive standard-axiom evidence,
+    owner acceptance, integration and verified publication are separate
+    revision-specific requirements. The assembly snapshot certifies no later
+    full 71-module pass, release, coverage or incubator conversion.
+    Earlier evidence applies only to its recorded inputs. The earlier 67-module
+    predecessor e2b368027e83268263317b87bdd9b9e210db8021 had already been
+    independently reviewed, accepted and integrated after full CI524, then
+    verified at official GitHub commit 509357b3ba10be716b28d83b07c90831af1259a0.
+
+    Historical 69-module assembly state:
     Current source-only 69-module registration, 2026-09-27: frozen predecessor
     e2b368027e83268263317b87bdd9b9e210db8021 was unaccepted at assembly and
     retains its separate acceptance and release gates. This successor registers

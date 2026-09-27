@@ -13,6 +13,7 @@ import SheafCohomologyExamples.ConePullbackSections
 import SheafCohomologyExamples.PullbackLocalSections
 import SheafCohomologyExamples.NativeStageSectionEquality
 import SheafCohomologyExamples.NativeStageSectionLifting
+import SheafCohomologyExamples.NativeStageSectionColimit
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
 import SheafCohomologyExamples.ConePullbackLimit
@@ -37,6 +38,8 @@ for actual-unit germs, local representation, equality neighborhoods and finite c
 The native stage-equality leaf gives two public distinguishability clients.
 The native stage-lifting leaf gives two private ordinary-import clients for
 eventual native-section inhabitation and persistence along later arrows.
+The native stage-colimit leaf gives two private ordinary-import clients for
+cancellation and recovery of a target coprojection through the actual comparison.
 Together they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change,

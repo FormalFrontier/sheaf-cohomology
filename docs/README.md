@@ -17,8 +17,8 @@ original generated `docs/API.md` in the pre-transfer accepted tree, not this
 file's editorially updated introduction. The historical generated file can
 be checked in that old revision; do not relabel the old hash as a new current
 Markdown attestation.
-The current 69 Lean modules also include twenty-two new subjects and twenty-one
-client leaves (eighteen private-client modules and three named public-client modules),
+The current 71 Lean modules also include twenty-three new subjects and twenty-two
+client leaves (nineteen private-client modules and three named public-client modules),
 covered by [AbelianForget.md](AbelianForget.md),
 [SquareTransition.md](SquareTransition.md) and
 [SheafedSpace.md](SheafedSpace.md) and
@@ -35,7 +35,8 @@ covered by [AbelianForget.md](AbelianForget.md),
 [ConePullbackSections.md](ConePullbackSections.md) and
 [PullbackLocalSections.md](PullbackLocalSections.md) and
 [NativeStageSectionEquality.md](NativeStageSectionEquality.md) and
-[NativeStageSectionLifting.md](NativeStageSectionLifting.md), not by this
+[NativeStageSectionLifting.md](NativeStageSectionLifting.md) and
+[NativeStageSectionColimit.md](NativeStageSectionColimit.md), not by this
 native batch. The old root and example-client source hashes do not match the
 current changed roots. Reproducing these historical records is
 distinct from accepting their mathematical meaning or auditing kernel proofs.
@@ -85,7 +86,7 @@ pins. Its C dependencies may require Lean's bundled `bin/cc` on `PATH`.
 The following **historical reproduction** is for a separate checkout of
 pre-transfer tree `3a7204971fbbbb0a130335eda04b9d9d2b157267`, which includes
 the frozen adapter and old 26 Lean modules, **not** the changed current
-69-module checkout. The `source_revision` below remains the older analyzed
+71-module checkout. The `source_revision` below remains the older analyzed
 `a9f1a38787d33205c469ff89710563fffb4974fd`, which is in that checkout's
 Git history. Use Bash, Python 3, git, elan and Lake. Install the pinned
 toolchain, fetch the **matching mathlib cache successfully before the project
@@ -126,7 +127,7 @@ python3 -O -B scripts/generate_api.py --native-data "$docs_work/rendered/doc-dat
 
 The native database's parent directory must exist before `single`. The frozen
 adapter and its hashes are historical reproduction checks; they do not generate
-a new 69-module reference, certify the current roots, or constitute a required
+a new 71-module reference, certify the current roots, or constitute a required
 new-generation release gate. For the current checkout, use the lightweight
 [AbelianForget](AbelianForget.md) and [SquareTransition](SquareTransition.md)
 API supplements, applicable proof/build evidence and

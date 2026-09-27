@@ -567,3 +567,37 @@ notices remain applicable. No incubator ancestry is imported into the public
 release history. Original leaf acceptance and focused destination evidence do
 not establish acceptance of this combined graph, verified publication,
 source coverage, third-party ownership or human endorsement.
+
+## Native stage-section colimit comparison
+
+`SheafCohomology/NativeStageSectionColimit.lean` and its two private
+ordinary-import clients copy the **full original statements and proof
+expressions** of Worker B Hive Task
+`hive-request-bf36c0a2309835a3fdfa6d14f20ebde4191ab672` (UID
+`1addeab3-992e-4fed-aa4b-afcea8e2487c`), accepted unregistered incubator leaf
+`1bad295cf6a96a5da13105442982a55e17efb5ec`. Original independent review was
+by Worker A Task `hive-request-7b1e8ba3ec50fa7889d32b48e6e638db24c101b8`
+(UID `a86d4770-966b-43ad-8b5d-ca56f8e44a82`), report
+`35292e96298179d531f70abfc23d6d85ca17e9fc`. Original Apache notices and
+the separate source evidence `0568c4e2f088f6b44727883bf564b095bf9c54b0`
+remain applicable within their recorded scope.
+
+Worker A Task `hive-request-0379bab87d7c2b4512b09a37865419d3586e95c2`
+(UID `7d5fd314-be18-4a43-8f5c-f6407812944d`) supplied the narrow destination
+adapter and standalone guide at `7dd9de3a3f8f8ab113fb6be8356df44b49e03c0a`.
+The only Lean substitutions are one producer import, one ordinary-client
+import and the client namespace/end; reversing them recovers original blobs
+`f8966a17216572a0316604118c37e41d7348070d` and
+`770f312d7b9f5f1cf949fd60d9442399abdc76d8`. Separate destination evidence
+is `06e9dbab113c651b06de411a991f09c531aba6ab`.
+Anchor registered the unchanged Lean leaves and updated navigation, lifecycle
+and credit, separately from the original implementation and independent review.
+
+The [stage-colimit guide](NativeStageSectionColimit.md) preserves the native
+equality/lifting and cone-section contributors and distinguishes Anchor's
+finite-descent design from copied proof expressions. The destination invokes
+those interfaces and mathlib filtered-colimit results, not external source
+text. No incubator ancestry enters the public release history. Original leaf
+acceptance and focused transfer checks do not establish combined-root
+acceptance, verified publication, source coverage, third-party ownership or
+human endorsement.
