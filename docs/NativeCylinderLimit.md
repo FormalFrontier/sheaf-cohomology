@@ -74,11 +74,17 @@ both-target build and private-inclusive standard-axiom evidence. The corrected
 75-module predecessor later completed its own independent review, full CI621,
 owner decisions and protected integration; its official GitHub release
 `57decc6d5106fe32dc57f9684de38f6e10534de5` was verified at 22:30:32 UTC.
-This documentation-only reconciliation normally merges accepted main
+Its documentation-only reconciliation normally merged accepted main
 `efcfeae07fa909b9c1d20bdd665cf733eb11cb4d` without changing any of the
-77 Lean blobs, roots, eleven package objects or CI inputs. The complete 77-module
-evidence is reused for those unchanged inputs, not a fresh successor build
-or audit and not acceptance of this candidate.
+77 Lean blobs, roots, eleven package objects or CI inputs. Full CI633 on corrected
+`f15cc3d61ceb85e259b936eb49c1f644d04f88c1` succeeded at 23:30:34 UTC;
+complete owner intake is recorded in Sheaf Cohomology issue #34/comment 55429.
+After final independent review `4234805eb8b0fe43059c2cab212d0d3d06d2c38e`
+and separate main/prep/public owner
+decisions and protected integration, official GitHub release
+`361c79281381d75d3c3c2195947ff8cb3a29c39f` was verified at 23:41:14 UTC
+(issue #34/comment 55473). These decisions accept the 77-module contribution,
+not its comparison successor or source coverage.
 The exact incubator donor
 `bf566ea767083405992cb832df9e914712a9e3cb` (tree
 `a159267d83bb32335d17ec42f6d1149622be7e0a`) was accepted by
@@ -128,9 +134,8 @@ adapter is by worker-a Hive Task
 `2d67f405-088f-4811-8d5a-6dce4586b1a3`). Responsible maintainer:
 Anchor, Sheaf Cohomology issue #34.
 
-Exact final destination/release review, current required CI, owner acceptance,
-protected integration, verified publication, incubator conversion and any source
-correspondence/coverage decision remain separate. A chosen-limit isomorphism,
+Incubator conversion and any source correspondence/coverage decision remain
+separate from the recorded 77-module release. A chosen-limit isomorphism,
 Gamma comparison, spectral transfer and IsIso endpoint are outside this API.
 Changed prerequisite APIs require reassessment. The predecessor release and
-original 77-module computation do not supply this successor's separate owner decisions.
+original 77-module computation do not supply any later successor's separate owner decisions.

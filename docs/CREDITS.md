@@ -717,3 +717,43 @@ the genuine private ordinary-import client. The [guide](NativeCylinderLimit.md)
 states the exact hypotheses and independent gates. No private source text,
 incubator dependency or ancestry is imported into release history; leaf acceptance
 does not establish aggregate acceptance, official publication or source coverage.
+
+## Chosen native cylinder limits and original-stage sections
+
+`SheafCohomology/NativeCylinderComparison.lean` and its private ordinary-import
+client transfer the complete statements **and proof expressions** of accepted
+unregistered incubator leaf `139b78367cd641f86c1ccf489f1898db3fab32e4`.
+Original worker-b Hive Task `hive-request-f9876d0c2840470583113050ec0546a64eb3954f`
+(UID `91e70b6b-63f7-4c56-846f-b66316065a3c`) authored revision
+`854e446c6b0efbf85c3023e7b21ccd7f9428d8ea`. Fresh worker-a Task
+`hive-request-0b6d132e6ccf9833cd02ade98d31770d2a5ab1e1`
+(UID `73f1fb4c-cd23-4deb-afbc-579c3ef3cee7`) reviewed it in
+`c2c9ac564f69514bbbebbdd03945c95b19c9f7e9`,
+`reviews/native-cylinder-comparison/REVIEW.md`. Anchor reconciled the preserved
+author branch with accepted-unregistered parent `bf566ea767083405992cb832df9e914712a9e3cb`
+and accepted the leaf at incubator issue #4/comment54410. Donor-only evidence
+`da4acd9e9915d3223b5fddbbc297b5702ea264cb` is not a destination check.
+
+Worker-a adapter Task `hive-request-4ea69b252477c9247909ab3e36e3c4b4134edbbb`
+(UID `d0fb2e2c-6071-47c1-8e8d-f552d91874a4`) transferred the two Lean leaves
+and wrote the standalone guide at `9a00d11039b45e90c6901bd57bb5b2e1fee88306`.
+Reversing precisely two producer imports and the client import/namespace/end
+recovers donor blobs `76263b70a75ba132e0de4acc3bfe949dfb556457` and
+`9c4f0b8bc2a09974a86bba547c191f0decf949de`. Separate target evidence is
+`a5c49fc6f3e083b4324d593c1793071afa4fe6e5`. Anchor supplied aggregate imports,
+navigation, lifecycle metadata and credit without changing either Lean blob.
+
+The inherited native-cylinder authors, provenance repair, native restriction
+author and Andrew Yang's mathlib open-immersion work remain credited above.
+The tail-directedness proof expressions adapt worker-b Task
+`hive-request-065ffb46d5b6d2b9ada197a66b9c1b783b57e00f`
+(UID `4720124c-2740-40ba-947d-5be3c681f64e`), original source commit
+`e827107b7a1c6a8cf187189bda816f08931e269a`, retained at
+`e266a5076df34934171cc284ba8f2834e56f8c78` in
+`FormalFrontier/source-fujiwara-kato-rigid-geometry-i`,
+`Research/fk-corollary-3-1-12-open-tail-restriction-scratch.lean:27–49`.
+The [standalone guide](NativeCylinderComparison.md) preserves the full
+mathematical and contributor boundaries. Apache notices remain intact; no
+private source text, incubator dependency or incubator ancestry enters the
+deliverable history. Leaf acceptance and focused checks do not accept the
+combined graph, release, source correspondence or coverage.

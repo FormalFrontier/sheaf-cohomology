@@ -36,22 +36,47 @@ identity, composition and actual global-section component equations.
 For a directed preorder with an explicit distinguished index, an arbitrary
 native limit cone restricts to a native limit of the principal-tail diagram
 of inverse-image opens, without assuming the desired restricted limit.
+The chosen native limit of that restricted diagram is canonically isomorphic
+to the literal restriction. Both projection and base-map laws identify its
+global-section comparison on original-stage sections, retaining the necessary
+restriction-object and inverse-image casts.
 
-This source-only 77-module registration preserves both native-cylinder Lean
+This source-only 79-module registration preserves both native-comparison Lean
+leaves from `9a00d11039b45e90c6901bd57bb5b2e1fee88306`, all 75 older nonroot
+Lean files and all eleven dependency objects. At its original 2026-09-27
+20:19:12 UTC assembly,
+the frozen 77-module parent `c2809532ab73025867cb24b8b80d9e67da069d2d`
+and its 73/75 predecessors were unaccepted. Its later scoped independent review
+`5d8e1855fdd7aa2f1aab97157dd745b7e9f484be` approved the mathematical,
+API, provenance and registration increment. Full 79-module CI607 on
+`d443e034746972593ec0c91f64268771a3013b5a` succeeded at 21:37:56 UTC;
+the owner inspected its complete both-target build and private-inclusive
+standard-axiom evidence. This documentation-only reconciliation normally merges
+accepted 77-module main `f15cc3d61ceb85e259b936eb49c1f644d04f88c1`,
+preserving all 79 Lean blobs, both roots, eleven package objects and CI inputs.
+Unchanged-input evidence is reused, not claimed as a fresh successor build or
+audit. Current required CI, independent final documentation/ancestry/release
+review, individual owner acceptance, integration and verified publication
+remain separate gates for this 79-module candidate. No release or source
+coverage is claimed for it. The following paragraphs preserve earlier assembly
+snapshots and their subsequent outcomes.
+
+The historical source-only 77-module registration preserved both native-cylinder Lean
 leaves from `194e6310aad7205ff53e33cc73e9ba16b5f9398d` and all eleven
 dependency objects. At its original 2026-09-27 19:11:29 UTC assembly, the frozen
 75-module parent `c45c1713bf3e8457c02730fddf09d810dfae7027` was unaccepted.
 Full 77-module CI590 on `c2809532ab73025867cb24b8b80d9e67da069d2d`
 subsequently succeeded at 20:37:50 UTC; the owner inspected its complete
-both-target build and private-inclusive standard-axiom evidence. This
-documentation-only reconciliation normally merges accepted 75-module main
+both-target build and private-inclusive standard-axiom evidence. Its
+documentation-only reconciliation normally merged accepted 75-module main
 `efcfeae07fa909b9c1d20bdd665cf733eb11cb4d`, preserving all 77 Lean blobs,
-both roots, eleven package objects and CI inputs. Unchanged-input evidence is
-reused, not rerun or borrowed from the predecessor. Current required CI,
-independent final destination/release review, individual owner acceptance,
-integration and verified publication remain separate gates for this 77-module
-candidate. No release or source coverage is claimed for it. The following
-paragraphs preserve earlier assembly snapshots and their subsequent outcomes.
+both roots, eleven package objects and CI inputs. Full CI633 on corrected
+`f15cc3d61ceb85e259b936eb49c1f644d04f88c1` succeeded at 23:30:34 UTC.
+After complete owner evidence intake, independent final review and separate
+main/prep/public decisions and protected integration, official GitHub release
+`361c79281381d75d3c3c2195947ff8cb3a29c39f` was verified at 23:41:14 UTC.
+These are the 77-module contribution's own decisions, not acceptance of 79
+or a source-coverage decision.
 
 The historical 75-module registration preserved the two transferred native-restriction
 Lean leaves from `b9496a1ded04552f9619acdcda5f6257b5c9ebe1` and all eleven
@@ -388,6 +413,7 @@ empty spaces.
 | Global sections of a chosen native limit | `NativeLimitGlobalSections`: the actual native projection comparison factors through moving-stage and fixed-base section comparisons and is an isomorphism under spectral-limit hypotheses |
 | Native restriction to inverse-image opens | `NativeOpenRestriction`: canonical native restriction arrows, their inclusion/identity/composition laws and actual global-section component equations |
 | Native limits of principal-tail open cylinders | `NativeCylinderLimit`: actual restricted native diagram, cone and limit, derived from an arbitrary original native limit |
+| Chosen native cylinder limits and original-stage sections | `NativeCylinderComparison`: chosen native-limit isomorphism, projection/base laws and actual section comparison with explicit casts |
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
@@ -469,6 +495,13 @@ the corresponding native limiting cone from the original native limit witness.
 Its ordinary-import client recovers the original projection equation for any
 restricted cone. Empty spaces and opens are allowed; no restricted-limit
 premise, spectral transfer or chosen-limit section comparison is added by this unit.
+The [native cylinder-comparison guide](docs/NativeCylinderComparison.md) covers
+the twenty-seventh new subject. It compares the chosen native limit with the
+literal restriction, proves both native projection and base identities, and
+reads the actual colimit comparison on original-stage sections. The inverse
+native isomorphism is used contravariantly by `Γ`; both equality transports
+remain explicit. Any stage open, including the empty open, is allowed.
+This unit does not assert spectral invertibility of that comparison.
 The section-transport supplement uses the existing `N.rightOp` composed with global sections and the
 actual unit at the top open; it supplies no colimit-map invertibility or
 finite-stage gluing theorem.
@@ -482,8 +515,8 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports twenty-five additional example leaves. The root
-and twenty-two leaves use named private declarations, including the native
+readiness assembly and imports twenty-six additional example leaves. The root
+and twenty-three leaves use named private declarations, including the native
 stage-lifting, stage-colimit and chosen native-limit ordinary-import clients; the
 `ConePullbackSections` leaf contains five named public ordinary-import clients,
 `PullbackLocalSections` contains four more named public ordinary-import clients,
