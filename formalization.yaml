@@ -24,6 +24,7 @@ project:
     native whole-stage section lifting and the actual cone-section colimit
     comparison under spectral-limit hypotheses, actual projection comparison
     for global sections of a chosen native limit and its named invertibility,
+    native inverse-image-open restriction and actual section-component laws,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -226,12 +227,42 @@ status:
     premise and no global instance. Its private ordinary-import client detects
     coprojection equality by actual native projection images. Source endpoints,
     additive extensions and arbitrary colimit-choice identifications remain separate.
+    NativeOpenRestriction constructs canonical restriction arrows for
+    SheafedSpace.{v+1,v,v} (Type v) over inverse-image opens, using the existing
+    open-immersion lift. Native inclusion, uniqueness, identity and composition
+    equations retain named-open equality transports. The actual global-section
+    map agrees with the original presheaf morphism component after those
+    transports. No compactness, spectrality, nonemptiness or limit is required;
+    principal-tail and cylinder limits are not asserted by this unit.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Historical source-only 75-module registration assembled on 2026-09-27 from adapter
+    b9496a1ded04552f9619acdcda5f6257b5c9ebe1 on frozen unaccepted 73-module
+    predecessor e570bfbb0a56dd38c43e9ed1c10057205e6088aa. Both new Lean leaves,
+    all 71 old nonroot Lean files, eleven package objects, Lake configuration,
+    toolchain and CI are unchanged. The original incubator leaf
+    800f8c79310c54ade745f79d947f98830272f357 was independently reviewed and
+    accepted unregistered. Separate focused destination evidence
+    431ca8a1a80ac5b62be0e8c86897faaeabf0ea50 records successful matching cache,
+    warning-fatal producer/client builds and twenty producer plus one private
+    client origin, all standard-three. Aggregate imports are changed inputs;
+    that focused evidence does not certify this 75-module graph. Subsequently,
+    full CI575 on c45c1713bf3e8457c02730fddf09d810dfae7027 succeeded at
+    2026-09-27 19:45:26 UTC; the owner inspected its complete both-target build
+    and private-inclusive standard-axiom evidence for all 75 modules. This
+    documentation-only reconciliation normally merges accepted 73-module main
+    3b5513ba8420573af260339c5edfb5bbaae20f2c, preserving every 75-module Lean
+    blob, both roots, all eleven package objects and CI inputs. Its unchanged
+    computational inputs permit evidence reuse, not a claimed fresh successor
+    build or audit. Current required CI, fresh final destination/release review,
+    individual owner acceptance, protected integration and verified publication
+    remain separate gates for this candidate. No 75-module release, source
+    coverage or incubator conversion is asserted.
+
     Historical source-only 73-module assembly snapshot, 2026-09-27 17:05 UTC:
     frozen predecessor
     7aa59f0e087045625022cc448d14fa96458725ab and its 69-module predecessor
@@ -246,10 +277,14 @@ review:
     at 19:18:10 UTC; after full owner evidence intake and separate main/prep/public
     decisions and protected integration, its official GitHub release
     75d708bf56eeec2de6c599b16cb96c82c961c9fe was verified at 19:26:30 UTC.
-    This 73-module successor normally merges that accepted ancestry, retaining
+    The corrected 73-module successor normally merged that accepted ancestry, retaining
     all 73 Lean blobs, roots, eleven pins and CI from original e570bfbb.
-    Neither predecessor decision accepts the 73-module graph.
-    This successor registers both
+    Full CI600 on corrected 3b5513ba8420573af260339c5edfb5bbaae20f2c succeeded
+    at 21:06:08 UTC; after complete owner evidence intake, final independent
+    review and separate main/prep/public decisions and protected integration,
+    official GitHub release 6aa8528f28264d9b44de0f31e72696d8d95ce97d was
+    verified at 21:19:58 UTC. Those decisions do not accept the 75-module graph.
+    The 73-module successor registered both
     unchanged NativeLimitGlobalSections Lean leaves from adapter
     68d837027efcd3e61dd5ef80ff9a0153f8e178e0, transferred from independently
     reviewed and accepted unregistered incubator leaf
@@ -258,12 +293,10 @@ review:
     imports ARE changed computational inputs. Separate focused adapter evidence
     0ce32352e38c75721ee011e132ea513d4c589a69 checks fifteen producer origins
     and one private ordinary-client origin, including four private-prefix origins,
-    all standard-three; it does not certify this combined root graph. Exact
-    combined destination/release review, applicable complete build and
-    private-inclusive standard-axiom evidence, owner acceptance, integration
-    and verified publication are distinct revision-specific requirements.
-    The assembly snapshot certifies no later completion of those requirements,
-    source coverage or incubator dependency conversion.
+    all standard-three; those focused checks did not certify its combined root
+    graph. Its later complete aggregate evidence and separate review/release
+    decisions supported that release, not the assembly snapshot. Source
+    coverage and incubator dependency conversion remain separate.
 
     Historical 71-module assembly state:
     Historical source-only 71-module assembly snapshot, 2026-09-27 16:39:24 UTC:

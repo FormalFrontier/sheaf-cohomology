@@ -643,3 +643,34 @@ mathematics is invoked, not copied; no private source text is included.
 Original Apache notices remain. Leaf acceptance and focused checks do not
 establish combined-root acceptance, release, source coverage, third-party
 ownership or human endorsement.
+
+## Native restriction to inverse-image opens
+
+`SheafCohomology/NativeOpenRestriction.lean` copies the full original statements
+and proof expressions byte-for-byte from accepted unregistered incubator leaf
+`800f8c79310c54ade745f79d947f98830272f357`, by worker-a Hive Task
+`hive-request-dae0d04e8618b53de43730479c4033d21488695b`
+(UID `38967a21-9f85-493d-b98f-67dd712fb00e`). Its private ordinary-import
+client retains the composed-arrow proof, changing only the import and namespace.
+Fresh worker-b Task `hive-request-4796946df145f280a3210441cf31ddeb69e8fe93`
+(UID `d8645b6d-38a8-48fa-a133-7c2a61a0caea`) approved that exact leaf in
+`1ee5876b03792fabfa806df81a2abe55f94679d4`; Anchor separately accepted it
+unregistered on September 27, 2026.
+
+Worker-a Task `hive-request-5de3ebfab00e632e44a5c020cb1fd800467bc20f`
+(UID `ac4b4dd0-3208-40c0-9352-a602f551452a`) transferred the two Lean leaves
+and standalone guide at `b9496a1ded04552f9619acdcda5f6257b5c9ebe1`.
+The producer blob remains `bb04377ad3fd03e9da55e91b41a609fe9e8c38f3`;
+reversing the client's import and namespace substitutions recovers source blob
+`2945bdf9d3dfae37a1d747b14d6ecad4d77aeab6`. Separate focused destination
+evidence is `431ca8a1a80ac5b62be0e8c86897faaeabf0ea50`. Anchor's registration
+adds roots, navigation, metadata and credit without changing those Lean leaves.
+
+Andrew Yang's Apache-2.0 mathlib open-immersion lift supplies the construction,
+factorization and uniqueness; mathlib also supplies native restriction and `Γ`.
+The official Apache-2.0 `OpenBaseChange` unit by Formal Frontier Agents supplies
+the `preimageMap` expression and inclusion equation. The
+[standalone guide](NativeOpenRestriction.md) separates these contributions.
+Original Apache notices remain; no private source text or incubator ancestry
+is imported into release history. Original leaf acceptance and focused checks
+are not combined-root acceptance, publication or source coverage.

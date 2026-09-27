@@ -30,8 +30,26 @@ is an isomorphism of types under the same spectral-limit hypotheses.
 For the native limit constructed over that actual underlying-space limit,
 its projection maps also identify the colimit of native stage global sections
 with global sections of the chosen native limit.
+For any same-universe Type-valued native sheafed-space morphism, restriction
+to an inverse-image open gives a canonical native arrow with inclusion,
+identity, composition and actual global-section component equations.
 
-At the 2026-09-27 17:05 UTC assembly snapshot, this source-only 73-module
+This 75-module registration preserves the two transferred native-restriction
+Lean leaves from `b9496a1ded04552f9619acdcda5f6257b5c9ebe1` and all eleven
+dependency objects. At its original 2026-09-27 assembly, the frozen 73-module
+parent `e570bfbb0a56dd38c43e9ed1c10057205e6088aa` was unaccepted.
+The full 75-module CI check on `c45c1713bf3e8457c02730fddf09d810dfae7027`
+subsequently succeeded at 19:45:26 UTC, and its complete build and
+private-inclusive standard-axiom evidence was inspected by the owner.
+This documentation-only reconciliation normally merges accepted 73-module
+main `3b5513ba8420573af260339c5edfb5bbaae20f2c`, preserving all 75 Lean blobs,
+both roots, eleven package objects and CI inputs. The unchanged-input evidence
+is reused, not rerun or borrowed from the predecessor. Current required CI,
+independent final destination/release review, individual owner acceptance,
+integration and verified publication remain separate gates for this 75-module
+candidate. No release or source coverage is claimed for it.
+
+At the historical 2026-09-27 17:05 UTC assembly snapshot, the source-only 73-module
 registration was not an accepted combined graph. Its frozen 71-module predecessor
 `7aa59f0e087045625022cc448d14fa96458725ab` and the 69-module predecessor
 `7c0510d5c17de07b78b0bedce5f9b9783a72027e` still had separate acceptance
@@ -46,10 +64,13 @@ The corrected 71-module documentation snapshot
 at 19:18:10 UTC and, after its separate owner evidence intake, acceptance
 and protected main/prep/public integration, was verified on official GitHub as
 `75d708bf56eeec2de6c599b16cb96c82c961c9fe` at 19:26:30 UTC.
-This 73-module successor normally merges that accepted ancestry and preserves
-all 73 Lean files, roots and eleven dependency objects of its original
-`e570bfbb0a56dd38c43e9ed1c10057205e6088aa` candidate. Neither predecessor
-decision accepts this successor. The earlier
+The corrected 73-module successor normally merged that accepted ancestry and
+preserved all 73 Lean files, roots and eleven dependency objects of its original
+`e570bfbb0a56dd38c43e9ed1c10057205e6088aa` candidate. After full CI600 succeeded
+at 21:06:08 UTC and complete owner intake, independent final review and separate
+main/prep/public decisions, its official GitHub release
+`6aa8528f28264d9b44de0f31e72696d8d95ce97d` was verified at 21:19:58 UTC.
+These predecessor decisions do not accept the 75-module successor. The earlier
 67-module tree at `e2b368027e83268263317b87bdd9b9e210db8021` was independently
 reviewed, accepted and integrated after complete CI524 build and private-inclusive
 standard-axiom evidence, and verified on official GitHub as
@@ -58,12 +79,10 @@ standard-axiom evidence, and verified on official GitHub as
 reviewed, accepted and integrated after complete CI492 build and private-inclusive
 standard-axiom evidence, and verified on official GitHub as
 `abf9086d46dcfe221e60bc6cf6884bd71ed0e2b6` with the same tree.
-The new chosen native-limit global-section leaves have focused author checks against the
-unchanged eleven-package graph; the aggregate imports are changed computational
-inputs. Neither those checks nor predecessor checks certify this combined graph.
-Final destination/release review, applicable combined checks, owner acceptance
-and verified publication are separate revision-specific requirements for this
-successor; the assembly snapshot does not certify their later completion.
+The original 73-module assembly's focused leaf checks did not certify its
+changed aggregate roots. Its later complete aggregate evidence and separate
+release decisions, rather than those focused checks, supported that release.
+Every successor still needs its own applicable evidence and decisions.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -345,6 +364,7 @@ empty spaces.
 | Native whole-stage section lifting | `NativeStageSectionLifting`: each cone-pullback global section lifts from a native global section after a filtered transition |
 | Native section-colimit comparison | `NativeStageSectionColimit`: the actual `colimMap` of `ConePullbackSections.coneSections` is an isomorphism under the spectral-limit hypotheses |
 | Global sections of a chosen native limit | `NativeLimitGlobalSections`: the actual native projection comparison factors through moving-stage and fixed-base section comparisons and is an isomorphism under spectral-limit hypotheses |
+| Native restriction to inverse-image opens | `NativeOpenRestriction`: canonical native restriction arrows, their inclusion/identity/composition laws and actual global-section component equations |
 | Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
 | Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
 | Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
@@ -413,6 +433,12 @@ the named `isIso_nativeGlobalSectionsComparison` combines moving-stage and
 fixed-base comparisons under the same-universe small filtered, actual-limit
 and spectral-stage/map hypotheses. It assumes no desired isomorphism or
 inhabited stage and adds no global instance or source endpoint claim.
+The [native open-restriction guide](docs/NativeOpenRestriction.md) covers the
+twenty-fifth new subject. For `SheafedSpace.{v+1,v,v} (Type v)`, it uses the
+existing open-immersion lift and identifies the underlying map with the
+official open-base-change map. Named-open and composition equations retain
+explicit equality transports. Its section equation uses the actual `Γ.map`,
+with no limit, spectrality, nonemptiness or desired-isomorphism premise.
 The section-transport supplement uses the existing `N.rightOp` composed with global sections and the
 actual unit at the top open; it supplies no colimit-map invertibility or
 finite-stage gluing theorem.
