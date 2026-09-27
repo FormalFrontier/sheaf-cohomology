@@ -8,7 +8,8 @@ project:
     resolution comparisons, local cohomology, right-derived pushforward
     comparisons, pullback coherence, native sheafed-space cone pullbacks and cocones
     and their cone-wise additive-to-Type forgetting and ordinary-colimit desc
-    compatibility, varying-base native diagram and cone pushforwards,
+    compatibility, varying-base native diagram and cone pushforwards and their
+    additive-to-Type coefficient transport,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -100,7 +101,14 @@ status:
     cone. These constructors need only a coefficient category; their stage
     and projection mate characterizations require the stronger native
     pullback-adjunction assumptions. No Cartesian or limiting square/cone,
-    stage isomorphism or coefficient-changing theorem is assumed or obtained.
+    stage isomorphism or coefficient-changing theorem is assumed by these
+    generic constructors. The additive-to-Type coefficient-diagram comparison
+    gives strict equality of forgotten native direct-image diagrams and
+    an identity-vertex isomorphism of compatible cones after diagram
+    transport, together with canonical pullback-comparison laws for actual
+    mates. It uses a shared universe for spaces,
+    additive groups and sets, and an arbitrary small indexing category;
+    no limit, filteredness, nonemptiness or stage isomorphism is required.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
@@ -173,6 +181,15 @@ review:
     combined checks remain required, and predecessor acceptance must precede
     protected successor integration. Ordered verified official publication
     and subsequent reviewed incubator conversion are distinct later steps.
+    The coefficient-diagram registration preserves both Lean leaves of
+    destination df460b093e5c846314f97cfac36b3a0fb3f5f930, transferred from
+    separately accepted original d30bbc667d43143d8c4ecda7c4e8ba3ca3125508,
+    on accepted and integrated destination 069ec1d6d3de9c9f93004057bf785e417eeb45a1.
+    Only aggregate imports, guide lifecycle wording, navigation, credit and
+    scope metadata are added. Mathematical bodies and pins are unchanged.
+    Exact independent destination/release review, applicable combined build
+    and complete standard-axiom evidence, owner acceptance and ordered
+    verified official publication remain required for this new candidate.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant and native mathematical

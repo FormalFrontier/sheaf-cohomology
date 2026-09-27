@@ -110,3 +110,16 @@ clients in
 [`AbelianForgetSquareTransition.lean`](../SheafCohomologyExamples/AbelianForgetSquareTransition.lean)
 cover arbitrary stages, postcomposition in the target, identity, the empty
 space and genuinely pasted squares; they are not a new public API.
+
+## Varying-base native diagrams
+
+The [coefficient-diagram guide](AbelianForgetDiagramPushforward.md) describes
+`SheafCohomology.AbelianForget.DiagramPushforward`. Its declarations live in
+`AlgebraicGeometry.SheafedSpace.AbelianForget`, rather than the single-space
+`TopCat.Sheaf.AbelianForget` namespace above. Forgetting coefficients commutes
+strictly with varying-base direct-image diagrams; compatible native cones
+are compared by an identity-vertex isomorphism after diagram transport.
+The canonical pullback comparison identifies the actual mates. The guide
+states the equality transports and same-universe
+boundary. No limit, filteredness, endpoint invertibility or Ringed result is
+asserted.

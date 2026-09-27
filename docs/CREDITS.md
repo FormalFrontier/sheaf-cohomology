@@ -267,3 +267,21 @@ with destination imports, namespace and private visibility. Anchor added
 aggregate registration and documentation/metadata navigation without changing
 either Lean leaf. This origin record does not itself approve the destination,
 clear third-party rights, establish source correspondence or publish a release.
+
+## Coefficient forgetting for varying-base direct images
+
+`SheafCohomology/AbelianForget/DiagramPushforward.lean` retains the mathematical
+expressions of Worker A Hive Task
+`hive-request-620e7673c746798330d114e0e2debbc4a80a2381` (UID
+`41fde94b-1957-44b7-9437-430fe5cfd02b`), original revision
+`d30bbc667d43143d8c4ecda7c4e8ba3ca3125508`. Worker A Hive Task
+`hive-request-0ad06f8848e144e0c34ccd44ac71e2da46c56d58` (UID
+`520ced02-de5d-483f-b69f-e8bfb284babe`) transferred the producer,
+private import-only clients and standalone guide at
+`df460b093e5c846314f97cfac36b3a0fb3f5f930`. Only three producer import
+paths changed; client expressions retain their mathematical content with
+destination imports, namespace and private visibility. Anchor registered
+the unchanged Lean leaves in the aggregate roots and updated navigation,
+lifecycle wording and metadata. These expression credits do not themselves
+establish third-party rights, destination acceptance, publication or source
+coverage; each requires its applicable evidence and decision.

@@ -14,6 +14,7 @@ import SheafCohomologyExamples.DiagramPushforward
 import SheafCohomologyExamples.AbelianForgetSheafedSpace
 import SheafCohomologyExamples.AbelianForgetConePullback
 import SheafCohomologyExamples.AbelianForgetConePullbackCocone
+import SheafCohomologyExamples.AbelianForgetDiagramPushforward
 
 /-!
 # Public-root sheaf cohomology examples

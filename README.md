@@ -152,6 +152,14 @@ actual strict squares, with no Cartesian, limiting or invertibility premise.
 See the [diagram-pushforward guide](docs/DiagramPushforward.md) for the exact
 variance, universe assumptions and Type/Ab/empty-index clients.
 
+`SheafCohomology.AbelianForget.DiagramPushforward` compares forgetting
+coefficients before and after these varying-base direct images. It supplies
+strict equality of native diagrams and an identity-vertex isomorphism of
+compatible cones after diagram transport, together with the canonical
+additive-to-Type comparison for actual mates. No limit, filteredness or stage-isomorphism premise is
+needed. See the [coefficient-diagram guide](docs/AbelianForgetDiagramPushforward.md)
+for the exact equality transports, shared universe and private clients.
+
 This repository is organized around reusable mathematics. Source-specific
 interpretation, provenance, correspondence, and coverage remain in the relevant
 source-metadata repositories. Anchor is responsible for the initial integration
@@ -209,6 +217,7 @@ empty spaces.
 | Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
 | Forgetful native cocones | `AbelianForget.ConePullbackCocone`: actual projection-mate legs and ordinary-colimit desc compatibility |
 | Varying-base direct images | `DiagramPushforward`: native diagrams, compatible cones and actual-arrow mate formulas |
+| Forgetful varying-base direct images | `AbelianForget.DiagramPushforward`: strict diagram equality, transported-cone comparison and canonical mate compatibility |
 
 All module names in the table are prefixed by `SheafCohomology.`. Consult their
 declaration types for the precise category, sheafification, Ext and universe
@@ -228,7 +237,9 @@ subjects, and the [projection-mate cocone guide](docs/ConePullbackCocone.md)
 documents one more. The
 [forgetful cocone guide](docs/AbelianForgetConePullbackCocone.md) covers the
 three public laws of the tenth new subject; the
-[diagram-pushforward guide](docs/DiagramPushforward.md) covers the eleventh.
+[diagram-pushforward guide](docs/DiagramPushforward.md) covers the eleventh;
+the [coefficient-diagram guide](docs/AbelianForgetDiagramPushforward.md)
+covers the twelfth.
 Of the old 556 native display sites,
 399 carry source docstrings; the other 157 explicitly mark their absence and
 point generically to the source and module guide, not separately authored
