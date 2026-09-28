@@ -1,16 +1,80 @@
 # sheaf-cohomology
 
-Reusable Lean foundations for sheaf cohomology, compact-open sections,
-cohomological functors, and forgetting abelian-group structure on sheaves.
-The current 97-module **candidate** also develops native commutative-ring-to-Type
-forgetting, cofiltered limit preservation and ring global sections of the
-original native spectral-limit cone. Its joint-stage representation does not
-assert surjectivity from an arbitrarily fixed stage. See the
-[ring coefficient guide](docs/CommRingForget.md) and
-[ring global-sections guide](docs/NativeCommRingGlobalSections.md).
-The new candidate's destination build, complete private-inclusive axiom audit,
-fresh independent review, acceptance and publication remain outstanding;
-the accepted 88-module release does not certify these additions.
+An accepted, officially published private release of this 97-module Lean library
+develops sheaf cohomology, compact-open sections, and native limits and sections
+of sheafed spaces. Import [`SheafCohomology`](SheafCohomology.lean) for the
+aggregate API or an individual subject module for a smaller import. These
+results are declarations of this library, built on mathlib and its published
+dependencies; they are not a claim to have formalized an entire source.
+
+## Headline results
+
+- **Compact-open sections and acyclicity.** On a prespectral,
+  quasi-separated space, evaluation of suitable concrete-category sheaves on
+  a compact open preserves small filtered colimits, subject to the explicit
+  sheafification, concrete-category and universe assumptions. For abelian
+  sheaves on a *compact* such space, quasi-flasqueness implies vanishing of
+  positive-degree sheaf cohomology, using an injective-envelope dimension
+  shift. See
+  [`preservesColimit_sections`](SheafCohomology/CompactOpenSections.lean#L784),
+  [`subsingleton_H_succ`](SheafCohomology/QuasiFlasqueAcyclicity.lean#L259),
+  and the [mathematical guide](docs/Guide.md).
+- **Higher direct images.** For a spectral map from a prespectral,
+  quasi-separated source to a prespectral target, right-derived pushforward
+  of abelian sheaves preserves filtered colimits in every natural degree. The
+  theorem identifies the *canonical* `colimit.post` comparison for a small,
+  nonempty directed-preorder diagram, not an arbitrary isomorphism; this API
+  has universe-zero spaces, coefficients and Ext groups and requires its
+  stated sheafification/Ext instances. See
+  [`rightDerivedPushforward_colimitPost_isIso`](SheafCohomology/HigherDirectImageFilteredColimit.lean#L332)
+  and the [mathematical guide](docs/Guide.md).
+- **Native sheafed-space limits.** For an actual cone, a limiting underlying
+  space cone and a colimiting cocone of its projection-pullback sheaves imply
+  that the native cone is limiting; over that same limiting base, the converse
+  recovers the sheaf colimit. A separate construction builds such a native
+  limit when the required coefficient colimits and local weak sheafification
+  exist. These are conditional results under the concrete-coefficient
+  hypotheses, not a global limits instance. See the
+  [limit criterion](SheafCohomology/ConePullbackLimit.lean#L222),
+  [fixed-base converse](SheafCohomology/ConePullbackLimitConverse.lean#L170),
+  [construction](SheafCohomology/LimitConstruction.lean#L62), and
+  [limit guide](docs/ConePullbackLimit.md).
+- **Forgetting coefficients.** The native additive-to-Type and
+  commutative-ring-to-Type functors preserve same-universe cofiltered limits
+  of sheafed spaces, using canonical pullback mates and filtered sheaf-colimit
+  comparisons. The ring pullback `canonicalComparison` is a *different* map
+  from the filtered-diagram `colimit.post` comparison; neither preservation
+  theorem covers arbitrary diagram shapes. See the
+  [additive theorem](SheafCohomology/AbelianForget/LimitPreservation.lean#L103),
+  [ring theorem](SheafCohomology/CommRingForget/LimitPreservation.lean#L112),
+  and [ring guide](docs/CommRingForget.md).
+- **Global sections of spectral inverse limits.** Filtered colimits of
+  native stage sections recover the global sections of the constructed
+  Type-valued native limit, and of the *original actual limiting cone* for
+  additive or commutative-ring coefficients. All three isomorphisms require
+  small filtered indexing, spectral original stages and spectral original
+  transition maps. In the ring case each limit section comes from
+  *some* stage, not from every fixed stage. See the
+  [Type comparison](SheafCohomology/NativeLimitGlobalSections.lean#L181),
+  [additive comparison](SheafCohomology/NativeAdditiveGlobalSections.lean#L99),
+  [ring comparison and stage theorem](SheafCohomology/NativeCommRingGlobalSections.lean#L105),
+  and [ring sections guide](docs/NativeCommRingGlobalSections.md).
+- **Compact-open cylinders.** For a directed preorder and a selected index,
+  restricting an actual native limit to the inverse image of a compact stage
+  open gives filtered-colimit descriptions of sections over that open for
+  Type-valued and additive sheafed spaces. Both results use spectral original
+  stages and transitions and the constructed restricted limit; the additive
+  result compares sections of the *original* cone point. Empty opens are
+  allowed, but this library does not assert the corresponding ring-cylinder
+  theorem. See the
+  [Type theorem](SheafCohomology/NativeSpectralCylinderSections.lean#L45),
+  [additive theorem](SheafCohomology/NativeAdditiveCylinderSections.lean#L101),
+  and [additive cylinder guide](docs/NativeAdditiveCylinderSections.md).
+
+## Further scope and historical snapshots
+
+The detailed descriptions below are retained verbatim. Their dated
+candidate-stage accounts record past states, not the current release status.
 
 It also provides native sheafed-space cone pullbacks and projection-mate
 cocones, an additive-to-Type forgetful functor and its canonical cone-wise
