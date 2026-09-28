@@ -142,7 +142,7 @@ Full changed-input CI674, final independent review and distinct owner decisions
 subsequently supported accepted 84 main/release-prep
 `36e49294f84208fa678872e84b6bdbd96c603188` and official private
 release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`, verified on
-2026-09-28 (issue #34/comment 56186). This **unaccepted 85** successor carries
+2026-09-28 (issue #34/comment 56186). At that checkpoint the **unaccepted 85** successor carried
 both whole repaired restriction headers from that accepted 84; after `module`
 all proof/import bytes stay frozen 85. Original frozen 85 CI655 does not pass
 these changed-header inputs: applicable both-target/private-inclusive successor
@@ -180,7 +180,7 @@ original SPDX, Generality and provenance/auditability notices. Their original
 author text and continuation lines now follow `Contributor:` beneath
 `Authors: Formal Frontier Agents`; reversing just this header change recovers
 each complete frozen 84 file. The Type client retained its original whole
-blob at that snapshot. In this unaccepted 85 successor, its own worker-only
+blob at that snapshot. In the then-unaccepted 85 successor, its own worker-only
 author header is reversibly relabeled with collective `Authors:` and its
 original worker as `Contributor:`, so the Type client is **not** now
 whole-file identical to frozen 85, accepted 84 or the original transfer.
@@ -189,8 +189,17 @@ This is one of nine inherited headers repaired after final review
 `abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a` recorded
 native4434/4435/4436 REQUEST_CHANGES. Four earlier inherited actual84
 repairs remain separate: thirteen headers total differ from frozen 85.
-This repair is not approval; CI655 and CI678/679/680 on previous inputs
-cannot certify it. Exact independent review and applicable
-both-target/private-inclusive checks remain. No
+This repair alone was not approval; CI655 and CI678/679/680 on previous inputs
+could not certify it. Full successor85 CI685/artifact131785, independent
+consolidated review `fc9bb966ca2c9f9426fd817341f787e851351bcd`
+(native4442–4444), separate owner gates and official private release
+`2c7b5e3e2e94704b9aa825c1aed88a880cf78dae` subsequently completed
+actual85 (accepted main `25e596baca25cf582aa2f6d9ba22d7833de74ec7`,
+#34/56450). This still-unaccepted 88 successor retains the repaired whole
+headers and unchanged frozen88 module-onward proofs. Frozen88 CI665 and
+scoped native4411 were already consumed (#34/55987 and #34/55894), but
+thirteen changed-header inputs require applicable full successor88 CI and
+fresh author-distinct consolidated final review before separate owner gates.
+No
 incubator dependency, source-local experiment or private source asset was
 copied. Source coverage is a separate decision.

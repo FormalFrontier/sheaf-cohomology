@@ -163,8 +163,17 @@ reconciliation. After changed-input CI674, final review and distinct owner
 decisions, actual accepted main/release-prep
 `36e49294f84208fa678872e84b6bdbd96c603188` was published as official
 private `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37` on 2026-09-28
-(issue #34/comment 56186). This still **unaccepted 85** successor does not
-change this module's proof body or extend the cylinder result to additive
-coefficients.
+(issue #34/comment 56186). At that checkpoint the still **unaccepted 85**
+successor did not change this module's proof body or extend its cylinder result
+to additive coefficients. Later full CI685/artifact131785, consolidated
+independent review `fc9bb966ca2c9f9426fd817341f787e851351bcd`
+(native4442–4444) and individual owner gates completed accepted85 main
+`25e596baca25cf582aa2f6d9ba22d7833de74ec7` and official private85
+`2c7b5e3e2e94704b9aa825c1aed88a880cf78dae` (#34/56450). This
+still-unaccepted 88 successor preserves the comparison body and roots, while
+frozen88 full CI665 (#34/55987) and scoped independent native4411 review
+(#34/55894) remain evidence only for their applicable scopes. Thirteen
+inherited header changes need full successor88 CI and consolidated final
+independent review before separate owner release gates.
 No spectral `IsIso` within this module, endpoint, source-passage
 correspondence or formalization-coverage conclusion is claimed.

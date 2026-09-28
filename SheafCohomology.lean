@@ -17,8 +17,10 @@ public import SheafCohomology.NativeLimitGlobalSections
 public import SheafCohomology.NativeOpenRestriction
 public import SheafCohomology.NativeCylinderLimit
 public import SheafCohomology.NativeCylinderComparison
+public import SheafCohomology.NativeSpectralCylinder
 public import SheafCohomology.NativeSpectralCylinderSections
 public import SheafCohomology.NativeAdditiveGlobalSections
+public import SheafCohomology.NativeAdditiveCylinderSections
 public import SheafCohomology.ConePullback
 public import SheafCohomology.ConePullbackSections
 public import SheafCohomology.ConePullbackCocone

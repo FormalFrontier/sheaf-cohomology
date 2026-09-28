@@ -143,11 +143,21 @@ were outstanding at that dated checkpoint. Full changed-input CI674,
 independent final review and distinct owner decisions subsequently supported
 actual accepted84 main `36e49294f84208fa678872e84b6bdbd96c603188` and
 official private release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`,
-verified on 2026-09-28 (issue #34/comment 56186). This **unaccepted 85**
+verified on 2026-09-28 (issue #34/comment 56186). At that checkpoint the **unaccepted 85**
 successor inherits both whole 83 credit repairs through accepted84; its
 module-onward bytes remain frozen 85. The original 85 CI655 does not cover
-the four inherited changed headers: applicable successor85 both-target/
-private-inclusive checks and consolidated independent final review remain.
+the four inherited changed headers: at that checkpoint applicable successor85
+both-target/private-inclusive checks and consolidated independent final review
+remained. Subsequently full CI685/artifact131785, consolidated independent
+review `fc9bb966ca2c9f9426fd817341f787e851351bcd` (native4442–4444)
+and individual owner gates completed accepted85 main/release-prep
+`25e596baca25cf582aa2f6d9ba22d7833de74ec7` and official private85
+`2c7b5e3e2e94704b9aa825c1aed88a880cf78dae` (#34/56450).
+This still-unaccepted 88 successor inherits the repaired entire credit
+headers; frozen88 CI665, already owner-intaken #34/55987, and CI685 cannot
+certify thirteen changed 88-header inputs. Its unchanged scoped mathematics
+has independent native4411 approval (owner intake #34/55894), but final
+consolidated review and applicable full successor88 CI remain owner gates.
 Source correspondence stays separate.
 Neither this focused adapter nor the Type-only compact-cylinder result claims
 an additive-cylinder extension or a source-specific endpoint.

@@ -43,6 +43,10 @@ private instance tailDirected (i0 : ι) : IsDirectedOrder (Set.Ici i0) :=
     obtain ⟨k, hik, hjk⟩ := exists_ge_ge i.1 j.1
     exact ⟨⟨k, i.2.trans hik⟩, hik, hjk⟩⟩
 
+/-- The principal tail of a directed preorder is directed. -/
+theorem tailDirectedOrder (i0 : ι) : IsDirectedOrder (Set.Ici i0) :=
+  tailDirected i0
+
 /-- A principal tail is final even without a linear order. -/
 instance tailInclusion_final (i0 : ι) : (tailInclusion i0).Final := by
   change (Subtype.mono_coe (· ∈ Set.Ici i0)).functor.Final

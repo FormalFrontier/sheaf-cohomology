@@ -117,11 +117,21 @@ are not combined-root approval; changed prerequisite APIs require reassessment.
 No chosen native-limit `Γ` comparison, source-specific endpoint or source
 coverage is asserted by this contribution.
 
-The later accepted 84 release (issue #34/comment 56186) does not accept this
-85 successor. Final review `abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a`
+The later accepted 84 release (issue #34/comment 56186) did not accept the
+then-unaccepted 85 successor. Final review `abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a`
 requested changes (native4434/4435/4436) for nine inherited worker-only
 headers, including this producer/client, in addition to the four headers
 repaired in the earlier actual84 reconciliation. This static label correction
 does not constitute independent approval or a new computational pass:
-CI655 and CI678/679/680 on prior inputs cannot certify it. Applicable
-both-target/private-inclusive checks and exact independent review remain.
+CI655 and CI678/679/680 on prior inputs could not certify it. Later full
+CI685/artifact131785, author-distinct consolidated review
+`fc9bb966ca2c9f9426fd817341f787e851351bcd` (native4442–4444)
+and separate owner gates completed accepted85 main/release-prep
+`25e596baca25cf582aa2f6d9ba22d7833de74ec7` and official private85
+`2c7b5e3e2e94704b9aa825c1aed88a880cf78dae` (#34/56450). The
+still-unaccepted 88 successor inherits this complete accepted85 file, not
+the original whole transfer blob: only its module-onward byte identity and
+the earlier header reversal support the original donor comparison. Frozen88
+CI665 and scoped native4411 review were owner-intaken (#34/55987 and
+#34/55894), not replayed. Applicable full changed-header successor88 CI and
+fresh consolidated final review remain before separate owner gates.

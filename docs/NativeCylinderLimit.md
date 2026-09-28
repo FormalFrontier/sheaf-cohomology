@@ -29,8 +29,11 @@ nonempty-space or nonempty-open hypothesis.
 ## Constructions and use
 
 - `tailInclusion i0 : Set.Ici i0 ⥤ ι` is final by directedness, and
-  `tailInclusion_op_initial` makes its opposite initial. `tailDiagram N i0`
-  restricts the original diagram to this opposite tail.
+  `tailInclusion_op_initial` makes its opposite initial. The public
+  `tailDirectedOrder i0 : IsDirectedOrder (Set.Ici i0)` exposes the same
+  former private witness for *local* filtered-tail use; it installs no
+  global instance. `tailDiagram N i0` restricts the original diagram to
+  this opposite tail.
 - `transition N i0 i` maps tail stage `i` to the distinguished stage;
   `stageOpen N i0 U0 i` is the inverse image of `U0` under this transition.
   `stageOpen_map` supplies the equality of named inverse-image opens needed
@@ -166,14 +169,20 @@ Full changed-header CI674 and fresh final review supported actual accepted
 84 main/release-prep `36e49294f84208fa678872e84b6bdbd96c603188` and
 official private release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`
 (issue #34/comment 56186), whose sole parent is official 83. This **unaccepted
-85** successor inherits that accepted main ancestry and four whole header
-repairs while retaining the generic producer, named additive client, Type
-client, roots and every module-onward byte from frozen 85. CI655 is not a
-changed-header successor check. One applicable both-target/private-inclusive
-85 check, fresh author-distinct consolidated actual-parent/main/prep/public
-review and separate owner decisions/publication remain. No 85 acceptance,
-additive compact-cylinder endpoint, incubator conversion or source coverage
-is inferred from these predecessor releases.
+85** successor at that checkpoint inherited accepted 84 ancestry and four whole
+header repairs, retaining the generic producer, named additive client, Type
+client, roots and every module-onward byte from frozen 85. CI655 could not
+certify its changed headers. Subsequently full both-target/private-inclusive
+CI685/artifact131785 and independent consolidated review
+`fc9bb966ca2c9f9426fd817341f787e851351bcd` (native4442–4444)
+supported accepted main/release-prep85 `25e596baca25cf582aa2f6d9ba22d7833de74ec7`
+and official private85 `2c7b5e3e2e94704b9aa825c1aed88a880cf78dae`
+(#34/56450). The still **unaccepted 88** successor inherits the complete
+accepted 85 credit headers, but CI685 and frozen88 CI665 cannot certify its
+thirteen changed-header inputs. Applicable full both-target/private-inclusive
+88 CI, fresh author-distinct consolidated final review, separate owner gates,
+protected integration and verified publication remain; no source-coverage or
+incubator-conversion decision follows.
 
 **Contributors and dependencies:** The original native open-restriction
 predecessor was authored by worker-a Hive Task
@@ -227,6 +236,32 @@ worker-a Hive Task `hive-request-f2b4090a882686df924af77bc982594879d2f8a3`
 original proofs. Responsible maintainer: Anchor, Sheaf Cohomology issue #34.
 The Lean files retain their Apache-2.0 notices and original credits.
 
-A generic chosen-limit/Gamma comparison, spectral extension, additive
-compact-cylinder endpoint, assumed restricted `IsLimit` or `IsIso`, and
-reflection bridge are outside this API and this transfer.
+A generic chosen-limit/Gamma comparison, assumed restricted `IsLimit` or
+`IsIso`, and reflection bridge remain outside this API. At the earlier
+generic-cylinder transfer, neither spectral extension nor an additive
+compact-cylinder endpoint was included; separate later modules provide
+both without changing the constructed native limit here.
+
+## Later public tail witness (2026-09-28)
+
+The current producer adds only `tailDirectedOrder i0` above to its original
+full proof body. It comes from accepted **unregistered** incubator additive
+leaf `6ceec6dbfcfca0cad053e291457c8587c60839c5` (tree
+`1e9e6ca983535ff2c8f658d0bde8994ce6f7aaca`, #4/55732), whose donor
+author worker-b Task
+`hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf`, UID
+`0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4`, exposes the existing private
+directedness proof. Its *underlying* expression remains credited to the
+source-tail Task `hive-request-065ffb46d5b6d2b9ada197a66b9c1b783b57e00f`,
+UID `4720124c-2740-40ba-947d-5be3c681f64e`; this extraction does not
+reassign proof authorship. The frozen **unaccepted** destination parent is
+`651f8223c7dbb2df870f3f594077365bf6767d7f`, tree
+`7f69109ef07c5261c9f5b3d2ccf3163e56a6055d`. Its earlier
+`SheafCohomologyExamples.NativeCylinderLimitAdditive` contributor-header
+repair remains untouched. Static import-prefix adaptation here is by
+worker-a Task `hive-request-9dcde8f6d7062e56cb44b8468857f81145d25e0f`,
+UID `8c900d59-2daf-4646-af0c-9df846d22539`, not the author of the
+tail proof. See `docs/NativeAdditiveCylinderSections.md` for the distinct
+preorder-only additive laws, spectral helper, provenance and pending checks.
+No new root registration, destination proof-integrity result, review,
+acceptance or official release follows from this isolated transfer.

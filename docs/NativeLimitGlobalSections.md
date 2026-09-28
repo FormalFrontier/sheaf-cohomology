@@ -108,7 +108,7 @@ are FormalFrontier/incubator commit
 reversing the producer's single public-import substitution and the client's
 ordinary import plus two namespace/end substitutions recovered those blobs.
 At the original transfer the Apache-2.0 SPDX and worker-author headers stayed
-in both files. This unaccepted 85 successor retains both SPDX notices and
+in both files. The then-unaccepted 85 successor retained both SPDX notices and
 complete original worker credit, but reversibly relabels `Authors:` as
 collective project credit with `Contributor:` for the workers; reversing the
 labels restores the complete pre-repair destination blobs, not the incubator
@@ -199,14 +199,23 @@ successor was unaccepted and still needed changed-header CI and final review;
 both subsequently completed. Accepted84 main/release-prep
 `36e49294f84208fa678872e84b6bdbd96c603188` was published as official
 private `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37` on 2026-09-28
-(issue #34/comment 56186). This still **unaccepted 85** successor changes
+(issue #34/comment 56186). At that checkpoint the still **unaccepted 85** successor changed
 neither the Type-valued comparison body nor its original hypotheses.
 Final review `abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a` recorded
 native4434/4435/4436 REQUEST_CHANGES for nine inherited worker-only headers,
 including this pair, separate from the four earlier actual84 header repairs.
 This label correction is not approval or a successor proof-integrity pass;
-CI655 and CI678/679/680 on earlier inputs cannot certify changed headers.
-Applicable both-target/private-inclusive checks and exact review remain.
+CI655 and CI678/679/680 on earlier inputs could not certify changed headers.
+Full successor85 CI685/artifact131785, independent consolidated review
+`fc9bb966ca2c9f9426fd817341f787e851351bcd` (native4442–4444)
+and owner gates later supported accepted85 main/release-prep
+`25e596baca25cf582aa2f6d9ba22d7833de74ec7` and official private85
+`2c7b5e3e2e94704b9aa825c1aed88a880cf78dae` (#34/56450).
+This still-unaccepted 88 successor inherits the entire repaired headers,
+not original whole transfer blobs; the module-onward proof expressions remain
+frozen88-exact. Frozen88 CI665 and scoped native4411 review were already
+consumed (#34/55987 and #34/55894), but full successor88 CI and final
+author-distinct consolidated review remain before separate owner gates.
 
 If the frozen target or predecessor APIs change, reassess this adapter.
 No source-PDF reading, passage excerpt, coverage decision, additive or

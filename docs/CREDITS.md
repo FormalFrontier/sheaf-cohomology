@@ -791,9 +791,14 @@ combined graph, release, source correspondence or coverage.
 
 ## Compact-open native spectral-cylinder sections
 
+At the historical 83-module assembly,
 `SheafCohomology/NativeSpectralCylinderSections.lean` and its private ordinary-import
-client preserve complete statements and proof expressions from accepted-unregistered
-incubator leaf `d8986c460ccae72392ad39550d89669604ec1284`. Original author:
+client preserved complete statements and proof expressions from accepted-unregistered
+incubator leaf `d8986c460ccae72392ad39550d89669604ec1284`. The current Type
+producer is **modified** by the coefficient-generic helper extraction at
+accepted unregistered donor `6ceec6dbfcfca0cad053e291457c8587c60839c5`;
+the old raw-reversal statement applies only to that historical assembly.
+Original Type topology-expression author:
 worker-b Task `hive-request-e8a25d6c5328e70c571fe96c3ac0b8102530eaa1`
 (UID `ddcebc71-0a10-45a6-b8cf-9606083d850e`). Fresh independent reviewer:
 worker-a Task `hive-request-39c7e47c551ef244416635d53429219016b1f836`
@@ -802,14 +807,20 @@ worker-a Task `hive-request-39c7e47c551ef244416635d53429219016b1f836`
 `reviews/native-spectral-cylinder-sections/REVIEW.md`. Anchor's incubator
 issue #4/comment54519 accepted that donor unregistered, not this destination.
 
-Worker-a adapter Task `hive-request-5d68fce000ac813d7755bf44f7aa4a699799d102`
+The historical Type-only transfer by worker-a adapter Task
+`hive-request-5d68fce000ac813d7755bf44f7aa4a699799d102`
 (UID `e4c4c56a-25fc-4725-9cd3-4061a5326fbc`) supplied the three payloads at
 `cb6dc05b14fb718dcc39cf8b8c1aec0cc616a397`; separate focused target evidence is
 `89444c293bdea7624a1713850abc1a11c3ccaea0`. Only the producer comparison import
 and client import/namespace/end differ from donor Lean blobs
 `62b2c5765ec7d8105d23951baf7f582183fa8455` and
-`0b52bb4c6dc503204daf53040136538b479f1846`. Anchor supplied root imports,
-navigation, metadata and credit without altering either new Lean blob.
+`0b52bb4c6dc503204daf53040136538b479f1846`. Anchor supplied those historical
+root imports, navigation, metadata and credit without altering either Lean blob.
+Neither the old Type-only blob reversal nor its old focused evidence covers the
+changed current Type producer; only the donor's final2 checks cover the changed
+donor Type module, not this destination graph.
+The original topology expression remains credited to e8a25d6c/ddcebc71;
+the new generic extraction is credited separately below.
 
 The [standalone guide](NativeSpectralCylinderSections.md) preserves full
 inherited author and expression credit. In particular, the tail-directed witness
@@ -892,6 +903,49 @@ dependency or incubator ancestry enters the deliverable history. Donor acceptanc
 and focused destination checks did not certify the new aggregate roots;
 the additive cylinder endpoint and source coverage remain separate.
 
+## Coefficient-generic spectral cylinders and additive cylinder sections
+
+`SheafCohomology/NativeSpectralCylinder.lean` supplies the coefficient-generic
+restricted-stage/map spectral helper. The current
+`SheafCohomology/NativeSpectralCylinderSections.lean` invokes that helper in
+place of its earlier inline Type-only topology proof. The original Type
+topology expression belongs to worker-b Task
+`hive-request-e8a25d6c5328e70c571fe96c3ac0b8102530eaa1`, UID
+`ddcebc71-0a10-45a6-b8cf-9606083d850e`; the coefficient-generic extraction
+and new additive results belong to worker-b Task
+`hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf`, UID
+`0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4`. That author's accepted,
+**unregistered** incubator donor is
+`6ceec6dbfcfca0cad053e291457c8587c60839c5`; fresh independent review
+is `dd535468fc9a4d14ec2ac90e794e41604ddcba4c`,
+`reviews/native-additive-cylinder-sections/REVIEW.md`, accepted only as an
+incubator leaf by Anchor at incubator issue #4/comment55732.
+
+`SheafCohomology/NativeAdditiveCylinderSections.lean` proves the preorder-only
+comparison and both full additive arrow laws for the original cone; locally
+filtered tails, a **constructed** restricted native limit and spectrality
+establish its compact possibly-empty-open IsIso endpoint. The named private
+ordinary-import client in
+`SheafCohomologyExamples/NativeAdditiveCylinderSections.lean` cancels on actual
+original projection sections, retaining both named-open casts. The existing
+`NativeCylinderLimit`, `NativeOpenRestriction` and **donor** additive-global
+results are invoked, not reauthored. The separately frozen destination 83
+additive-global registration is not thereby accepted or published.
+
+Static destination adaptation (five controlled Lean payloads and the standalone
+guide) belongs to worker-a Task
+`hive-request-9dcde8f6d7062e56cb44b8468857f81145d25e0f`, UID
+`8c900d59-2daf-4646-af0c-9df846d22539`, at
+`a476ccbaf62a401b1cc8b464bfe04da27dfab46e`; that Task did **not**
+author the donor mathematics. The 2026-09-28 source-only root/navigation/metadata
+registration belongs to worker-a Task
+`hive-request-b43835c27fa736b37edbf2bf908b44a6e81e0f4e`, UID
+`badc1bbb-885f-4d3a-9dcd-2ddc478616a5`, also not a proof author. All 86
+nonroot Lean blobs, original Authors/Contributor headers, eleven dependency
+objects, Lake, toolchain and CI remain unchanged. The adapter and this
+registration supply no destination build, axiom audit, independent wholegraph
+review, owner acceptance, release or source-coverage decision.
+
 ## Category-generic native open restriction
 
 The existing `SheafCohomology/NativeOpenRestriction.lean` is generalized in
@@ -950,7 +1004,7 @@ reversible collective-credit exception just described. No private source
 text, incubator dependency or incubator
 ancestry enters this deliverable; no source-coverage decision follows.
 
-## Actual-parent reconciliation of the 85 successor
+## Historical actual-parent reconciliation of the 85 successor
 
 Worker-a Hive Task `hive-request-37161c96a456edb3b7ceee2aa96e1b3c69a6b612`
 (UID `27cb01a1-8fdf-47c3-906a-10bc121af578`) normally merges accepted84
@@ -989,6 +1043,47 @@ Hive Task `hive-request-96648a429ccb63253fb14ffb5bc17d00df299cb6`, UID
 the original mathematical proofs or their adapters, nor an independent reviewer.
 The final review's objection is historical evidence motivating this attempted
 repair, not approval. Original CI655 and successor CI678/679/680 on the prior
-inputs cannot certify these new headers. Fresh exact independent review and
-applicable both-target/private-inclusive checks remain before Anchor's separate
-owner decisions and official publication; this 85 successor is unaccepted.
+inputs cannot certify these new headers. At that dated checkpoint fresh exact
+independent review and applicable both-target/private-inclusive checks remained
+before Anchor's separate owner decisions and official publication; the 85
+successor was then unaccepted.
+
+## Actual-parent reconciliation of the unaccepted 88 successor
+
+Full frozen88 CI665/UI63/artifact121236 on original PR142 head
+`1ded7c974bdb6cd753e393fbc8d09bb2782c69e9` was consumed by Anchor
+at Sheaf Cohomology issue #34/comment 55987. Its independent scoped
+mathematical/API/provenance/registration review
+`eed9f975efd4dd17cbace2d3a40d4d041319b67f` (native4411) was consumed
+at #34/comment 55894. Neither result was metadata-only; neither accepts
+this changed-header successor or needs repeating.
+
+Actual85 subsequently passed full changed-input CI685/artifact131785,
+independent author-distinct consolidated review
+`fc9bb966ca2c9f9426fd817341f787e851351bcd` (native4442–4444), and
+separate owner gates. Accepted main/release-prep
+`25e596baca25cf582aa2f6d9ba22d7833de74ec7` and official private85
+`2c7b5e3e2e94704b9aa825c1aed88a880cf78dae` were verified
+(#34/comment 56450), after separate 81/83/84 official releases.
+
+Worker-a Hive Task `hive-request-00a2d16de3e9d91c3ab18427527337bc2da95a50`
+(UID `c0b22631-f9c1-4763-a28d-e32889a3e05f`) merges accepted85
+development into frozen **unaccepted**88 without rebase or new mathematical
+authorship. Thirteen whole Lean files inherit accepted85's collective
+`Authors: Formal Frontier Agents`, complete original `Contributor:` Task/UID,
+SPDX and continuation lines; reversing their header repairs recovers each
+original frozen88 file. All 88 module-onward bodies/imports/options, the
+other 75 whole Lean blobs, both roots and eleven complete package objects
+remain frozen88-exact. The original topology expression remains due to
+worker-b Task `hive-request-e8a25d6c5328e70c571fe96c3ac0b8102530eaa1`
+(UID `ddcebc71-0a10-45a6-b8cf-9606083d850e`); generic extraction/additive
+proofs belong to worker-b Task
+`hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf`
+(UID `0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4`). Static adapter and registrar
+retain their separate credits above. Historical Type-spectral `d8986`
+remains fixed, but generic extraction changed the *current* Type spectral
+body; old Type-only evidence cannot certify it. This still-unaccepted88
+successor requires applicable full both-target/private-inclusive CI for
+thirteen changed-header inputs and fresh author-distinct consolidated final
+main/prep/public review before Anchor's separate gates, protected integration
+and verified publication. No source coverage or incubator conversion follows.

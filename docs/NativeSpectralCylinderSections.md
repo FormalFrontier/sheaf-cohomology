@@ -5,6 +5,9 @@ Import `SheafCohomology.NativeSpectralCylinderSections` for
 This is an isomorphism theorem for the *existing* native comparison, not a new
 cylinder or limit construction. The ordinary-import example lives in
 `SheafCohomologyExamples.NativeSpectralCylinderSections`.
+For the coefficient-generic reusable stage/map results alone, import
+`SheafCohomology.NativeSpectralCylinder` instead; it has no chosen-limit
+comparison import.
 
 Fix `{ι : Type v} [Preorder ι] [IsDirectedOrder ι]`, `i0 : ι`,
 `N : ιᵒᵖ ⥤ SheafedSpace.{v + 1, v, v} (Type v)`, a cone `m : Cone N`
@@ -32,18 +35,26 @@ may be empty: `i0` itself supplies the nonempty directed tail `Set.Ici i0`.
 
 ## Proof and ordinary-import client
 
-Public `stageOpen_map` and `stageOpen_base` show that the *literal*
-`stageOpen N i0 U0 i` is the inverse image of `U0` along an original
-transition. Compactness of a compact-open inverse image under the original
-spectral map, and the actual restriction's open embedding, give compactness
-of the restricted stage. `isCompact_univ_iff` and the mathlib spectral
-open-embedding theorem supply spectrality of that literal stage. For a
-restricted arrow, the compact-open **source** inclusion is retrocompact and
-spectral (`IsRetrocompact_iff_isSpectralMap_subtypeVal`); compose it with the
-original spectral transition. Public `stageMap_fac` identifies that composite
-with the restricted map followed by its target inclusion. The published
-`SpectralStoneDuality.isSpectralMap_to_subtype_of_comp` transfers spectrality
-to the actual restricted arrow without replacing its space or map.
+The spectrality proofs formerly private here are extracted once, with
+their original topology-expression credit, to public
+`NativeCylinderLimit.spectralStage` and `spectralStageMap` in
+`SheafCohomology.NativeSpectralCylinder`. For arbitrary coefficients
+`C : Type (v+1)` with `[Category.{v} C]`, they assume only original
+spectral stages/maps and compact `U0`; neither a cone, `IsLimit`, directed
+tail nor nonempty open is needed. The helper explicitly imports
+`Mathlib.Topology.Constructible` and official
+`SpectralStoneDuality.Subspace`, not this Type endpoint. Public
+`stageOpen_map` and `stageOpen_base` identify the *literal* inverse-image
+open under an original transition. Compactness along that spectral map
+and the actual restriction's open embedding give a compact spectral
+restricted stage. For a restricted arrow, the compact-open **source**
+inclusion is retrocompact and spectral
+(`IsRetrocompact_iff_isSpectralMap_subtypeVal`); compose it with the
+original spectral transition. `stageMap_fac` identifies this composite
+with the restricted map followed by its target inclusion. The official
+`SpectralStoneDuality.isSpectralMap_to_subtype_of_comp` then gives
+spectrality of the actual arrow. The Type endpoint uses this helper at
+`C := Type v` and retains its original public conclusion.
 
 Set `R := restricted N i0 U0` and let `cR` be the forgetful image of
 `restrictedCone N i0 m U0`. The inherited `restrictedSpaceIsLimit` supplies
@@ -72,20 +83,24 @@ its desired equality, and does not assert broad eventual equality.
 
 ## Reproduce focused checks
 
-From the repository root at the exact code commit, with its unchanged
+For a later authorized check from the repository root at the exact code
+commit, with its unchanged
 `lean-toolchain`, `lakefile.toml` and `lake-manifest.json`:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
 lake exe cache get
-env LEAN_NUM_THREADS=2 lake --wfail build +SheafCohomology.NativeSpectralCylinderSections:olean +SheafCohomologyExamples.NativeSpectralCylinderSections:olean
+env LEAN_NUM_THREADS=2 lake --wfail build +SheafCohomology.NativeSpectralCylinder:olean +SheafCohomology.NativeSpectralCylinderSections:olean +SheafCohomologyExamples.NativeSpectralCylinderSections:olean
 ```
 
-The cache fetch must succeed *before* building. In the separate evidence
-checkout, the complete actual-origin collector is reproducible by
-`lake env lean evidence/native-spectral-cylinder-sections/AuditNativeSpectralCylinderSections.lean`
-after those focused checks. This is not a default/full-graph check and does
-not substitute for promotion review or the responsible maintainer's decision.
+These commands are documented, **not executed for this static adapter**.
+The cache fetch must succeed *before* a build. The earlier separate Type
+evidence checkout had an actual-origin collector at
+`evidence/native-spectral-cylinder-sections/AuditNativeSpectralCylinderSections.lean`;
+its old proof result is historical and does **not** certify the modified
+current module. The donor's final2 ten-target build/private-inclusive
+audit cover that changed donor module, **not** this destination or a
+registered/full graph. Fresh applicable evidence and review remain necessary.
 The target pins are Lean `leanprover/lean4:v4.34.0-rc2`, mathlib
 `83abb3e776bdefcbc447a1e44d0debe4010039e5`, published
 SpectralStoneDuality `452b7b7be1bea76434cd083b1019a26f96b4ab30`
@@ -95,7 +110,8 @@ and published IdealCompletion
 
 ## Attribution and dated lifecycle
 
-The complete original statements and proof expressions come from
+For the **earlier Type endpoint adapter**, the complete original statements
+and proof expressions came from
 `FormalFrontier/incubator` commit
 `d8986c460ccae72392ad39550d89669604ec1284`, files
 `Incubator/Topology/Sheaves/NativeSpectralCylinderSections.lean` (blob
@@ -103,9 +119,12 @@ The complete original statements and proof expressions come from
 `IncubatorTest/Topology/Sheaves/NativeSpectralCylinderSections.lean` (blob
 `0b52bb4c6dc503204daf53040136538b479f1846`). Only the producer's
 comparison import and the client's producer import plus its namespace/end
-change in this destination adapter. Reverse those substitutions to recover
-both original blobs; SPDX Apache-2.0 and collective Authors notices remain
-unchanged. The donor author is worker-b Task
+change in that earlier destination adapter. Reversing those historical
+substitutions recovered both original blobs **at that time**; the current
+producer is modified by the later generic-helper extraction and does not
+reverse to the raw `d8986c` blob by import substitution alone. SPDX
+Apache-2.0 and collective Authors notices remain unchanged. The original
+Type proof author is worker-b Task
 `hive-request-e8a25d6c5328e70c571fe96c3ac0b8102530eaa1` (UID
 `ddcebc71-0a10-45a6-b8cf-9606083d850e`). Its fresh independent review
 was by worker-a Task `hive-request-39c7e47c551ef244416635d53429219016b1f836`
@@ -160,9 +179,41 @@ this destination adapter. It was authored by worker-a Task
 `e4c4c56a-25fc-4725-9cd3-4061a5326fbc`) from the **then-unaccepted**
 target `FormalFrontier/sheaf-cohomology` revision
 `d443e034746972593ec0c91f64268771a3013b5a` (PR #129), with
-explicit rework if that target's interfaces changed. At that adapter snapshot,
-its new code was **unreviewed and unaccepted**, without root/default-target
-registration, PR, merge or release. The later source-only 81-module assembly
+explicit rework if that target's interfaces change. As of this dated
+adapter, its new code is **unreviewed and unaccepted**: no root or default
+target registration, PR, merge, acceptance, release, source correspondence
+or source coverage is claimed. Registration, full-graph evidence, fresh
+promotion review and publication are separate owner-controlled steps.
+
+## Later generic-helper extraction (2026-09-28)
+
+The current Type producer uses the shared coefficient-generic topology in
+`SheafCohomology.NativeSpectralCylinder`; its original example is still
+byte-exact. The complete accepted **unregistered** incubator donor is
+`6ceec6dbfcfca0cad053e291457c8587c60839c5` (tree
+`1e9e6ca983535ff2c8f658d0bde8994ce6f7aaca`, #4/55732), independently
+reviewed at `dd535468fc9a4d14ec2ac90e794e41604ddcba4c`, with only
+its own final2 changed-input computational evidence. Generic extraction
+and tail-alias reuse belong to worker-b Task
+`hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf`, UID
+`0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4`; the topology proof expression
+remains due to original Type author worker-b Task
+`hive-request-e8a25d6c5328e70c571fe96c3ac0b8102530eaa1`, UID
+`ddcebc71-0a10-45a6-b8cf-9606083d850e`. The static destination
+adaptation and this guide update are by worker-a Task
+`hive-request-9dcde8f6d7062e56cb44b8468857f81145d25e0f`, UID
+`8c900d59-2daf-4646-af0c-9df846d22539`, not by the topology author.
+The frozen **unaccepted** destination parent is
+`651f8223c7dbb2df870f3f594077365bf6767d7f` (tree
+`7f69109ef07c5261c9f5b3d2ccf3163e56a6055d`), with outstanding
+ordered 81→83→84→85 actual-parent/release reconciliation *at that snapshot*. This static
+eight-path branch is not registered into roots, built, axiom-audited,
+independently reviewed, accepted or officially published. See
+`docs/NativeAdditiveCylinderSections.md` for the distinct additive
+comparison and casts, empty-open endpoint, private client, credits and
+later full-graph requirements. No source-coverage decision is made here.
+
+The later source-only 81-module assembly
 at 2026-09-27 20:41:17 UTC registered both leaves, preserving their exact
 statements, proof expressions and the eleven-package graph. Scoped independent
 review `f603c82f5ce9fc81f1f5efa8ad4db847faf557cf` subsequently approved
@@ -193,6 +244,20 @@ at that earlier reconciliation. It subsequently passed changed-input CI674
 and independent final review and was accepted at main/release-prep
 `36e49294f84208fa678872e84b6bdbd96c603188`, then published as official
 private `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37` (issue #34/comment
-56186). This still **unaccepted 85** successor does not change this Type-only
-spectral-cylinder body or establish an additive compact-cylinder theorem.
-No source correspondence, source coverage or incubator conversion follows.
+56186). At that checkpoint the still **unaccepted 85** successor did not change
+the then-current Type-only spectral-cylinder body or establish an additive
+compact-cylinder theorem. Subsequently full CI685/artifact131785, independent
+consolidated review `fc9bb966ca2c9f9426fd817341f787e851351bcd`
+(native4442–4444), separate owner gates and protected integrations completed
+accepted85 main `25e596baca25cf582aa2f6d9ba22d7833de74ec7` and official
+private85 `2c7b5e3e2e94704b9aa825c1aed88a880cf78dae` (#34/56450).
+The still **unaccepted 88** successor contains the *modified* current Type
+spectral-cylinder producer after generic-helper extraction; historical Type-only
+evidence on the earlier body does not certify it. Original frozen88 full
+CI665/artifact121236 and scoped review `eed9f975efd4dd17cbace2d3a40d4d041319b67f`
+(native4411) were consumed at #34/55987 and #34/55894, respectively. Its
+thirteen inherited 85 credit headers still require applicable full both-target,
+private-inclusive successor88 CI and fresh author-distinct consolidated final
+review before separate owner acceptance, protected integration and verified
+publication. No source correspondence, source coverage or incubator conversion
+follows from this documentation.
