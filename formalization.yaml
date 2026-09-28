@@ -34,11 +34,14 @@ project:
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
-    sheaves in Lean. The current transfer candidate additionally provides native
+    sheaves in Lean. The accepted 97-module predecessor also provides native
     commutative-ring-to-Type sheaf and sheafed-space coefficient forgetting,
     same-universe cofiltered native-limit preservation, and an original-cone
     ring global-section comparison and joint-stage representation under filtered
-    spectral-limit hypotheses; destination verification and review are pending.
+    spectral-limit hypotheses. This 99-module library also provides original-open
+    native commutative-ring cylinder section comparisons, actual restricted and
+    original-stage arrow laws, conditional isomorphism and a some-tail-stage
+    representative.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -93,9 +96,19 @@ automation:
 
 status:
   scope: >-
-    The new 97-module transfer candidate adds seven native commutative-ring
-    coefficient-forgetting producer leaves, one ring global-section producer
-    and one named public ordinary-import unique-lift example. The canonical
+    The accepted, officially published 97-module predecessor includes seven native
+    commutative-ring coefficient-forgetting producer leaves, one ring
+    global-section producer and one named public ordinary-import unique-lift
+    example. This 99-module library adds an original-open
+    commutative-ring cylinder producer and four private ordinary-import clients.
+    The literal restricted tail-stage sections compare to the original cone's
+    named open; the restricted leg and the original-stage law use the actual
+    cone projections and both equality transports in CommRingCat. Under an
+    actual original limit, directed preorder, spectral original stages and
+    transitions, and a compact possibly-empty stage open, this comparison is
+    invertible and every section has a representative at some tail stage, not
+    necessarily at any fixed stage. No nonempty, Nontrivial or
+    transition-surjectivity premise is introduced. The canonical
     pullback comparison is the mate of the original ring unit, the filtered
     sheaf-colimit comparison is literal colimit.post, and the native cocone
     uses the original projection mates. Cofiltered preservation assumes a
@@ -103,11 +116,11 @@ status:
     shape; the ring global-section comparison needs an actual limiting cone
     with spectral original stages and transitions. Its stage theorem supplies
     some stage representative for each section, not fixed-stage surjectivity;
-    neither result assumes nonempty stage spaces. The 38 selected results
+    neither result assumes nonempty stage spaces. The 43 selected results
     below are a curated public API list, not the complete declaration/axiom
     census. The prior 88-module scope and dated lifecycle statements below
-    remain historical, while the destination transfer awaits combined checks,
-    independent review, owner acceptance and publication.
+    remain historical. This implemented scope does not itself certify review,
+    acceptance or publication of a particular revision.
     Reusable sheaf-cohomological APIs under each declaration's actual category,
     topology, sheafification, Ext and universe assumptions. The positive
     local-cohomology/right-derived comparison has a shared universe parameter
@@ -400,10 +413,38 @@ status:
       file: SheafCohomology/NativeCommRingGlobalSections.lean
     - declaration: AlgebraicGeometry.SheafedSpace.exists_nativeCommRingGlobalSections_stage
       file: SheafCohomology/NativeCommRingGlobalSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.nativeCommRingCylinderSectionsComparison
+      file: SheafCohomology/NativeCommRingCylinderSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.colimit_ι_nativeCommRingCylinderSectionsComparison
+      file: SheafCohomology/NativeCommRingCylinderSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.originalStage_nativeCommRingCylinderSectionsComparison
+      file: SheafCohomology/NativeCommRingCylinderSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.isIso_nativeCommRingCylinderSectionsComparison
+      file: SheafCohomology/NativeCommRingCylinderSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.exists_nativeCommRingCylinderSections_stage
+      file: SheafCohomology/NativeCommRingCylinderSections.lean
 
 review:
-  status: "other: accepted 88 baseline; native ring 97 transfer awaits destination checks and review"
+  status: "other: reviewed 97-module predecessor and isolated ring-cylinder donor; those reviews do not approve the 99-module artifact"
   notes: >-
+    The preceding 97-module release was accepted and published privately. The
+    99-module version extends that accepted main with one byte-exact
+    original-open ring-cylinder producer, one ordinary private client adapted
+    only in import and namespace/end, two root imports, a standalone guide,
+    navigation, credits and five curated results.
+    The isolated unregistered donor received fresh independent review and owner
+    acceptance in its own scope, plus a focused two-module build and complete
+    actual-origin standard-axiom evidence; that does not establish relocated
+    destination elaboration, aggregate roots, new private/generated origin
+    audits or this transfer's substantive independent review. At the September
+    28, 2026 initial preparation checkpoint, no Lean build, cache fetch or
+    axiom audit had been run by this static transfer author; native destination
+    checks, fresh author-distinct consolidated review, owner acceptance,
+    protected integration and verified GitHub publication had not yet occurred.
+    This is dated preparation history, not the present artifact's exact-revision
+    status. No source correspondence or later incubator conversion is asserted.
+    The following 97-module candidate paragraph records its historical state
+    before that separate release's acceptance, not this branch's current state.
     This 97-module candidate is a static destination transfer from the accepted
     88-module main and release-prep at 663a2747016e153522d8cf141f956d9fd837b895.
     Eight producer and one example Lean leaves, two guides and seven edited

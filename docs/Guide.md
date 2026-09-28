@@ -1,9 +1,10 @@
 # Mathematical and module guide
 
-This guide describes the accepted library and the proposed ring transfer,
-not a complete formalization of a source. On an accepted release import
-`SheafCohomology` for
-the aggregate public interface, or import a subject module directly. The native
+This guide describes the 99-module library, including original-open
+commutative-ring cylinders and the results of its previously accepted,
+published 97-module predecessor, not a complete formalization of a source.
+Import `SheafCohomology` for the aggregate public interface, or import a
+subject module directly. The native
 [historical API reference](API.md) supplies declaration-level displayed hypotheses
 for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [SquareTransition supplement](SquareTransition.md),
@@ -31,8 +32,10 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [native additive global-sections supplement](NativeAdditiveGlobalSections.md),
 [native additive-cylinder sections supplement](NativeAdditiveCylinderSections.md),
 [ring coefficient-forgetting guide](CommRingForget.md), and
-[ring global-sections guide](NativeCommRingGlobalSections.md)
-cover both the older additions and the proposed ring subjects.
+[ring global-sections guide](NativeCommRingGlobalSections.md) cover the
+97-module predecessor's additions; the
+[original-open ring-cylinder guide](NativeCommRingCylinderSections.md)
+covers the original-open ring-cylinder API.
 [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -127,7 +130,7 @@ the forgotten *native* additive transition with the native Type-valued
 transition on the canonically compared stage. See the
 [forgetful square supplement](AbelianForget.md#commuting-squares).
 
-## Accepted and proposed modules
+## Module inventory
 
 The original 24 subject leaves below are included in the frozen native API
 reference. Nine new `AbelianForget` leaves, `SquareTransition`,
@@ -141,9 +144,12 @@ and `NativeLimitGlobalSections`, `NativeOpenRestriction`, `NativeCylinderLimit`,
 `NativeAdditiveCylinderSections`
 are documented in supplements;
 the earlier 55 subjects, thirty-one client leaves and two roots form the
-accepted 88-file baseline. The present candidate adds seven `CommRingForget`
-subjects and one `NativeCommRingGlobalSections` subject, one example leaf,
-and keeps the two roots: 63 producer leaves, 32 example leaves, 97 Lean files.
+historical 88-file baseline. The accepted 97-module release adds seven
+`CommRingForget` subjects and one `NativeCommRingGlobalSections` subject,
+one example leaf and keeps the two roots: 63 producer leaves and 32 example
+leaves. The 99-module library also includes one ring-cylinder producer leaf and
+one ordinary-import private example leaf, for 64 producers, 33 examples and two
+roots.
 The stage-representative theorem is inside the endpoint producer, not a separate
 example leaf. Prefix producer subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
@@ -167,6 +173,7 @@ the same hypotheses.
 | `CommRingForget.ConePullbackCocone` | Comparison of the actual projection-mate cocone legs |
 | `CommRingForget.LimitPreservation` | Same-universe cofiltered native-limit preservation, without global instance |
 | `NativeCommRingGlobalSections` | Original-cone ring-section cocone, isomorphism under spectral hypotheses, joint-stage representative |
+| `NativeCommRingCylinderSections` | Original-open ring-section comparison, actual restricted and original-stage arrow laws, conditional IsIso and some-tail-stage representative |
 | `AcyclicResolution` | Ext/homology comparison from acyclic resolutions |
 | `ColimitPostApp` | Evaluation of canonical colimit maps at components |
 | `ColimitTransport` | Transport/naturality of canonical colimit comparisons |
@@ -235,6 +242,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.NativeSpectralCylinderSections` | Private ordinary-import client: cancel the actual comparison on original-stage sections, retaining both equality transports |
 | `SheafCohomologyExamples.NativeAdditiveGlobalSections` | Private ordinary-import client: original additive projection equality iff equality after an actual later original-stage transition |
 | `SheafCohomologyExamples.NativeAdditiveCylinderSections` | Named private ordinary-import client: actual original-projection equality detects additive coprojection equality with both casts |
+| `SheafCohomologyExamples.NativeCommRingCylinderSections` | Four private ordinary-import clients: original-projection equality, some-stage product, compact empty open and selected tail-stage arrow |
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
 | `SheafCohomologyExamples.ConePullbackLimit` | Private Type/Ab Fin 3 lifts, projections and mates; empty-index reconstruction conditional on a genuine sheaf-colimit witness |
@@ -436,6 +444,19 @@ directedness/filteredness are introduced only locally, the restricted native
 limit is constructed rather than assumed, and spectrality gives its `IsIso`.
 The named private ordinary-import client cancels on actual original projection
 sections with both restriction-object and named-open casts.
+
+The [original-open ring-cylinder guide](NativeCommRingCylinderSections.md)
+describes the `CommRingCat` comparison from the literal restricted tail-stage
+section colimit to the original cone's named inverse-image open. The restricted
+cone leg followed by the forward restriction-object cast and the original
+stage's inverse restriction-object cast before its coprojection, followed by
+the reverse cone-open cast after the actual original projection, are explicit
+arrow laws under a preorder alone. Under a directed preorder, an actual original
+limiting cone, spectral original stages and transitions and a compact possibly-empty
+stage open, the restricted limit and spectrality follow locally, giving a direct
+ring-valued IsIso and an original-stage representative at *some* tail index.
+There is no nonempty-open, `Nontrivial` or transition-surjectivity premise and
+no fixed-stage surjectivity or locally ringed/scheme conclusion.
 
 The `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local

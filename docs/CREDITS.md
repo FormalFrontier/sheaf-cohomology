@@ -12,9 +12,59 @@ verified original project contributions; it does not automatically settle
 concrete third-party rights, authenticity of a notice, or an entire public
 release history. There is no new human-author or source-author approval claim.
 
-## Native commutative-ring transfer candidate
+## Original-open ring-cylinder transfer and preparation history
 
-The 97-module candidate transfers the accepted, **isolated and unregistered**
+The 99-module library includes a ring-cylinder producer first accepted in
+isolation as an unregistered incubator donor, and one ordinary-import example
+leaf with four private clients. At its September 28, 2026 initial preparation
+checkpoint, this destination transfer had not passed destination checks or
+received destination review, protected acceptance or an official release.
+That is historical preparation status, not a report on later revisions. The
+mathematical expression and ring-specific original-open proofs belong to
+worker-a Hive Task
+`hive-request-88dfae1c142ae9a97c6e943836f56272654fa848` (UID
+`91101cdb-86bf-42a6-984d-2bd74e2d112a`). Its producer SPDX/collective
+author header remains byte-for-byte intact; the Apache-2.0 project license
+and original donor rights notice are preserved, without implying new rights
+clearance. The ordinary-import private client retains its original header
+and proofs, changing only its destination import and namespace/end.
+
+That proof explicitly reuses the additive-cylinder expression of worker-b
+`hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf` (UID
+`0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4`), the category-generic cylinder
+of worker-a `hive-request-27d70680c0e69c147294098e3ac13b1c7092c0e1`
+(UID `bfe6acf9-1385-4602-a9b8-1e88f6908b1a`), and spectral restriction
+of worker-b `hive-request-e8a25d6c5328e70c571fe96c3ac0b8102530eaa1`
+(UID `ddcebc71-0a10-45a6-b8cf-9606083d850e`). The ring-global theorem
+by worker-a `hive-request-1c0851150518e166978e650f8b077bcdd9311334`
+(UID `6ed601e1-657b-408f-bf75-7df21b10a83a`) adapts additive-global work
+of `hive-request-0b67e8c17f9041202a7550e7a7703f53d6bb4004` (UID
+`7b289efe-e184-4c33-9723-7ef39e977b59`) and the CommRingForget bridge of
+`hive-request-c57c813632815e9d350373cdfa7741657fb4852a` (UID
+`2717d143-2755-441e-83fb-8f9190fbe8f1`). The API assessment was by
+worker-b `hive-request-d3c2586e89c15b535aecaa643cab3e9cbdb8b549`
+(UID `fc541648-a37d-4749-b741-30000d4baef2`); the bounded promotion
+assessment, **not the mathematics**, was by worker-a
+`hive-request-d568f6f45172710e211e061902580a06b402beb3` (UID
+`b85beb45-e4fa-4a2b-9fb1-3a21628aaf2f`). Independent worker-b
+`hive-request-79827e2353e8bd4c27140758da00208865beace1` (UID
+`e09332ab-507c-4d1d-9305-209de813449d`) reviewed and approved the
+*isolated donor*, not this destination transfer. Worker-a Task
+`hive-request-e8521867db768898ae29c146bf0347216ca05cde` (UID
+`6dd9e506-99a9-43e8-a095-a1230890cd4c`) authors this static destination
+transfer, guide and metadata, not the donor proof. Worker-a Task
+`hive-request-1b263146ce9c918f553bc7198c7fe406410f5d43` (UID
+`26499b19-ad45-4345-9179-5db55bc2a728`) corrects release-lifecycle
+documentation, not the donor proof, destination transfer or independent review.
+Anchor is the responsible maintainer and alone decides destination review
+intake, acceptance, integration and verified publication; none is implied by
+this attribution.
+
+## Historical native commutative-ring transfer candidate
+
+The following 97-module candidate account records its then-current historical
+state; the 97-module release has since been accepted and published. That
+candidate transferred the accepted, **isolated and unregistered**
 incubator ring bridge and endpoint into this independently usable library;
 it is not yet a destination review, protected integration or release.
 The seven `SheafCohomology/CommRingForget/` producer leaves and the

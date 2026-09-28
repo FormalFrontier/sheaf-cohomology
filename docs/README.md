@@ -48,15 +48,19 @@ covered by [AbelianForget.md](AbelianForget.md),
 native batch. The old root and example-client source hashes do not match the
 current changed roots. Reproducing these historical records is
 distinct from accepting their mathematical meaning or auditing kernel proofs.
-The present 97-module candidate adds eight producer and one ordinary-import
-example leaves, with two root imports and one examples-root import. Its new
+The accepted, published 97-module library adds eight producer and one ordinary-import
+example leaves relative to the historical 88-module snapshot. Its
 [CommRingForget](CommRingForget.md) and
 [NativeCommRingGlobalSections](NativeCommRingGlobalSections.md) guides describe
-the destination API and its exact original-cone assumptions. The fixed 26-module
+the destination API and its exact original-cone assumptions. The 99-module
+library also includes the public original-open ring-cylinder producer and an
+ordinary-import private example leaf; see the
+[ring-cylinder guide](NativeCommRingCylinderSections.md). The fixed 26-module
 `API.md`, `api-manifest.json` and `scripts/api_inventory.json` remain historical
-and must not be read as an inventory of the 97-module candidate. Neither the
-new guides nor these historical generated records certify the candidate's
-build, complete axiom audit, independent review or release.
+and must not be read as an inventory of the accepted 97-module baseline or
+the 99-module library. The new guide and historical generated records do not
+themselves certify any exact revision's build, complete axiom audit, independent
+review or release.
 
 For the 157 missing-docstring sites, the shipped text is a generic pointer to
 the source and module guide, not an independently authored per-site explanation.

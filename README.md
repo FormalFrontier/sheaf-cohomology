@@ -1,11 +1,13 @@
 # sheaf-cohomology
 
-An accepted, officially published private release of this 97-module Lean library
-develops sheaf cohomology, compact-open sections, and native limits and sections
-of sheafed spaces. Import [`SheafCohomology`](SheafCohomology.lean) for the
-aggregate API or an individual subject module for a smaller import. These
-results are declarations of this library, built on mathlib and its published
-dependencies; they are not a claim to have formalized an entire source.
+This 99-module library develops sheaf cohomology, compact-open sections, and
+native limits and sections of sheafed spaces, including original-open
+commutative-ring cylinders. Its 97-module predecessor was accepted and
+officially published privately before the ring-cylinder modules were added.
+Import [`SheafCohomology`](SheafCohomology.lean) for the aggregate API or an
+individual subject module for a smaller import. These results are declarations
+of this library, built on mathlib and its published dependencies; they are not
+a claim to have formalized an entire source.
 
 ## Headline results
 
@@ -62,19 +64,29 @@ dependencies; they are not a claim to have formalized an entire source.
 - **Compact-open cylinders.** For a directed preorder and a selected index,
   restricting an actual native limit to the inverse image of a compact stage
   open gives filtered-colimit descriptions of sections over that open for
-  Type-valued and additive sheafed spaces. Both results use spectral original
-  stages and transitions and the constructed restricted limit; the additive
-  result compares sections of the *original* cone point. Empty opens are
-  allowed, but this library does not assert the corresponding ring-cylinder
-  theorem. See the
+  Type-valued, additive and commutative-ring sheafed spaces. The conditional
+  ring result compares the literal restricted tail-stage rings with sections
+  on the *original* cone's inverse-image open: its original-stage law uses the
+  actual projection and both equality transports in `CommRingCat`. For an actual
+  limiting cone, spectral original stages and transition maps, and a compact
+  possibly-empty stage open, this comparison is an isomorphism, and each
+  section comes from *some* tail stage, not every fixed stage. No nonempty-open,
+  nontrivial-ring or transition-surjectivity premise is needed. See the
   [Type theorem](SheafCohomology/NativeSpectralCylinderSections.lean#L45),
   [additive theorem](SheafCohomology/NativeAdditiveCylinderSections.lean#L101),
-  and [additive cylinder guide](docs/NativeAdditiveCylinderSections.md).
+  [ring IsIso and some-stage declarations](SheafCohomology/NativeCommRingCylinderSections.lean),
+  [additive cylinder guide](docs/NativeAdditiveCylinderSections.md), and
+  [ring-cylinder guide](docs/NativeCommRingCylinderSections.md).
 
 ## Further scope and historical snapshots
 
 The detailed descriptions below are retained verbatim. Their dated
 candidate-stage accounts record past states, not the current release status.
+At its September 28, 2026 initial preparation checkpoint, the original-open
+ring-cylinder addition still required destination both-root build, complete
+transitive standard-axiom audit including private declarations, independent
+review, owner acceptance and verified publication. That dated checkpoint does
+not report the present artifact's exact-revision status.
 
 It also provides native sheafed-space cone pullbacks and projection-mate
 cocones, an additive-to-Type forgetful functor and its canonical cone-wise

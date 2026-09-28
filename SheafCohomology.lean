@@ -41,6 +41,7 @@ public import SheafCohomology.AbelianForget.DiagramPushforward
 public import SheafCohomology.AbelianForget.LimitPreservation
 public import SheafCohomology.CommRingForget.LimitPreservation
 public import SheafCohomology.NativeCommRingGlobalSections
+public import SheafCohomology.NativeCommRingCylinderSections
 public import SheafCohomology.OpenBaseChange
 public import SheafCohomology.FilteredColimitFunctorH
 public import SheafCohomology.HigherDirectImageFilteredColimit
@@ -73,4 +74,7 @@ commuting-square transitions, and open base change.
 The commutative-ring-to-Type counterpart preserves same-universe cofiltered
 native limits; for an original spectral native limit, its ring-section
 colimit comparison is invertible and every section has some stage representative.
+On a compact open of an original spectral native limiting cone, the literal
+restricted ring-section comparison is also invertible, and every section on
+the corresponding original cone open comes from some tail stage.
 -/
