@@ -677,9 +677,11 @@ are not combined-root acceptance, publication or source coverage.
 
 ## Native limits of principal-tail open cylinders
 
-`SheafCohomology/NativeCylinderLimit.lean` transfers the accepted-unregistered
-incubator leaf `bf566ea767083405992cb832df9e914712a9e3cb`, changing only its
-parent import. Original cylinder mathematics is by worker-a Hive Task
+At the original 77-module assembly, `SheafCohomology/NativeCylinderLimit.lean`
+transferred the accepted-unregistered Type-valued incubator leaf
+`bf566ea767083405992cb832df9e914712a9e3cb`, changing only its parent
+import; this producer was later generalized in place as credited below.
+Original cylinder mathematics is by worker-a Hive Task
 `hive-request-153a0400bb1a4285602d24cceb51ae9a56b6b3be` (UID
 `38e90320-4a49-4738-9620-3881f7b58af5`); separate worker-a Task
 `hive-request-d984b1de170e87f4be31d9ce565c90299c51e3b3` (UID
@@ -717,6 +719,35 @@ the genuine private ordinary-import client. The [guide](NativeCylinderLimit.md)
 states the exact hypotheses and independent gates. No private source text,
 incubator dependency or ancestry is imported into release history; leaf acceptance
 does not establish aggregate acceptance, official publication or source coverage.
+
+The later *category-generic* cylinder is distinct from that original Type
+construction. Worker-a Task
+`hive-request-27d70680c0e69c147294098e3ac13b1c7092c0e1` (UID
+`bfe6acf9-1385-4602-a9b8-1e88f6908b1a`) adapted the producer to arbitrary
+same-universe coefficient `C` and closely adapted its named private additive
+ordinary-import client at accepted-unregistered incubator revision
+`3f42acfa49bc773a4b12727e5f1b68b7299680a7`. The Type client remains
+unchanged and no parallel Type wrapper is introduced. Original Type author,
+provenance/header repair, native-restriction precursor and the source-tail
+directedness/finality expression author and retained source revision stay
+credited in the preceding paragraph and the [guide](NativeCylinderLimit.md).
+Original generic review `de388e4a01404d58c3afcd9306cb990138ce9f0a`
+requested a provenance clarification; exact-successor review
+`7daf6056828d4231167cd3fa393b5f5823d34519` resolved that objection.
+Complete donor seven-module/74-origin evidence `85e7799ed3b60bd274fe008989a2bd274763711a`
+includes 25 private origins, but is not an 85-module destination check.
+
+Static generic destination transfer of the producer, additive client and
+standalone guide at `2980f5b0fc5c10fa8bf876527366690f8f654a48`:
+worker-a Task `hive-request-174ca2aad0df7bdc9275c6af83be955de855bd97`
+(UID `abffae59-12f3-4536-8643-d91504fc806d`). Separate coherent 85
+example-root import, documentation, metadata and credit registration: worker-a
+Task `hive-request-f2b4090a882686df924af77bc982594879d2f8a3`
+(UID `bd0b26e2-40ab-4ab0-b12f-60aaf5f4e356`). Neither transfer nor
+registration authored the original proofs or ran a destination build/axiom
+audit. The original Type transfer credit above is retained. Old 84 CI637 and
+donor evidence are not changed-85 proof checks; owner-controlled complete graph
+checks, fresh independent destination review, acceptance and release remain.
 
 ## Chosen native cylinder limits and original-stage sections
 
@@ -848,8 +879,15 @@ Original SPDX and contributor attribution remain intact under that reversible
 header exception. Full CI666 and fresh independent final review supported
 accepted83 `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` and official private
 release `6793f2ff8469d1cab23a98ac2da22a3286d22f8e`, verified on
-2026-09-28. This 84 successor inherits both collective-credit headers exactly;
-none of those 83 decisions accepts it. No private source text, incubator
+2026-09-28. At its earlier reconciliation, the 84 successor inherited both
+collective-credit headers exactly; none of the 83 decisions then accepted it.
+Full changed-input CI674, fresh final independent review and separate owner
+decisions later supported accepted84 main/release-prep
+`36e49294f84208fa678872e84b6bdbd96c603188` and official private
+release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`, verified on
+2026-09-28 (issue #34/comment 56186). This unaccepted85 successor inherits
+the same two whole headers; it does not change their proof bodies. No private
+source text, incubator
 dependency or incubator ancestry enters the deliverable history. Donor acceptance
 and focused destination checks did not certify the new aggregate roots;
 the additive cylinder endpoint and source coverage remain separate.
@@ -893,9 +931,10 @@ header text (including both continuation lines, Generality and the
 provenance/auditability repair). Reversing exactly each new header recovers the
 original 84 whole file; only the `module`-onward suffix remains byte-identical
 without reversal. Both roots, Type restriction client, mathematical content,
-eleven dependency objects and upstream notices are unchanged. Full84 successor
-CI for the four changed headers, independent final main/prep/public review and
-individual owner decisions/release remain outstanding. This change is by
+eleven dependency objects and upstream notices were unchanged. At that 84
+reconciliation, full successor CI for the four changed headers, independent
+final main/prep/public review and individual owner decisions were outstanding;
+they later completed as recorded above. This header repair is by
 worker-a Task `hive-request-69c3cc1e2ad44b30a98b3a852b8eb2866ba76f65`,
 UID `1a955cb0-f708-4835-bdb5-64567d7d5257`, without new proof authorship.
 
@@ -910,3 +949,46 @@ and the complete Contributor text remain; the Authors label has the
 reversible collective-credit exception just described. No private source
 text, incubator dependency or incubator
 ancestry enters this deliverable; no source-coverage decision follows.
+
+## Actual-parent reconciliation of the 85 successor
+
+Worker-a Hive Task `hive-request-37161c96a456edb3b7ceee2aa96e1b3c69a6b612`
+(UID `27cb01a1-8fdf-47c3-906a-10bc121af578`) normally merges accepted84
+main `36e49294f84208fa678872e84b6bdbd96c603188` into frozen unaccepted85
+`651f8223c7dbb2df870f3f594077365bf6767d7f`, reconciling bounded
+documentation and inheriting exactly four collective-credit headers. The
+original generic cylinder producer/additive client and Type clients are not
+rewritten; all bytes from `module` onward remain frozen85-identical. This
+reconciliation does not confer original mathematical authorship, accept85 or
+replace the old scoped native4404 REQUEST_CHANGES/resolved4405 approval.
+Original exact85 CI655/artifact120266 does not pass these four changed source
+headers. Applicable full successor checks and fresh independent consolidated
+review precede Anchor's separate owner decisions and official publication;
+the earlier 81/83/84 releases do not decide 85 or source coverage.
+
+## Inherited author-header correction on the unaccepted 85 successor
+
+Final independent review `abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a`
+(worker-b Task `hive-request-b92726f59674d6a71b82c466e5075036f0682e55`,
+UID `508370fe-4866-44c7-8644-e55a8aa35b94`) recorded native4434/4435/4436
+REQUEST_CHANGES on PR141/147/148: nine inherited original-project Lean headers
+named only their workers. The earlier four inherited actual84 header repairs
+remain separate. This static successor changes only the first `Authors:` label
+in each of the nine native equality, lifting, stage-colimit and chosen-limit
+producer/client files, and the Type restriction client, to collective
+`Authors: Formal Frontier Agents` followed by the unchanged original worker
+credit as `Contributor:`. All original Task/UID attribution recorded above,
+SPDX notices and module-onward proof/import/option bytes remain. The other
+fourteen files without individual headers have no blanket header requirement.
+Reversing these nine label edits recovers their complete predecessor blobs;
+13 headers differ from frozen 85 when combined with the earlier four repairs.
+
+The nine-header-only correction and this provenance update are by worker-a
+Hive Task `hive-request-96648a429ccb63253fb14ffb5bc17d00df299cb6`, UID
+`3f80b741-2385-4a45-bf6b-26cd185dda5e`; this Task is **not** an author of
+the original mathematical proofs or their adapters, nor an independent reviewer.
+The final review's objection is historical evidence motivating this attempted
+repair, not approval. Original CI655 and successor CI678/679/680 on the prior
+inputs cannot certify these new headers. Fresh exact independent review and
+applicable both-target/private-inclusive checks remain before Anchor's separate
+owner decisions and official publication; this 85 successor is unaccepted.

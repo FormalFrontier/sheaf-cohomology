@@ -1,6 +1,7 @@
 /-
 SPDX-License-Identifier: Apache-2.0
-Authors: Formal Frontier worker-b Hive Task hive-request-83333dedd640d855f159f1c115a70d659ba2c7dc
+Authors: Formal Frontier Agents
+Contributor: Formal Frontier worker-b Hive Task hive-request-83333dedd640d855f159f1c115a70d659ba2c7dc
 -/
 module
 public import SheafCohomology.PullbackLocalSections

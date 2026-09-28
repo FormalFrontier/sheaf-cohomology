@@ -25,7 +25,8 @@ project:
     comparison under spectral-limit hypotheses, actual projection comparison
     for global sections of a chosen native limit and its named invertibility,
     category-generic native inverse-image-open restriction and actual section-component laws,
-    native limits of principal-tail open-cylinder diagrams,
+    category-generic native limits of principal-tail open-cylinder diagrams
+    with Type and additive ordinary-import clients,
     chosen native cylinder-limit isomorphisms and original-stage section comparisons,
     original-cone additive global-section comparisons and spectral-limit invertibility,
     commuting-square transitions
@@ -242,13 +243,16 @@ status:
     principal-tail and cylinder limits are not asserted by this unit.
     The separate NativeCylinderLimit unit constructs the actual restriction
     diagram over a principal tail of a directed preorder with an explicit
-    distinguished index. An arbitrary original native limit cone and stage
-    open induce its literal restricted cone and a constructed native IsLimit;
+    distinguished index, for C in Type(v+1) with Category.{v} C inferred from
+    the original SheafedSpace.{v+1,v,v} C diagram. An arbitrary original native
+    limit cone and stage open induce its literal restricted cone and a constructed
+    native IsLimit;
     the restricted limit is not an input assumption. Native lift equations
     and uniqueness follow from finality, open-immersion factorization and
     monic cancellation, without linear order, spectrality or inhabited opens
-    or spaces. Its private ordinary-import client applies this limit to an
-    arbitrary restricted cone and recovers the original projection equation.
+    or spaces. Separate Type and additive private ordinary-import clients apply
+    this same limit to arbitrary restricted cones and recover the original
+    projection equation without duplicating a Type wrapper.
     This unit adds no chosen-limit isomorphism, restricted-diagram section
     comparison, spectral transfer or source endpoint.
     The separate NativeCylinderComparison constructs the chosen native-limit
@@ -283,6 +287,60 @@ status:
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Current successor85 state: accepted84 main/release-prep
+    36e49294f84208fa678872e84b6bdbd96c603188, tree
+    26ca208680099b374e7d536c8b45d38ba24848e0, completed its own
+    changed-header CI674, independent final review and owner decisions.
+    Official private release e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37
+    was verified on 2026-09-28 (issue 34/comment56186) with actual official83
+    6793f2ff8469d1cab23a98ac2da22a3286d22f8e as sole parent; official81
+    b743039857ca8c206b6a8cdb99afe7c7e8ce0c25 precedes 83. This
+    UNACCEPTED85 development successor normally merges accepted84 ancestry into
+    frozen85 651f8223c7dbb2df870f3f594077365bf6767d7f, inheriting exactly
+    four whole collective-credit headers. A further nine inherited original-project
+    worker-only headers are reversibly corrected in this unaccepted successor;
+    13 headers differ from frozen85, while all bytes from module onward,
+    both roots and all eleven whole package objects remain frozen85-identical.
+    Original frozen85 full both-target/private-inclusive CI655/artifact120266
+    (issue 34/comment55824) and scoped native4404 REQUEST_CHANGES followed by
+    resolved exact native4405 approval remain historical exact-input evidence;
+    CI655 does NOT certify these changed header inputs. Final review
+    abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a recorded native4434/4435/4436
+    REQUEST_CHANGES on PR141/147/148 for the additional nine headers; this
+    correction is not approval. CI678/679/680 on the earlier internal/public
+    candidate also cannot certify this changed successor. One applicable
+    successor85 full both-target/private-inclusive check and fresh independent
+    exact-candidate author-distinct review remain
+    before separate owner acceptance, protected integration and official
+    publication. No 85 acceptance, additive compact-cylinder endpoint,
+    incubator conversion or source coverage is inferred from 81/83/84 releases.
+
+    Historical 85-module assembly state:
+    Static source-only 85-module generic-cylinder registration assembled on
+    2026-09-28 from transfer 2980f5b0fc5c10fa8bf876527366690f8f654a48,
+    sole frozen unaccepted 84 parent 53a0a858ec7d3fab15c96f9f10ba8c31d8e21554.
+    Accepted unregistered incubator donor 3f42acfa49bc773a4b12727e5f1b68b7299680a7
+    supplies the generalized existing producer and new private additive
+    client. Original Type client, producer/client proof expressions, public
+    root, eleven complete dependency objects, Lake/toolchain/default targets
+    and CI stay unchanged; only the examples root adds an ordinary client import.
+    Inventory is 53 subjects, 30 client leaves (27 private, three named public)
+    and two roots. Donor seven-target/74-origin evidence including 25 private
+    origins, old 84 CI637/artifact112464 and scoped review are not a new 85
+    graph build or private-inclusive audit and do not accept this successor.
+    Complete 85-graph checks, independent destination review, owner acceptance,
+    actual ordered parent reconciliation and verified official publication
+    remain separate; no source coverage, additive compact-cylinder endpoint or
+    incubator conversion is asserted. Actual 79 main and prep
+    f950b52d57e87efb70f4c8adb6d84856248520e9
+    and native public ca6684a3b2eaa21a9e415175ceda61d9a4ac75c8 advanced
+    on 2026-09-28 (issue 34 comments 55620, 55622, 55625, 55637). Their exact
+    tree/sole-parent was verified on private GitHub main at 00:28:20 UTC
+    (issue 34 comment 55641); the 00:27:50 pending readback was historical.
+    Those 79 individual decisions did not themselves accept 81/83/84/85. The paragraphs
+    below preserve dated prior assembly snapshots, not live successor status.
+
+    Historical 84-module assembly state:
     Source-only 84-module generic-restriction registration assembled on
     2026-09-27 at 23:04 UTC from static transfer
     952a1fcb976ccd9f2cf41316c1db4dd64542f14b on frozen then-unaccepted
@@ -304,7 +362,8 @@ review:
     CI666 and independent final review and was published on official private
     GitHub as 6793f2ff8469d1cab23a98ac2da22a3286d22f8e on 2026-09-28,
     with official81 b743039857ca8c206b6a8cdb99afe7c7e8ce0c25 as sole
-    public parent. This UNACCEPTED84 development successor normally merges
+    public parent. At the earlier 84 reconciliation, the then-unaccepted84
+    development successor normally merged
     accepted83, retains its two additive-global-section collective-credit
     headers and only repairs the generic restriction producer/additive client
     Authors headers to collective Authors plus their complete original
@@ -312,8 +371,10 @@ review:
     pins remain unchanged from the original84. Full original637 is historical
     exact-input evidence, NOT a pass for these four changed headers. Applicable
     both-target/full84/private-inclusive successor CI and a fresh independent
-    final main/prep/public review precede separate owner acceptance, protected
-    integration and verified publication. No generic-cylinder or additive-cylinder
+    final main/prep/public review preceded separate owner acceptance, protected
+    integration and verified publication. All of those 84 gates later completed
+    as recorded in the current state above. At that 84 checkpoint no
+    generic-cylinder or additive-cylinder
     endpoint, source coverage or incubator conversion is asserted. Historical
     assembly notes below retain their dated then-current gates.
 

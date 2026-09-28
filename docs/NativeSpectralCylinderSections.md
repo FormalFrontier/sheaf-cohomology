@@ -188,7 +188,11 @@ additive or generic successor. The additive global-section contribution received
 its own subsequent full CI666, final review and owner decisions: accepted 83
 main `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` and official private
 release `6793f2ff8469d1cab23a98ac2da22a3286d22f8e`, verified on
-2026-09-28. The following 84 generic-restriction successor remains unaccepted
-and does not change this Type-only spectral-cylinder body or establish an
-additive cylinder theorem. No source correspondence, source coverage or
-incubator conversion follows from these releases.
+2026-09-28. The following 84 generic-restriction successor was unaccepted
+at that earlier reconciliation. It subsequently passed changed-input CI674
+and independent final review and was accepted at main/release-prep
+`36e49294f84208fa678872e84b6bdbd96c603188`, then published as official
+private `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37` (issue #34/comment
+56186). This still **unaccepted 85** successor does not change this Type-only
+spectral-cylinder body or establish an additive compact-cylinder theorem.
+No source correspondence, source coverage or incubator conversion follows.

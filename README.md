@@ -37,11 +37,16 @@ identity, composition and actual global-section component equations.
 The existing Type-valued API is a specialization of these same declarations;
 ordinary-import Type and additive clients exercise their component readback.
 For a directed preorder with an explicit distinguished index, an arbitrary
-native limit cone restricts to a native limit of the principal-tail diagram
-of inverse-image opens, without assuming the desired restricted limit.
-The chosen native limit of that restricted diagram is canonically isomorphic
-to the literal restriction. Both projection and base-map laws identify its
-global-section comparison on original-stage sections, retaining the necessary
+native limit cone of `SheafedSpace.{v + 1, v, v} C`, for any
+`C : Type (v + 1)` with `Category.{v} C`, restricts to a native limit of the
+principal-tail diagram of inverse-image opens, without assuming the desired
+restricted limit. Ordinary-import Type and additive private clients apply the
+same constructed limit and recover its original projection equation; the
+additive client does not duplicate the Type wrapper.
+For Type-valued sheafed spaces, the chosen native limit of that restricted
+diagram is canonically isomorphic to the literal restriction. Both projection
+and base-map laws identify its global-section comparison on original-stage
+sections, retaining the necessary
 restriction-object and inverse-image casts.
 If the original stages and transition maps are spectral and the chosen stage
 open is compact, that actual restricted-cylinder comparison is an isomorphism.
@@ -57,42 +62,89 @@ client detects original projection equality by equality after an actual later
 transition. This does not extend the Type-only compact-cylinder theorem to
 additive coefficients.
 
-The source-only 84-module registration was assembled at 2026-09-27 23:04 UTC
-from static destination transfer `952a1fcb976ccd9f2cf41316c1db4dd64542f14b`
-on frozen, then-unaccepted 83-module parent
-`70d1aad387e72104ae294ac07a32c113d7f72e75`. It generalized the existing
-native restriction declarations in place and registered a named private additive
-client by changing only the example root's import. The independently reviewed
-donor `ae8d32640fc9c946778fdd79fbc37528b433fa06` was accepted as an
-**unregistered incubator leaf only**; donor checks were not destination checks.
-The original 83-module CI627 succeeded at 22:47:17 UTC, but its inputs did not
-include the generalized producer or new additive client/root. The 75-module
-official release `57decc6d5106fe32dc57f9684de38f6e10534de5` was verified
-at 22:30:32 UTC. The then-outstanding 77/79/81/83 predecessor gates were
-historical assembly status, not current release status.
+At its original 2026-09-28 assembly, static transfer
+`2980f5b0fc5c10fa8bf876527366690f8f654a48` on frozen **unaccepted**
+84-module parent `53a0a858ec7d3fab15c96f9f10ba8c31d8e21554`, this
+source-only 85-module registration adds the accepted, unregistered generic
+cylinder producer from incubator `3f42acfa49bc773a4b12727e5f1b68b7299680a7`
+and its named private additive ordinary-import client without changing the
+existing Type client or duplicating its wrapper. The producer and additive
+client retain blobs `2ed83dd88a57759c35550f48725f3657740a14e1` and
+`1777e5b9bb6d7fa6c3ef731843a92842e078a149`; only the example root imports
+the new client. The 85-file traversal comprises 53 producers, 30 client leaves
+(27 private and three named-public), and two roots. Donor seven-module build
+and private-inclusive axiom evidence is not a changed 85-module destination
+pass. Old 84 CI637/artifact112464 and its scoped reviews likewise do not
+certify this changed graph or accept its parent. A full 85-graph build and
+private-inclusive standard-axiom audit, fresh independent destination review,
+individual predecessor/owner acceptance, integration and verified publication
+were still required; that assembly claimed no 85 pass, acceptance, source
+coverage or incubator conversion. The following paragraphs preserve dated predecessor
+assemblies, not the current graph's lifecycle.
 
-The original 84-module candidate `53a0a858ec7d3fab15c96f9f10ba8c31d8e21554`
-subsequently passed both-target, private-inclusive CI637 (issue #34, comment
-55462) at 23:36:49 UTC: 84 modules, 1,950 actual-origin declarations including
-569 private, and only standard axioms. The scoped independent review
-`efecfe1af9a07f376fd2c92e7f59125ac14ddb3c` and native review 4379
-concerned that exact original registration. Neither certifies this successor's
-changed Lean headers,
-merged ancestry or revised public artifact. Actual accepted 83-module main and
-release-prep are `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` (tree
-`052dfd63230482a17d4dedc158446796857bc686`); its official private GitHub
-release `6793f2ff8469d1cab23a98ac2da22a3286d22f8e` has previous official
-81 release `b743039857ca8c206b6a8cdb99afe7c7e8ce0c25` as sole parent,
-verified on 2026-09-28 at 05:15:05 UTC. This 84-module development successor
-merges that **accepted** 83 ancestry without adopting its public-release
-ancestry. It retains the accepted 83 additive-global-sections collective-credit
-headers and repairs only the generic restriction producer/additive client headers;
-every 84-module file remains unchanged from `module` onward. The original
-CI637 does **not** pass these four changed headers. Applicable full successor
-CI and a fresh independent final main/prep/public review, followed by distinct
-owner acceptance, protected integration and verified publication, are required.
-This 84-module successor is **unaccepted**. Neither a generic-cylinder nor an
-additive-cylinder extension, source coverage or incubator conversion follows.
+The historical source-only 84-module registration preserves the generic
+restriction producer and named private additive client from static transfer
+`952a1fcb976ccd9f2cf41316c1db4dd64542f14b`, all other nonroot Lean files,
+the public aggregate root and all eleven dependency objects. Only the example
+root gains the additive-client import. The underlying restriction declarations
+are generalized in place, not duplicated under new names. The donor
+`ae8d32640fc9c946778fdd79fbc37528b433fa06` was independently reviewed and
+accepted as an unregistered incubator leaf only. Donor evidence and the old
+83-module CI result do not certify this changed graph. This exact candidate
+requires a complete 84-module build and private-inclusive standard-axiom
+audit, fresh independent destination review, ordered predecessor releases,
+owner acceptance and verified publication. No such pass or acceptance is
+claimed at this assembly.
+
+Its frozen 83-module parent
+`70d1aad387e72104ae294ac07a32c113d7f72e75` remains unaccepted at the
+2026-09-27 23:04 UTC assembly. Full CI627 on that parent succeeded at
+22:47:17 UTC; the owner inspected the complete both-target and private-inclusive
+evidence, but the generalized restriction producer and new client/root are
+changed computational inputs. The separate 75-module release was verified
+on official GitHub at `57decc6d5106fe32dc57f9684de38f6e10534de5` at
+22:30:32 UTC. At that 2026-09-27 23:04 UTC assembly, the individual
+77/79/81/83 release gates and expected parent reconciliation remained open.
+Subsequently, actual 79 main and release-prep advanced to
+`f950b52d57e87efb70f4c8adb6d84856248520e9`, and native public release
+`ca6684a3b2eaa21a9e415175ceda61d9a4ac75c8` was integrated at
+2026-09-28 00:24:21 UTC (issue #34 comments 55620, 55622, 55625, 55637).
+Private GitHub `main` was verified at 00:28:20 UTC at that same public
+commit/tree/sole parent (issue #34 comment 55641); the earlier 00:27:50
+pending readback was historical. Those 79 decisions did not themselves accept 81/83/84/85,
+a generic additive cylinder endpoint, source coverage or incubator conversion.
+
+Actual 81 and 83 subsequently completed their separate official releases at
+`b743039857ca8c206b6a8cdb99afe7c7e8ce0c25` and
+`6793f2ff8469d1cab23a98ac2da22a3286d22f8e`. The original frozen 84
+candidate `53a0a858ec7d3fab15c96f9f10ba8c31d8e21554` passed CI637
+(issue #34/comment 55462); its scoped review
+`efecfe1af9a07f376fd2c92e7f59125ac14ddb3c`/native4379 concerned that
+registration, not later changed headers. Full changed-input CI674 and fresh
+independent final review supported accepted 84 main/release-prep
+`36e49294f84208fa678872e84b6bdbd96c603188` (tree
+`26ca208680099b374e7d536c8b45d38ba24848e0`); the official private
+release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`, verified on
+2026-09-28 (issue #34/comment 56186), has official 83 as sole parent.
+This **unaccepted 85** development successor normally merges accepted 84,
+not the public release or a planning branch. The original frozen 85 candidate
+`651f8223c7dbb2df870f3f594077365bf6767d7f` passed complete CI655
+(issue #34/comment 55824); its scoped review retains native4404
+REQUEST_CHANGES and resolved native4405 approval. Its actual-parent
+reconciliation repaired four inherited headers. A separate final review of
+that unaccepted result (`abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a`;
+native4434/4435/4436 REQUEST_CHANGES on PR141/147/148) found nine more
+inherited original-project worker-only author headers. This static successor
+adds collective author credit to exactly those nine while retaining their
+original contributors, for 13 changed headers versus frozen 85. It does not
+resolve the objection by itself or confer review approval. CI655 does *not*
+certify the four earlier or nine newly changed Lean headers; the started
+CI678/679/680 executions on the preceding internal/public candidates also
+cannot certify this successor, regardless of their eventual results.
+Applicable both-target/private-inclusive successor 85 checks and fresh exact
+independent review precede separate owner acceptance, protected integration
+and verified publication. No 85 acceptance, source coverage or incubator
+conversion follows from this header correction.
 
 The original source-only 83-module registration preserved both additive Lean leaves from
 `2d34161ac8426b027efd2a03637fb0530ca5a906`, all 79 older nonroot Lean files,
@@ -228,10 +280,16 @@ standard-axiom evidence, and verified on official GitHub as
 reviewed, accepted and integrated after complete CI492 build and private-inclusive
 standard-axiom evidence, and verified on official GitHub as
 `abf9086d46dcfe221e60bc6cf6884bd71ed0e2b6` with the same tree.
-The original 73-module assembly's focused leaf checks did not certify its
-changed aggregate roots. Its later complete aggregate evidence and separate
-release decisions, rather than those focused checks, supported that release.
-Every successor still needs its own applicable evidence and decisions.
+At its original assembly, the 73-module chosen native-limit global-section
+leaves had focused author checks against the unchanged eleven-package graph;
+the aggregate imports are changed computational
+inputs. Neither those checks nor predecessor checks certify this combined graph.
+Final destination/release review, applicable combined checks, owner acceptance
+and verified publication are separate revision-specific requirements for that
+successor; that assembly snapshot did not certify their later completion or
+acceptance of the historical 84-module candidate or this 85-module successor.
+Later complete aggregate evidence and separate release decisions supported the
+73 release; every successor still needs its own applicable evidence and decisions.
 
 Authors: Formal Frontier Agents. Original project contributions are licensed
 under [Apache-2.0](LICENSE). The library builds on independently reviewed
@@ -598,9 +656,11 @@ retain the explicit casts in the composed section-component equation.
 The [native cylinder-limit guide](docs/NativeCylinderLimit.md) covers the
 twenty-sixth new subject. For a directed preorder, an explicit index and an
 arbitrary stage open, it constructs the opposite-tail restriction diagram and
-the corresponding native limiting cone from the original native limit witness.
-Its ordinary-import client recovers the original projection equation for any
-restricted cone. Empty spaces and opens are allowed; no restricted-limit
+the corresponding native limiting cone from the original native limit witness
+for any `C : Type (v + 1)` with `Category.{v} C`. The Type and additive private
+ordinary-import clients recover the original projection equation for any
+restricted cone using the same constructor. Empty spaces and opens are
+allowed; no restricted-limit
 premise, spectral transfer or chosen-limit section comparison is added by this unit.
 The [native cylinder-comparison guide](docs/NativeCylinderComparison.md) covers
 the twenty-seventh new subject. It compares the chosen native limit with the
@@ -638,10 +698,11 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports twenty-nine additional example leaves. The root
-and twenty-six leaves use named private declarations, including the native
+readiness assembly and imports thirty additional example leaves. The root
+and twenty-seven leaves use named private declarations, including the native
 stage-lifting, stage-colimit, chosen native-limit, open-restriction, cylinder-limit,
-cylinder-comparison, spectral-cylinder, additive restriction and additive native-limit clients; the
+cylinder-comparison, spectral-cylinder, additive restriction, additive cylinder-limit
+and additive native-limit clients; the
 `ConePullbackSections` leaf contains five named public ordinary-import clients,
 `PullbackLocalSections` contains four more named public ordinary-import clients,
 and `NativeStageSectionEquality` contains two public distinguishability clients.

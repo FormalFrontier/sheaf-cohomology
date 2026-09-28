@@ -59,9 +59,9 @@ FormalFrontier/incubator commit
 `1bad295cf6a96a5da13105442982a55e17efb5ec` (tree
 `03b2028da5e4e03d324adf6c683d97a4d82831a0`), producer blob
 `f8966a17216572a0316604118c37e41d7348070d` and client blob
-`770f312d7b9f5f1cf949fd60d9442399abdc76d8`. Reversing only the
-producer's one import and the client's one ordinary import plus its
-namespace/end substitutions recovers those exact blobs. The original
+`770f312d7b9f5f1cf949fd60d9442399abdc76d8`. At the original transfer,
+reversing the producer's one import and the client's one ordinary import plus
+its namespace/end substitutions recovered those exact blobs. The original
 implementation and complete proof expressions are by worker-b Hive Task
 `hive-request-bf36c0a2309835a3fdfa6d14f20ebde4191ab672`
 (UID `1addeab3-992e-4fed-aa4b-afcea8e2487c`); its separate unchanged-input
@@ -81,8 +81,14 @@ by worker-b Task `hive-request-e5e544a630e9b84215130384682791cdebd0aea0`
 cone-section transport, native-cone and compact-open prerequisites, and
 mathlib filtered-colimit results are **invoked**, not copied from external
 source text. Anchor's separate finite-descent design is incubator commit
-`4c52c039a83ad2579e4978686c5bc2aac818992e`. Original SPDX and
-author headers remain intact. The narrow destination adapter and this
+`4c52c039a83ad2579e4978686c5bc2aac818992e`. At this original transfer
+the SPDX and worker-author headers remained intact; in the unaccepted 85
+successor the SPDX and worker credit remain, but collective `Authors:` and
+original-worker `Contributor:` labels replace the two worker-only author
+labels. Reversing only those later labels restores the complete pre-repair
+destination blobs; the earlier import/namespace reversal then recovers the
+incubator originals. All bytes from `module` onward are unchanged by the
+header correction. The narrow destination adapter and this
 guide are by worker-a Hive Task
 `hive-request-0379bab87d7c2b4512b09a37865419d3586e95c2`
 (UID `7d5fd314-be18-4a43-8f5c-f6407812944d`).
@@ -110,3 +116,12 @@ requirements for Sheaf71. Original expression credit and predecessor evidence
 are not combined-root approval; changed prerequisite APIs require reassessment.
 No chosen native-limit `Γ` comparison, source-specific endpoint or source
 coverage is asserted by this contribution.
+
+The later accepted 84 release (issue #34/comment 56186) does not accept this
+85 successor. Final review `abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a`
+requested changes (native4434/4435/4436) for nine inherited worker-only
+headers, including this producer/client, in addition to the four headers
+repaired in the earlier actual84 reconciliation. This static label correction
+does not constitute independent approval or a new computational pass:
+CI655 and CI678/679/680 on prior inputs cannot certify it. Applicable
+both-target/private-inclusive checks and exact independent review remain.

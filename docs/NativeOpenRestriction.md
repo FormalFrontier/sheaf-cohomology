@@ -122,20 +122,31 @@ validate these changed inputs. The original 84 candidate
 private-inclusive CI637 at 23:36:49 UTC (issue #34, comment 55462); the
 separate scoped destination review
 `efecfe1af9a07f376fd2c92e7f59125ac14ddb3c`/native4379 covers the original
-registration, not this changed-header, merged-ancestry successor. The 77/79/81/83 predecessor gates
+registration, not the changed-header, merged-ancestry successor. The
+77/79/81/83 predecessor gates
 that were open at assembly are now complete. Actual accepted 83 main/release-prep
 `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` was published as official
 private GitHub `6793f2ff8469d1cab23a98ac2da22a3286d22f8e` on 2026-09-28,
 with verified preceding 81 release
 `b743039857ca8c206b6a8cdb99afe7c7e8ce0c25` as sole public parent.
-This 84 successor inherits its accepted 83 additive-credit headers unchanged;
+At the earlier 84 reconciliation, that successor inherited its accepted 83
+additive-credit headers unchanged;
 its generic producer and additive client now have reversible collective-credit
 header repairs. All module-onward bytes remain from the original 84 candidate.
 Original CI637 does **not** certify those changed headers. Applicable full
 successor build/private-inclusive standard-axiom CI and a fresh independent
-final main/prep/public review still precede separate owner acceptance, protected
-integration and verified publication. This 84 successor remains **unaccepted**;
-donor acceptance is not destination integration or incubator conversion.
+final main/prep/public review still preceded separate owner acceptance, protected
+integration and verified publication. It was **unaccepted at that checkpoint**;
+donor acceptance was not destination integration or incubator conversion.
+Full changed-input CI674, final independent review and distinct owner decisions
+subsequently supported accepted 84 main/release-prep
+`36e49294f84208fa678872e84b6bdbd96c603188` and official private
+release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`, verified on
+2026-09-28 (issue #34/comment 56186). This **unaccepted 85** successor carries
+both whole repaired restriction headers from that accepted 84; after `module`
+all proof/import bytes stay frozen 85. Original frozen 85 CI655 does not pass
+these changed-header inputs: applicable both-target/private-inclusive successor
+85 CI and a fresh consolidated final review/owner decisions remain separate.
 
 ## Provenance
 
@@ -168,6 +179,18 @@ restriction and `Γ`; the Apache-2.0 official
 original SPDX, Generality and provenance/auditability notices. Their original
 author text and continuation lines now follow `Contributor:` beneath
 `Authors: Formal Frontier Agents`; reversing just this header change recovers
-each complete frozen 84 file. The Type client remains byte-identical. No
+each complete frozen 84 file. The Type client retained its original whole
+blob at that snapshot. In this unaccepted 85 successor, its own worker-only
+author header is reversibly relabeled with collective `Authors:` and its
+original worker as `Contributor:`, so the Type client is **not** now
+whole-file identical to frozen 85, accepted 84 or the original transfer.
+Its complete original Task/UID and all module-onward bytes remain unchanged.
+This is one of nine inherited headers repaired after final review
+`abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a` recorded
+native4434/4435/4436 REQUEST_CHANGES. Four earlier inherited actual84
+repairs remain separate: thirteen headers total differ from frozen 85.
+This repair is not approval; CI655 and CI678/679/680 on previous inputs
+cannot certify it. Exact independent review and applicable
+both-target/private-inclusive checks remain. No
 incubator dependency, source-local experiment or private source asset was
 copied. Source coverage is a separate decision.

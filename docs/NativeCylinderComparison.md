@@ -158,7 +158,13 @@ spectral and additive global-section contributions have since received their
 own independent decisions, with accepted 83 main
 `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` and official private release
 `6793f2ff8469d1cab23a98ac2da22a3286d22f8e` verified on 2026-09-28.
-The 84 generic-restriction successor remains unaccepted and does not change
-this module's proof body or extend the cylinder result to additive coefficients.
+The 84 generic-restriction successor was unaccepted at that earlier
+reconciliation. After changed-input CI674, final review and distinct owner
+decisions, actual accepted main/release-prep
+`36e49294f84208fa678872e84b6bdbd96c603188` was published as official
+private `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37` on 2026-09-28
+(issue #34/comment 56186). This still **unaccepted 85** successor does not
+change this module's proof body or extend the cylinder result to additive
+coefficients.
 No spectral `IsIso` within this module, endpoint, source-passage
 correspondence or formalization-coverage conclusion is claimed.

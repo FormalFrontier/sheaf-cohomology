@@ -125,7 +125,7 @@ reference. Nine new `AbelianForget` leaves, `SquareTransition`,
 and `NativeLimitGlobalSections`, `NativeOpenRestriction`, `NativeCylinderLimit`,
 `NativeCylinderComparison`, `NativeSpectralCylinderSections`, and `NativeAdditiveGlobalSections`
 are documented in supplements;
-all 53 subjects, twenty-nine client leaves and two roots form the current 84-file
+all 53 subjects, thirty client leaves and two roots form the current 85-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -186,7 +186,7 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named downstream examples, including twenty-nine imported client modules |
+| `SheafCohomologyExamples` | Named downstream examples, including thirty imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
@@ -201,6 +201,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.NativeOpenRestriction` | Private ordinary-import client: compose two restricted native arrows and recover the original composite's section component |
 | `SheafCohomologyExamples.NativeOpenRestrictionAdditive` | Named private ordinary-import additive client: the same composition readback with the explicit inverse-image cast |
 | `SheafCohomologyExamples.NativeCylinderLimit` | Private ordinary-import client: apply the constructed restricted limit to an arbitrary cone and recover the original native projection equation |
+| `SheafCohomologyExamples.NativeCylinderLimitAdditive` | Private ordinary-import additive client: apply the same constructed generic restricted limit and recover the original native projection equation |
 | `SheafCohomologyExamples.NativeCylinderComparison` | Private ordinary-import client: inverse native projection law, both base identities and the original-stage section equation for arbitrary opens |
 | `SheafCohomologyExamples.NativeSpectralCylinderSections` | Private ordinary-import client: cancel the actual comparison on original-stage sections, retaining both equality transports |
 | `SheafCohomologyExamples.NativeAdditiveGlobalSections` | Private ordinary-import client: original additive projection equality iff equality after an actual later original-stage transition |
@@ -344,15 +345,17 @@ or cylinder-limit theorem.
 
 The separate [native cylinder-limit supplement](NativeCylinderLimit.md) constructs
 that principal-tail diagram and limit. For `ι : Type v` with a directed preorder,
-an explicit `i0 : ι`, `N : ιᵒᵖ ⥤ SheafedSpace.{v+1,v,v} (Type v)`, an
+an explicit `i0 : ι`, `C : Type (v + 1)` with `Category.{v} C` inferred from
+`N : ιᵒᵖ ⥤ SheafedSpace.{v+1,v,v} C`, an
 arbitrary native limiting cone `m` and an open at `i0`, `restrictedIsLimit`
 proves that `restrictedCone` is limiting over the actual diagram `restricted`.
 The original limit is input; a limit of the restricted diagram is constructed,
 not assumed. Finality of the principal tail, the native open-immersion lift and
 monic cancellation give existence and uniqueness. No linear order, spectrality
-or nonempty-space/open hypothesis is needed. The private ordinary-import client
-uses this constructed limit for any restricted cone, then recovers the original
-projection equation after the native inclusion. This unit adds no chosen-limit
+or nonempty-space/open hypothesis is needed. Separate Type and additive private
+ordinary-import clients use the same constructed generic limit for any restricted
+cone, then recover the original projection equation after the native inclusion;
+there is no duplicate Type wrapper. This unit adds no chosen-limit
 isomorphism, section comparison for the restricted diagram or spectral transfer.
 
 The separate [native cylinder-comparison supplement](NativeCylinderComparison.md)
@@ -394,46 +397,35 @@ an additive global-sections result, not an additive compact-cylinder extension.
 The `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local
 cohomology, higher direct images, open base change and native section transport.
-At the original 2026-09-27 21:59:24 UTC assembly, the 83-module aggregate's
-combined checks and inherited predecessor releases were still outstanding.
-Scoped independent review `7f48d057eefdb811782bbadce2ccacceb2ed9ae6`
-subsequently approved the mathematical/API/provenance/registration increment;
-its stale twenty-six-client table row is corrected above to twenty-eight.
-Full CI627 on `70d1aad387e72104ae294ac07a32c113d7f72e75` succeeded at
-22:47:17 UTC, and the owner inspected all 83 modules' both-target build and
-private-inclusive standard-axiom evidence. Actual 81 later completed its own
-final review, CI648, owner decisions and private publication, verified on
-2026-09-28 at 02:39:17 UTC. The 83-module reconciliation merged its accepted
-main `6e055c187a6e097636f2e9b5bf5d4f5eba351876` and repaired the two
-additive Authors headers, retaining the original Contributor and all proof bodies.
-Full changed-header CI666, fresh final review and separate owner decisions
-subsequently supported the **actual 83 release**: accepted main/release-prep
-`9ba31ec9d399343a81e7284f7856f53c6a1d7f5c`, official private GitHub
-`6793f2ff8469d1cab23a98ac2da22a3286d22f8e`, verified on 2026-09-28
-at 05:15:05 UTC. Its sole official parent is the 81 release
-`b743039857ca8c206b6a8cdb99afe7c7e8ce0c25`.
-
-The 84-module registration was assembled separately at 2026-09-27 23:04 UTC
-on frozen then-unaccepted 83 parent `70d1aad387e72104ae294ac07a32c113d7f72e75`.
-Its **original** candidate `53a0a858ec7d3fab15c96f9f10ba8c31d8e21554`
-passed complete both-target/private-inclusive CI637 at 23:36:49 UTC (84 modules,
-1,950 actual-origin declarations, including 569 private); its scoped review
-`efecfe1af9a07f376fd2c92e7f59125ac14ddb3c`/native4379 concerned that
-exact original registration. CI627 did not cover the generic producer
-and new additive client/root; donor-focused evidence is not destination CI.
-This successor normally merges actual accepted 83 ancestry and carries its two
-credit headers unchanged, while changing only the generic producer/additive
-client headers to collective Authors plus the entire original Contributor text.
-All 84 module-onward imports, options and proofs remain fixed. Original CI637
-is **not a pass for four changed headers**; applicable both-target/full84,
-private-inclusive successor CI and a fresh independent final main/prep/public
-review are required before separate owner acceptance, protected integration and
-verified publication. This 84 successor is **not accepted or released**.
-Private example names are not public
-API, including the native stage-lifting, stage-colimit, chosen native-limit and
-Type/additive open-restriction, cylinder-limit, cylinder-comparison, spectral-cylinder and additive clients;
-the section-transport,
-local-pullback and native stage-equality clients are public named examples. Inspect the sample's
+At its original 2026-09-28 assembly, the source-only 85-module aggregate had
+no combined build or private-inclusive axiom evidence. Donor seven-module
+evidence and old 84 CI637/artifact112464 did not certify its changed closure.
+Frozen 85 `651f8223c7dbb2df870f3f594077365bf6767d7f` subsequently passed
+full both-target/private-inclusive CI655 (issue #34/comment 55824); scoped
+review first requested a collective-credit correction (native4404) and then
+approved the exact repaired original (native4405). Actual 81 and 83 each
+completed their own official release at `b743039857ca8c206b6a8cdb99afe7c7e8ce0c25`
+and `6793f2ff8469d1cab23a98ac2da22a3286d22f8e`, respectively. Full
+changed-header CI674 and independent final review supported actual accepted 84
+main/release-prep `36e49294f84208fa678872e84b6bdbd96c603188` and private
+release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`, verified on 2026-09-28
+(issue #34/comment 56186). This **unaccepted 85** successor merges that actual
+84 main ancestry and inherits four reversible collective-credit headers. Final
+review `abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a` requested changes on
+PR141/147/148 (native4434/4435/4436) for nine further inherited worker-only
+author headers, not for the unchanged mathematics or fourteen headerless files.
+This successor repairs those nine labels; 13 headers differ from frozen 85,
+while every module-onward byte remains fixed. Neither original CI655 nor the
+CI678/679/680 executions on the prior candidate certify these changed inputs.
+Applicable both-target/private-inclusive successor 85 evidence and fresh exact
+independent review remain before separate owner acceptance, integration and
+publication. The repair is not an approval or acceptance.
+None of the 81/83/84 releases decides 85 acceptance or source coverage.
+Private example names are not public API, including the native stage-lifting,
+stage-colimit, chosen native-limit and
+Type/additive open-restriction, Type/additive cylinder-limit, cylinder-comparison,
+spectral-cylinder and additive clients; the section-transport, local-pullback
+and native stage-equality clients are public named examples. Inspect the sample's
 actual binders when adapting a result:
 the positive/zero-degree split and universe-zero restrictions are essential.
 Review actual source hypotheses and typeclass instances rather than guessing

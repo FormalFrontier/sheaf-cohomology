@@ -1,6 +1,7 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
+Generality: Formal Frontier worker-a Hive Task hive-request-27d70680c0e69c147294098e3ac13b1c7092c0e1, UID bfe6acf9-1385-4602-a9b8-1e88f6908b1a
 -/
 module
 public import SheafCohomology.NativeOpenRestriction
@@ -53,10 +54,11 @@ instance tailInclusion_final (i0 : ι) : (tailInclusion i0).Final := by
 instance tailInclusion_op_initial (i0 : ι) : (tailInclusion i0).op.Initial :=
   inferInstance
 
-variable (N : ιᵒᵖ ⥤ SheafedSpace.{v + 1, v, v} (Type v)) (i0 : ι)
+variable {C : Type (v + 1)} [Category.{v} C]
+variable (N : ιᵒᵖ ⥤ SheafedSpace.{v + 1, v, v} C) (i0 : ι)
 
 /-- The original diagram, restricted to the opposite principal tail. -/
-abbrev tailDiagram : (Set.Ici i0)ᵒᵖ ⥤ SheafedSpace.{v + 1, v, v} (Type v) :=
+abbrev tailDiagram : (Set.Ici i0)ᵒᵖ ⥤ SheafedSpace.{v + 1, v, v} C :=
   (tailInclusion i0).op ⋙ N
 
 /-- Transition from a tail stage to the distinguished stage. -/
@@ -95,7 +97,7 @@ theorem stageOpen_map (U0 : Opens (N.obj (op i0)))
 
 /-- The literal sheafed-space restriction at a tail stage. -/
 abbrev stage (U0 : Opens (N.obj (op i0))) (i : (Set.Ici i0)ᵒᵖ) :
-    SheafedSpace.{v + 1, v, v} (Type v) :=
+    SheafedSpace.{v + 1, v, v} C :=
   (N.obj (op (unop i).1)).restrict (stageOpen N i0 U0 (unop i)).isOpenEmbedding
 
 /-- The native restriction of a transition, including its named-open transport. -/
@@ -116,7 +118,7 @@ theorem stageMap_fac (U0 : Opens (N.obj (op i0)))
 
 /-- The actual opposite-tail functor on restricted native sheafed spaces. -/
 @[expose] def restricted (U0 : Opens (N.obj (op i0))) :
-    (Set.Ici i0)ᵒᵖ ⥤ SheafedSpace.{v + 1, v, v} (Type v) where
+    (Set.Ici i0)ᵒᵖ ⥤ SheafedSpace.{v + 1, v, v} C where
   obj := stage N i0 U0
   map := fun f => stageMap N i0 U0 f
   map_id := by
@@ -132,9 +134,7 @@ theorem stageMap_fac (U0 : Opens (N.obj (op i0)))
       (stageOpen N i0 U0 (unop k)).isOpenEmbedding)).1
     rw [stageMap_fac, Category.assoc, stageMap_fac,
       ← Category.assoc, stageMap_fac]
-    change _ ≫ N.map ((tailInclusion i0).op.map (f ≫ g)) =
-      _ ≫ N.map ((tailInclusion i0).op.map f) ≫ N.map ((tailInclusion i0).op.map g)
-    simp [Functor.map_comp]
+    simp only [Functor.map_comp, Category.assoc]
 
 /-- The canonical native inclusions constitute a natural transformation. -/
 @[expose] def inclusion (U0 : Opens (N.obj (op i0))) :
@@ -179,6 +179,32 @@ theorem coneComponent_fac (m : Cone N) (U0 : Opens (N.obj (op i0)))
         m.π.app (op i.1) :=
   restrictOnNamedPreimage_fac _ _ _ _
 
+omit [IsDirectedOrder ι] in
+private theorem coneComponent_naturality (m : Cone N) (U0 : Opens (N.obj (op i0)))
+    {i j : (Set.Ici i0)ᵒᵖ} (f : i ⟶ j) :
+    coneComponent N i0 m U0 (unop i) ≫ stageMap N i0 U0 f =
+      coneComponent N i0 m U0 (unop j) := by
+  haveI : Mono ((inclusion N i0 U0).app j) := by
+    change Mono ((N.obj (op (unop j).1)).ofRestrict
+      (stageOpen N i0 U0 (unop j)).isOpenEmbedding)
+    infer_instance
+  have hprojection : m.π.app (op (unop i).1) ≫ (tailDiagram N i0).map f =
+      m.π.app (op (unop j).1) := by
+    have hw := m.w ((tailInclusion i0).op.map f)
+    change m.π.app (op (unop i).1) ≫ (tailDiagram N i0).map f =
+      m.π.app (op (unop j).1) at hw
+    exact hw
+  apply (cancel_mono ((inclusion N i0 U0).app j)).1
+  change (coneComponent N i0 m U0 (unop i) ≫ stageMap N i0 U0 f) ≫
+      (N.obj (op (unop j).1)).ofRestrict (stageOpen N i0 U0 (unop j)).isOpenEmbedding =
+    coneComponent N i0 m U0 (unop j) ≫
+      (N.obj (op (unop j).1)).ofRestrict (stageOpen N i0 U0 (unop j)).isOpenEmbedding
+  rw [Category.assoc, stageMap_fac, ← Category.assoc]
+  change (coneComponent N i0 m U0 (unop i) ≫ (inclusion N i0 U0).app i) ≫
+      (tailDiagram N i0).map f =
+    coneComponent N i0 m U0 (unop j) ≫ (inclusion N i0 U0).app j
+  rw [coneComponent_fac, Category.assoc, hprojection, ← coneComponent_fac]
+
 /-- The actual cone of restrictions, literally based at the original cone
 point restricted to the inverse image of `U0`. -/
 @[expose] def restrictedCone (m : Cone N) (U0 : Opens (N.obj (op i0))) :
@@ -188,48 +214,9 @@ point restricted to the inverse image of `U0`. -/
     app := fun i => coneComponent N i0 m U0 (unop i)
     naturality := by
       intro i j f
-      change coneComponent N i0 m U0 (unop j) =
-        coneComponent N i0 m U0 (unop i) ≫ stageMap N i0 U0 f
-      symm
-      haveI : Mono ((inclusion N i0 U0).app j) := by
-        change Mono ((N.obj (op (unop j).1)).ofRestrict
-          (stageOpen N i0 U0 (unop j)).isOpenEmbedding)
-        infer_instance
-      have hπ : m.π.app (op (unop i).1) ≫ (tailDiagram N i0).map f =
-          m.π.app (op (unop j).1) := by
-        have hw := m.w ((tailInclusion i0).op.map f)
-        change m.π.app (op (unop i).1) ≫ (tailDiagram N i0).map f =
-          m.π.app (op (unop j).1) at hw
-        exact hw
-      apply (cancel_mono ((inclusion N i0 U0).app j)).1
-      calc
-        (coneComponent N i0 m U0 (unop i) ≫ stageMap N i0 U0 f) ≫
-            (inclusion N i0 U0).app j =
-          (m.pt.ofRestrict (coneOpen N i0 m U0).isOpenEmbedding ≫
-            m.π.app (op (unop i).1)) ≫ (tailDiagram N i0).map f := by
-              calc
-                _ = coneComponent N i0 m U0 (unop i) ≫
-                    (stageMap N i0 U0 f ≫ (inclusion N i0 U0).app j) :=
-                      (Category.assoc _ _ _).symm
-                _ = coneComponent N i0 m U0 (unop i) ≫
-                    ((inclusion N i0 U0).app i ≫ (tailDiagram N i0).map f) :=
-                      congrArg _ (show stageMap N i0 U0 f ≫
-                        (inclusion N i0 U0).app j =
-                        (inclusion N i0 U0).app i ≫ (tailDiagram N i0).map f from
-                          stageMap_fac N i0 U0 f)
-                _ = (coneComponent N i0 m U0 (unop i) ≫
-                    (inclusion N i0 U0).app i) ≫ (tailDiagram N i0).map f :=
-                      Category.assoc _ _ _
-                _ = _ := congrArg (· ≫ (tailDiagram N i0).map f)
-                  (coneComponent_fac N i0 m U0 (unop i))
-        _ = coneComponent N i0 m U0 (unop j) ≫ (inclusion N i0 U0).app j := by
-          calc
-            _ = m.pt.ofRestrict (coneOpen N i0 m U0).isOpenEmbedding ≫
-                (m.π.app (op (unop i).1) ≫ (tailDiagram N i0).map f) :=
-                  (Category.assoc _ _ _).symm
-            _ = m.pt.ofRestrict (coneOpen N i0 m U0).isOpenEmbedding ≫
-                m.π.app (op (unop j).1) := congrArg _ hπ
-            _ = _ := (coneComponent_fac N i0 m U0 (unop j)).symm
+      simpa only [Functor.const_obj_map, Functor.const_obj_obj, restricted,
+        Category.id_comp] using
+          (coneComponent_naturality N i0 m U0 f).symm
   }
 
 omit [IsDirectedOrder ι] in

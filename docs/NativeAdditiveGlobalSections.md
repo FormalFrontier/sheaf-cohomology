@@ -135,11 +135,20 @@ Actual accepted 83 main/release-prep
 `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` and its official private
 GitHub release `6793f2ff8469d1cab23a98ac2da22a3286d22f8e` (verified on
 2026-09-28 at 05:15:05 UTC) complete the 83 gates, not 84 acceptance. This
-84 successor carries both accepted83 credit headers unchanged. Its separate
+84 successor carried both accepted83 credit headers unchanged. Its separate
 generic restriction producer and additive restriction client header changes
 make original84 CI637 historical evidence, not a pass for the successor;
 applicable full84 successor CI and independent final main/prep/public review
-are outstanding. Source correspondence stays separate.
+were outstanding at that dated checkpoint. Full changed-input CI674,
+independent final review and distinct owner decisions subsequently supported
+actual accepted84 main `36e49294f84208fa678872e84b6bdbd96c603188` and
+official private release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`,
+verified on 2026-09-28 (issue #34/comment 56186). This **unaccepted 85**
+successor inherits both whole 83 credit repairs through accepted84; its
+module-onward bytes remain frozen 85. The original 85 CI655 does not cover
+the four inherited changed headers: applicable successor85 both-target/
+private-inclusive checks and consolidated independent final review remain.
+Source correspondence stays separate.
 Neither this focused adapter nor the Type-only compact-cylinder result claims
 an additive-cylinder extension or a source-specific endpoint.
 

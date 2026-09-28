@@ -104,10 +104,17 @@ are FormalFrontier/incubator commit
 `00d551efc598b8252fbc694830523b830bf94a27` (tree
 `00de4a6974fef3683911807b5928f928e7a9030b`): producer blob
 `89e1bdca0160dc88665cc6a024bdb24422bebcbc`, client blob
-`c4c386299561a77415f1825e55c51e0c38fe86c5`. Reverse only the
-producer's single public-import substitution, and the client's ordinary
-import plus two namespace/end substitutions, to recover those blobs.
-The original Apache-2.0 SPDX and authorship headers stay in both files.
+`c4c386299561a77415f1825e55c51e0c38fe86c5`. At the original transfer,
+reversing the producer's single public-import substitution and the client's
+ordinary import plus two namespace/end substitutions recovered those blobs.
+At the original transfer the Apache-2.0 SPDX and worker-author headers stayed
+in both files. This unaccepted 85 successor retains both SPDX notices and
+complete original worker credit, but reversibly relabels `Authors:` as
+collective project credit with `Contributor:` for the workers; reversing the
+labels restores the complete pre-repair destination blobs, not the incubator
+originals without the earlier import/namespace reversal. Neither current
+whole file is identical to the original transfer blob. All bytes
+from `module` onward, including the proof expressions, remain unchanged.
 The original implementation and complete proof expressions are by
 worker-b Hive Task `hive-request-4c216dbec01d4be3c9179c965656f0054d638fb8`
 (UID `b5bc6fa6-d9ab-4cfa-bd79-3ec1cdf7265a`). Its complete focused
@@ -186,9 +193,20 @@ Its later final independent review, applicable checks, owner decisions and
 protected integration supported official 73 release
 `6aa8528f28264d9b44de0f31e72696d8d95ce97d`, verified on 2026-09-27 at
 21:19:58 UTC. The earlier assembly language records historical gates, not
-current pending 73 work. The subsequent 83 release and its still-unaccepted
-84 generic-restriction successor do not change this Type-valued comparison;
-the latter needs its own changed-header CI and final review.
+current pending 73 work. The subsequent 83 release did not change this
+Type-valued comparison. At that checkpoint the 84 generic-restriction
+successor was unaccepted and still needed changed-header CI and final review;
+both subsequently completed. Accepted84 main/release-prep
+`36e49294f84208fa678872e84b6bdbd96c603188` was published as official
+private `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37` on 2026-09-28
+(issue #34/comment 56186). This still **unaccepted 85** successor changes
+neither the Type-valued comparison body nor its original hypotheses.
+Final review `abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a` recorded
+native4434/4435/4436 REQUEST_CHANGES for nine inherited worker-only headers,
+including this pair, separate from the four earlier actual84 header repairs.
+This label correction is not approval or a successor proof-integrity pass;
+CI655 and CI678/679/680 on earlier inputs cannot certify changed headers.
+Applicable both-target/private-inclusive checks and exact review remain.
 
 If the frozen target or predecessor APIs change, reassess this adapter.
 No source-PDF reading, passage excerpt, coverage decision, additive or
