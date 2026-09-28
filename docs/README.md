@@ -17,7 +17,7 @@ original generated `docs/API.md` in the pre-transfer accepted tree, not this
 file's editorially updated introduction. The historical generated file can
 be checked in that old revision; do not relabel the old hash as a new current
 Markdown attestation.
-The current 88 Lean modules also include thirty-one new subjects and thirty-one
+The earlier accepted 88 Lean modules also include thirty-one new subjects and thirty-one
 client leaves (twenty-eight private-client modules and three named public-client
 modules),
 covered by [AbelianForget.md](AbelianForget.md),
@@ -48,6 +48,16 @@ covered by [AbelianForget.md](AbelianForget.md),
 native batch. The old root and example-client source hashes do not match the
 current changed roots. Reproducing these historical records is
 distinct from accepting their mathematical meaning or auditing kernel proofs.
+The present 97-module candidate adds eight producer and one ordinary-import
+example leaves, with two root imports and one examples-root import. Its new
+[CommRingForget](CommRingForget.md) and
+[NativeCommRingGlobalSections](NativeCommRingGlobalSections.md) guides describe
+the destination API and its exact original-cone assumptions. The fixed 26-module
+`API.md`, `api-manifest.json` and `scripts/api_inventory.json` remain historical
+and must not be read as an inventory of the 97-module candidate. Neither the
+new guides nor these historical generated records certify the candidate's
+build, complete axiom audit, independent review or release.
+
 For the 157 missing-docstring sites, the shipped text is a generic pointer to
 the source and module guide, not an independently authored per-site explanation.
 Its adequacy for the whole public API is assessed in semantic review.

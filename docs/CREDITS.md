@@ -12,6 +12,45 @@ verified original project contributions; it does not automatically settle
 concrete third-party rights, authenticity of a notice, or an entire public
 release history. There is no new human-author or source-author approval claim.
 
+## Native commutative-ring transfer candidate
+
+The 97-module candidate transfers the accepted, **isolated and unregistered**
+incubator ring bridge and endpoint into this independently usable library;
+it is not yet a destination review, protected integration or release.
+The seven `SheafCohomology/CommRingForget/` producer leaves and the
+`SheafCohomologyExamples.CommRingForgetLimitPreservation` ordinary-import
+client preserve the ring-specific expressions of worker-a Hive Task
+`hive-request-c57c813632815e9d350373cdfa7741657fb4852a` (UID
+`2717d143-2755-441e-83fb-8f9190fbe8f1`), adapting published additive
+counterparts from Anchor and the other attributed project contributors.
+The original additive `LimitPreservation` expression belongs to worker-b
+Hive Task `hive-request-13fb7168e78b10adc0a739488a5b88a5bad2cd58`
+(UID `9a8d7368-37db-444c-b740-2b889ce82678`), not to this transfer.
+`SheafCohomology.NativeCommRingGlobalSections`, including the joint-stage
+theorem moved once from the isolated ordinary-import client, preserves
+the expression of worker-a Hive Task
+`hive-request-1c0851150518e166978e650f8b077bcdd9311334` (UID
+`6ed601e1-657b-408f-bf75-7df21b10a83a`), adapting the published
+additive endpoint by worker-a Hive Task
+`hive-request-0b67e8c17f9041202a7550e7a7703f53d6bb4004` (UID
+`7b289efe-e184-4c33-9723-7ef39e977b59`). The preceding **noncompiled**
+ring-sections investigation was worker-a Hive Task
+`hive-request-c122a6d40799b53667ffc3699a7642ef15453985` (UID
+`911c1933-e837-4a1c-85cd-2dce903e2357`); it did not author this proof.
+The transfer plan came from worker-b Hive Task
+`hive-request-16203bc40aa6f68f90eecddf00ac9175cde81875` (UID
+`c07f972b-a1ec-4ce4-8656-46c783996e3e`). Worker-a Hive Task
+`hive-request-dca3c2336f435c0591bd04d84d13aa15fbf9e06f` (UID
+`02c11592-0b74-4d5f-8537-564768f8cc9b`) authors this destination
+relocation, standalone guides, navigation and metadata, not the donor proofs.
+
+SPDX and collective project authorship are retained in the transferred
+files. This attribution does not by itself decide copyright ownership,
+third-party redistribution rights, destination proof integrity or official
+publication. The existing historical credits below remain accounts of their
+own earlier development states; reviewer and responsible maintainer assess
+the exact final candidate and public release independently.
+
 ## Original Lean contributors
 
 The following map identifies the **first-added expression** of the original

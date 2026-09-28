@@ -35,6 +35,7 @@ import SheafCohomologyExamples.AbelianForgetConePullback
 import SheafCohomologyExamples.AbelianForgetConePullbackCocone
 import SheafCohomologyExamples.AbelianForgetDiagramPushforward
 import SheafCohomologyExamples.AbelianForgetLimitPreservation
+import SheafCohomologyExamples.CommRingForgetLimitPreservation
 
 /-!
 # Public-root sheaf cohomology examples

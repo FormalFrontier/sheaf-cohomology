@@ -34,7 +34,11 @@ project:
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
-    sheaves in Lean.
+    sheaves in Lean. The current transfer candidate additionally provides native
+    commutative-ring-to-Type sheaf and sheafed-space coefficient forgetting,
+    same-universe cofiltered native-limit preservation, and an original-cone
+    ring global-section comparison and joint-stage representation under filtered
+    spectral-limit hypotheses; destination verification and review are pending.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -89,6 +93,21 @@ automation:
 
 status:
   scope: >-
+    The new 97-module transfer candidate adds seven native commutative-ring
+    coefficient-forgetting producer leaves, one ring global-section producer
+    and one named public ordinary-import unique-lift example. The canonical
+    pullback comparison is the mate of the original ring unit, the filtered
+    sheaf-colimit comparison is literal colimit.post, and the native cocone
+    uses the original projection mates. Cofiltered preservation assumes a
+    small same-universe filtered index, not a global instance or arbitrary
+    shape; the ring global-section comparison needs an actual limiting cone
+    with spectral original stages and transitions. Its stage theorem supplies
+    some stage representative for each section, not fixed-stage surjectivity;
+    neither result assumes nonempty stage spaces. The 38 selected results
+    below are a curated public API list, not the complete declaration/axiom
+    census. The prior 88-module scope and dated lifecycle statements below
+    remain historical, while the destination transfer awaits combined checks,
+    independent review, owner acceptance and publication.
     Reusable sheaf-cohomological APIs under each declaration's actual category,
     topology, sheafification, Ext and universe assumptions. The positive
     local-cohomology/right-derived comparison has a shared universe parameter
@@ -304,10 +323,102 @@ status:
     source correspondence or coverage.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
+  main_results:
+    - declaration: TopCat.Sheaf.CommRingForget.underlyingSheaf
+      file: SheafCohomology/CommRingForget/Basic.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent_mate
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent_mate_map
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent_naturality
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComparison
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent_isIso
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComparisonIso
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.inverseComparisonIso
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent_id
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent_comp
+      file: SheafCohomology/CommRingForget/Pullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.preservesFilteredSheafColimit
+      file: SheafCohomology/CommRingForget/FilteredColimits.lean
+    - declaration: TopCat.Sheaf.CommRingForget.preservesFilteredColimits
+      file: SheafCohomology/CommRingForget/FilteredColimits.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComparison_stage
+      file: SheafCohomology/CommRingForget/FilteredColimits.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComparison_isIso
+      file: SheafCohomology/CommRingForget/FilteredColimits.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.underlying
+      file: SheafCohomology/CommRingForget/SheafedSpace.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.underlying_forgetToPresheafedSpace
+      file: SheafCohomology/CommRingForget/SheafedSpace.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.underlying_forget
+      file: SheafCohomology/CommRingForget/SheafedSpace.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.underlying_map_pullback_mate
+      file: SheafCohomology/CommRingForget/SheafedSpace.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent_comp_inv
+      file: SheafCohomology/CommRingForget/ConePullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent_triangleMap
+      file: SheafCohomology/CommRingForget/ConePullback.lean
+    - declaration: TopCat.Sheaf.CommRingForget.canonicalComponent_triangleMap_of_comp
+      file: SheafCohomology/CommRingForget/ConePullback.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.underlyingDiagram_forget
+      file: SheafCohomology/CommRingForget/ConePullback.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.underlyingCone
+      file: SheafCohomology/CommRingForget/ConePullback.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.underlying_sheafMate
+      file: SheafCohomology/CommRingForget/ConePullback.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.conePullback_naturality
+      file: SheafCohomology/CommRingForget/ConePullback.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.conePullbackIso
+      file: SheafCohomology/CommRingForget/ConePullback.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.underlying_mapCone_forget
+      file: SheafCohomology/CommRingForget/ConePullbackCocone.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.conePullbackCocone_forget_ι
+      file: SheafCohomology/CommRingForget/ConePullbackCocone.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.isColimit_conePullbackCocone_underlying
+      file: SheafCohomology/CommRingForget/LimitPreservation.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.preservesLimit_fromSpaceCone
+      file: SheafCohomology/CommRingForget/LimitPreservation.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.preservesCofilteredLimit
+      file: SheafCohomology/CommRingForget/LimitPreservation.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.CommRingForget.preservesCofilteredLimitsOfShape
+      file: SheafCohomology/CommRingForget/LimitPreservation.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.nativeCommRingGlobalSectionsCocone
+      file: SheafCohomology/NativeCommRingGlobalSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.nativeCommRingGlobalSectionsComparison
+      file: SheafCohomology/NativeCommRingGlobalSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.colimit_ι_nativeCommRingGlobalSectionsComparison
+      file: SheafCohomology/NativeCommRingGlobalSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.isIso_nativeCommRingGlobalSectionsComparison
+      file: SheafCohomology/NativeCommRingGlobalSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.exists_nativeCommRingGlobalSections_stage
+      file: SheafCohomology/NativeCommRingGlobalSections.lean
 
 review:
-  status: "other: frozen 88 scope independently reviewed; changed-header successor awaits final review"
+  status: "other: accepted 88 baseline; native ring 97 transfer awaits destination checks and review"
   notes: >-
+    This 97-module candidate is a static destination transfer from the accepted
+    88-module main and release-prep at 663a2747016e153522d8cf141f956d9fd837b895.
+    Eight producer and one example Lean leaves, two guides and seven edited
+    files add exactly the selected ring API and one relocated joint-stage proof;
+    incumbent nonroot Lean bodies/headers, pinned eleven-package graph, Lake,
+    toolchain, checker and CI remain unchanged. The isolated unregistered donor
+    ed25648058ec8b6df3df54341e1f45588beef054 had separately scoped bridge
+    and endpoint review and evidence, neither applicable as a destination
+    both-root build, moved-proof elaboration or private-inclusive axiom audit.
+    Required destination computation, fresh author-distinct exact-candidate
+    review including rights, owner acceptance, protected integration, reviewed
+    public-lineage release and GitHub publication remain distinct. No source
+    correspondence/coverage or incubator conversion is claimed. The following
+    paragraphs retain previous registration snapshots as history, not this
+    candidate's current state.
     At its original 2026-09-28 checkpoint this source-only coherent 88-module
     registration added two
     public producer imports and one ordinary named-private client import to

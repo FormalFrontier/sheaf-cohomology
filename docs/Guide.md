@@ -1,7 +1,8 @@
 # Mathematical and module guide
 
-This guide describes the shipped mathematical APIs, not a complete formalization
-of a source. Import `SheafCohomology` for
+This guide describes the accepted library and the proposed ring transfer,
+not a complete formalization of a source. On an accepted release import
+`SheafCohomology` for
 the aggregate public interface, or import a subject module directly. The native
 [historical API reference](API.md) supplies declaration-level displayed hypotheses
 for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
@@ -26,11 +27,13 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [native open-restriction supplement](NativeOpenRestriction.md),
 [native cylinder-limit supplement](NativeCylinderLimit.md),
 [native cylinder-comparison supplement](NativeCylinderComparison.md),
-[native spectral-cylinder sections supplement](NativeSpectralCylinderSections.md), and
-[native additive global-sections supplement](NativeAdditiveGlobalSections.md), and
-[native additive-cylinder sections supplement](NativeAdditiveCylinderSections.md)
-cover the thirty-one new
-subjects. [Generation details](README.md) identify the
+[native spectral-cylinder sections supplement](NativeSpectralCylinderSections.md),
+[native additive global-sections supplement](NativeAdditiveGlobalSections.md),
+[native additive-cylinder sections supplement](NativeAdditiveCylinderSections.md),
+[ring coefficient-forgetting guide](CommRingForget.md), and
+[ring global-sections guide](NativeCommRingGlobalSections.md)
+cover both the older additions and the proposed ring subjects.
+[Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
 
@@ -101,6 +104,15 @@ stage equation holds when both ordinary `HasColimit` instances are available.
 There is no global preservation instance, spectral-space premise or new
 arbitrary-universe wrapper. See [all declarations and hypotheses](AbelianForget.md).
 
+The ring-to-Type functor has analogous native mates and filtered sheaf colimits;
+for a small same-universe filtered shape it preserves actual native cofiltered
+limits without a global instance or spectral hypothesis. Given an *original*
+spectral native limit, the ring global-section comparison uses its literal
+projection maps, is invertible, and gives a stage representative for each
+section (not surjectivity at any fixed stage). See the
+[ring bridge](CommRingForget.md) and [endpoint](NativeCommRingGlobalSections.md)
+for the exact assumptions and empty-index boundary.
+
 For a commuting square and a pullback stage morphism, `SquareTransition`
 constructs the canonical counit-defined transition and identifies its adjoint
 with the forward strict pushforward comparison. It proves target naturality,
@@ -115,7 +127,7 @@ the forgotten *native* additive transition with the native Type-valued
 transition on the canonically compared stage. See the
 [forgetful square supplement](AbelianForget.md#commuting-squares).
 
-## All shipped modules
+## Accepted and proposed modules
 
 The original 24 subject leaves below are included in the frozen native API
 reference. Nine new `AbelianForget` leaves, `SquareTransition`,
@@ -128,8 +140,12 @@ and `NativeLimitGlobalSections`, `NativeOpenRestriction`, `NativeCylinderLimit`,
 `NativeSpectralCylinderSections`, `NativeAdditiveGlobalSections`, and
 `NativeAdditiveCylinderSections`
 are documented in supplements;
-all 55 subjects, thirty-one client leaves and two roots form the current 88-file
-Lean inventory. Prefix subject names with `SheafCohomology.`. These
+the earlier 55 subjects, thirty-one client leaves and two roots form the
+accepted 88-file baseline. The present candidate adds seven `CommRingForget`
+subjects and one `NativeCommRingGlobalSections` subject, one example leaf,
+and keeps the two roots: 63 producer leaves, 32 example leaves, 97 Lean files.
+The stage-representative theorem is inside the endpoint producer, not a separate
+example leaf. Prefix producer subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
 
@@ -143,6 +159,14 @@ the same hypotheses.
 | `AbelianForget.ConePullback` | Natural isomorphism between native cone pullbacks before and after additive-to-Type forgetting |
 | `AbelianForget.ConePullbackCocone` | Actual projection-mate leg comparison and ordinary-colimit desc compatibility |
 | `AbelianForget.LimitPreservation` | Same-universe cofiltered native limits preserved by additive-to-Type forgetting; named witnesses, no global instance |
+| `CommRingForget.Basic` | Underlying Type-valued sheaf of a commutative-ring sheaf |
+| `CommRingForget.Pullback` | Canonical original-unit pullback mate and invertible natural comparison |
+| `CommRingForget.FilteredColimits` | Literal filtered sheaf-colimit comparison and stage equation |
+| `CommRingForget.SheafedSpace` | Native commutative-ring-to-Type coefficient-forgetting functor |
+| `CommRingForget.ConePullback` | Original-cone pullback diagram comparison |
+| `CommRingForget.ConePullbackCocone` | Comparison of the actual projection-mate cocone legs |
+| `CommRingForget.LimitPreservation` | Same-universe cofiltered native-limit preservation, without global instance |
+| `NativeCommRingGlobalSections` | Original-cone ring-section cocone, isomorphism under spectral hypotheses, joint-stage representative |
 | `AcyclicResolution` | Ext/homology comparison from acyclic resolutions |
 | `ColimitPostApp` | Evaluation of canonical colimit maps at components |
 | `ColimitTransport` | Transport/naturality of canonical colimit comparisons |
@@ -223,6 +247,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.DiagramPushforward` | Private Type/Ab Fin 3 stages, mates, compositions and compatible native cones, plus empty-index cones with arbitrary vertex map |
 | `SheafCohomologyExamples.AbelianForgetDiagramPushforward` | Twelve private coefficient-diagram clients: nonidentity Fin 3 arrows and composition, compatible projections and empty-index cones |
 | `SheafCohomologyExamples.AbelianForgetLimitPreservation` | Private finite, natural-number and polymorphic preservation clients; separate mapped-cone composition laws |
+| `SheafCohomologyExamples.CommRingForgetLimitPreservation` | Named public `uniqueLift` ordinary-import example for original forgotten projections |
 
 ## Using the boundary
 

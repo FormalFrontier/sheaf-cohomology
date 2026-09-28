@@ -2,6 +2,16 @@
 
 Reusable Lean foundations for sheaf cohomology, compact-open sections,
 cohomological functors, and forgetting abelian-group structure on sheaves.
+The current 97-module **candidate** also develops native commutative-ring-to-Type
+forgetting, cofiltered limit preservation and ring global sections of the
+original native spectral-limit cone. Its joint-stage representation does not
+assert surjectivity from an arbitrarily fixed stage. See the
+[ring coefficient guide](docs/CommRingForget.md) and
+[ring global-sections guide](docs/NativeCommRingGlobalSections.md).
+The new candidate's destination build, complete private-inclusive axiom audit,
+fresh independent review, acceptance and publication remain outstanding;
+the accepted 88-module release does not certify these additions.
+
 It also provides native sheafed-space cone pullbacks and projection-mate
 cocones, an additive-to-Type forgetful functor and its canonical cone-wise
 natural isomorphism. A native cone-limit criterion derives a limit from the
@@ -75,7 +85,9 @@ locally, and the restricted limit is constructed, not assumed. Its named
 private ordinary-import client detects equality after an actual original
 projection, retaining both restriction-object and named-open casts.
 
-On 2026-09-28, this source-only coherent 88-module registration uses static
+The following 88-module registration account is a historical pre-candidate
+snapshot, not the present 97-module status. On 2026-09-28, that source-only
+coherent 88-module registration uses static
 adapter `a476ccbaf62a401b1cc8b464bfe04da27dfab46e` on its sole frozen
 **unaccepted** parent `651f8223c7dbb2df870f3f594077365bf6767d7f`.
 It adds only two public producer imports and one private-client import to the
@@ -346,6 +358,17 @@ the `v0.4` in `formalization.yaml` identifies the metadata schema, not a release
 
 ## Mathematical scope
 
+The ring counterpart of additive coefficient forgetting preserves every
+same-universe cofiltered native limit of commutative-ring sheafed spaces via
+the canonical original pullback mate, filtered sheaf-colimit comparison and
+actual projection-mate cocone. For original spectral stage spaces and
+transitions, an actual native limiting cone has a ring-section colimit
+comparison whose legs are exactly the original projections; this comparison
+is invertible, and every vertex section comes from some stage. The former
+theorem does not require spectrality; the latter requires the explicit
+spectral/filtered hypotheses, with no nonempty-stage or fixed-stage
+surjectivity claim. See the [focused API guides](docs/README.md).
+
 The initial units prove that evaluation of sheaves valued in a suitable
 concrete category on a compact open preserves filtered colimits. They define
 quasi-flasque sheaves categorically, show that this is exactly surjectivity of
@@ -575,6 +598,16 @@ Use `import SheafCohomology` for the aggregate API, or a subject module for a
 smaller import. The module-system readiness assembly re-exports the existing
 interfaces; implementation helpers remain private.
 
+For the new ring API import
+`SheafCohomology.CommRingForget.LimitPreservation` or
+`SheafCohomology.NativeCommRingGlobalSections` independently, or use the
+aggregate `SheafCohomology` root. The ordinary-import example
+`SheafCohomologyExamples.CommRingForgetLimitPreservation` supplies the
+named public `uniqueLift` client against the actual forgotten projections.
+See [CommRingForget](docs/CommRingForget.md) and
+[NativeCommRingGlobalSections](docs/NativeCommRingGlobalSections.md) for
+the full same-universe, filtered and spectral assumptions.
+
 For the forgetful functor and its comparisons, import
 `SheafCohomology.AbelianForget.Pullback` and/or
 `SheafCohomology.AbelianForget.FilteredColimits`, or import
@@ -788,6 +821,9 @@ lake --wfail build SheafCohomologyExamples
 The default build includes the library and example target. Exact check
 results and independent review must bind the final combined revision; author
 checks of an earlier input are not independent approval of the assembly.
+In particular, these instructions have **not** been executed for the new
+97-module transfer candidate; donor-only proof checks are not destination
+both-root or relocated-theorem evidence.
 
 The computational release checks are a successful build with the pinned Lean
 and dependency graph and a complete transitive axiom audit in the built
