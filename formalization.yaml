@@ -27,6 +27,7 @@ project:
     native inverse-image-open restriction and actual section-component laws,
     native limits of principal-tail open-cylinder diagrams,
     chosen native cylinder-limit isomorphisms and original-stage section comparisons,
+    original-cone additive global-section comparisons and spectral-limit invertibility,
     commuting-square transitions
     and their additive-to-Type forgetful compatibility, open base
     change and the forgetful functor from abelian-group sheaves to Type-valued
@@ -263,12 +264,60 @@ status:
     public coprojection laws. No desired IsIso, restricted-limit or surjectivity
     premise is added. Its private ordinary-import client cancels the comparison
     on original-stage sections with both restriction-object and inverse-image casts.
+    NativeAdditiveGlobalSections defines the original additive cone's global-section
+    cocone, colimit.desc comparison and literal original-projection stage law.
+    Their inferred signatures require neither filteredness nor a limiting cone.
+    With small same-universe filtered indexing, an actual original native limit,
+    and spectral original stages and transition maps, that comparison is an
+    isomorphism. The proof uses full native cone/diagram forgetting and forward
+    colimit.post, without duplicating the Type spectral proof. Its private
+    ordinary-import client derives equality after an actual later transition
+    from original projection equality, and proves the converse. No additive
+    restriction or compact-cylinder extension is supplied by this unit.
     No new global preservation instance, full
     theory, arbitrary-universe wrapper or whole-source completion is asserted.
 
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Source-only 83-module registration assembled at 2026-09-27 21:59:24 UTC from adapter
+    2d34161ac8426b027efd2a03637fb0530ca5a906 on frozen unaccepted 81-module
+    predecessor a67d8f00d6da10ccd6af1beebe04be053fcdc1cd. Both new Lean blobs,
+    all 79 old nonroot Lean files, eleven complete package objects, Lake,
+    toolchain and CI were preserved. Donor 4806e203844ff4f4abbcf06d35a93b25a5fbf814
+    was independently reviewed at 69190f94af343224a2b179f93a228a273758b185
+    and accepted as an unregistered incubator leaf at issue 4/comment 54912.
+    Separate destination evidence d89012599010495ad52df061c2bdeff6f8472ee5
+    records successful matching cache before a warning-fatal focused build and
+    all 12 producer plus 1 private client actual-origin transitive standard-three
+    checks, including four private/generated producer declarations. It does not
+    certify changed aggregate roots. At this assembly, fresh exact destination
+    review, full 83-module build/private-inclusive audit, ordered 75/77/79/81
+    releases, owner acceptance/integration and final public-tree review and
+    publication remained separate gates. The 73-module release was independently
+    accepted and verified on official GitHub at
+    6aa8528f28264d9b44de0f31e72696d8d95ce97d at 21:19:58 UTC; it does not accept
+    that frozen successor. Subsequent independent scoped review
+    7f48d057eefdb811782bbadce2ccacceb2ed9ae6 approved the mathematical, API,
+    provenance and registration increment. Full CI627 on
+    70d1aad387e72104ae294ac07a32c113d7f72e75 succeeded at 22:47:17 UTC;
+    complete both-target, all 83-module and private-inclusive standard-axiom
+    evidence was owner-intaken. This final reconciliation normally merges
+    actual accepted 81 main 6e055c187a6e097636f2e9b5bf5d4f5eba351876,
+    whose separate private publication is recorded below. It repairs the two
+    additive module headers with collective Authors and the ENTIRE original
+    Task/UID as Contributor, preserving all bytes from module onward, all 81
+    other Lean blobs, both roots and eleven whole dependency objects. The
+    earlier exact-header/reversal claims are dated historical snapshots;
+    reversing this later header exception restores those original files.
+    Changed source headers require applicable successor CI and complete owner
+    evidence intake, not a borrowed old pass. Fresh final independent credit,
+    documentation, ancestry and release review, separate owner decisions,
+    protected integration and verified individual publication remain pending.
+    No 83 release, source coverage, additive-cylinder endpoint or incubator
+    conversion is asserted. Subsequent historical paragraphs retain dates.
+
+    Historical 81-module assembly state:
     Source-only 81-module registration assembled at 2026-09-27 20:41:17 UTC from adapter
     cb6dc05b14fb718dcc39cf8b8c1aec0cc616a397 on frozen unaccepted 79-module
     predecessor d443e034746972593ec0c91f64268771a3013b5a. Both new Lean leaves,
@@ -283,14 +332,15 @@ review:
     approved the mathematical/API/provenance/registration increment. Full CI610
     on a67d8f00d6da10ccd6af1beebe04be053fcdc1cd succeeded at 22:04:27 UTC;
     the owner inspected its complete both-target build and private-inclusive
-    standard-axiom evidence. This documentation-only reconciliation normally
-    merges accepted 79-module main f950b52d57e87efb70f4c8adb6d84856248520e9,
+    standard-axiom evidence. Its documentation-only reconciliation normally
+    merged accepted 79-module main f950b52d57e87efb70f4c8adb6d84856248520e9,
     preserving all 81 Lean blobs, both roots, eleven package objects and CI inputs.
-    Computational evidence is reused for unchanged inputs, not claimed as a fresh
-    successor build or audit. Current required CI, independent final documentation,
-    ancestry and release review, individual owner acceptance, protected integration
-    and verified publication remain separate gates for this 81-module candidate.
-    No 81-module release, source coverage or incubator conversion is asserted.
+    Full CI648 on corrected 6e055c187a6e097636f2e9b5bf5d4f5eba351876 succeeded
+    on 2026-09-28 at 01:05:13 UTC. After complete owner evidence intake,
+    independent final review, separate main/prep/public decisions and protected
+    integration, actual private GitHub release
+    b743039857ca8c206b6a8cdb99afe7c7e8ce0c25 was verified at 02:39:17 UTC.
+    These are 81's own decisions, not acceptance of 83 or source coverage.
 
     Historical 79-module assembly and reconciliation state:
     Source-only 79-module registration assembled at 2026-09-27 20:19:12 UTC from adapter

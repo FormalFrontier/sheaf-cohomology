@@ -797,3 +797,55 @@ Subspace and mathlib spectral/open-embedding results are invoked, not copied.
 SPDX Apache-2.0 and Authors notices are retained; no incubator ancestry,
 dependency or private source text enters this deliverable. Donor acceptance
 and focused checks do not certify the new roots, destination release or source coverage.
+
+## Native additive global sections
+
+`SheafCohomology/NativeAdditiveGlobalSections.lean` and its module-private
+ordinary-import client preserve the complete statements and proof expressions
+of accepted-unregistered incubator leaf
+`4806e203844ff4f4abbcf06d35a93b25a5fbf814`. Original author: worker-a Task
+`hive-request-0b67e8c17f9041202a7550e7a7703f53d6bb4004`, UID
+`7b289efe-e184-4c33-9723-7ef39e977b59`. Fresh independent reviewer: worker-b
+Task `hive-request-d7144b00be8d022d3238248e42d365ea903f6a15`, UID
+`8c20f82f-ce23-47c3-90eb-5372d0f0b1b9`, report
+`69190f94af343224a2b179f93a228a273758b185`,
+`reviews/native-additive-global-sections/REVIEW.md`. Anchor's incubator
+issue4/comment54912 accepted that donor unregistered, not this destination.
+The preceding noncompiled API plan is by worker-a Task
+`hive-request-7a9932f81650d59ba53a99f18bb87a61b1e5046d`, UID
+`117c1001-76ff-46a7-863b-fefcb485badb`, report
+`0b33b9cf70c50509ca766a020cd82667e7cf16e1`.
+
+Worker-a adapter Task `hive-request-6d69256f4facbc79af9be1ed2e70a55908a11731`,
+UID `9c8d00ee-de21-4aef-8927-357aeec5a8af`, supplied the three destination
+payloads at `2d34161ac8426b027efd2a03637fb0530ca5a906`; separate focused
+evidence is `d89012599010495ad52df061c2bdeff6f8472ee5`. At that historical
+adapter/registration, reversing only the
+producer import and client import/namespace/end substitutions recovers donor
+blobs `6f60930e277b287deb1772c23f732ae586609cb8` and
+`a166f8868ba3b48cfad492339aa6447a79e3bd3e`. Anchor supplied root imports,
+navigation, lifecycle metadata and credit without changing either Lean blob.
+The later 2026-09-28 final-parent reconciliation adds collective
+`Authors: Formal Frontier Agents` to both modules and retains the ENTIRE
+original worker-a Task/UID text as `Contributor:`. Removing that added Authors
+line and changing Contributor back to Authors restores each historical
+complete file; the earlier import/namespace reversal then recovers the donor.
+All bytes from `module` onward are unchanged. This is Anchor's destination
+credit repair, not new proof authorship or a mathematical change.
+
+The cocone, colimit.desc and stage-law expressions closely adapt the Type
+native-limit module by worker-b Task
+`hive-request-4c216dbec01d4be3c9179c965656f0054d638fb8`, UID
+`b5bc6fa6-d9ab-4cfa-bd79-3ec1cdf7265a`. Its Type spectral proof is invoked,
+not copied. The official full-cone additive-forget preservation result by
+worker-b Task `hive-request-13fb7168e78b10adc0a739488a5b88a5bad2cd58`, UID
+`9a8d7368-37db-444c-b740-2b889ce82678`, and the separate native-to-space
+preservation theorem are invoked, not copied. The
+[standalone guide](NativeAdditiveGlobalSections.md) preserves detailed mathlib
+credit to Kim Morrison, Reid Barton, Justus Springer, Mario Carneiro and
+Floris van Doorn, including the original Gamma and filtered-colimit APIs.
+Original SPDX and contributor attribution remain intact under that reversible
+header exception. No private source text, incubator
+dependency or incubator ancestry enters the deliverable history. Donor acceptance
+and focused destination checks do not certify new aggregate roots, destination
+acceptance/release, the additive cylinder endpoint or source coverage.

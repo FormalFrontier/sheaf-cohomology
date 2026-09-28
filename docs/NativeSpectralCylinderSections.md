@@ -174,12 +174,15 @@ standard-axiom evidence, not just the eight focused leaf origins.
 The corrected 79-module predecessor later completed its own final review,
 CI643, owner decisions and protected integration; its official GitHub release
 `ca6684a3b2eaa21a9e415175ceda61d9a4ac75c8` was verified on 2026-09-28
-at 00:28:20 UTC. This documentation-only 81-module successor normally merges
+at 00:28:20 UTC. Its documentation-only 81-module successor normally merged
 that accepted main `f950b52d57e87efb70f4c8adb6d84856248520e9`, keeping
 all 81 Lean blobs, both roots, eleven package objects and CI inputs fixed.
-Full 81-module evidence is reused for unchanged inputs, not claimed as a fresh
-successor build or audit. The current required CI context, final independent
-documentation/ancestry/release review, individual owner acceptance and protected
-integration, and verified publication remain separate gates. This 81-module
-candidate is not yet accepted or released. No source correspondence, source
-coverage or incubator conversion follows from this reconciliation.
+Full CI648 on corrected `6e055c187a6e097636f2e9b5bf5d4f5eba351876` succeeded
+on 2026-09-28 at 01:05:13 UTC. The owner consumed the complete both-target
+build and all 81-module/private-inclusive standard-axiom evidence. Following
+fresh final review `3f39164f7f7fd6b65737106abf6ad22a1648a38f` and separate
+main/prep/public decisions and protected integration, official private GitHub
+release `b743039857ca8c206b6a8cdb99afe7c7e8ce0c25` was verified at 02:39:17 UTC.
+These are the 81 contribution's own completed gates, not acceptance of a later
+additive or generic successor. No source correspondence, source coverage or
+incubator conversion follows from this release.

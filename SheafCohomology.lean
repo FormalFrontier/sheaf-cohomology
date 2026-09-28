@@ -18,6 +18,7 @@ public import SheafCohomology.NativeOpenRestriction
 public import SheafCohomology.NativeCylinderLimit
 public import SheafCohomology.NativeCylinderComparison
 public import SheafCohomology.NativeSpectralCylinderSections
+public import SheafCohomology.NativeAdditiveGlobalSections
 public import SheafCohomology.ConePullback
 public import SheafCohomology.ConePullbackSections
 public import SheafCohomology.ConePullbackCocone
@@ -57,6 +58,7 @@ comparison over spectral limits, global sections of the chosen native limit,
 native restriction to inverse-image opens and its actual section components,
 native limits of principal-tail open cylinders,
 their chosen native-limit isomorphisms and original-stage section comparisons,
+additive global sections of an arbitrary chosen native spectral limit,
 sheafed-space
 cones and their section-unit transport,
 a conditional native-limit criterion and its

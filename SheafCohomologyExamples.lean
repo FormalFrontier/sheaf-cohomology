@@ -19,6 +19,7 @@ import SheafCohomologyExamples.NativeOpenRestriction
 import SheafCohomologyExamples.NativeCylinderLimit
 import SheafCohomologyExamples.NativeCylinderComparison
 import SheafCohomologyExamples.NativeSpectralCylinderSections
+import SheafCohomologyExamples.NativeAdditiveGlobalSections
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
 import SheafCohomologyExamples.ConePullbackLimit
@@ -51,6 +52,8 @@ The native cylinder-limit leaf applies the constructed restricted limit to an
 arbitrary restricted cone and recovers its original native projection equation.
 The chosen native-limit leaf gives a private ordinary-import client detecting
 coprojection equality through the actual native projection maps.
+The additive native-limit leaf gives a private ordinary-import client equating
+original projection equality with equality after an actual later transition.
 Together they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change,
