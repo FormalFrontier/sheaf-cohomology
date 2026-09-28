@@ -24,7 +24,7 @@ project:
     native whole-stage section lifting and the actual cone-section colimit
     comparison under spectral-limit hypotheses, actual projection comparison
     for global sections of a chosen native limit and its named invertibility,
-    native inverse-image-open restriction and actual section-component laws,
+    category-generic native inverse-image-open restriction and actual section-component laws,
     native limits of principal-tail open-cylinder diagrams,
     chosen native cylinder-limit isomorphisms and original-stage section comparisons,
     original-cone additive global-section comparisons and spectral-limit invertibility,
@@ -231,11 +231,14 @@ status:
     coprojection equality by actual native projection images. Source endpoints,
     additive extensions and arbitrary colimit-choice identifications remain separate.
     NativeOpenRestriction constructs canonical restriction arrows for
-    SheafedSpace.{v+1,v,v} (Type v) over inverse-image opens, using the existing
+    SheafedSpace.{v+1,v,v} C with C in Type(v+1) and Category.{v} C,
+    over inverse-image opens, using the existing
     open-immersion lift. Native inclusion, uniqueness, identity and composition
     equations retain named-open equality transports. The actual global-section
     map agrees with the original presheaf morphism component after those
-    transports. No compactness, spectrality, nonemptiness or limit is required;
+    transports. Type and additive clients use these same declarations, with
+    explicit casts in the composed component equation. No concrete coefficient
+    category, extra limit, compactness, spectrality or nonemptiness is required;
     principal-tail and cylinder limits are not asserted by this unit.
     The separate NativeCylinderLimit unit constructs the actual restriction
     diagram over a principal tail of a directed preorder with an explicit
@@ -280,6 +283,41 @@ status:
 review:
   status: "other: independently reviewed mathematical development; release decisions are revision-specific"
   notes: >-
+    Source-only 84-module generic-restriction registration assembled on
+    2026-09-27 at 23:04 UTC from static transfer
+    952a1fcb976ccd9f2cf41316c1db4dd64542f14b on frozen then-unaccepted
+    83-module predecessor 70d1aad387e72104ae294ac07a32c113d7f72e75.
+    Donor ae8d32640fc9c946778fdd79fbc37528b433fa06 was independently
+    reviewed and accepted only as an unregistered incubator leaf. Its 92-origin
+    and separate named-private one-origin checks were not destination evidence.
+    Old83 CI627 passed at 22:47:17 UTC but not on the changed generic producer,
+    additive client and example-root imports. Original84 candidate
+    53a0a858ec7d3fab15c96f9f10ba8c31d8e21554 subsequently passed full
+    both-target/private-inclusive CI637 at 23:36:49 UTC, owner intake issue
+    34/comment55462: 84 modules and 1950 origins including 569 private.
+    Its separate scoped review efecfe1af9a07f376fd2c92e7f59125ac14ddb3c
+    and native4379 cover that original registration, not this
+    changed-header, merged-ancestry successor. At assembly the 77/79/81/83
+    predecessor gates were still open; they subsequently completed separately.
+    Actual accepted83 main/release-prep 9ba31ec9d399343a81e7284f7856f53c6a1d7f5c
+    (tree 052dfd63230482a17d4dedc158446796857bc686) passed full changed-header
+    CI666 and independent final review and was published on official private
+    GitHub as 6793f2ff8469d1cab23a98ac2da22a3286d22f8e on 2026-09-28,
+    with official81 b743039857ca8c206b6a8cdb99afe7c7e8ce0c25 as sole
+    public parent. This UNACCEPTED84 development successor normally merges
+    accepted83, retains its two additive-global-section collective-credit
+    headers and only repairs the generic restriction producer/additive client
+    Authors headers to collective Authors plus their complete original
+    Contributor text. All84 module-onward bytes, both roots and eleven whole
+    pins remain unchanged from the original84. Full original637 is historical
+    exact-input evidence, NOT a pass for these four changed headers. Applicable
+    both-target/full84/private-inclusive successor CI and a fresh independent
+    final main/prep/public review precede separate owner acceptance, protected
+    integration and verified publication. No generic-cylinder or additive-cylinder
+    endpoint, source coverage or incubator conversion is asserted. Historical
+    assembly notes below retain their dated then-current gates.
+
+    Historical 83-module assembly state:
     Source-only 83-module registration assembled at 2026-09-27 21:59:24 UTC from adapter
     2d34161ac8426b027efd2a03637fb0530ca5a906 on frozen unaccepted 81-module
     predecessor a67d8f00d6da10ccd6af1beebe04be053fcdc1cd. Both new Lean blobs,
@@ -302,20 +340,21 @@ review:
     provenance and registration increment. Full CI627 on
     70d1aad387e72104ae294ac07a32c113d7f72e75 succeeded at 22:47:17 UTC;
     complete both-target, all 83-module and private-inclusive standard-axiom
-    evidence was owner-intaken. This final reconciliation normally merges
-    actual accepted 81 main 6e055c187a6e097636f2e9b5bf5d4f5eba351876,
-    whose separate private publication is recorded below. It repairs the two
+    evidence was owner-intaken. The earlier 83 reconciliation merged actual
+    accepted 81 main 6e055c187a6e097636f2e9b5bf5d4f5eba351876,
+    whose separate private publication is recorded below. It repaired the two
     additive module headers with collective Authors and the ENTIRE original
     Task/UID as Contributor, preserving all bytes from module onward, all 81
     other Lean blobs, both roots and eleven whole dependency objects. The
     earlier exact-header/reversal claims are dated historical snapshots;
     reversing this later header exception restores those original files.
-    Changed source headers require applicable successor CI and complete owner
-    evidence intake, not a borrowed old pass. Fresh final independent credit,
-    documentation, ancestry and release review, separate owner decisions,
-    protected integration and verified individual publication remain pending.
-    No 83 release, source coverage, additive-cylinder endpoint or incubator
-    conversion is asserted. Subsequent historical paragraphs retain dates.
+    Changed source headers required applicable successor CI and complete owner
+    evidence intake, not a borrowed old pass. Full CI666 on the final83 header
+    digest succeeded; fresh independent final review and separate owner main,
+    release-prep and public decisions preceded the verified official83 release
+    recorded above. That release does not accept 84, source coverage, an
+    additive-cylinder endpoint or incubator conversion. Subsequent historical
+    paragraphs retain dates.
 
     Historical 81-module assembly state:
     Source-only 81-module registration assembled at 2026-09-27 20:41:17 UTC from adapter

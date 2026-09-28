@@ -825,7 +825,7 @@ producer import and client import/namespace/end substitutions recovers donor
 blobs `6f60930e277b287deb1772c23f732ae586609cb8` and
 `a166f8868ba3b48cfad492339aa6447a79e3bd3e`. Anchor supplied root imports,
 navigation, lifecycle metadata and credit without changing either Lean blob.
-The later 2026-09-28 final-parent reconciliation adds collective
+The 2026-09-28 final-parent 83 reconciliation added collective
 `Authors: Formal Frontier Agents` to both modules and retains the ENTIRE
 original worker-a Task/UID text as `Contributor:`. Removing that added Authors
 line and changing Contributor back to Authors restores each historical
@@ -845,7 +845,68 @@ preservation theorem are invoked, not copied. The
 credit to Kim Morrison, Reid Barton, Justus Springer, Mario Carneiro and
 Floris van Doorn, including the original Gamma and filtered-colimit APIs.
 Original SPDX and contributor attribution remain intact under that reversible
-header exception. No private source text, incubator
+header exception. Full CI666 and fresh independent final review supported
+accepted83 `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` and official private
+release `6793f2ff8469d1cab23a98ac2da22a3286d22f8e`, verified on
+2026-09-28. This 84 successor inherits both collective-credit headers exactly;
+none of those 83 decisions accepts it. No private source text, incubator
 dependency or incubator ancestry enters the deliverable history. Donor acceptance
-and focused destination checks do not certify new aggregate roots, destination
-acceptance/release, the additive cylinder endpoint or source coverage.
+and focused destination checks did not certify the new aggregate roots;
+the additive cylinder endpoint and source coverage remain separate.
+
+## Category-generic native open restriction
+
+The existing `SheafCohomology/NativeOpenRestriction.lean` is generalized in
+place using the exact producer expression of accepted-unregistered incubator
+leaf `ae8d32640fc9c946778fdd79fbc37528b433fa06`, **original 84 blob**
+`2846f2ee01a6c01c6705a5a80d8c9839b1f44e4a`. The original 84 named private
+additive client reverses by only import and namespace/end substitutions to donor
+blob `bbc6eeab4bab0a275d6e40275673acfcf57371e0`. The existing Type client stays
+unchanged; this is not a duplicate restriction implementation.
+
+Generic producer and close Type-to-additive client adaptation: worker-a Task
+`hive-request-30271b71e726fc52aa0a7c7670ba0eca5de6eaac`, UID
+`295217cc-fb36-46be-968d-03070242fd2b`. Named-private auditability and header
+repair, not mathematical authorship: worker-a Task
+`hive-request-97bfa2a350ebf1a403402c688ba8f4c80ca4a394`, UID
+`79c83628-cbc1-4702-a72f-ea4c3412c00d`. Noncompiled route analysis:
+worker-b Task `hive-request-95f10ba06d205ac6940b05ee7c67b16ff0e0f725`, UID
+`df7518ed-d71a-4cb1-b4ab-d6810ad3a1ad`. Fresh independent full donor review:
+worker-b Task `hive-request-f06218b26e9e91423ccc33d15127fec071e2e862`, UID
+`3d93f379-6d25-4640-9585-58a1ad623e32`, report
+`9ce66df6fc29d6386ce9b5d72ca7f9b3bc2bb90e`. Anchor's incubator issue4/comment55201
+accepts the donor leaf only. Original92-origin and separate repaired1-origin
+evidence are not a combined run or a destination proof check.
+
+Static destination transfer and standalone guide at
+`952a1fcb976ccd9f2cf41316c1db4dd64542f14b`: worker-a Task
+`hive-request-b45999b6c3820ed16f789cbb8a9b68ce126bf8f6`, UID
+`7e0cdddd-188a-4d9e-807b-1f46e1fb6915`. No destination computation was run
+by that static Task. Anchor supplied the coherent example-root registration,
+API navigation, lifecycle metadata and this credit without changing either
+transferred Lean blob. Original84 full CI637 on frozen
+`53a0a858ec7d3fab15c96f9f10ba8c31d8e21554` succeeded, with scoped review
+limited to that registration. The accepted83 release above resolves the
+historical predecessor gate, not this 84 successor. Its generic producer and
+additive client now have collective Authors plus complete original Contributor
+header text (including both continuation lines, Generality and the
+provenance/auditability repair). Reversing exactly each new header recovers the
+original 84 whole file; only the `module`-onward suffix remains byte-identical
+without reversal. Both roots, Type restriction client, mathematical content,
+eleven dependency objects and upstream notices are unchanged. Full84 successor
+CI for the four changed headers, independent final main/prep/public review and
+individual owner decisions/release remain outstanding. This change is by
+worker-a Task `hive-request-69c3cc1e2ad44b30a98b3a852b8eb2866ba76f65`,
+UID `1a955cb0-f708-4835-bdb5-64567d7d5257`, without new proof authorship.
+
+The original Type author `hive-request-dae0d04e8618b53de43730479c4033d21488695b`
+(UID `38967a21-9f85-493d-b98f-67dd712fb00e`) and its earlier destination
+adapter `hive-request-5de3ebfab00e632e44a5c020cb1fd800467bc20f`
+(UID `ac4b4dd0-3208-40c0-9352-a602f551452a`) remain credited above and in the
+[standalone guide](NativeOpenRestriction.md). Andrew Yang's Apache-2.0 mathlib
+open-immersion lift and official OpenBaseChange expression are reused, not
+independently reimplemented. Original SPDX, Generality and repair notices
+and the complete Contributor text remain; the Authors label has the
+reversible collective-credit exception just described. No private source
+text, incubator dependency or incubator
+ancestry enters this deliverable; no source-coverage decision follows.

@@ -175,17 +175,20 @@ The corrected Sheaf71 documentation snapshot
 at 2026-09-27 19:18:10 UTC. After complete owner evidence intake and separate
 main, internal and public decisions and protected integration, its official
 GitHub release `75d708bf56eeec2de6c599b16cb96c82c961c9fe` was verified at
-19:26:30 UTC. This 73-module successor normally merges that accepted ancestry
+19:26:30 UTC. The 73-module successor merged that accepted ancestry
 without rewriting the original `e570bfbb0a56dd38c43e9ed1c10057205e6088aa`
 candidate or changing any of its 73 Lean blobs, roots, eleven pins or CI inputs.
 It also carries the accepted predecessor's corrected stage-colimit guide.
 Original73 CI558 had succeeded at 18:52:33 UTC; its fully intaken both-target
-and private-inclusive standard-axiom evidence remains applicable only to the
-unchanged computational inputs, not a fresh execution on the documentation
-successor. Changed documentation and public history need their own exact final
-independent review; the genuine current required context, owner decisions and
-ordered verified publication are separate. Neither predecessor publication
-nor original73 computation asserts those later decisions.
+and private-inclusive standard-axiom evidence applied only to unchanged
+computational inputs, not as a fresh execution on the documentation successor.
+Its later final independent review, applicable checks, owner decisions and
+protected integration supported official 73 release
+`6aa8528f28264d9b44de0f31e72696d8d95ce97d`, verified on 2026-09-27 at
+21:19:58 UTC. The earlier assembly language records historical gates, not
+current pending 73 work. The subsequent 83 release and its still-unaccepted
+84 generic-restriction successor do not change this Type-valued comparison;
+the latter needs its own changed-header CI and final review.
 
 If the frozen target or predecessor APIs change, reassess this adapter.
 No source-PDF reading, passage excerpt, coverage decision, additive or

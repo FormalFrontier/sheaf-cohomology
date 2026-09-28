@@ -117,21 +117,29 @@ provenance/registration increment; full 83-module CI627 on
 at 22:47:17 UTC and its complete both-target/private-inclusive evidence was
 owner-intaken. The later actual 81-module predecessor was separately accepted and
 officially published at `b743039857ca8c206b6a8cdb99afe7c7e8ce0c25`, verified
-on 2026-09-28 at 02:39:17 UTC. This final reconciliation normally merges its
+on 2026-09-28 at 02:39:17 UTC. The earlier 83 reconciliation merged its
 accepted main `6e055c187a6e097636f2e9b5bf5d4f5eba351876`.
 
-The same reconciliation makes a reversible header-only credit repair in both
+That reconciliation made a reversible header-only credit repair in both
 new modules: `Authors: Formal Frontier Agents`, followed by `Contributor:`
 retaining the donor author's ENTIRE original Task/UID text. Remove that new
 Authors line and change Contributor back to Authors to recover the previous
 whole file; then the historical import/namespace substitutions recover the
 donor. Every byte from `module` onward, both roots, all 81 other Lean blobs and
-eleven whole pins remain fixed. Earlier exact-header and whole-blob statements
+eleven whole pins remained fixed relative to the original 83 assembly. Earlier
+exact-header and whole-blob statements
 apply to the historical adapter/registration, not this header-repaired source.
-The changed source digest requires applicable successor CI and complete owner
-intake; no old pass is claimed for it. Fresh final independent credit/docs/
-ancestry/release review, separate owner acceptance and individual verified
-publication remain pending. Source correspondence stays separate.
+The changed source digest passed full CI666 with complete owner intake, followed
+by fresh independent final review and separate owner main/prep/public decisions.
+Actual accepted 83 main/release-prep
+`9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` and its official private
+GitHub release `6793f2ff8469d1cab23a98ac2da22a3286d22f8e` (verified on
+2026-09-28 at 05:15:05 UTC) complete the 83 gates, not 84 acceptance. This
+84 successor carries both accepted83 credit headers unchanged. Its separate
+generic restriction producer and additive restriction client header changes
+make original84 CI637 historical evidence, not a pass for the successor;
+applicable full84 successor CI and independent final main/prep/public review
+are outstanding. Source correspondence stays separate.
 Neither this focused adapter nor the Type-only compact-cylinder result claims
 an additive-cylinder extension or a source-specific endpoint.
 

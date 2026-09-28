@@ -30,9 +30,12 @@ is an isomorphism of types under the same spectral-limit hypotheses.
 For the native limit constructed over that actual underlying-space limit,
 its projection maps also identify the colimit of native stage global sections
 with global sections of the chosen native limit.
-For any same-universe Type-valued native sheafed-space morphism, restriction
+For native sheafed spaces valued in any `C : Type (v + 1)` with
+`Category.{v} C`, restriction
 to an inverse-image open gives a canonical native arrow with inclusion,
 identity, composition and actual global-section component equations.
+The existing Type-valued API is a specialization of these same declarations;
+ordinary-import Type and additive clients exercise their component readback.
 For a directed preorder with an explicit distinguished index, an arbitrary
 native limit cone restricts to a native limit of the principal-tail diagram
 of inverse-image opens, without assuming the desired restricted limit.
@@ -54,6 +57,43 @@ client detects original projection equality by equality after an actual later
 transition. This does not extend the Type-only compact-cylinder theorem to
 additive coefficients.
 
+The source-only 84-module registration was assembled at 2026-09-27 23:04 UTC
+from static destination transfer `952a1fcb976ccd9f2cf41316c1db4dd64542f14b`
+on frozen, then-unaccepted 83-module parent
+`70d1aad387e72104ae294ac07a32c113d7f72e75`. It generalized the existing
+native restriction declarations in place and registered a named private additive
+client by changing only the example root's import. The independently reviewed
+donor `ae8d32640fc9c946778fdd79fbc37528b433fa06` was accepted as an
+**unregistered incubator leaf only**; donor checks were not destination checks.
+The original 83-module CI627 succeeded at 22:47:17 UTC, but its inputs did not
+include the generalized producer or new additive client/root. The 75-module
+official release `57decc6d5106fe32dc57f9684de38f6e10534de5` was verified
+at 22:30:32 UTC. The then-outstanding 77/79/81/83 predecessor gates were
+historical assembly status, not current release status.
+
+The original 84-module candidate `53a0a858ec7d3fab15c96f9f10ba8c31d8e21554`
+subsequently passed both-target, private-inclusive CI637 (issue #34, comment
+55462) at 23:36:49 UTC: 84 modules, 1,950 actual-origin declarations including
+569 private, and only standard axioms. The scoped independent review
+`efecfe1af9a07f376fd2c92e7f59125ac14ddb3c` and native review 4379
+concerned that exact original registration. Neither certifies this successor's
+changed Lean headers,
+merged ancestry or revised public artifact. Actual accepted 83-module main and
+release-prep are `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` (tree
+`052dfd63230482a17d4dedc158446796857bc686`); its official private GitHub
+release `6793f2ff8469d1cab23a98ac2da22a3286d22f8e` has previous official
+81 release `b743039857ca8c206b6a8cdb99afe7c7e8ce0c25` as sole parent,
+verified on 2026-09-28 at 05:15:05 UTC. This 84-module development successor
+merges that **accepted** 83 ancestry without adopting its public-release
+ancestry. It retains the accepted 83 additive-global-sections collective-credit
+headers and repairs only the generic restriction producer/additive client headers;
+every 84-module file remains unchanged from `module` onward. The original
+CI637 does **not** pass these four changed headers. Applicable full successor
+CI and a fresh independent final main/prep/public review, followed by distinct
+owner acceptance, protected integration and verified publication, are required.
+This 84-module successor is **unaccepted**. Neither a generic-cylinder nor an
+additive-cylinder extension, source coverage or incubator conversion follows.
+
 The original source-only 83-module registration preserved both additive Lean leaves from
 `2d34161ac8426b027efd2a03637fb0530ca5a906`, all 79 older nonroot Lean files,
 and all eleven dependency objects, Lake configuration and CI. At its
@@ -69,18 +109,17 @@ review `7f48d057eefdb811782bbadce2ccacceb2ed9ae6` approved the mathematical,
 API, provenance and registration increment. Full 83-module CI627 on
 `70d1aad387e72104ae294ac07a32c113d7f72e75` succeeded at 22:47:17 UTC;
 the owner inspected its complete both-target build and private-inclusive
-standard-axiom evidence. This final reconciliation normally merges actual
-accepted 81-module main `6e055c187a6e097636f2e9b5bf5d4f5eba351876`.
-It also adds collective Authors credit to the two additive module headers,
+standard-axiom evidence. The earlier 83-module reconciliation merged actual
+accepted 81-module main `6e055c187a6e097636f2e9b5bf5d4f5eba351876`
+and added collective Authors credit to the two additive module headers,
 retaining the entire original Task/UID as Contributor and every byte from
 `module` onward. All 81 other Lean blobs, both roots, eleven package objects,
-Lake configuration and CI remain fixed. The source-header changes require
-applicable successor CI; the earlier complete evidence is not a fresh pass
-on this changed source digest. Current full checks, fresh final independent
-documentation/credit/ancestry/release review, owner acceptance and individual
-verified publication remain separate gates. No 83 release, additive-cylinder
-endpoint or source coverage is asserted. Earlier assembly snapshots below
-retain their dates and subsequent outcomes.
+Lake configuration and CI stayed fixed relative to its original assembly.
+Its changed-header successor passed full CI666, followed by independent final
+review, individual owner decisions and actual release as recorded above.
+Those completed 83-module gates do not accept this 84-module successor,
+an additive-cylinder endpoint or source coverage. Earlier assembly snapshots
+below retain their dates and subsequent outcomes.
 
 The historical source-only 81-module registration preserved both spectral-cylinder Lean
 leaves from `cb6dc05b14fb718dcc39cf8b8c1aec0cc616a397`, all 77 older nonroot
@@ -474,7 +513,7 @@ empty spaces.
 | Native whole-stage section lifting | `NativeStageSectionLifting`: each cone-pullback global section lifts from a native global section after a filtered transition |
 | Native section-colimit comparison | `NativeStageSectionColimit`: the actual `colimMap` of `ConePullbackSections.coneSections` is an isomorphism under the spectral-limit hypotheses |
 | Global sections of a chosen native limit | `NativeLimitGlobalSections`: the actual native projection comparison factors through moving-stage and fixed-base section comparisons and is an isomorphism under spectral-limit hypotheses |
-| Native restriction to inverse-image opens | `NativeOpenRestriction`: canonical native restriction arrows, their inclusion/identity/composition laws and actual global-section component equations |
+| Native restriction to inverse-image opens | `NativeOpenRestriction`: category-generic native restriction arrows, their inclusion/identity/composition laws and actual global-section component equations |
 | Native limits of principal-tail open cylinders | `NativeCylinderLimit`: actual restricted native diagram, cone and limit, derived from an arbitrary original native limit |
 | Chosen native cylinder limits and original-stage sections | `NativeCylinderComparison`: chosen native-limit isomorphism, projection/base laws and actual section comparison with explicit casts |
 | Compact-open native spectral-cylinder sections | `NativeSpectralCylinderSections`: invertibility of the actual restricted-cylinder comparison from original-stage spectrality and compactness of the chosen open |
@@ -548,11 +587,14 @@ fixed-base comparisons under the same-universe small filtered, actual-limit
 and spectral-stage/map hypotheses. It assumes no desired isomorphism or
 inhabited stage and adds no global instance or source endpoint claim.
 The [native open-restriction guide](docs/NativeOpenRestriction.md) covers the
-twenty-fifth new subject. For `SheafedSpace.{v+1,v,v} (Type v)`, it uses the
+twenty-fifth new subject. For `SheafedSpace.{v+1,v,v} C` with
+`{C : Type (v + 1)} [Category.{v} C]`, it uses the
 existing open-immersion lift and identifies the underlying map with the
 official open-base-change map. Named-open and composition equations retain
 explicit equality transports. Its section equation uses the actual `Γ.map`,
 with no limit, spectrality, nonemptiness or desired-isomorphism premise.
+Type and additive coefficients use the same API; both ordinary-import clients
+retain the explicit casts in the composed section-component equation.
 The [native cylinder-limit guide](docs/NativeCylinderLimit.md) covers the
 twenty-sixth new subject. For a directed preorder, an explicit index and an
 arbitrary stage open, it constructs the opposite-tail restriction diagram and
@@ -581,7 +623,8 @@ cone and its projections, compares actual global sections by `colimit.desc`,
 and proves invertibility under the original limiting/spectral hypotheses via
 the forward forgetting comparison. The private client derives eventual equality;
 neither it nor this contribution assumes the desired comparison is invertible.
-Additive restriction and compact-cylinder extensions remain separate work.
+Generic additive restriction is supplied separately by `NativeOpenRestriction`;
+the additive compact-cylinder extension remains separate work.
 The section-transport supplement uses the existing `N.rightOp` composed with global sections and the
 actual unit at the top open; it supplies no colimit-map invertibility or
 finite-stage gluing theorem.
@@ -595,10 +638,10 @@ Import the aggregate root or only the required subject module; importing
 `SheafCohomologyExamples` is unnecessary.
 
 `SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports twenty-eight additional example leaves. The root
-and twenty-five leaves use named private declarations, including the native
+readiness assembly and imports twenty-nine additional example leaves. The root
+and twenty-six leaves use named private declarations, including the native
 stage-lifting, stage-colimit, chosen native-limit, open-restriction, cylinder-limit,
-cylinder-comparison, spectral-cylinder and additive native-limit clients; the
+cylinder-comparison, spectral-cylinder, additive restriction and additive native-limit clients; the
 `ConePullbackSections` leaf contains five named public ordinary-import clients,
 `PullbackLocalSections` contains four more named public ordinary-import clients,
 and `NativeStageSectionEquality` contains two public distinguishability clients.

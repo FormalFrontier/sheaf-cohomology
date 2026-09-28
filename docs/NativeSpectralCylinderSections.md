@@ -184,5 +184,11 @@ fresh final review `3f39164f7f7fd6b65737106abf6ad22a1648a38f` and separate
 main/prep/public decisions and protected integration, official private GitHub
 release `b743039857ca8c206b6a8cdb99afe7c7e8ce0c25` was verified at 02:39:17 UTC.
 These are the 81 contribution's own completed gates, not acceptance of a later
-additive or generic successor. No source correspondence, source coverage or
-incubator conversion follows from this release.
+additive or generic successor. The additive global-section contribution received
+its own subsequent full CI666, final review and owner decisions: accepted 83
+main `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c` and official private
+release `6793f2ff8469d1cab23a98ac2da22a3286d22f8e`, verified on
+2026-09-28. The following 84 generic-restriction successor remains unaccepted
+and does not change this Type-only spectral-cylinder body or establish an
+additive cylinder theorem. No source correspondence, source coverage or
+incubator conversion follows from these releases.

@@ -1,6 +1,8 @@
 /-
 SPDX-License-Identifier: Apache-2.0
-Authors: Formal Frontier worker-a Hive Task hive-request-dae0d04e8618b53de43730479c4033d21488695b
+Authors: Formal Frontier Agents
+Contributor: Formal Frontier worker-a Hive Task hive-request-dae0d04e8618b53de43730479c4033d21488695b
+Generality: Formal Frontier worker-a Hive Task hive-request-30271b71e726fc52aa0a7c7670ba0eca5de6eaac
 -/
 module
 public import Mathlib.Geometry.RingedSpace.OpenImmersion
@@ -29,7 +31,8 @@ noncomputable section
 
 namespace AlgebraicGeometry.SheafedSpace
 
-variable {X Y Z : SheafedSpace.{v + 1, v, v} (Type v)}
+variable {C : Type (v + 1)} [Category.{v} C]
+variable {X Y Z : SheafedSpace.{v + 1, v, v} C}
 
 /-- The inclusion of the inverse-image open contains the composite's image. -/
 theorem restrictOnPreimage_range (g : X ⟶ Y) (V : Opens Y) :
@@ -99,7 +102,7 @@ theorem restrictOnNamedPreimage_fac (g : X ⟶ Y) (V : Opens Y)
 
 /-- Restricting an identity gives the identity, after the inverse-image equality cast. -/
 theorem restrictOnNamedPreimage_id
-    (X : SheafedSpace.{v + 1, v, v} (Type v)) (V : Opens X) :
+    (X : SheafedSpace.{v + 1, v, v} C) (V : Opens X) :
     restrictOnNamedPreimage (𝟙 X) V V (Opens.map_id_obj V).symm =
       𝟙 (X.restrict V.isOpenEmbedding) := by
   apply (cancel_mono (X.ofRestrict V.isOpenEmbedding)).1
@@ -125,19 +128,12 @@ theorem restrictOnPreimage_comp (f : X ⟶ Y) (g : Y ⟶ Z) (W : Opens Z) :
             rw [Category.assoc, restrictOnPreimage_fac]
     _ = X.ofRestrict ((Opens.map (f ≫ g).hom.base).obj W).isOpenEmbedding ≫
           (f ≫ g) := by
-            calc
-              (restrictOnNamedPreimage f ((Opens.map g.hom.base).obj W)
-                    ((Opens.map (f ≫ g).hom.base).obj W)
-                    (Opens.map_comp_obj f.hom.base g.hom.base W) ≫
-                  Y.ofRestrict ((Opens.map g.hom.base).obj W).isOpenEmbedding) ≫ g =
-                  (X.ofRestrict ((Opens.map (f ≫ g).hom.base).obj W).isOpenEmbedding ≫
-                    f) ≫ g := congrArg (· ≫ g) (restrictOnNamedPreimage_fac f _ _ _)
-              _ = _ := Category.assoc _ _ _
+            rw [← Category.assoc, restrictOnNamedPreimage_fac, Category.assoc]
     _ = restrictOnPreimage (f ≫ g) W ≫ Z.ofRestrict W.isOpenEmbedding :=
       (restrictOnPreimage_fac (f ≫ g) W).symm
 
 /-- Global sections of the restriction are sections on the chosen open. -/
-theorem restrict_Γ_obj (X : SheafedSpace.{v + 1, v, v} (Type v)) (U : Opens X) :
+theorem restrict_Γ_obj (X : SheafedSpace.{v + 1, v, v} C) (U : Opens X) :
     Γ.obj (op (X.restrict U.isOpenEmbedding)) = X.presheaf.obj (op U) := by
   change X.presheaf.obj (op (U.isOpenEmbedding.functor.obj ⊤)) = _
   rw [Opens.isOpenEmbedding_obj_top]
@@ -145,7 +141,7 @@ theorem restrict_Γ_obj (X : SheafedSpace.{v + 1, v, v} (Type v)) (U : Opens X) 
 /-- The inclusion's component on its defining open is the canonical transport
 from sections on that open to sections of the restriction. -/
 theorem ofRestrict_c_app_self
-    (X : SheafedSpace.{v + 1, v, v} (Type v)) (U : Opens X) :
+    (X : SheafedSpace.{v + 1, v, v} C) (U : Opens X) :
     (X.ofRestrict U.isOpenEmbedding).hom.c.app (op U) =
       eqToHom (restrict_Γ_obj X U).symm ≫
         (X.restrict U.isOpenEmbedding).presheaf.map
@@ -177,7 +173,7 @@ theorem restrictOnPreimage_Γ_map (g : X ⟶ Y) (V : Opens Y) :
   rw [Category.assoc, naturality] at square
   simp only [Category.assoc, eqToHom_trans] at square
   let tail :=
-    ((TopCat.Presheaf.pushforward (Type v) (restrictOnPreimage g V).hom.base).obj
+    ((TopCat.Presheaf.pushforward C (restrictOnPreimage g V).hom.base).obj
       (X.restrict ((Opens.map g.hom.base).obj V).isOpenEmbedding).presheaf).map
       (eqToHom (congrArg op hV.symm))
   haveI : Mono tail := by

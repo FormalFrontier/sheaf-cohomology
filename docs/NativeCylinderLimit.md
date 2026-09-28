@@ -138,4 +138,9 @@ Incubator conversion and any source correspondence/coverage decision remain
 separate from the recorded 77-module release. A chosen-limit isomorphism,
 Gamma comparison, spectral transfer and IsIso endpoint are outside this API.
 Changed prerequisite APIs require reassessment. The predecessor release and
-original 77-module computation do not supply any later successor's separate owner decisions.
+original 77-module computation do not supply any later successor's separate
+owner decisions. Accepted 83 main `9ba31ec9d399343a81e7284f7856f53c6a1d7f5c`
+was separately published as official private release
+`6793f2ff8469d1cab23a98ac2da22a3286d22f8e` on 2026-09-28. The
+unaccepted 84 generic-restriction successor leaves this Type-only cylinder
+API and its proof body unchanged; no generic or additive cylinder claim follows.
