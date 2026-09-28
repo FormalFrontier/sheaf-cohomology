@@ -2,7 +2,7 @@
 # Chosen native cylinder limits and original-stage sections
 
 Import `SheafCohomology.NativeCylinderComparison` directly, or use the aggregate
-`SheafCohomology` root, which re-exports this module in the 79-module candidate. This is a
+`SheafCohomology` root, which re-exports this module since the 79-module release. This is a
 reusable comparison for actual native limits, not an alternative diagram or a
 spectral invertibility theorem.
 
@@ -144,11 +144,14 @@ the owner inspected its complete both-target build and private-inclusive
 standard-axiom evidence. The corrected 77-module predecessor later completed
 its own review, full CI633, owner decisions and protected integration; official
 GitHub release `361c79281381d75d3c3c2195947ff8cb3a29c39f` was verified
-at 23:41:14 UTC. This documentation-only successor normally merges its accepted
+at 23:41:14 UTC. The documentation-only 79-module successor normally merged its accepted
 main `f15cc3d61ceb85e259b936eb49c1f644d04f88c1`, retaining all 79 Lean
-blobs, roots, eleven package objects and CI inputs. Complete 79-module evidence
-is reused for unchanged inputs, not a fresh successor build or audit. Current
-required CI, independent final documentation/ancestry/release review, individual
-owner acceptance, protected integration and verified publication remain separate
-gates; this 79-module candidate remains unaccepted. No spectral `IsIso`, endpoint, source-passage
+blobs, roots, eleven package objects and CI inputs. Full CI643 on the corrected
+`f950b52d57e87efb70f4c8adb6d84856248520e9` succeeded on 2026-09-28
+at 00:18:28 UTC. Complete owner evidence intake and final independent review
+`9e7df0cc74e4b612f72201b8baec304a281228ce` preceded separate main,
+release-prep and public owner decisions and protected integration. Its official
+GitHub release `ca6684a3b2eaa21a9e415175ceda61d9a4ac75c8` was verified
+at 00:28:20 UTC. These are this comparison contribution's own decisions,
+not acceptance of later spectral or additive extensions. No spectral `IsIso`, endpoint, source-passage
 correspondence or formalization-coverage conclusion is claimed.

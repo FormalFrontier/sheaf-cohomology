@@ -757,3 +757,43 @@ mathematical and contributor boundaries. Apache notices remain intact; no
 private source text, incubator dependency or incubator ancestry enters the
 deliverable history. Leaf acceptance and focused checks do not accept the
 combined graph, release, source correspondence or coverage.
+
+## Compact-open native spectral-cylinder sections
+
+`SheafCohomology/NativeSpectralCylinderSections.lean` and its private ordinary-import
+client preserve complete statements and proof expressions from accepted-unregistered
+incubator leaf `d8986c460ccae72392ad39550d89669604ec1284`. Original author:
+worker-b Task `hive-request-e8a25d6c5328e70c571fe96c3ac0b8102530eaa1`
+(UID `ddcebc71-0a10-45a6-b8cf-9606083d850e`). Fresh independent reviewer:
+worker-a Task `hive-request-39c7e47c551ef244416635d53429219016b1f836`
+(UID `1fa3b86b-f473-4750-8009-9c71ad8274be`), report
+`12f428898f1d962ecbbc4be174d168c608b75629`,
+`reviews/native-spectral-cylinder-sections/REVIEW.md`. Anchor's incubator
+issue #4/comment54519 accepted that donor unregistered, not this destination.
+
+Worker-a adapter Task `hive-request-5d68fce000ac813d7755bf44f7aa4a699799d102`
+(UID `e4c4c56a-25fc-4725-9cd3-4061a5326fbc`) supplied the three payloads at
+`cb6dc05b14fb718dcc39cf8b8c1aec0cc616a397`; separate focused target evidence is
+`89444c293bdea7624a1713850abc1a11c3ccaea0`. Only the producer comparison import
+and client import/namespace/end differ from donor Lean blobs
+`62b2c5765ec7d8105d23951baf7f582183fa8455` and
+`0b52bb4c6dc503204daf53040136538b479f1846`. Anchor supplied root imports,
+navigation, metadata and credit without altering either new Lean blob.
+
+The [standalone guide](NativeSpectralCylinderSections.md) preserves full
+inherited author and expression credit. In particular, the tail-directed witness
+adapts worker-b Task `hive-request-065ffb46d5b6d2b9ada197a66b9c1b783b57e00f`
+(UID `4720124c-2740-40ba-947d-5be3c681f64e`), retained source revision
+`e266a5076df34934171cc284ba8f2834e56f8c78`,
+`Research/fk-corollary-3-1-12-open-tail-restriction-scratch.lean:27–49`.
+The colimit-ext expression adapts the comparison-leg proof of worker-b f987
+(UID `91e70b6b-63f7-4c56-846f-b66316065a3c`); the cancellation expression
+adapts that comparison client and worker-b native-Gamma author4c216
+(UID `b5bc6fa6-d9ab-4cfa-bd79-3ec1cdf7265a`). Their full Task names and
+original revisions are recorded above and in the guide. Native restriction,
+cylinder construction and provenance repair authors remain credited there.
+The native Gamma, official limit-preservation, published SpectralStoneDuality
+Subspace and mathlib spectral/open-embedding results are invoked, not copied.
+SPDX Apache-2.0 and Authors notices are retained; no incubator ancestry,
+dependency or private source text enters this deliverable. Donor acceptance
+and focused checks do not certify the new roots, destination release or source coverage.

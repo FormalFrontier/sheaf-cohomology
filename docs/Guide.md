@@ -24,9 +24,10 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 [native stage-colimit supplement](NativeStageSectionColimit.md),
 [chosen native-limit global-section supplement](NativeLimitGlobalSections.md),
 [native open-restriction supplement](NativeOpenRestriction.md),
-[native cylinder-limit supplement](NativeCylinderLimit.md), and
-[native cylinder-comparison supplement](NativeCylinderComparison.md)
-cover the twenty-seven new
+[native cylinder-limit supplement](NativeCylinderLimit.md),
+[native cylinder-comparison supplement](NativeCylinderComparison.md), and
+[native spectral-cylinder sections supplement](NativeSpectralCylinderSections.md)
+cover the twenty-eight new
 subjects. [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -121,9 +122,9 @@ reference. Nine new `AbelianForget` leaves, `SquareTransition`,
 `DiagramPushforward`, `ConePullbackSections`, `PullbackLocalSections`,
 `NativeStageSectionEquality`, `NativeStageSectionLifting`, `NativeStageSectionColimit`
 and `NativeLimitGlobalSections`, `NativeOpenRestriction`, `NativeCylinderLimit`,
-`NativeCylinderComparison`
+`NativeCylinderComparison`, and `NativeSpectralCylinderSections`
 are documented in supplements;
-all 51 subjects, twenty-six client leaves and two roots form the current 79-file
+all 52 subjects, twenty-seven client leaves and two roots form the current 81-file
 Lean inventory. Prefix subject names with `SheafCohomology.`. These
 descriptions identify navigation, **not** a claim that every declaration has
 the same hypotheses.
@@ -152,6 +153,7 @@ the same hypotheses.
 | `NativeOpenRestriction` | Native restriction arrows over inverse-image opens, equality transports and actual global-section component equations |
 | `NativeCylinderLimit` | Actual principal-tail native restriction diagram and its native limit, constructed from an arbitrary original native limit |
 | `NativeCylinderComparison` | Chosen native-limit isomorphism, projection/base laws and actual original-stage section comparison with both equality transports |
+| `NativeSpectralCylinderSections` | Invertibility of that comparison on compact-open cylinders of original spectral stages and spectral transition maps |
 | `ConePullbackCocone` | Cocone whose legs are the mates of actual native cone projections, without a colimiting assertion |
 | `ConeOfPullbackCocone` | Native cone reconstructed from actual space-cone and pullback-cocone data, with exact forgetting and transported recovery |
 | `ConePullbackLimit` | Native limit criterion from the actual underlying-space limit and projection-mate sheaf colimit, with derived lifts and uniqueness |
@@ -182,7 +184,7 @@ the same hypotheses.
 | `SpectralPreimage` | Compact-open inverse image for spectral maps |
 | `SquareTransition` | Canonical square transition, forward mate, naturality and arbitrary pasting |
 | `SheafCohomology` | Aggregate root public imports (no new theorem) |
-| `SheafCohomologyExamples` | Named downstream examples, including twenty-six imported client modules |
+| `SheafCohomologyExamples` | Named downstream examples, including twenty-seven imported client modules |
 | `SheafCohomologyExamples.AbelianForgetPullback` | Seven private arbitrary-map, mate and coherence examples |
 | `SheafCohomologyExamples.AbelianForgetFilteredColimits` | Eight private filtered-colimit and empty-space examples |
 | `SheafCohomologyExamples.SquareTransition` | Eleven private Type/Ab, empty-space and arbitrary-pasting examples |
@@ -197,6 +199,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.NativeOpenRestriction` | Private ordinary-import client: compose two restricted native arrows and recover the original composite's section component |
 | `SheafCohomologyExamples.NativeCylinderLimit` | Private ordinary-import client: apply the constructed restricted limit to an arbitrary cone and recover the original native projection equation |
 | `SheafCohomologyExamples.NativeCylinderComparison` | Private ordinary-import client: inverse native projection law, both base identities and the original-stage section equation for arbitrary opens |
+| `SheafCohomologyExamples.NativeSpectralCylinderSections` | Private ordinary-import client: cancel the actual comparison on original-stage sections, retaining both equality transports |
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
 | `SheafCohomologyExamples.ConePullbackLimit` | Private Type/Ab Fin 3 lifts, projections and mates; empty-index reconstruction conditional on a genuine sheaf-colimit witness |
@@ -357,22 +360,36 @@ native limit and arbitrary open suffice; no spectrality or nonempty-open assumpt
 is added. Its genuine private ordinary-import client uses all these laws together.
 No spectral invertibility of this restricted comparison is asserted by this unit.
 
+The [native spectral-cylinder sections supplement](NativeSpectralCylinderSections.md)
+separately proves that invertibility. It assumes spectral original stages and
+spectral original transition maps and a compact chosen stage open, alongside
+the directed preorder, explicit index and genuine original native limit.
+Compact-open inverse images give spectral restricted stages. The actual native
+inclusion square and the published subtype criterion give spectral restricted
+arrows. Public colimit-leg equations identify the existing comparison with the
+native global-sections comparison followed by inverse/op and restriction casts;
+each factor is invertible. No desired isomorphism, restricted-limit premise,
+surjectivity or nonempty-open assumption is added. The private ordinary-import
+client detects equality of transported stage coprojections by actual original
+projection sections, keeping both the restriction-object and named-open casts.
+
 The `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local
 cohomology, higher direct images, open base change and native section transport.
-At the original 2026-09-27 20:19:12 UTC assembly, the 79-module aggregate's
+At the original 2026-09-27 20:41:17 UTC assembly, the 81-module aggregate's
 combined build and private-inclusive axiom evidence was still outstanding.
-The full aggregate CI607 check on `d443e034746972593ec0c91f64268771a3013b5a`
-succeeded at 21:37:56 UTC that day, and the owner subsequently inspected its
+The full aggregate CI610 check on `a67d8f00d6da10ccd6af1beebe04be053fcdc1cd`
+succeeded at 22:04:27 UTC that day, and the owner subsequently inspected its
 complete evidence. That evidence applies to this documentation-only successor
 because all computational inputs are unchanged; this records evidence reuse,
 not a fresh build or audit on the successor. The current required CI context,
 independent final documentation/ancestry/release review and individual
-owner/release decisions are separate
-gates. Predecessor and focused leaf checks apply only to their recorded inputs.
+owner/release decisions are separate gates. The predecessor's own 79-module
+release was verified on 2026-09-28 at 00:28:20 UTC; that does not accept 81.
+Predecessor and focused leaf checks apply only to their recorded inputs.
 Private example names are not public
 API, including the native stage-lifting, stage-colimit, chosen native-limit and
-open-restriction, cylinder-limit and cylinder-comparison clients;
+open-restriction, cylinder-limit, cylinder-comparison and spectral-cylinder clients;
 the section-transport,
 local-pullback and native stage-equality clients are public named examples. Inspect the sample's
 actual binders when adapting a result:
