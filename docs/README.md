@@ -55,13 +55,17 @@ example leaves relative to the historical 88-module snapshot. Its
 the destination API and its exact original-cone assumptions. The 99-module
 published predecessor also includes the public original-open ring-cylinder producer and an
 ordinary-import private example leaf; see the
-[ring-cylinder guide](NativeCommRingCylinderSections.md). The current
-101-module library also includes a generic producer and seven private clients
+[ring-cylinder guide](NativeCommRingCylinderSections.md). The published
+101-module predecessor also includes a generic producer and seven private clients
 for open-variable naturality on actual restricted-stage cylinder sections; see
-the [cylinder open-naturality guide](NativeCylinderOpenNaturality.md). The fixed
+the [cylinder open-naturality guide](NativeCylinderOpenNaturality.md). The current
+103-module library additionally compares literal later transition-pullback
+tail stages, native/section diagrams and their colimits under one local
+colimit assumption, with a square for any original cone; see the
+[native cylinder tail-change guide](NativeCylinderTailChange.md). The fixed
 26-module `API.md`, `api-manifest.json` and `scripts/api_inventory.json` remain historical
 and must not be read as an inventory of the accepted 97-module baseline or
-the current 101-module library. The new guide and historical generated records
+the current 103-module library. The new guides and historical generated records
 do not themselves certify any exact revision's build, complete axiom audit, independent
 review or release.
 

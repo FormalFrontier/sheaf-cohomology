@@ -1,16 +1,19 @@
 # sheaf-cohomology
 
-This 101-module library develops sheaf cohomology, compact-open sections, and
+This 103-module library develops sheaf cohomology, compact-open sections, and
 native limits and sections of sheafed spaces, including original-open
 commutative-ring cylinders and the open-variable naturality of their generic,
-ring and additive section comparisons. Its 99-module predecessor has been
-accepted and officially published privately.
+ring and additive section comparisons. It also compares the actual native
+section diagrams when their principal tail changes by transition pullback.
+Its 101-module predecessor has been accepted and officially published privately.
 Import [`SheafCohomology`](SheafCohomology.lean) for the aggregate API or an
 individual subject module for a smaller import. These results are declarations
 of this library, built on mathlib and its published dependencies; they are not
 a claim to have formalized an entire source. The
 [open-naturality guide](docs/NativeCylinderOpenNaturality.md) describes the new
-generic restriction and comparison arrows and their precise hypotheses.
+generic restriction and comparison arrows and their precise hypotheses; the
+[tail-change guide](docs/NativeCylinderTailChange.md) describes the later-stage
+diagram and colimit comparison.
 
 ## Headline results
 
@@ -73,8 +76,15 @@ generic restriction and comparison arrows and their precise hypotheses.
   the stated family of `HasColimit` assumptions, and the comparison to the
   original cone commutes with open restriction. Ring and additive restriction
   squares identify their existing arrows with this generic comparison; none
-  of these arrow laws asserts an all-open isomorphism. The conditional
-  ring result compares the literal restricted tail-stage rings with sections
+  of these arrow laws asserts an all-open isomorphism. The
+  change-of-principal-tail result uses the actual transition-pullback open:
+  the later native and section diagrams are isomorphic to the earlier diagrams
+  restricted along the final tail inclusion. Colimit existence transfers both
+  ways; one local `HasColimit` at the earlier tail yields the canonical iso,
+  coprojection law and an arbitrary-original-cone comparison square with a
+  forward target equality cast. This makes no all-open `IsIso` or identity/
+  composition claim for tail changes. Separately, the conditional ring result
+  compares the literal restricted tail-stage rings with sections
   on the *original* cone's inverse-image open: its original-stage law uses the
   actual projection and both equality transports in `CommRingCat`. For an actual
   limiting cone, spectral original stages and transition maps, and a compact
@@ -85,7 +95,11 @@ generic restriction and comparison arrows and their precise hypotheses.
   [additive theorem](SheafCohomology/NativeAdditiveCylinderSections.lean#L101),
   [ring IsIso and some-stage declarations](SheafCohomology/NativeCommRingCylinderSections.lean),
   [additive cylinder guide](docs/NativeAdditiveCylinderSections.md),
-  [generic open-naturality guide](docs/NativeCylinderOpenNaturality.md), and
+  [generic open-naturality guide](docs/NativeCylinderOpenNaturality.md),
+  [generic tail-change guide](docs/NativeCylinderTailChange.md),
+  [`betweenTailInclusion_final`](SheafCohomology/NativeCylinderTailChange.lean),
+  [`cylinderSectionsTailColimitIso`](SheafCohomology/NativeCylinderTailChange.lean),
+  [`cylinderSectionsComparison_betweenTail`](SheafCohomology/NativeCylinderTailChange.lean), and
   [ring-cylinder guide](docs/NativeCommRingCylinderSections.md).
 
 ## Further scope and historical snapshots

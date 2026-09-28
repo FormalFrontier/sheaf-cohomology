@@ -41,10 +41,15 @@ project:
     spectral-limit hypotheses. The published 99-module library also provides original-open
     native commutative-ring cylinder section comparisons, actual restricted and
     original-stage arrow laws, conditional isomorphism and a some-tail-stage
-    representative. This 101-module library adds category-generic open-variable
+    representative. This 103-module library includes category-generic open-variable
     restrictions on actual native cylinder section diagrams, a colimit presheaf,
     an arbitrary-original-cone natural comparison and ring/additive restriction
-    squares identifying the existing official comparison arrows.
+    squares identifying the existing official comparison arrows. It adds the
+    final later-stage tail inclusion for the actual transition-pullback open,
+    native and section diagram isomorphisms, two-way colimit-existence transport,
+    and the canonical colimit iso with coprojection law under one local earlier
+    HasColimit; for an arbitrary original cone the comparison square uses the
+    forward target equality cast.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -111,7 +116,7 @@ status:
     transitions, and a compact possibly-empty stage open, this comparison is
     invertible and every section has a representative at some tail stage, not
     necessarily at any fixed stage. No nonempty, Nontrivial or
-    transition-surjectivity premise is introduced. The 101-module library
+    transition-surjectivity premise is introduced. The 103-module library
     also includes the generic stage-open restriction transformations with
     identity and composition, their colimit presheaf under the exact
     per-open HasColimit family, and a comparison natural for the literal
@@ -119,8 +124,15 @@ status:
     preserves both equality transports. The ring/additive restriction squares
     identify the prior official arrows by their coprojection laws; no all-open
     IsIso, chosen limiting cone, spectrality or compactness is asserted by
-    these arrows. Seven private clients exercise original-stage sections,
-    proper and empty opens and restriction laws. The canonical
+    these arrows. The later actual transition-pullback open at index j yields
+    a final inclusion into the original principal tail, literal native and
+    section diagram isomorphisms, both colimit-existence directions and a
+    canonical colimit iso and coprojection law using one local earlier
+    HasColimit. The comparison square for any original cone has the forward
+    target equality cast, without an all-open IsIso or successive-tail
+    coherence claim. Seven inherited private clients exercise original-stage
+    sections, proper and empty opens and restriction laws; four new private
+    clients check tail coprojections and generic/ring/additive squares. The canonical
     pullback comparison is the mate of the original ring unit, the filtered
     sheaf-colimit comparison is literal colimit.post, and the native cocone
     uses the original projection mates. Cofiltered preservation assumes a
@@ -128,7 +140,7 @@ status:
     shape; the ring global-section comparison needs an actual limiting cone
     with spectral original stages and transitions. Its stage theorem supplies
     some stage representative for each section, not fixed-stage surjectivity;
-    neither result assumes nonempty stage spaces. The 56 selected results
+    neither result assumes nonempty stage spaces. The 67 selected results
     below are a curated public API list, not the complete declaration/axiom
     census. The prior 88-module scope and dated lifecycle statements below
     remain historical. This implemented scope does not itself certify review,
@@ -461,10 +473,49 @@ status:
       file: SheafCohomology/NativeCylinderOpenNaturality.lean
     - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.additiveCylinderSectionsComparison_restrict
       file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.betweenTailInclusion
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.betweenTailInclusion_final
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.stageOpen_betweenTail
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.restrictedBetweenTailIso
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.cylinderSectionsTailIso
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.hasColimit_cylinderSections_betweenTail
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.hasColimit_cylinderSections_of_betweenTail
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.cylinderSectionsTailColimitIso
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.colimit_ι_cylinderSectionsTailColimitIso
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.coneOpen_betweenTail
+      file: SheafCohomology/NativeCylinderTailChange.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.cylinderSectionsComparison_betweenTail
+      file: SheafCohomology/NativeCylinderTailChange.lean
 
 review:
   status: "other: acceptance and release evidence are revision-specific; preparation checkpoints below are historical"
   notes: >-
+    The accepted, privately published 101-module predecessor is main/prep
+    2eaac50486b157f11a31fd7b8bfd94d86d356b26, with official release
+    2ef3e5f5c521c02d90592b3c7bedea298f17eb53. This 103-module static
+    destination transfer maps accepted-isolated incubator donor
+    130b7069ae1afe580a9187d88531e6d58e58d43a, independently reviewed
+    by worker-a at ea68d1471eeaf947bf3a0a7a524c54b0935f59d4 and
+    accepted in incubator issue 4 comment 59539, to those existing public
+    open-naturality prerequisites. At the September 28, 2026 static-author
+    preparation checkpoint, affected destination both-root build and complete
+    actual-origin transitive standard-three audit including generated and
+    private declarations, fresh author-distinct exact-transfer review, owner
+    acceptance, protected integration and verified official GitHub release
+    remain pending; donor-focused checks and predecessor evidence do not
+    certify changed destination inputs. This is dated preparation history,
+    not a current-revision status claim or a source-coverage decision. The
+    following 101-module paragraph records its own earlier preparation
+    checkpoint rather than revising that contribution's accepted history.
     The 99-module predecessor was independently reviewed, owner-accepted and
     officially published privately. This 101-module static destination transfer
     starts directly from that accepted 99-module tree and adds one byte-exact

@@ -1,8 +1,9 @@
 # Mathematical and module guide
 
-This guide describes the 101-module library, including generic cylinder
-open naturality, original-open commutative-ring cylinders and the results of
-its previously accepted, published 99-module predecessor, not a complete
+This guide describes the 103-module library, including generic cylinder
+open naturality, actual transition-pullback principal-tail changes,
+original-open commutative-ring cylinders and the results of its previously
+accepted, published 101-module predecessor, not a complete
 formalization of a source.
 Import `SheafCohomology` for the aggregate public interface, or import a
 subject module directly. The native
@@ -40,6 +41,10 @@ covers the original-open ring-cylinder API.
 The [cylinder open-naturality guide](NativeCylinderOpenNaturality.md) covers
 actual restricted-stage open maps, the generic colimit-presheaf comparison
 square and the ring/additive specializations for an arbitrary original cone.
+The [native cylinder tail-change guide](NativeCylinderTailChange.md) covers
+later principal-tail inclusion, native and section diagram isomorphisms,
+both colimit-existence directions, the canonical colimit comparison and the
+arbitrary-original-cone square with its forward target cast.
 [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -179,6 +184,7 @@ the same hypotheses.
 | `NativeCommRingGlobalSections` | Original-cone ring-section cocone, isomorphism under spectral hypotheses, joint-stage representative |
 | `NativeCommRingCylinderSections` | Original-open ring-section comparison, actual restricted and original-stage arrow laws, conditional IsIso and some-tail-stage representative |
 | `NativeCylinderOpenNaturality` | Actual restricted-stage open transformations and colimit presheaf; arbitrary-original-cone comparison naturality and ring/additive arrow identifications |
+| `NativeCylinderTailChange` | Actual transition-pullback tail inclusion and native/section diagram isomorphisms; two-way colimit existence and canonical colimit comparison compatible with arbitrary original cones |
 | `AcyclicResolution` | Ext/homology comparison from acyclic resolutions |
 | `ColimitPostApp` | Evaluation of canonical colimit maps at components |
 | `ColimitTransport` | Transport/naturality of canonical colimit comparisons |
@@ -249,6 +255,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.NativeAdditiveCylinderSections` | Named private ordinary-import client: actual original-projection equality detects additive coprojection equality with both casts |
 | `SheafCohomologyExamples.NativeCommRingCylinderSections` | Four private ordinary-import clients: original-projection equality, some-stage product, compact empty open and selected tail-stage arrow |
 | `SheafCohomologyExamples.NativeCylinderOpenNaturality` | Seven private ordinary-import clients: original-stage ring/additive arrows, stage representatives, proper and empty opens, restriction identity and composition |
+| `SheafCohomologyExamples.NativeCylinderTailChange` | Four private ordinary-import clients: canonical coprojection, original-cone stage square, and ring/additive comparison squares |
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
 | `SheafCohomologyExamples.ConePullbackLimit` | Private Type/Ab Fin 3 lifts, projections and mates; empty-index reconstruction conditional on a genuine sheaf-colimit witness |
@@ -473,6 +480,15 @@ under open restriction. Its original-stage law retains both equality
 transports. Ring and additive squares use the already defined pointwise
 arrows; naturality makes no all-open `IsIso`, chosen-limit, spectrality or
 compactness assertion.
+
+The [native cylinder tail-change guide](NativeCylinderTailChange.md) instead
+compares the *actual* later pullback open with the earlier principal tail by
+final inclusion, native/section diagram isomorphisms and two-way transport of
+colimit existence. One local earlier `HasColimit` yields the canonical colimit
+iso and coprojection equation. For any original cone, its comparison square
+uses the forward equality cast on the target; the four private clients check
+generic and ring/additive consequences. No all-open invertibility, global
+colimits or successive-tail coherence is claimed.
 
 The `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local

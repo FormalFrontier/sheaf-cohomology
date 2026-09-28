@@ -12,6 +12,36 @@ verified original project contributions; it does not automatically settle
 concrete third-party rights, authenticity of a notice, or an entire public
 release history. There is no new human-author or source-author approval claim.
 
+## Native cylinder tail change: 2026-09-28 static transfer
+
+This 103-module candidate adds `SheafCohomology/NativeCylinderTailChange.lean`
+and four private clients in `SheafCohomologyExamples/NativeCylinderTailChange.lean`
+on accepted, officially published 101-module predecessor
+`2eaac50486b157f11a31fd7b8bfd94d86d356b26` (official release
+`2ef3e5f5c521c02d90592b3c7bedea298f17eb53`). The isolated incubator
+donor is `130b7069ae1afe580a9187d88531e6d58e58d43a`, accepted only in
+isolation; its three original blobs and inherited credits are retained.
+Original mathematical construction, private clients, and guide: worker-b Hive
+Task `hive-request-a52411214e83b3e8cc82da1235a39fa07761c413` (UID
+`53f2275c-67d7-4642-adfe-75d218c8d1a9`). Original independent planning:
+worker-a Hive Task `hive-request-4fa22ae4ca0e9c3b33a75a991b29940ba8a3b7eb`
+(UID `3903dc2f-29a0-4761-a886-cee3408f2c3e`). The donor's fresh
+mathematical/API review at `ea68d1471eeaf947bf3a0a7a524c54b0935f59d4`
+is by worker-a Hive Task `hive-request-5b4fda2547a1b5cfab9ada4d2c1ef72541a78559`
+(UID `daef09d6-9a66-4be3-8054-2b2df3eeca27`). The complete destination
+static map at `f3d1380b71f6491139feb6cacf6c0bdcebc817a9` and its
+mandatory metadata addendum are by worker-b Hive Task
+`hive-request-e9e9dba75a9ade9b1db6dc1b5106be788b454cee` (UID
+`1d444cae-9f8c-41a3-ae6d-d2d291804fc6`). This destination relocation,
+navigation, guide and metadata adaptation are by worker-b Hive Task
+`hive-request-e9debe7ed9e54cca2d94b75a4c5bc9a832eb7f46` (UID
+`9c41bda5-1baa-4f83-afd6-f786cb5142ef`), not a replacement of any
+original proof authorship. The inherited 101-module open-naturality authors,
+predecessor credits and original SPDX/author headers remain unchanged below.
+Donor focused proofs and its review do not certify changed destination inputs;
+fresh destination build/complete private-inclusive audit and author-distinct
+transfer review are separate from acceptance, release and source coverage.
+
 ## Native cylinder open naturality: 2026-09-28 static transfer
 
 The 101-module candidate maps an accepted isolated incubator producer

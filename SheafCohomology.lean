@@ -43,6 +43,7 @@ public import SheafCohomology.CommRingForget.LimitPreservation
 public import SheafCohomology.NativeCommRingGlobalSections
 public import SheafCohomology.NativeCommRingCylinderSections
 public import SheafCohomology.NativeCylinderOpenNaturality
+public import SheafCohomology.NativeCylinderTailChange
 public import SheafCohomology.OpenBaseChange
 public import SheafCohomology.FilteredColimitFunctorH
 public import SheafCohomology.HigherDirectImageFilteredColimit
@@ -66,6 +67,8 @@ native limits of principal-tail open cylinders,
 their chosen native-limit isomorphisms and original-stage section comparisons,
 contravariant open restrictions of cylinder sections and original-cone
 comparison naturality for generic, ring and additive coefficients,
+actual transition-pullback changes of principal tail for the native and
+section diagrams, their colimits and comparisons with arbitrary original cones,
 additive global sections of an arbitrary chosen native spectral limit,
 sheafed-space
 cones and their section-unit transport,
