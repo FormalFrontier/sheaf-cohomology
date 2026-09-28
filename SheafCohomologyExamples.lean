@@ -24,6 +24,7 @@ import SheafCohomologyExamples.NativeSpectralCylinderSections
 import SheafCohomologyExamples.NativeAdditiveGlobalSections
 import SheafCohomologyExamples.NativeAdditiveCylinderSections
 import SheafCohomologyExamples.NativeCommRingCylinderSections
+import SheafCohomologyExamples.NativeCylinderOpenNaturality
 import SheafCohomologyExamples.ConePullbackCocone
 import SheafCohomologyExamples.ConeOfPullbackCocone
 import SheafCohomologyExamples.ConePullbackLimit
@@ -61,6 +62,9 @@ The additive native-limit leaf gives a private ordinary-import client equating
 original projection equality with equality after an actual later transition.
 The ring-cylinder leaf privately exercises original projection equality,
 some-stage products, compact empty opens and a selected tail-stage arrow.
+The cylinder open-naturality leaf privately exercises generic open restrictions,
+the original-stage ring and additive laws, proper and empty opens, and the
+restriction identity and composition laws.
 Together they exercise
 compact-open and degree-zero colimits, quasi-flasqueness, acyclic resolutions,
 local cohomology, all-degree derived colimits, pullback and open base change,

@@ -11,6 +11,14 @@ Write
 `R := NativeCylinderLimit.restricted S i0 U0` and
 `mR := NativeCylinderLimit.restrictedCone S i0 m U0`.
 
+For varying stage opens, the
+[generic cylinder open-naturality guide](NativeCylinderOpenNaturality.md)
+identifies this same additive comparison with the generic arbitrary-original-cone
+arrow and derives its restriction square from the actual restricted-stage
+transformation. That arrow law requires no limiting cone, spectrality or
+compact-open assumption; the pointwise `IsIso` result below retains its
+separate hypotheses.
+
 `NativeCylinderLimit.nativeAdditiveCylinderSectionsComparison S i0 m U0`
 is an additive morphism
 

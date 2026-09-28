@@ -38,10 +38,13 @@ project:
     commutative-ring-to-Type sheaf and sheafed-space coefficient forgetting,
     same-universe cofiltered native-limit preservation, and an original-cone
     ring global-section comparison and joint-stage representation under filtered
-    spectral-limit hypotheses. This 99-module library also provides original-open
+    spectral-limit hypotheses. The published 99-module library also provides original-open
     native commutative-ring cylinder section comparisons, actual restricted and
     original-stage arrow laws, conditional isomorphism and a some-tail-stage
-    representative.
+    representative. This 101-module library adds category-generic open-variable
+    restrictions on actual native cylinder section diagrams, a colimit presheaf,
+    an arbitrary-original-cone natural comparison and ring/additive restriction
+    squares identifying the existing official comparison arrows.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -99,7 +102,7 @@ status:
     The accepted, officially published 97-module predecessor includes seven native
     commutative-ring coefficient-forgetting producer leaves, one ring
     global-section producer and one named public ordinary-import unique-lift
-    example. This 99-module library adds an original-open
+    example. The published 99-module predecessor adds an original-open
     commutative-ring cylinder producer and four private ordinary-import clients.
     The literal restricted tail-stage sections compare to the original cone's
     named open; the restricted leg and the original-stage law use the actual
@@ -108,7 +111,16 @@ status:
     transitions, and a compact possibly-empty stage open, this comparison is
     invertible and every section has a representative at some tail stage, not
     necessarily at any fixed stage. No nonempty, Nontrivial or
-    transition-surjectivity premise is introduced. The canonical
+    transition-surjectivity premise is introduced. The 101-module library
+    also includes the generic stage-open restriction transformations with
+    identity and composition, their colimit presheaf under the exact
+    per-open HasColimit family, and a comparison natural for the literal
+    inverse-image-open target of any original cone. Its original-stage law
+    preserves both equality transports. The ring/additive restriction squares
+    identify the prior official arrows by their coprojection laws; no all-open
+    IsIso, chosen limiting cone, spectrality or compactness is asserted by
+    these arrows. Seven private clients exercise original-stage sections,
+    proper and empty opens and restriction laws. The canonical
     pullback comparison is the mate of the original ring unit, the filtered
     sheaf-colimit comparison is literal colimit.post, and the native cocone
     uses the original projection mates. Cofiltered preservation assumes a
@@ -116,7 +128,7 @@ status:
     shape; the ring global-section comparison needs an actual limiting cone
     with spectral original stages and transitions. Its stage theorem supplies
     some stage representative for each section, not fixed-stage surjectivity;
-    neither result assumes nonempty stage spaces. The 43 selected results
+    neither result assumes nonempty stage spaces. The 56 selected results
     below are a curated public API list, not the complete declaration/axiom
     census. The prior 88-module scope and dated lifecycle statements below
     remain historical. This implemented scope does not itself certify review,
@@ -423,10 +435,53 @@ status:
       file: SheafCohomology/NativeCommRingCylinderSections.lean
     - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.exists_nativeCommRingCylinderSections_stage
       file: SheafCohomology/NativeCommRingCylinderSections.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.stageSectionRestriction
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.stageSectionsRestriction
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.stageSectionsRestriction_id
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.stageSectionsRestriction_comp
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.cylinderSectionsComparison
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.originalStage_cylinderSectionsComparison
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.cylinderSectionsPresheaf
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.cylinderSectionsComparison_restrict
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.cylinderSectionsNaturality
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.ringCylinderSectionsComparison_eq
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.additiveCylinderSectionsComparison_eq
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.ringCylinderSectionsComparison_restrict
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
+    - declaration: AlgebraicGeometry.SheafedSpace.NativeCylinderLimit.additiveCylinderSectionsComparison_restrict
+      file: SheafCohomology/NativeCylinderOpenNaturality.lean
 
 review:
-  status: "other: reviewed 97-module predecessor and isolated ring-cylinder donor; those reviews do not approve the 99-module artifact"
+  status: "other: acceptance and release evidence are revision-specific; preparation checkpoints below are historical"
   notes: >-
+    The 99-module predecessor was independently reviewed, owner-accepted and
+    officially published privately. This 101-module static destination transfer
+    starts directly from that accepted 99-module tree and adds one byte-exact
+    accepted-isolated generic cylinder producer, one ordinary private client
+    adapted only in its module import and namespace/end, a standalone guide,
+    root imports, current navigation, credits and 13 curated declarations.
+    Its accepted donor had separate focused 41+7 actual-origin standard-three
+    evidence and an independent donor review; neither is a destination
+    both-root build, complete destination axiom audit or this transfer's review.
+    At its September 28, 2026 static-author preparation checkpoint, no
+    Lean/Lake/cache/build/axiom audit was run by this transfer author; new
+    destination checks, fresh independent exact-candidate review, owner
+    acceptance, protected integration and verified publication were still
+    required. This dated checkpoint is not a current-state verdict about any
+    later release. No source correspondence or incubator conversion is claimed.
+    The following 99-module transfer paragraph records its September 28, 2026
+    initial preparation state before its separate acceptance and publication.
     The preceding 97-module release was accepted and published privately. The
     99-module version extends that accepted main with one byte-exact
     original-open ring-cylinder producer, one ordinary private client adapted

@@ -1,13 +1,16 @@
 # sheaf-cohomology
 
-This 99-module library develops sheaf cohomology, compact-open sections, and
+This 101-module library develops sheaf cohomology, compact-open sections, and
 native limits and sections of sheafed spaces, including original-open
-commutative-ring cylinders. Its 97-module predecessor was accepted and
-officially published privately before the ring-cylinder modules were added.
+commutative-ring cylinders and the open-variable naturality of their generic,
+ring and additive section comparisons. Its 99-module predecessor has been
+accepted and officially published privately.
 Import [`SheafCohomology`](SheafCohomology.lean) for the aggregate API or an
 individual subject module for a smaller import. These results are declarations
 of this library, built on mathlib and its published dependencies; they are not
-a claim to have formalized an entire source.
+a claim to have formalized an entire source. The
+[open-naturality guide](docs/NativeCylinderOpenNaturality.md) describes the new
+generic restriction and comparison arrows and their precise hypotheses.
 
 ## Headline results
 
@@ -64,7 +67,13 @@ a claim to have formalized an entire source.
 - **Compact-open cylinders.** For a directed preorder and a selected index,
   restricting an actual native limit to the inverse image of a compact stage
   open gives filtered-colimit descriptions of sections over that open for
-  Type-valued, additive and commutative-ring sheafed spaces. The conditional
+  Type-valued, additive and commutative-ring sheafed spaces. For an arbitrary
+  original cone, the actual restricted-stage section diagrams also vary
+  contravariantly with the stage open: their colimits form a presheaf under
+  the stated family of `HasColimit` assumptions, and the comparison to the
+  original cone commutes with open restriction. Ring and additive restriction
+  squares identify their existing arrows with this generic comparison; none
+  of these arrow laws asserts an all-open isomorphism. The conditional
   ring result compares the literal restricted tail-stage rings with sections
   on the *original* cone's inverse-image open: its original-stage law uses the
   actual projection and both equality transports in `CommRingCat`. For an actual
@@ -75,7 +84,8 @@ a claim to have formalized an entire source.
   [Type theorem](SheafCohomology/NativeSpectralCylinderSections.lean#L45),
   [additive theorem](SheafCohomology/NativeAdditiveCylinderSections.lean#L101),
   [ring IsIso and some-stage declarations](SheafCohomology/NativeCommRingCylinderSections.lean),
-  [additive cylinder guide](docs/NativeAdditiveCylinderSections.md), and
+  [additive cylinder guide](docs/NativeAdditiveCylinderSections.md),
+  [generic open-naturality guide](docs/NativeCylinderOpenNaturality.md), and
   [ring-cylinder guide](docs/NativeCommRingCylinderSections.md).
 
 ## Further scope and historical snapshots

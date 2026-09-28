@@ -1,8 +1,9 @@
 # Mathematical and module guide
 
-This guide describes the 99-module library, including original-open
-commutative-ring cylinders and the results of its previously accepted,
-published 97-module predecessor, not a complete formalization of a source.
+This guide describes the 101-module library, including generic cylinder
+open naturality, original-open commutative-ring cylinders and the results of
+its previously accepted, published 99-module predecessor, not a complete
+formalization of a source.
 Import `SheafCohomology` for the aggregate public interface, or import a
 subject module directly. The native
 [historical API reference](API.md) supplies declaration-level displayed hypotheses
@@ -36,6 +37,9 @@ for the original 26 modules; the [AbelianForget supplement](AbelianForget.md),
 97-module predecessor's additions; the
 [original-open ring-cylinder guide](NativeCommRingCylinderSections.md)
 covers the original-open ring-cylinder API.
+The [cylinder open-naturality guide](NativeCylinderOpenNaturality.md) covers
+actual restricted-stage open maps, the generic colimit-presheaf comparison
+square and the ring/additive specializations for an arbitrary original cone.
 [Generation details](README.md) identify the
 old reference's exact analyzed source. The Lean
 signatures and source files, rather than prose alone, determine the theorems.
@@ -174,6 +178,7 @@ the same hypotheses.
 | `CommRingForget.LimitPreservation` | Same-universe cofiltered native-limit preservation, without global instance |
 | `NativeCommRingGlobalSections` | Original-cone ring-section cocone, isomorphism under spectral hypotheses, joint-stage representative |
 | `NativeCommRingCylinderSections` | Original-open ring-section comparison, actual restricted and original-stage arrow laws, conditional IsIso and some-tail-stage representative |
+| `NativeCylinderOpenNaturality` | Actual restricted-stage open transformations and colimit presheaf; arbitrary-original-cone comparison naturality and ring/additive arrow identifications |
 | `AcyclicResolution` | Ext/homology comparison from acyclic resolutions |
 | `ColimitPostApp` | Evaluation of canonical colimit maps at components |
 | `ColimitTransport` | Transport/naturality of canonical colimit comparisons |
@@ -243,6 +248,7 @@ the same hypotheses.
 | `SheafCohomologyExamples.NativeAdditiveGlobalSections` | Private ordinary-import client: original additive projection equality iff equality after an actual later original-stage transition |
 | `SheafCohomologyExamples.NativeAdditiveCylinderSections` | Named private ordinary-import client: actual original-projection equality detects additive coprojection equality with both casts |
 | `SheafCohomologyExamples.NativeCommRingCylinderSections` | Four private ordinary-import clients: original-projection equality, some-stage product, compact empty open and selected tail-stage arrow |
+| `SheafCohomologyExamples.NativeCylinderOpenNaturality` | Seven private ordinary-import clients: original-stage ring/additive arrows, stage representatives, proper and empty opens, restriction identity and composition |
 | `SheafCohomologyExamples.ConePullbackCocone` | Private Type/Ab native cone triangles, empty-carrier cone and conditional colimit.desc |
 | `SheafCohomologyExamples.ConeOfPullbackCocone` | Private Type/Ab Fin 3 projections, mates and cone equations; transported recovery and arbitrary-sheaf empty-index clients |
 | `SheafCohomologyExamples.ConePullbackLimit` | Private Type/Ab Fin 3 lifts, projections and mates; empty-index reconstruction conditional on a genuine sheaf-colimit witness |
@@ -457,6 +463,16 @@ stage open, the restricted limit and spectrality follow locally, giving a direct
 ring-valued IsIso and an original-stage representative at *some* tail index.
 There is no nonempty-open, `Nontrivial` or transition-surjectivity premise and
 no fixed-stage surjectivity or locally ringed/scheme conclusion.
+
+The [native cylinder open-naturality guide](NativeCylinderOpenNaturality.md)
+adds the contravariant open-variable transformation of the *actual* restricted
+tail-stage section diagrams and its identity/composition laws. Given only the
+relevant family of colimits, these form a presheaf whose comparison with
+sections on the inverse-image opens of an arbitrary original cone is natural
+under open restriction. Its original-stage law retains both equality
+transports. Ring and additive squares use the already defined pointwise
+arrows; naturality makes no all-open `IsIso`, chosen-limit, spectrality or
+compactness assertion.
 
 The `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local

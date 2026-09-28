@@ -12,6 +12,14 @@ native cone. This module uses this library's
 [native cylinder](../SheafCohomology/NativeCylinderLimit.lean).
 No source-repository files are needed to use it.
 
+For varying stage opens, the
+[generic cylinder open-naturality guide](NativeCylinderOpenNaturality.md)
+identifies this same ring comparison with the generic arbitrary-original-cone
+arrow and derives its restriction square from the actual restricted-stage
+transformation. That arrow law requires neither a limiting cone nor spectral
+or compact-open hypotheses; the pointwise `IsIso` result below retains its
+separate assumptions.
+
 Let `ι` be a directed preorder, `S : ιᵒᵖ ⥤ SheafedSpace CommRingCat`
 an inverse diagram, `i0 : ι`, `m : Cone S` an *arbitrary* original cone,
 and `U0 : Opens (S.obj (op i0))`. Set `V := coneOpen S i0 m U0` and

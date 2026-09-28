@@ -53,13 +53,16 @@ example leaves relative to the historical 88-module snapshot. Its
 [CommRingForget](CommRingForget.md) and
 [NativeCommRingGlobalSections](NativeCommRingGlobalSections.md) guides describe
 the destination API and its exact original-cone assumptions. The 99-module
-library also includes the public original-open ring-cylinder producer and an
+published predecessor also includes the public original-open ring-cylinder producer and an
 ordinary-import private example leaf; see the
-[ring-cylinder guide](NativeCommRingCylinderSections.md). The fixed 26-module
-`API.md`, `api-manifest.json` and `scripts/api_inventory.json` remain historical
+[ring-cylinder guide](NativeCommRingCylinderSections.md). The current
+101-module library also includes a generic producer and seven private clients
+for open-variable naturality on actual restricted-stage cylinder sections; see
+the [cylinder open-naturality guide](NativeCylinderOpenNaturality.md). The fixed
+26-module `API.md`, `api-manifest.json` and `scripts/api_inventory.json` remain historical
 and must not be read as an inventory of the accepted 97-module baseline or
-the 99-module library. The new guide and historical generated records do not
-themselves certify any exact revision's build, complete axiom audit, independent
+the current 101-module library. The new guide and historical generated records
+do not themselves certify any exact revision's build, complete axiom audit, independent
 review or release.
 
 For the 157 missing-docstring sites, the shipped text is a generic pointer to

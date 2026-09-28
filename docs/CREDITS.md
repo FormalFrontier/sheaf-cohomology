@@ -12,6 +12,41 @@ verified original project contributions; it does not automatically settle
 concrete third-party rights, authenticity of a notice, or an entire public
 release history. There is no new human-author or source-author approval claim.
 
+## Native cylinder open naturality: 2026-09-28 static transfer
+
+The 101-module candidate maps an accepted isolated incubator producer
+byte-for-byte into `SheafCohomology/NativeCylinderOpenNaturality.lean`, adapts
+only the import and namespace/end of its ordinary private client and adapts
+its standalone guide to destination paths. Original mathematical expression
+and guide are by worker-b Hive Task
+`hive-request-51827423edd3eb15b42a7e767779f9185ecd75f7` (UID
+`ddf99071-c11e-4480-a49e-3c520be008de`), following the static planning of
+worker-a Hive Task `hive-request-255508773e44ed5da3965d0842913e70655f94ea`
+(UID `c80af6ec-ed99-40db-be81-1987d38351d1`). The separate destination
+mapping plan is by worker-b Hive Task
+`hive-request-0cd2ee699591d857c85d458a737058c659c29399` (UID
+`d07d11ba-5c35-495f-913d-b62a40e1fe8e`). This static transfer and
+navigation/metadata adaptation are by worker-a Hive Task
+`hive-request-bc334c178c62667286950dd8f7b6dbb94d47993c` (UID
+`eda38df6-55e2-4e29-b9a0-df019c224c19`); none of these later mapping
+roles replaces original proof authorship.
+
+The generic native cylinder prerequisite is by worker-a Task
+`hive-request-27d70680c0e69c147294098e3ac13b1c7092c0e1` (UID
+`bfe6acf9-1385-4602-a9b8-1e88f6908b1a`), and native restriction by
+worker-a Task `hive-request-dae0d04e8618b53de43730479c4033d21488695b`.
+The existing ring comparison is by worker-a Task
+`hive-request-88dfae1c142ae9a97c6e943836f56272654fa848` (UID
+`91101cdb-86bf-42a6-984d-2bd74e2d112a`), and additive comparison by
+worker-b Task `hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf`
+(UID `0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4`). The isolated donor received
+a separate independent worker-a review at `3c4967caf68e39f15f9bfceef8de4187906dc061`
+by Task `hive-request-b931ff4e09fca6b28db8be8c137831b6feec345e`
+(UID `9dbf594c-008a-45ec-aad0-90439d645f9a`). That review is **not** a
+review of this transfer. The donor's original Apache-2.0 SPDX/collective
+credit headers and the original texts below remain unchanged; no new rights
+or later release acceptance is inferred from this credit record.
+
 ## Original-open ring-cylinder transfer and preparation history
 
 The 99-module library includes a ring-cylinder producer first accepted in
