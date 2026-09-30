@@ -1,23 +1,23 @@
 # Historical native-generated sheaf-cohomology API (26 modules)
 
-Lake development package version `0.1.0`; analyzed source: `a9f1a38787d33205c469ff89710563fffb4974fd`; native doc-gen4: `97d4ecdfc8e09e7f511724c25e303d448de6a3db`.
-This frozen 556-site reference covers the original 24 subject modules and two
-root/client modules at the analyzed revision, not the eighteen later subjects or
-their seventeen private client modules. The new declarations have lightweight
-supplemental references indexed in the [current module guide](Guide.md).
-The old source hashes and manifest are historical, not a fresh attestation of
-the current 61-module tree. Its `api_sha256` checks the original generated
-Markdown **before this explanatory introduction was updated**, not the bytes
-of this editorially amended file.
-These are native **display signatures**, not complete elaboration-ready declarations
-or a proof/axiom census. Namespace resolution, inferred types and universes can be
-suppressed by native pretty-printing; follow each frozen source link for the exact
-binders and proof. Private helpers/examples need a separate complete proof audit.
-Twelve rows are marked **Source-local instance registration**: they are not
-globally registered typeclass instances, even if the native header says `theorem`.
-Explicit-name visibility is distinct from local typeclass registration.
-[Module guide](Guide.md) · [Historical reproduction](README.md) ·
-[Credits](CREDITS.md) · [Input manifest](api-manifest.json).
+Lake development version `0.1.0`; analyzed source `a9f1a38787d33205c469ff89710563fffb4974fd`; native doc-gen4 `97d4ecdfc8e09e7f511724c25e303d448de6a3db`.
+This 556-site reference covers 24 original subject modules and two historical
+root/client modules, **not** the current 103-file library. For current modules,
+see the [mathematical guide](Guide.md) and [guide index](README.md).
+The 24 subject files retain the exact historical input bytes in the current
+tree, so the relative `Frozen source` links below still land on the original
+Lean lines. Both roots have changed but have no displayed declaration sites.
+The [original public-release snapshot](https://github.com/FormalFrontier/sheaf-cohomology/tree/802bfcb6a00c82a07058be385a5a18d8ec69dbad)
+contains all 29 manifest inputs and the original generated Markdown; access
+may remain restricted until the GitHub mirror is exposed. The unchanged
+manifest's `api_sha256` hashes that **pre-editorial** Markdown, not this intro.
+Native display signatures may suppress inferred types, universes or namespace
+context: read source for exact binders and proofs. The 12 **Source-local
+instance registration** labels describe local, not global, registration;
+explicit-name visibility is a separate question. Private helpers/examples
+are not public display rows, and this reference is not a proof/axiom census.
+[Historical reproduction](README.md) · [Credits](CREDITS.md) ·
+[Input manifest](api-manifest.json).
 
 ## `SheafCohomology.AcyclicResolution`
 

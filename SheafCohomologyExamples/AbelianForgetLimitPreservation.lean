@@ -1,7 +1,7 @@
-/- SPDX-License-Identifier: Apache-2.0
-Original expression author: Worker B, Hive Task hive-request-13fb7168e78b10adc0a739488a5b88a5bad2cd58
-UID: 9a8d7368-37db-444c-b740-2b889ce82678. -/
-
+/-
+SPDX-License-Identifier: Apache-2.0
+Authors: Formal Frontier Agents
+-/
 module
 public import SheafCohomology.AbelianForget.LimitPreservation
 

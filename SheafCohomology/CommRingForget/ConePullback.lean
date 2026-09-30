@@ -1,10 +1,10 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Hive Task hive-request-c57c813632815e9d350373cdfa7741657fb4852a
-UID: 2717d143-2755-441e-83fb-8f9190fbe8f1
-Adapted from published SheafCohomology.AbelianForget.ConePullback by Formal Frontier authors.
+Adapted from SheafCohomology.AbelianForget.ConePullback by Formal Frontier Agents.
 -/
+
+
 module
 public import SheafCohomology.ConePullback
 public import SheafCohomology.CommRingForget.SheafedSpace
@@ -18,8 +18,8 @@ For any cone of underlying spaces, the native Type-valued pullback diagram of
 the forgotten sheafed spaces agrees canonically with the forgotten ring
 pullback diagram. Neither a limit nor a property of the cone's vertex is needed.
 
-Contributor: Hive Task `hive-request-c57c813632815e9d350373cdfa7741657fb4852a`
-(UID `2717d143-2755-441e-83fb-8f9190fbe8f1`). Expression and proof outline
+Ring adaptation: Formal Frontier Agents; the original additive work
+retains its contributor credit. Expression and proof outline
 adapt published `SheafCohomology.AbelianForget.ConePullback` at official revision
 `e4c7d681e0913fc1dde266cfcfc37763f1d47785` (Formal Frontier team);
 native cone/limit and generic category-theoretic APIs are imported, not copied.

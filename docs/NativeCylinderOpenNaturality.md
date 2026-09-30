@@ -135,24 +135,3 @@ spectral/compact-open/limiting-cone theorems; nothing here constructs a
 natural isomorphism on all opens, a chosen-limit bridge, stalks, a sheaf
 reconstruction, or a scheme structure. All types use the same-universe native
 sheafed-space API.
-
-## Credits
-
-New construction and guide: worker-b Hive Task
-`hive-request-51827423edd3eb15b42a7e767779f9185ecd75f7` (UID
-`ddf99071-c11e-4480-a49e-3c520be008de`). Static planning: worker-a Hive
-Task `hive-request-255508773e44ed5da3965d0842913e70655f94ea` (UID
-`c80af6ec-ed99-40db-be81-1987d38351d1`). Native cylinder: worker-a Task
-`hive-request-27d70680c0e69c147294098e3ac13b1c7092c0e1` (UID
-`bfe6acf9-1385-4602-a9b8-1e88f6908b1a`). Native open restriction:
-worker-a Task `hive-request-dae0d04e8618b53de43730479c4033d21488695b`.
-The original ring and additive cylinder comparisons remain credited to
-worker-a Task `hive-request-88dfae1c142ae9a97c6e943836f56272654fa848`
-(UID `91101cdb-86bf-42a6-984d-2bd74e2d112a`) and worker-b Task
-`hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf` (UID
-`0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4`) respectively. Their own
-dependency and original-author credits remain in the imported module headers.
-The static destination transfer and guide adaptation are by worker-a Hive Task
-`hive-request-bc334c178c62667286950dd8f7b6dbb94d47993c` (UID
-`eda38df6-55e2-4e29-b9a0-df019c224c19`); they do not change the original
-proof authorship.

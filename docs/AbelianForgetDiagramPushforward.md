@@ -112,24 +112,8 @@ The public-import-only module
 `SheafCohomologyExamples.AbelianForgetDiagramPushforward` contains twelve
 private clients. They exercise
 both nonidentity `Fin 3` arrows, their genuine composition, compatible
-projections of arbitrary native cones, and empty-index native cones. Both
-the production and client modules are registered in the default project
-roots in this destination candidate. Exact independent destination/release
-review, owner acceptance and verified publication remain separate steps.
-These are reusable compatibility results, not source correspondence, a limit
-theorem, a ringed-space construction, or an assertion of source coverage.
+projections of arbitrary native cones, and empty-index native cones.
 
-Author: Hive Task `hive-request-620e7673c746798330d114e0e2debbc4a80a2381`,
-UID `41fde94b-1957-44b7-9437-430fe5cfd02b` (worker-a).
-Destination transfer: Hive Task `hive-request-0ad06f8848e144e0c34ccd44ac71e2da46c56d58`,
-UID `520ced02-de5d-483f-b69f-e8bfb284babe` (worker-a).
-The source leaf was reviewed at incubator commit
-`d30bbc667d43143d8c4ecda7c4e8ba3ca3125508`; its production, example and
-guide blobs are `6600ab7a29876aacc9d6f06c4bcd42a879f3d1ad`,
-`008fca3b697a09d0a74ea17aaa1620892d930ddb`, and
-`18284d7fc00d46fae8a54c0f92735a025f1d67c0`, respectively. The
-original was independently reviewed by Hive Task
-`hive-request-8be7926df253d0f7e3ad3250be1aa1e60aa3a73f`, UID
-`90252b07-2de0-4ffa-9cd2-2b370241b64a` (worker-b), at review record
-`d307da4ce3d178104b770e0ffa342f9b14251605`. The destination project
-retains its Apache-2.0 license.
+Both modules are imported by their respective library and example
+roots. These are compatibility results, not a limit theorem or a
+ringed-space construction.

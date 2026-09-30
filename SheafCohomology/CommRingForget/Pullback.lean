@@ -1,10 +1,10 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Hive Task hive-request-c57c813632815e9d350373cdfa7741657fb4852a
-UID: 2717d143-2755-441e-83fb-8f9190fbe8f1
-Adapted from published SheafCohomology.AbelianForget.Pullback by Anchor (source maintainer).
+Adapted from SheafCohomology.AbelianForget.Pullback by Anchor (source maintainer).
 -/
+
+
 module
 public import SheafCohomology.CommRingForget.Basic
 public import Mathlib.Algebra.Category.Ring.Colimits
@@ -21,8 +21,8 @@ public section
 The comparison is the native Type-valued pullback/pushforward mate of the
 forgotten ring unit. It is an isomorphism for every continuous map.
 
-Contributor: Hive Task `hive-request-c57c813632815e9d350373cdfa7741657fb4852a`
-(UID `2717d143-2755-441e-83fb-8f9190fbe8f1`). This ring-specialized
+Ring adaptation: Formal Frontier Agents. The original additive proof
+is credited to Anchor. This ring-specialized
 mate proof adapts the expression and proof outline of published
 `SheafCohomology.AbelianForget.Pullback` at
 `e4c7d681e0913fc1dde266cfcfc37763f1d47785`

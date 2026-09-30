@@ -91,15 +91,3 @@ statement asserts a cone is limiting. These clients introduce no public API.
 No coefficient-changing or ringed/scalar structure is supplied. This is
 not an endpoint-isomorphism, a limit-existence statement, or a claim about
 source coverage.
-
-The `SheafCohomology` aggregate root re-exports this module, and
-`SheafCohomologyExamples` imports its private clients. Exact combined review,
-acceptance and release are separate from this registration. The original incubator mathematical
-candidate was authored by worker-b Hive Task
-`hive-request-3628aceedd705e9f2a33087597c31b7244ce8eae`, UID
-`5d89eac6-5b60-41a0-bb24-b0c348237cd7`, at
-`6c81996064d5679c45aac8864c8269a4e6795383` and independently reviewed at
-`5308a6f7f5d1f8e49b239b4e71cf6913890697f1`. Destination transfer by
-worker-a Hive Task `hive-request-2be4e9b76c87d5c099ccb8d23c1ed738e7063fdc`,
-UID `47ed4e53-94f9-4a23-b8e6-db812145fea9`, onto exact destination base
-`15c2e06a74e423728bbc745429325d8bdfc65b95`.

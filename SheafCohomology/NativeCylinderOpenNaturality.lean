@@ -1,10 +1,10 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: worker-b Hive Task hive-request-51827423edd3eb15b42a7e767779f9185ecd75f7, UID ddf99071-c11e-4480-a49e-3c520be008de
-Planning: worker-a Hive Task hive-request-255508773e44ed5da3965d0842913e70655f94ea, UID c80af6ec-ed99-40db-be81-1987d38351d1
-Dependencies: generic cylinder by hive-request-27d70680c0e69c147294098e3ac13b1c7092c0e1, UID bfe6acf9-1385-4602-a9b8-1e88f6908b1a; native restriction by hive-request-dae0d04e8618b53de43730479c4033d21488695b; ring comparison by hive-request-88dfae1c142ae9a97c6e943836f56272654fa848, UID 91101cdb-86bf-42a6-984d-2bd74e2d112a; additive comparison by hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf, UID 0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4
+Builds on the generic cylinder, native restriction, and coefficient comparisons.
 -/
+
+
 module
 public import SheafCohomology.NativeCommRingCylinderSections
 public import SheafCohomology.NativeAdditiveCylinderSections

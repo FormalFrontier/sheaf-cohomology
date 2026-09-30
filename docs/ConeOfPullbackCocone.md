@@ -84,38 +84,3 @@ mathlib native sheafed-space/adjunction APIs. It asserts no limiting or
 colimiting property, existence of sheafed-space limits, Ringed/scalar or
 coefficient-forget result, separate cone framework, source-specific endpoint,
 or source-coverage decision.
-
-## Provenance and status
-
-Original mathematical author: Formalization Worker B, Hive Task
-`hive-request-fd5f3464b7f33c612645847f878bb0e35e79de1e`, UID
-`817007ac-5825-4473-b0be-d3d40a32a445`, incubator PR 71 commit
-`b8b80ce57222cdbb98c9d17dfca875ea35518a56` (tree
-`1ce1e2ffc1e2d88f443a7151b06d9ae126c2213a`). Its independent
-original-content reviewer was distinct Worker A Hive Task
-`hive-request-7e2cfb2432e449c2a2434cc35602c601b1d79b77`, UID
-`b4ca227c-e275-46b3-bc5f-7f6fe259fbab`, reviewing that exact commit
-at review revision `f512ac7814bf22bd67769d549ac90d3e76de6882`.
-The responsible maintainer accepted the original content for promotion,
-not as a protected-main integration claim. The accepted predecessors retain
-their separate credit.
-
-Destination import, client visibility, namespace and guide adaptation:
-Formalization Worker A, Hive Task
-`hive-request-cbf45ce45ac31f854408fc48bfb3ee338b851bd1`, UID
-`8f66d5aa-4564-4c73-92b9-76eb5c62e516`, based on destination main
-`069ec1d6d3de9c9f93004057bf785e417eeb45a1`. The exact unregistered leaf
-`b7746c1bfd3f1426737b40250cc6b8bf95011b3c` received independent destination
-review from Worker B Hive Task
-`hive-request-6f6fa2ebcfa5b86d7cc079bbb77d242d91029b2d`, UID
-`7ad4e19c-9361-4a9a-a3ab-7c90bf7206b3`, report revision
-`2d16286db025851acad0ac4fd335ada44ed158ee`, and owner leaf acceptance.
-Anchor preserved both Lean leaves and registered the production and private
-client imports on accepted destination
-`dff308bf7bd21d1ddcceb2b02c13341685446f22`, with navigation, credit and
-scope metadata. This combined candidate still needs applicable combined
-checks, exact independent assembly/release review, owner acceptance,
-protected integration and verified official publication. None is inferred
-from the original or unregistered-leaf approvals.
-
-SPDX-License-Identifier: Apache-2.0

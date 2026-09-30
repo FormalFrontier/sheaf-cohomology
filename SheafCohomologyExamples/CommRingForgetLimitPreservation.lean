@@ -1,9 +1,9 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Hive Task hive-request-c57c813632815e9d350373cdfa7741657fb4852a
-UID: 2717d143-2755-441e-83fb-8f9190fbe8f1
 -/
+
+
 module
 public import SheafCohomology.CommRingForget.LimitPreservation
 
@@ -15,8 +15,8 @@ public section
 The original projection maps, not projections transported from a replacement
 cone, characterize the forgetful image of every limiting commutative-ring cone.
 
-Contributor: Hive Task `hive-request-c57c813632815e9d350373cdfa7741657fb4852a`
-(UID `2717d143-2755-441e-83fb-8f9190fbe8f1`).
+Original ring example: Formal Frontier Agents; contributor context in
+`docs/CREDITS.md` and the repository's published history.
 -/
 
 set_option warningAsError true

@@ -1,10 +1,10 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Hive Task hive-request-c57c813632815e9d350373cdfa7741657fb4852a
-UID: 2717d143-2755-441e-83fb-8f9190fbe8f1
-Adapted from published SheafCohomology.AbelianForget.LimitPreservation by Worker B, Task hive-request-13fb7168e78b10adc0a739488a5b88a5bad2cd58, UID 9a8d7368-37db-444c-b740-2b889ce82678.
+Adapted from SheafCohomology.AbelianForget.LimitPreservation by Formal Frontier Agents.
 -/
+
+
 module
 public import SheafCohomology.CommRingForget.FilteredColimits
 public import SheafCohomology.CommRingForget.ConePullbackCocone
@@ -29,13 +29,13 @@ projection-mate cocone, and the filtered-colimit theorem for sheaves on the
 underlying space. The index must be filtered: forgetting ring structure
 does not generally preserve the initial sheaf of an empty native limit.
 
-Author: Worker B, Hive Task `hive-request-13fb7168e78b10adc0a739488a5b88a5bad2cd58`
-(`9a8d7368-37db-444c-b740-2b889ce82678`).
+Original additive proof: Formal Frontier Agents; see its shipped header and
+`docs/CREDITS.md` for contributor and adaptation context.
 
-Contributor: Hive Task `hive-request-c57c813632815e9d350373cdfa7741657fb4852a`
-(UID `2717d143-2755-441e-83fb-8f9190fbe8f1`). Expression and proof outline
-adapt published `SheafCohomology.AbelianForget.LimitPreservation` at official revision
-`e4c7d681e0913fc1dde266cfcfc37763f1d47785` (Worker B, Hive Task hive-request-13fb7168e78b10adc0a739488a5b88a5bad2cd58 (UID 9a8d7368-37db-444c-b740-2b889ce82678));
+Ring adaptation: Formal Frontier Agents; the expression and proof outline
+closely adapt the separately credited original additive proof
+in published `SheafCohomology.AbelianForget.LimitPreservation` at official revision
+`e4c7d681e0913fc1dde266cfcfc37763f1d47785` (Formal Frontier Agents);
 native cone/limit and generic category-theoretic APIs are imported, not copied.
 -/
 

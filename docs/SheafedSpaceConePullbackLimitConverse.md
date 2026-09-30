@@ -3,9 +3,8 @@
 Import `SheafCohomology.ConePullbackLimitConverse` for the converse of the
 [native limit criterion](ConePullbackLimit.md) for **actual cones**.
 
-The aggregate `SheafCohomology` root now re-exports this producer, and
-`SheafCohomologyExamples` imports its private client module. This source-only
-61-module registration is not yet an accepted or checked combined graph.
+The `SheafCohomology` root exports this producer;
+`SheafCohomologyExamples` imports its private client module.
 
 ```lean
 import SheafCohomology.ConePullbackLimitConverse
@@ -92,44 +91,3 @@ canonical sheaf `IsColimit`. It neither assumes the conclusion nor proves
 that an arbitrary chosen empty native cone is limiting. Compare the distinct
 [limit construction](SheafedSpaceLimitConstruction.md), which has additional
 existence assumptions not used here.
-
-## Provenance and lifecycle
-
-Original theorem, clients and exposition: Formal Frontier Worker B, Hive Task
-`hive-request-5c0d008960ac42fcbe67c583368b2de1262bc7a6`, UID
-`1e7508ec-7d20-4c36-8393-f3d49db2f034`. Independent review of the
-original exact leaf: Formal Frontier Worker A, Hive Task
-`hive-request-be8be110d4df284a21383c998c3f79eaa0e9d665`, UID
-`59ba953e-e1f3-423e-80c2-36cbce0bb980`. This destination-only adapter:
-Formal Frontier Worker A, Hive Task
-`hive-request-2db87e045f6161e5d842a9fbf578054eceb228a2`, UID
-`2d2da29d-c711-4c27-90b8-9f8f0a860f18`. Credit for the earlier native
-cone, mate and coherence prerequisites remains in their module headers and
-the [native limit criterion](ConePullbackLimit.md).
-
-The original three-file destination leaf was based on frozen **unaccepted**
-parent `ce960dc79b3c455419aef3904999513df4692b33`. This registration preserves
-its two Lean blobs and combines it with the separate evidence-wording
-correction `605acadce2c090f7a3b5828dc3bb5ab3d2cf3d93`; the correction's scoped
-review does not approve this final graph. The 55-module ancestor is accepted
-and integrated, but the later 57/59/61-module registrations are not fully
-accepted. The original proof's review is not independent review of this
-destination transfer or a source-correspondence decision.
-Owner acceptance, root assembly/registration, applicable combined/root CI,
-protected integration, verified official publication, and eventual replacement
-of the precursor implementation remain separate gates; no release or source
-coverage is claimed here.
-
-From the pinned Lake project, fetch its matching mathlib cache **before** the
-focused build of the leaf modules:
-
-```sh
-LAKE_JOBS=1 LEAN_NUM_THREADS=2 lake exe cache get
-LAKE_JOBS=1 LEAN_NUM_THREADS=2 lake --wfail build \
-  SheafCohomology.ConePullbackLimitConverse \
-  SheafCohomologyExamples.ConePullbackLimitConverse
-```
-
-These commands check the leaf, not the eventual aggregate roots or release.
-
-SPDX-License-Identifier: Apache-2.0

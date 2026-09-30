@@ -1,12 +1,12 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: worker-a Hive Task hive-request-88dfae1c142ae9a97c6e943836f56272654fa848, UID 91101cdb-86bf-42a6-984d-2bd74e2d112a
-Proof pattern: additive cylinder by hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf, UID 0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4
-Dependencies: generic cylinder by hive-request-27d70680c0e69c147294098e3ac13b1c7092c0e1, UID bfe6acf9-1385-4602-a9b8-1e88f6908b1a; spectral topology by hive-request-e8a25d6c5328e70c571fe96c3ac0b8102530eaa1, UID ddcebc71-0a10-45a6-b8cf-9606083d850e
-Ring-global theorem: hive-request-1c0851150518e166978e650f8b077bcdd9311334, UID 6ed601e1-657b-408f-bf75-7df21b10a83a; additive-global hive-request-0b67e8c17f9041202a7550e7a7703f53d6bb4004, UID 7b289efe-e184-4c33-9723-7ef39e977b59; CommRingForget hive-request-c57c813632815e9d350373cdfa7741657fb4852a, UID 2717d143-2755-441e-83fb-8f9190fbe8f1
-Assessment: hive-request-d3c2586e89c15b535aecaa643cab3e9cbdb8b549, UID fc541648-a37d-4749-b741-30000d4baef2
+Builds on the native additive cylinder and the generic spectral cylinder.
 -/
+
+
+
+
 module
 public import SheafCohomology.NativeCommRingGlobalSections
 public import SheafCohomology.NativeSpectralCylinder

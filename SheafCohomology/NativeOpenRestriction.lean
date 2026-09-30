@@ -1,9 +1,9 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Formal Frontier worker-a Hive Task hive-request-dae0d04e8618b53de43730479c4033d21488695b
-Generality: Formal Frontier worker-a Hive Task hive-request-30271b71e726fc52aa0a7c7670ba0eca5de6eaac
 -/
+
+
 module
 public import Mathlib.Geometry.RingedSpace.OpenImmersion
 public import SheafCohomology.OpenBaseChange

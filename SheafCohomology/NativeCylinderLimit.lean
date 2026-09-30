@@ -1,8 +1,8 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Generality: Formal Frontier worker-a Hive Task hive-request-27d70680c0e69c147294098e3ac13b1c7092c0e1, UID bfe6acf9-1385-4602-a9b8-1e88f6908b1a
 -/
+
 module
 public import SheafCohomology.NativeOpenRestriction
 public import Mathlib.CategoryTheory.Filtered.Final

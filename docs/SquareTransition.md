@@ -108,23 +108,5 @@ genuinely arbitrary two-square pasting. Use the focused
 `import SheafCohomology.SquareTransition` or the aggregate
 `import SheafCohomology`. The default example target imports these clients.
 
-## Documentation and credit
-
-This source-independent reference **supplements** the historical native API
-rendering in [`API.md`](API.md); it is not a fresh doc-gen run or a claim that
-the historical inventory includes this new module. The package uses its pinned
-Lean `v4.34.0-rc2` and mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5`; follow the repository
-README's cache-first build instructions before compiling.
-
-Original project contributors are credited as Formal Frontier Agents under
-Apache-2.0. Anchor supplied the original source-local `Type` proof expressions
-(commits `474d7f975dcc8560f4182a83f7b6bbe32cbf6762` and
-`6daac54906b30cd4be04aff2ab15b1718eaed9ed`); Worker A adapted them to
-the coefficient-generic incubator module, and Anchor assembled its accepted
-revision `a2c6e8b61dcb5984c47e2af9e9c5203dffd4a88a`. This destination
-transfer preserves its proofs and public signatures. This credit records
-internal mathematical reuse, not source-level correspondence, a downstream
-release, or a claim about an external human author. The full project credit and
-license context remains in
-[`CREDITS.md`](CREDITS.md) and [`LICENSE`](../LICENSE).
+This library reuses mathlib sheaves and native pullback maps;
+see [credits](CREDITS.md) for mathematical and adaptation provenance.

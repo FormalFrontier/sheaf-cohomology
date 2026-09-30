@@ -1,6 +1,6 @@
 /-
 SPDX-License-Identifier: Apache-2.0
-Authors: Formal Frontier Agents; Worker B (Hive Task hive-request-502206a7e28d7384c6a1ab57a9acf7a38c6a9eb4)
+Authors: Formal Frontier Agents
 -/
 module
 public import SheafCohomology.LimitConstruction

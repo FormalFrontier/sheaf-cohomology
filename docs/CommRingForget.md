@@ -50,28 +50,3 @@ cone, with equations against `underlying.map (m.π.app i)` themselves.
 The filtered hypothesis is real: this is not an arbitrary-shape or
 empty-index theorem, and no spectrality, nonempty stage, surjective
 transition, or replacement-cone premise is needed here.
-
-## Reproduction and attribution
-
-Use this repository's pinned `lean-toolchain` and `lake-manifest.json` from
-its root. After fetching the matching precompiled cache successfully, the
-relevant targets may be built with:
-
-```sh
-lake exe cache get
-lake --wfail build SheafCohomology.CommRingForget.LimitPreservation
-lake --wfail build SheafCohomologyExamples.CommRingForgetLimitPreservation
-```
-
-These are reproduction instructions, not evidence of checks on this
-candidate. The direct dependencies are mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5` and the officially
-published spectral-stone-duality
-`452b7b7be1bea76434cd083b1019a26f96b4ab30`; no incubator checkout
-or RingedSpaces dependency is required. Worker-a Hive Task
-`hive-request-c57c813632815e9d350373cdfa7741657fb4852a` (UID
-`2717d143-2755-441e-83fb-8f9190fbe8f1`) authored the ring bridge by
-adapting the published additive counterpart. The precise original and
-adaptation credits, including the earlier additive limit-preservation
-expression, are in [credits](CREDITS.md); independent destination review,
-build and axiom checks are separate from original donor acceptance.

@@ -1,10 +1,10 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Hive Task hive-request-c57c813632815e9d350373cdfa7741657fb4852a
-UID: 2717d143-2755-441e-83fb-8f9190fbe8f1
-Adapted from published SheafCohomology.AbelianForget.Basic by Anchor (source maintainer).
+Adapted from SheafCohomology.AbelianForget.Basic by Anchor (source maintainer).
 -/
+
+
 module
 public import Mathlib.CategoryTheory.Sites.PreservesSheafification
 public import Mathlib.Algebra.Category.Ring.Limits
@@ -20,8 +20,8 @@ set_option warningAsError true
 The native sheaf-composition construction forgets the ring structure without
 changing the underlying sheaf of types.
 
-Contributor: Hive Task `hive-request-c57c813632815e9d350373cdfa7741657fb4852a`
-(UID `2717d143-2755-441e-83fb-8f9190fbe8f1`). The expression adapts the
+Ring adaptation: Formal Frontier Agents. The original additive work
+is credited to Anchor. The expression adapts the
 published additive construction in SheafCohomology.AbelianForget.Basic at
 `e4c7d681e0913fc1dde266cfcfc37763f1d47785` (Anchor, source maintainer).
 The underlying sheaf-composition and forgetful functors are mathlib APIs.

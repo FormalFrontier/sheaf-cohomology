@@ -1,125 +1,94 @@
-# Historical native API generation and verification
+# Library guides and historical native API
 
-[API.md](API.md) renders the **original** 26 Lean modules (24 unchanged subjects,
-the original aggregate and private-example client) from doc-gen4's **native**
-per-module
-JSON and HTML: 556 display sites (545 HTML top-level declarations and 11
-nested constructors/structure/class fields). All 11 nested sites also occur
-as native JSON rows; the two presentations are cross-checked, not counted
-twice. There are 399 native source docstrings and 157 sites without one; a
-missing docstring is labeled instead of invented. The fixed
-inventory `scripts/api_inventory.json` binds every site to its module,
-name, kind, visible signature and, for top-level declarations, native
-docstring. `api-manifest.json` binds source/pin bytes, the native input record
-and HTML hashes and the resulting Markdown **for the old analyzed revision**.
-In particular, the unchanged manifest's `api_sha256` is the hash of the
-original generated `docs/API.md` in the pre-transfer accepted tree, not this
-file's editorially updated introduction. The historical generated file can
-be checked in that old revision; do not relabel the old hash as a new current
-Markdown attestation.
-The earlier accepted 88 Lean modules also include thirty-one new subjects and thirty-one
-client leaves (twenty-eight private-client modules and three named public-client
-modules),
-covered by [AbelianForget.md](AbelianForget.md),
-[SquareTransition.md](SquareTransition.md) and
-[SheafedSpace.md](SheafedSpace.md) and
-[ConePullbackCocone.md](ConePullbackCocone.md) and
-[AbelianForgetConePullbackCocone.md](AbelianForgetConePullbackCocone.md) and
-[DiagramPushforward.md](DiagramPushforward.md) and
-[AbelianForgetDiagramPushforward.md](AbelianForgetDiagramPushforward.md) and
-[ConeOfPullbackCocone.md](ConeOfPullbackCocone.md) and
-[ConePullbackLimit.md](ConePullbackLimit.md) and
-[SheafedSpaceLimitConstruction.md](SheafedSpaceLimitConstruction.md) and
-[SheafedSpaceLimitPreservation.md](SheafedSpaceLimitPreservation.md) and
-[AbelianSheafedSpaceCofilteredLimits.md](AbelianSheafedSpaceCofilteredLimits.md) and
-[SheafedSpaceConePullbackLimitConverse.md](SheafedSpaceConePullbackLimitConverse.md) and
-[ConePullbackSections.md](ConePullbackSections.md) and
-[PullbackLocalSections.md](PullbackLocalSections.md) and
-[NativeStageSectionEquality.md](NativeStageSectionEquality.md) and
-[NativeStageSectionLifting.md](NativeStageSectionLifting.md) and
-[NativeStageSectionColimit.md](NativeStageSectionColimit.md) and
-[NativeLimitGlobalSections.md](NativeLimitGlobalSections.md) and
-[NativeOpenRestriction.md](NativeOpenRestriction.md) and
-[NativeCylinderLimit.md](NativeCylinderLimit.md) and
-[NativeCylinderComparison.md](NativeCylinderComparison.md) and
-[NativeSpectralCylinderSections.md](NativeSpectralCylinderSections.md) and
-[NativeAdditiveGlobalSections.md](NativeAdditiveGlobalSections.md) and
-[NativeAdditiveCylinderSections.md](NativeAdditiveCylinderSections.md), not by this
-native batch. The old root and example-client source hashes do not match the
-current changed roots. Reproducing these historical records is
-distinct from accepting their mathematical meaning or auditing kernel proofs.
-The accepted, published 97-module library adds eight producer and one ordinary-import
-example leaves relative to the historical 88-module snapshot. Its
-[CommRingForget](CommRingForget.md) and
-[NativeCommRingGlobalSections](NativeCommRingGlobalSections.md) guides describe
-the destination API and its exact original-cone assumptions. The 99-module
-published predecessor also includes the public original-open ring-cylinder producer and an
-ordinary-import private example leaf; see the
-[ring-cylinder guide](NativeCommRingCylinderSections.md). The published
-101-module predecessor also includes a generic producer and seven private clients
-for open-variable naturality on actual restricted-stage cylinder sections; see
-the [cylinder open-naturality guide](NativeCylinderOpenNaturality.md). The current
-103-module library additionally compares literal later transition-pullback
-tail stages, native/section diagrams and their colimits under one local
-colimit assumption, with a square for any original cone; see the
-[native cylinder tail-change guide](NativeCylinderTailChange.md). The fixed
-26-module `API.md`, `api-manifest.json` and `scripts/api_inventory.json` remain historical
-and must not be read as an inventory of the accepted 97-module baseline or
-the current 103-module library. The new guides and historical generated records
-do not themselves certify any exact revision's build, complete axiom audit, independent
-review or release.
+This checkout contains **103 Lean files**: 66 subject modules, 35 example leaves,
+and the `SheafCohomology` and `SheafCohomologyExamples` roots. Import
+`SheafCohomology` for the aggregate library, or import a subject module directly.
+The [mathematical and module guide](Guide.md) covers the current library; the
+[credits](CREDITS.md) give provenance and third-party attribution.
 
-For the 157 missing-docstring sites, the shipped text is a generic pointer to
-the source and module guide, not an independently authored per-site explanation.
-Its adequacy for the whole public API is assessed in semantic review.
+## Find a result
 
-The manifest fields `proof_certification: false` and `release_acceptance: false`
-describe the documentation generator's scope: it certifies neither proofs nor
-release acceptance. They are not the lifecycle status of the library or a
-negative result of a build or axiom audit. Actual release decisions are made
-separately for exact revisions using the applicable build, complete standard-axiom
-audit and independent lightweight assessment described in the project README.
+- **Sheaf cohomology and exactness:** start with the [module guide](Guide.md)
+  for resolutions, open cohomology, local cohomology, and flasque and
+  quasi-flasque results. The [historical API](API.md) displays declarations
+  from the original modules only.
+- **Native sheafed spaces and cones:** [native cones](SheafedSpace.md),
+  [projection-mate cocones](ConePullbackCocone.md),
+  [cone reconstruction](ConeOfPullbackCocone.md),
+  [limit construction](SheafedSpaceLimitConstruction.md),
+  [limit preservation](SheafedSpaceLimitPreservation.md), and the
+  [fixed-base converse](SheafedSpaceConePullbackLimitConverse.md).
+- **Diagram maps and coefficients:** [diagram pushforward](DiagramPushforward.md),
+  [additive forgetting](AbelianForget.md),
+  [coefficient-diagram comparison](AbelianForgetDiagramPushforward.md),
+  [cofiltered limits](AbelianSheafedSpaceCofilteredLimits.md), and
+  [commutative-ring forgetting](CommRingForget.md).
+- **Pullbacks and sections:** [square transitions](SquareTransition.md),
+  [cone-pullback limits](ConePullbackLimit.md),
+  [local pullback sections](PullbackLocalSections.md), and
+  [sections across a cone](ConePullbackSections.md).
+- **Native cylinders and stage sections:** [cylinder limits](NativeCylinderLimit.md),
+  [open restriction](NativeOpenRestriction.md),
+  [stage equality](NativeStageSectionEquality.md),
+  [stage lifting](NativeStageSectionLifting.md),
+  [stage colimits](NativeStageSectionColimit.md),
+  [open-variable naturality](NativeCylinderOpenNaturality.md), and
+  [principal-tail changes](NativeCylinderTailChange.md).
+- **Global sections and coefficient specializations:**
+  [native additive sections](NativeAdditiveGlobalSections.md),
+  [additive cylinders](NativeAdditiveCylinderSections.md),
+  [ring global sections](NativeCommRingGlobalSections.md),
+  [ring cylinders](NativeCommRingCylinderSections.md), and
+  [spectral cylinders](NativeSpectralCylinderSections.md).
 
-Displayed signatures retain all native visible binder tokens and declaration
-modifiers; only whitespace is normalized. Native pretty-printing may omit
-inferable types or require its surrounding namespace, so displayed fragments
-need not elaborate standalone. The exact Lean source and actual universes are
-authoritative. Private Lean helpers and private named examples are **not**
-included as public API rows and require their own proof inventory. A module
-with no displayed declarations still participates in the 26-module native
-selection; the example client's entries are private by design.
+These guides link to their actual Lean producers and, where useful, ordinary-import
+examples. They supplement rather than extend the frozen declaration inventory.
 
-Twelve displayed rows are marked **Source-local instance registration** from
-their exact frozen source ranges. These `local instance` registrations do not
-install globally available typeclass instances; some native display headers say
-`theorem` or `instance` without recording that scope. The annotation changes
-neither the native header nor the docstring. Registration scope and declaration
-visibility are distinct: this guide makes no claim about explicit-name access.
-The fixed adapter checks the twelve source lines/spans against the displayed
-names before rendering the annotation.
+## Historical 26-module reference (September 26, 2026)
 
-## Toolchain and separate inputs
+[API.md](API.md) preserves native doc-gen4 *display signatures* for 24 original
+subject modules plus the then-current aggregate and example roots. Its 556
+sites comprise 545 top-level declarations and 11 nested sites; 399 have native
+source docstrings, while 157 receive a generic source/guide pointer. Twelve
+sites are annotated as source-local instance registrations, not global
+instances. The reference neither inventories the current 103 modules nor
+certifies elaboration-ready signatures, private declarations or kernel axioms.
 
-The current library pins Lean `v4.34.0-rc2`, mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5` and an eleven-package
-`lake-manifest.json`, including official spectral-stone-duality and
-ideal-completion. Historical reproduction instead uses the old checkout's
-unchanged nine-package manifest; the current graph must not be substituted
-for those historical inputs. Use an **unchanged**, separate doc-gen4 checkout at
-`97d4ecdfc8e09e7f511724c25e303d448de6a3db`, including its own
-manifest. Its `single` command records each module with an explicit immutable
-`sourceUri`; `fromDb` emits both declaration JSON and HTML. Building doc-gen4
-itself does not depend on mathlib, and it does not change this library's Lake
-pins. Its C dependencies may require Lean's bundled `bin/cc` on `PATH`.
+The fixed [input manifest](api-manifest.json) binds 26 Lean files and three
+project pin files, native JSON/HTML records and the **original**, pre-editorial
+`docs/API.md` digest. The original complete generated file and **all 29 exact
+input bytes** occur in the [first official public-release history snapshot
+`802bfcb6a00c` (September 26, 2026)](https://github.com/FormalFrontier/sheaf-cohomology/tree/802bfcb6a00c82a07058be385a5a18d8ec69dbad).
+That public-release history may remain access-controlled while the GitHub mirror
+is private; this link does not assert public visibility today. Its tree
+`0760e54bc22e850c51a3b98f39ad39adb478b95a` equals the historical
+pre-transfer development tree `3a7204971fbbbb0a130335eda04b9d9d2b157267`.
+The source originally analyzed by doc-gen4 was
+`a9f1a38787d33205c469ff89710563fffb4974fd`; the analyzed commit's
+native `sourceUri` identifies provenance, not a claim that its URL is publicly
+reachable.
 
-The following **historical reproduction** is for a separate checkout of
-pre-transfer tree `3a7204971fbbbb0a130335eda04b9d9d2b157267`, which includes
-the frozen adapter and old 26 Lean modules, **not** the changed current
-88-module checkout. The `source_revision` below remains the older analyzed
-`a9f1a38787d33205c469ff89710563fffb4974fd`, which is in that checkout's
-Git history. Use Bash, Python 3, git, elan and Lake. Install the pinned
-toolchain, fetch the **matching mathlib cache successfully before the project
-build**, and build the old modules and old example target with the default build:
+The 24 original subject files **still match** their manifest hashes byte for
+byte in this 103-file checkout, so all relative `Frozen source` line links in
+[API.md](API.md) refer to the same original source lines here. The aggregate
+root, example root, `lakefile.toml` and `lake-manifest.json` differ from their
+historical inputs; the pinned `lean-toolchain` still matches. The two roots
+have no native declaration display sites. New headers in other modules do not
+change any of the frozen source-link targets. Do not use this checkout's
+changed roots or dependency graph to claim reproduction of the old output.
+The manifest's `api_sha256` deliberately remains the hash of the **original**
+generated Markdown in the historical snapshot, not the editorial introduction
+of this checkout. These useful historical bindings are not release/build/axiom
+attestations for the current library.
+
+## Optional historical reproduction
+
+Use a separate checkout of the exact official historical snapshot above (or
+its byte-identical pre-transfer development tree), not current main. Keep an
+unchanged separate doc-gen4 checkout at
+`97d4ecdfc8e09e7f511724c25e303d448de6a3db` with its own toolchain
+and manifest. In the historical sheaf checkout, install its pinned Lean,
+**successfully fetch the matching mathlib cache before building**, then run:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
@@ -127,11 +96,8 @@ lake exe cache get
 lake --wfail build
 ```
 
-In the separate fixed doc-gen4 checkout, run `lake build doc-gen4` with its
-own `lean-toolchain` and manifest; where necessary, prepend the path to that
-installed toolchain's `bin` directory to `PATH` first. Then set its **actual
-absolute executable path** and run this in this project's root. The two
-checkouts must stay separate:
+Build `doc-gen4` in its **separate** pinned checkout with `lake build doc-gen4`.
+Supply that executable's actual absolute path in the historical sheaf checkout:
 
 ```sh
 docgen_executable=/absolute/path/to/doc-gen4/.lake/build/bin/doc-gen4
@@ -150,72 +116,11 @@ python3 -B scripts/generate_api.py --native-data "$docs_work/rendered/doc-data" 
   --html-root "$docs_work/rendered/doc" --source-revision "$source_revision" --check
 SHEAF_NATIVE_DATA="$docs_work/rendered/doc-data" \
 SHEAF_HTML_ROOT="$docs_work/rendered/doc" python3 -B scripts/test_generate_api.py
-python3 -O -B scripts/generate_api.py --native-data "$docs_work/rendered/doc-data" \
-  --html-root "$docs_work/rendered/doc" --source-revision "$source_revision" --check
 ```
 
-The native database's parent directory must exist before `single`. The frozen
-adapter and its hashes are historical reproduction checks; they do not generate
-a new 88-module reference, certify the current roots, or constitute a required
-new-generation release gate. For the current checkout, use the lightweight
-[AbelianForget](AbelianForget.md) and [SquareTransition](SquareTransition.md)
-API supplements, applicable proof/build evidence and
-normal link/scope checks instead of inventing a regenerated receipt. Preserve
-its manifest, raw JSON and source HTML outside the published library when
-performing a review. The adapter refuses missing/extra modules and display
-sites, wrong names, kinds, signatures or docstrings, malformed header tags,
-changed source ranges, wrong 40-hex URI/path and changed source or pin bytes.
-Where the frozen development input `a9f1a38787d33205c469ff89710563fffb4974fd`
-is in Git, the adapter checks every shipped Lean and pin file byte-for-byte
-against that input. A source-only public lineage without that Git object must
-instead reproduce the committed complete source/pin hash manifest;
-these hashes validate bytes but do **not** attest that supplied JSON was
-genuinely generated by doc-gen4. Review the native-generation command receipt
-and raw inputs separately. The full `a9f1a38787d33205c469ff89710563fffb4974fd`
-GitHub URIs in the native `sourceUri` records and commands above are historical
-generation provenance; they do not assert that the object exists on GitHub.
-The frozen source links in API.md are relative to the old subject paths; their
-source ranges remain applicable to the unchanged old subjects. The changed root
-and example files require separate current-tree link/scope inspection, not a
-claim that their old source hashes still match. A future
-parentless public history need not regenerate native docs merely because it
-lacks that development commit. Renew documentation checks for genuinely changed
-inputs without relabeling historical native source hashes as a successor check.
-The tree need not embed its own future commit hash to establish this binding.
-
-## Author development baseline
-
-In the worker's four-CPU, 15 GiB cgroup on 2026-09-25, the author reported
-1m24s for the matching cache fetch, 16m26s for the unchanged default build
-(2,373 Lake jobs), and 1m13s for the separate doc-gen4 build after fixing
-the compiler path. The native batch has timestamped start/end records spanning
-2m28s; the other three durations have no separate timestamped command ledgers
-in the retained packet. The cgroup's observed memory peak reached
-approximately its 15 GiB limit, with 1,735 `memory.events max` events and no
-OOM/kill events; the peak is shared across the worker and filesystem cache,
-not a per-command RSS measurement. Cold/warm cache and host load change these
-times substantially. The separate Git evidence retains the two raw tool-build
-nonpasses and successful source/native receipts, source URIs, per-module times
-and resource snapshots. Initial time/path/parser errors are described in the
-author report, not preserved as a complete raw failure transcript. This is a
-reproducibility baseline rather than a future runtime guarantee.
-
-## AbelianForget transfer observation
-
-On 2026-09-26, in this transfer's 15 GiB worker cgroup, the matching
-Lean v4.34.0-rc2/mathlib cache fetch succeeded (8,892 decompressed cached
-files). One `LAKE_JOBS=2 lake --wfail build` of the expanded default library
-**and** example targets completed all 2,378 jobs successfully. The retained
-build log spans 22:27:31–22:36:33 UTC (about 9m02s); no OOM or kill events
-were observed. This is a different workload and cache state from the older
-26-module, 2,373-job author baseline above, not a controlled benchmark or a
-guarantee for subsequent builds. Keep adequate disk/memory headroom and fetch
-the matching cache before building; audit and lightweight metadata checks are
-separate steps.
-
-This Markdown ships no doc-gen4 site assets, dependency API website, private
-source correspondence, raw proof transcript or full checker output. The
-[mathematical guide](Guide.md) covers the significant assumptions and the
-[credits](CREDITS.md) distinguish the library's code and third-party tools.
-Do not treat a documentation pass or a source-link syntax check as a browser
-test, semantic approval, full proof audit, legal clearance, or a release.
+The `source_revision` above is **historical metadata**; its URL is not the
+public-release snapshot link. Native generation was performed for the older
+inputs; no new native run or computation is claimed here. Neither historical
+reproduction nor stored-proof replay is a new release requirement. Current
+release acceptance separately needs its applicable build, transitive
+standard-axiom audit, rights assessment and independent review.

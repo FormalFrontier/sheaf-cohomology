@@ -1,8 +1,8 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Formal Frontier worker-b Hive Task hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf, UID 0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4
 -/
+
 module
 import SheafCohomology.NativeAdditiveCylinderSections
 

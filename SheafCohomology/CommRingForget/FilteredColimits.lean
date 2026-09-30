@@ -1,10 +1,10 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Hive Task hive-request-c57c813632815e9d350373cdfa7741657fb4852a
-UID: 2717d143-2755-441e-83fb-8f9190fbe8f1
-Adapted from published SheafCohomology.AbelianForget.FilteredColimits by Anchor (source maintainer).
+Adapted from SheafCohomology.AbelianForget.FilteredColimits by Anchor (source maintainer).
 -/
+
+
 module
 public import SheafCohomology.CommRingForget.Basic
 public import Mathlib.Topology.Sheaves.Limits
@@ -21,8 +21,8 @@ public section
 For a same-universe small filtered diagram, the native underlying-sheaf functor
 preserves its colimit. The canonical comparison is the literal `colimit.post`.
 
-Contributor: Hive Task `hive-request-c57c813632815e9d350373cdfa7741657fb4852a`
-(UID `2717d143-2755-441e-83fb-8f9190fbe8f1`). Proof structure adapts
+Ring adaptation: Formal Frontier Agents. Original additive authorship
+remains with Anchor; this proof structure adapts
 the published additive file `SheafCohomology.AbelianForget.FilteredColimits`
 from official revision `e4c7d681e0913fc1dde266cfcfc37763f1d47785`
 (Anchor, source maintainer); generic sheafification and colimit APIs are mathlib.

@@ -1,14 +1,14 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Formal Frontier worker-a Hive Task hive-request-dae0d04e8618b53de43730479c4033d21488695b
-  (UID 38967a21-9f85-493d-b98f-67dd712fb00e),
-  Formal Frontier worker-a Hive Task hive-request-30271b71e726fc52aa0a7c7670ba0eca5de6eaac
-  (UID 295217cc-fb36-46be-968d-03070242fd2b)
-Provenance/auditability repair: Formal Frontier worker-a Hive Task
-  hive-request-97bfa2a350ebf1a403402c688ba8f4c80ca4a394
-  (UID 79c83628-cbc1-4702-a72f-ea4c3412c00d)
 -/
+
+
+
+
+
+
+
 module
 import SheafCohomology.NativeOpenRestriction
 
@@ -18,11 +18,11 @@ set_option backward.isDefEq.respectTransparency false
 /-!
 # Additive native restriction component readback
 
-Adapted from the ordinary Type client by Formal Frontier worker-a Hive Task
-`hive-request-30271b71e726fc52aa0a7c7670ba0eca5de6eaac`, UID
-`295217cc-fb36-46be-968d-03070242fd2b`. The Type client was authored by
-worker-a Task `hive-request-dae0d04e8618b53de43730479c4033d21488695b`,
-UID `38967a21-9f85-493d-b98f-67dd712fb00e`.
+Additive adaptation: Formal Frontier Agents, adapting the original
+`SheafCohomologyExamples.NativeOpenRestriction` Type client.
+The Type client is separately credited to Formal Frontier Agents
+through the published history; its proof expression is adapted here,
+with upstream mathlib credit explained in `docs/CREDITS.md`.
 -/
 
 open CategoryTheory TopologicalSpace Opposite AlgebraicGeometry

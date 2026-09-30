@@ -90,39 +90,7 @@ of `U` are separate possible coherence results, not claims here. This module
 publicly imports the existing `SheafCohomology.NativeCylinderOpenNaturality`;
 neither module requires a source-repository or incubator dependency.
 
-## Reproducibility and credit
-
-Use the pinned `lean-toolchain` and `lake-manifest.json`. From the project
-root, fetch the matching precompiled mathlib cache successfully **before**
-any build, and check the producer and ordinary private client:
-
-```sh
-lake exe cache get
-lake build SheafCohomology.NativeCylinderTailChange
-lake build SheafCohomologyExamples.NativeCylinderTailChange
-```
-
-For a release candidate, build both aggregate roots too: `lake build
-SheafCohomology SheafCohomologyExamples`. Check the complete actual-origin
-transitive axioms including generated and private declarations; the only
-permitted foundations are `propext`, `Classical.choice`, and `Quot.sound`.
-The isolated donor's focused checks do not certify this destination transfer.
-
-Construction, client, and guide: worker-b Hive Task
-`hive-request-a52411214e83b3e8cc82da1235a39fa07761c413` (UID
-`53f2275c-67d7-4642-adfe-75d218c8d1a9`). Static assessment: worker-a
-Hive Task `hive-request-4fa22ae4ca0e9c3b33a75a991b29940ba8a3b7eb`
-(UID `3903dc2f-29a0-4761-a886-cee3408f2c3e`). The inherited generic
-cylinder/open-naturality implementation and the native restriction and
-ring/additive comparison libraries retain their separately credited authors
-and original provenance in their imported headers. The isolated donor was
-independently reviewed by worker-a Hive Task
-`hive-request-5b4fda2547a1b5cfab9ada4d2c1ef72541a78559` (UID
-`daef09d6-9a66-4be3-8054-2b2df3eeca27`) at `ea68d1471eeaf947bf3a0a7a524c54b0935f59d4`
-and accepted only in isolation. Destination transfer and guide adaptation:
-worker-b Hive Task `hive-request-e9debe7ed9e54cca2d94b75a4c5bc9a832eb7f46`
-(UID `9c41bda5-1baa-4f83-afd6-f786cb5142ef`); the standalone transfer
-plan is by worker-b Hive Task `hive-request-e9e9dba75a9ade9b1db6dc1b5106be788b454cee`
-(UID `1d444cae-9f8c-41a3-ae6d-d2d291804fc6`). These adaptations do not
-replace original proof authorship or constitute destination build, review,
-acceptance, official release or source-coverage evidence.
+This is a comparison for the actual transition-pullback open,
+not an arbitrary equal open or an all-open isomorphism. See the
+[open-naturality guide](NativeCylinderOpenNaturality.md) for the
+underlying restricted-stage transformations.

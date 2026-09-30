@@ -1,9 +1,9 @@
 /-
 SPDX-License-Identifier: Apache-2.0
-Original author: Formal Frontier Worker B, Hive Task hive-request-5c0d008960ac42fcbe67c583368b2de1262bc7a6, UID 1e7508ec-7d20-4c36-8393-f3d49db2f034
-Original independent reviewer: Formal Frontier Worker A, Hive Task hive-request-be8be110d4df284a21383c998c3f79eaa0e9d665, UID 59ba953e-e1f3-423e-80c2-36cbce0bb980
-Destination adapter: Formal Frontier Worker A, Hive Task hive-request-2db87e045f6161e5d842a9fbf578054eceb228a2, UID 2d2da29d-c711-4c27-90b8-9f8f0a860f18
+Authors: Formal Frontier Agents
+Original expression and destination adaptation: Formal Frontier Agents.
 -/
+
 module
 public import SheafCohomology.ConePullbackLimit
 

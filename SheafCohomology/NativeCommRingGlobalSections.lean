@@ -1,11 +1,11 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Hive Task hive-request-1c0851150518e166978e650f8b077bcdd9311334
-UID: 6ed601e1-657b-408f-bf75-7df21b10a83a
-Adapted from the published additive endpoint by Hive Task hive-request-0b67e8c17f9041202a7550e7a7703f53d6bb4004 (UID 7b289efe-e184-4c33-9723-7ef39e977b59).
-Uses the accepted CommRingForget bridge by Hive Task hive-request-c57c813632815e9d350373cdfa7741657fb4852a (UID 2717d143-2755-441e-83fb-8f9190fbe8f1) and the plan by Hive Task hive-request-c122a6d40799b53667ffc3699a7642ef15453985 (UID 911c1933-e837-4a1c-85cd-2dce903e2357).
+Adapted from SheafCohomology.NativeAdditiveGlobalSections.
+Uses the SheafCohomology.CommRingForget comparison.
 -/
+
+
 module
 public import SheafCohomology.NativeLimitGlobalSections
 public import SheafCohomology.LimitPreservation

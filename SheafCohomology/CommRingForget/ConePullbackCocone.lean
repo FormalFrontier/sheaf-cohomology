@@ -1,10 +1,10 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Hive Task hive-request-c57c813632815e9d350373cdfa7741657fb4852a
-UID: 2717d143-2755-441e-83fb-8f9190fbe8f1
-Adapted from published SheafCohomology.AbelianForget.ConePullbackCocone by Anchor (source maintainer).
+Adapted from SheafCohomology.AbelianForget.ConePullbackCocone by Anchor (source maintainer).
 -/
+
+
 module
 public import SheafCohomology.CommRingForget.ConePullback
 public import SheafCohomology.ConePullbackCocone
@@ -18,8 +18,8 @@ For a cone of ring sheafed spaces, the native Type-valued projection mates
 agree with the forgotten ring projection mates after the canonical pullback
 comparison. No assumption that either cocone is colimiting is needed.
 
-Contributor: Hive Task `hive-request-c57c813632815e9d350373cdfa7741657fb4852a`
-(UID `2717d143-2755-441e-83fb-8f9190fbe8f1`). Expression and proof outline
+Ring adaptation: Formal Frontier Agents. The original additive work
+is credited to Anchor. Expression and proof outline
 adapt published `SheafCohomology.AbelianForget.ConePullbackCocone` at official revision
 `e4c7d681e0913fc1dde266cfcfc37763f1d47785` (Anchor);
 native cone/limit and generic category-theoretic APIs are imported, not copied.

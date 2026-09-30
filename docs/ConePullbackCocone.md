@@ -62,23 +62,6 @@ private definition with the identical type and expression.
 
 No limiting-cone, colimiting-cocone, filteredness, nonemptiness, stage
 isomorphism, geometry, endpoint, or forgetful compatibility theorem is asserted.
-The aggregate `SheafCohomology` imports this module, and
-`SheafCohomologyExamples` imports its private client. This registration and
-the guide/metadata assembly do not themselves establish a successful combined
-build, independent destination acceptance or verified publication.
 
-## Provenance
-
-The mathematical expressions originate with Formalization Worker B, Hive Task
-`hive-request-b5d71038ee1c27e92bd1d66f62b21001a79f2069` (UID
-`001c2dd6-70cd-4f36-92a3-0bee18fb582a`), incubator commit
-`e32952df2893d49f76b8fe96a63db3defd3a4381`. Its prerequisite
-`ConePullback` expressions originated with Worker B Task
-`hive-request-a5c686fef9733b91207a12bdbe674244008553c9` (UID
-`f70328b3-10f7-4bbc-a451-4678e9530731`). Worker A Hive Task
-`hive-request-314f8ea55794f67df587aaab888cb76a998d3007` (UID
-`285a5ea5-e220-4df1-8088-816b66f61521`) transfers the original
-cocone expressions and adapts imports, client visibility/module names,
-documentation and the repository's Apache-2.0 collective-author headers.
-This credits expression origin without attributing an unverified human author
-or making a source-coverage claim.
+The aggregate library imports this module; the example library imports
+its private client.

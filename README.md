@@ -5,7 +5,6 @@ native limits and sections of sheafed spaces, including original-open
 commutative-ring cylinders and the open-variable naturality of their generic,
 ring and additive section comparisons. It also compares the actual native
 section diagrams when their principal tail changes by transition pullback.
-Its 101-module predecessor has been accepted and officially published privately.
 Import [`SheafCohomology`](SheafCohomology.lean) for the aggregate API or an
 individual subject module for a smaller import. These results are declarations
 of this library, built on mathlib and its published dependencies; they are not
@@ -102,872 +101,101 @@ diagram and colimit comparison.
   [`cylinderSectionsComparison_betweenTail`](SheafCohomology/NativeCylinderTailChange.lean), and
   [ring-cylinder guide](docs/NativeCommRingCylinderSections.md).
 
-## Further scope and historical snapshots
+## Scope and navigation
 
-The detailed descriptions below are retained verbatim. Their dated
-candidate-stage accounts record past states, not the current release status.
-At its September 28, 2026 initial preparation checkpoint, the original-open
-ring-cylinder addition still required destination both-root build, complete
-transitive standard-axiom audit including private declarations, independent
-review, owner acceptance and verified publication. That dated checkpoint does
-not report the present artifact's exact-revision status.
+The [mathematical guide](docs/Guide.md) maps modules, proofs, examples and
+limitations. Focused guides cover [native cones and limits](docs/ConePullbackLimit.md),
+[the constructed native limit](docs/SheafedSpaceLimitConstruction.md),
+[additive](docs/AbelianSheafedSpaceCofilteredLimits.md) and
+[ring](docs/CommRingForget.md) coefficient forgetting,
+[global-section comparisons](docs/NativeLimitGlobalSections.md),
+[compact-open additive cylinders](docs/NativeAdditiveCylinderSections.md),
+[ring cylinders](docs/NativeCommRingCylinderSections.md),
+[open-variable naturality](docs/NativeCylinderOpenNaturality.md) and
+[principal-tail changes](docs/NativeCylinderTailChange.md).
 
-It also provides native sheafed-space cone pullbacks and projection-mate
-cocones, an additive-to-Type forgetful functor and its canonical cone-wise
-natural isomorphism. A native cone-limit criterion derives a limit from the
-actual underlying-space limit and projection-mate sheaf colimit. A named
-construction supplies that sheaf colimit from coefficient colimits and local
-sheafification, producing an actual native limiting cone.
-Named witnesses also show that forgetting to topological spaces preserves
-native limits under the construction's exact hypotheses.
-For additive coefficients, named witnesses show that forgetting to Type-valued
-sheafed spaces preserves same-universe cofiltered limits.
-The fixed-base converse recovers the actual projection-mate sheaf colimit
-from an actual native limit whose underlying-space cone is also limiting.
-For Type-valued sheaves, section units and restricted adjoint triangles induce
-a natural transformation from native stage global sections to sections of the
-cone-pullback diagram, without requiring a limiting or spectral cone.
-The actual inverse-image sheaf also has a native stalk comparison, local
-section representations and equality neighborhoods. Compact source opens
-in prespectral spaces admit finite compact-open local representations.
-Over an actual limit of spectral stages with spectral transition maps,
-equality under a projection's literal pullback unit is reflected at one stage,
-both on compact opens and for the existing native global-section functor.
-Every global section of the cone-pullback sheaf at a stage also lifts from a
-native global section after one filtered transition, including empty-stage cases.
-Consequently, the actual `colimMap` of the native cone-section transformation
-is an isomorphism of types under the same spectral-limit hypotheses.
-For the native limit constructed over that actual underlying-space limit,
-its projection maps also identify the colimit of native stage global sections
-with global sections of the chosen native limit.
-For native sheafed spaces valued in any `C : Type (v + 1)` with
-`Category.{v} C`, restriction
-to an inverse-image open gives a canonical native arrow with inclusion,
-identity, composition and actual global-section component equations.
-The existing Type-valued API is a specialization of these same declarations;
-ordinary-import Type and additive clients exercise their component readback.
-For a directed preorder with an explicit distinguished index, an arbitrary
-native limit cone of `SheafedSpace.{v + 1, v, v} C`, for any
-`C : Type (v + 1)` with `Category.{v} C`, restricts to a native limit of the
-principal-tail diagram of inverse-image opens, without assuming the desired
-restricted limit. Ordinary-import Type and additive private clients apply the
-same constructed limit and recover its original projection equation; the
-additive client does not duplicate the Type wrapper.
-For Type-valued sheafed spaces, the chosen native limit of that restricted
-diagram is canonically isomorphic to the literal restriction. Both projection
-and base-map laws identify its global-section comparison on original-stage
-sections, retaining the necessary
-restriction-object and inverse-image casts.
-If the original stages and transition maps are spectral and the chosen stage
-open is compact, that actual restricted-cylinder comparison is an isomorphism.
-Spectrality of the literal restricted stages and maps is derived; the empty
-open is allowed. A private ordinary-import client cancels the comparison on
-original-stage sections while preserving both equality transports.
+Some constructions start with an *actual* cone or cocone; a theorem that
+recognizes a limit does not supply limits for arbitrary shapes or coefficients.
+The separate native limit constructor requires the stated coefficient colimits
+and weak sheafification. Generic cylinder comparisons and open restriction
+squares work for arbitrary original cones; invertibility and some-stage
+representation require their additional spectral, compactness and original-limit
+hypotheses. The Type-valued and additive/ring results have distinct concrete
+coefficient and universe constraints. In particular, the all-degree filtered
+right-derived theorem is at universe zero; the sheafified local-cohomology
+comparison used in its proof has its own positive-degree scope.
 
-For additive sheafed spaces, the global-section maps of any chosen native cone
-define a cocone and its literal colimit comparison. If the original cone is
-limiting and its small filtered diagram has spectral underlying stages and
-spectral transition maps, that comparison is an isomorphism. An ordinary-import
-client detects original projection equality by equality after an actual later
-transition. This does not extend the Type-only compact-cylinder theorem to
-additive coefficients.
+The [native API reference](docs/API.md) and its
+[manifest](docs/api-manifest.json) describe only a frozen historical 26-module
+input: 556 display sites (545 top-level plus 11 nested), with 399 source
+docstrings, 157 generic pointers and 12 source-local instance annotations.
+They are not a current 103-module or private-axiom inventory; the
+[documentation contract](docs/README.md) explains their exact frozen scope.
+Focused guides and the Lean declarations themselves supply the remaining
+signatures. Examples under
+[`SheafCohomologyExamples`](SheafCohomologyExamples.lean) demonstrate ordinary
+imports; many example declarations are intentionally private.
 
-Separately, a coefficient-generic spectral-cylinder helper derives spectrality
-of the actual restricted stages and arrows from spectral original stages/maps
-and a compact, possibly empty stage open, without a cone or limit assumption.
-For additive coefficients, `NativeAdditiveCylinderSections` compares the
-filtered colimit of sections of the actual restricted stages with sections of
-the original cone point over its named inverse-image open. Its definition and
-both full additive arrow laws need only a preorder, not directedness or a
-limiting cone. Given an original native limit and spectral original stages/maps,
-the comparison is an isomorphism: tail directedness/filteredness are supplied
-locally, and the restricted limit is constructed, not assumed. Its named
-private ordinary-import client detects equality after an actual original
-projection, retaining both restriction-object and named-open casts.
+## Build and verification
 
-The following 88-module registration account is a historical pre-candidate
-snapshot, not the present 97-module status. On 2026-09-28, that source-only
-coherent 88-module registration uses static
-adapter `a476ccbaf62a401b1cc8b464bfe04da27dfab46e` on its sole frozen
-**unaccepted** parent `651f8223c7dbb2df870f3f594077365bf6767d7f`.
-It adds only two public producer imports and one private-client import to the
-existing roots; all 86 nonroot Lean blobs, eleven complete dependency objects,
-toolchain, Lake and CI files remain fixed. The traversal has 55 producers,
-31 client leaves (28 private and three named-public) and two roots. The
-accepted, unregistered additive-cylinder donor does not accept this destination.
-At the 2026-09-28 02:31 UTC owner checkpoint, actual 79 was privately published and final
-81 CI648 had succeeded and been owner-intaken without acceptance/release;
-85 CI655 succeeded for metadata but was not yet owner-intaken. None certifies
-the changed 88 graph. Ordered 81→83→84→85 actual-parent reconciliation,
-complete destination evidence, review, owner acceptance and individual
-publication were then separate gates. Subsequently original frozen 88 head
-`1ded7c974bdb6cd753e393fbc8d09bb2782c69e9` passed full both-target,
-private-inclusive CI665/artifact121236 (owner intake #34/55987), and its
-mathematical/API/provenance/registration scope received independent approval
-`eed9f975efd4dd17cbace2d3a40d4d041319b67f` (native4411, owner intake
-#34/55894). Neither is merely metadata-only evidence or acceptance of this
-actual-parent successor. Actual 81/83/84/85 completed their separate official
-private releases at `b743039857ca8c206b6a8cdb99afe7c7e8ce0c25`,
-`6793f2ff8469d1cab23a98ac2da22a3286d22f8e`,
-`e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37` and
-`2c7b5e3e2e94704b9aa825c1aed88a880cf78dae`, respectively
-(#34/56450). This still **unaccepted 88** successor merges accepted 85 main
-`25e596baca25cf582aa2f6d9ba22d7833de74ec7` into frozen 88. It inherits
-thirteen whole collective-credit headers, preserving every 88 module-onward
-byte and both roots. CI665 and CI685 cannot certify these thirteen changed
-Lean-header inputs. Applicable full both-target/private-inclusive successor
-88 CI and one author-distinct consolidated final main/prep/public review
-precede separate owner acceptance, protected integration and verified
-publication. No 88 acceptance, source coverage or incubator conversion is
-asserted. The following paragraphs are dated predecessor snapshots.
-
-At its original 2026-09-28 assembly, static transfer
-`2980f5b0fc5c10fa8bf876527366690f8f654a48` on frozen **unaccepted**
-84-module parent `53a0a858ec7d3fab15c96f9f10ba8c31d8e21554`, this
-source-only 85-module registration adds the accepted, unregistered generic
-cylinder producer from incubator `3f42acfa49bc773a4b12727e5f1b68b7299680a7`
-and its named private additive ordinary-import client without changing the
-existing Type client or duplicating its wrapper. The producer and additive
-client retain blobs `2ed83dd88a57759c35550f48725f3657740a14e1` and
-`1777e5b9bb6d7fa6c3ef731843a92842e078a149`; only the example root imports
-the new client. The 85-file traversal comprises 53 producers, 30 client leaves
-(27 private and three named-public), and two roots. Donor seven-module build
-and private-inclusive axiom evidence is not a changed 85-module destination
-pass. Old 84 CI637/artifact112464 and its scoped reviews likewise do not
-certify that graph or accept its parent. At that assembly a full 85-graph build and
-private-inclusive standard-axiom audit, fresh independent destination review,
-individual predecessor/owner acceptance, integration and verified publication
-were still required; that assembly claimed no 85 pass, acceptance, source
-coverage or incubator conversion. The following paragraphs preserve dated predecessor
-assemblies, not the current graph's lifecycle.
-
-The historical source-only 84-module registration preserves the generic
-restriction producer and named private additive client from static transfer
-`952a1fcb976ccd9f2cf41316c1db4dd64542f14b`, all other nonroot Lean files,
-the public aggregate root and all eleven dependency objects. Only the example
-root gains the additive-client import. The underlying restriction declarations
-are generalized in place, not duplicated under new names. The donor
-`ae8d32640fc9c946778fdd79fbc37528b433fa06` was independently reviewed and
-accepted as an unregistered incubator leaf only. Donor evidence and the old
-83-module CI result do not certify this changed graph. This exact candidate
-requires a complete 84-module build and private-inclusive standard-axiom
-audit, fresh independent destination review, ordered predecessor releases,
-owner acceptance and verified publication. No such pass or acceptance is
-claimed at this assembly.
-
-Its frozen 83-module parent
-`70d1aad387e72104ae294ac07a32c113d7f72e75` remains unaccepted at the
-2026-09-27 23:04 UTC assembly. Full CI627 on that parent succeeded at
-22:47:17 UTC; the owner inspected the complete both-target and private-inclusive
-evidence, but the generalized restriction producer and new client/root are
-changed computational inputs. The separate 75-module release was verified
-on official GitHub at `57decc6d5106fe32dc57f9684de38f6e10534de5` at
-22:30:32 UTC. At that 2026-09-27 23:04 UTC assembly, the individual
-77/79/81/83 release gates and expected parent reconciliation remained open.
-Subsequently, actual 79 main and release-prep advanced to
-`f950b52d57e87efb70f4c8adb6d84856248520e9`, and native public release
-`ca6684a3b2eaa21a9e415175ceda61d9a4ac75c8` was integrated at
-2026-09-28 00:24:21 UTC (issue #34 comments 55620, 55622, 55625, 55637).
-Private GitHub `main` was verified at 00:28:20 UTC at that same public
-commit/tree/sole parent (issue #34 comment 55641); the earlier 00:27:50
-pending readback was historical. Those 79 decisions did not themselves accept 81/83/84/85,
-a generic additive cylinder endpoint, source coverage or incubator conversion.
-
-Actual 81 and 83 subsequently completed their separate official releases at
-`b743039857ca8c206b6a8cdb99afe7c7e8ce0c25` and
-`6793f2ff8469d1cab23a98ac2da22a3286d22f8e`. The original frozen 84
-candidate `53a0a858ec7d3fab15c96f9f10ba8c31d8e21554` passed CI637
-(issue #34/comment 55462); its scoped review
-`efecfe1af9a07f376fd2c92e7f59125ac14ddb3c`/native4379 concerned that
-registration, not later changed headers. Full changed-input CI674 and fresh
-independent final review supported accepted 84 main/release-prep
-`36e49294f84208fa678872e84b6bdbd96c603188` (tree
-`26ca208680099b374e7d536c8b45d38ba24848e0`); the official private
-release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`, verified on
-2026-09-28 (issue #34/comment 56186), has official 83 as sole parent.
-At that historical checkpoint, the **unaccepted 85** development successor normally merged accepted 84,
-not the public release or a planning branch. The original frozen 85 candidate
-`651f8223c7dbb2df870f3f594077365bf6767d7f` passed complete CI655
-(issue #34/comment 55824); its scoped review retains native4404
-REQUEST_CHANGES and resolved native4405 approval. Its actual-parent
-reconciliation repaired four inherited headers. A separate final review of
-that unaccepted result (`abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a`;
-native4434/4435/4436 REQUEST_CHANGES on PR141/147/148) found nine more
-inherited original-project worker-only author headers. This static successor
-adds collective author credit to exactly those nine while retaining their
-original contributors, for 13 changed headers versus frozen 85. It does not
-resolve the objection by itself or confer review approval. CI655 does *not*
-certify the four earlier or nine newly changed Lean headers; the started
-CI678/679/680 executions on the preceding internal/public candidates also
-cannot certify this successor, regardless of their eventual results.
-Applicable both-target/private-inclusive successor 85 checks and fresh exact
-independent review precede separate owner acceptance, protected integration
-and verified publication. No 85 acceptance, source coverage or incubator
-conversion follows from this header correction.
-
-The original source-only 83-module registration preserved both additive Lean leaves from
-`2d34161ac8426b027efd2a03637fb0530ca5a906`, all 79 older nonroot Lean files,
-and all eleven dependency objects, Lake configuration and CI. At its
-2026-09-27 21:59:24 UTC assembly, the frozen 81-module parent
-`a67d8f00d6da10ccd6af1beebe04be053fcdc1cd` and the 75/77/79 successors were
-unaccepted. The 73-module release had separately been accepted and verified on official
-GitHub at `6aa8528f28264d9b44de0f31e72696d8d95ce97d` at 21:19:58 UTC;
-it was not the frozen parent of that candidate. Separate adapter evidence
-`d89012599010495ad52df061c2bdeff6f8472ee5` covers the focused producer/client
-build and all 12+1 actual-origin declarations, including private/generated ones.
-It did not certify the changed aggregate roots. Subsequent scoped independent
-review `7f48d057eefdb811782bbadce2ccacceb2ed9ae6` approved the mathematical,
-API, provenance and registration increment. Full 83-module CI627 on
-`70d1aad387e72104ae294ac07a32c113d7f72e75` succeeded at 22:47:17 UTC;
-the owner inspected its complete both-target build and private-inclusive
-standard-axiom evidence. The earlier 83-module reconciliation merged actual
-accepted 81-module main `6e055c187a6e097636f2e9b5bf5d4f5eba351876`
-and added collective Authors credit to the two additive module headers,
-retaining the entire original Task/UID as Contributor and every byte from
-`module` onward. All 81 other Lean blobs, both roots, eleven package objects,
-Lake configuration and CI stayed fixed relative to its original assembly.
-Its changed-header successor passed full CI666, followed by independent final
-review, individual owner decisions and actual release as recorded above.
-Those completed 83-module gates do not accept this 84-module successor,
-an additive-cylinder endpoint or source coverage. Earlier assembly snapshots
-below retain their dates and subsequent outcomes.
-
-The historical source-only 81-module registration preserved both spectral-cylinder Lean
-leaves from `cb6dc05b14fb718dcc39cf8b8c1aec0cc616a397`, all 77 older nonroot
-Lean files and all eleven dependency objects. At its original 2026-09-27
-20:41:17 UTC assembly,
-the frozen 79-module parent `d443e034746972593ec0c91f64268771a3013b5a`
-and its 73/75/77 predecessors were unaccepted. Later scoped independent review
-`f603c82f5ce9fc81f1f5efa8ad4db847faf557cf` approved the mathematical,
-API, provenance and registration increment. Full 81-module CI610 on
-`a67d8f00d6da10ccd6af1beebe04be053fcdc1cd` succeeded at 22:04:27 UTC;
-the owner inspected its complete both-target build and private-inclusive
-standard-axiom evidence. Its documentation-only reconciliation normally merged
-accepted 79-module main `f950b52d57e87efb70f4c8adb6d84856248520e9`,
-preserving all 81 Lean blobs, both roots, eleven package objects and CI inputs.
-Full CI648 on corrected `6e055c187a6e097636f2e9b5bf5d4f5eba351876`
-succeeded on 2026-09-28 at 01:05:13 UTC. After complete owner evidence intake,
-independent final review and separate main/prep/public decisions and protected
-integration, official private GitHub release
-`b743039857ca8c206b6a8cdb99afe7c7e8ce0c25` was verified at 02:39:17 UTC.
-These are the 81-module contribution's own decisions, not acceptance of 83
-or a source-coverage decision.
-
-The historical source-only 79-module registration preserved both native-comparison Lean
-leaves from `9a00d11039b45e90c6901bd57bb5b2e1fee88306`, all 75 older nonroot
-Lean files and all eleven dependency objects. At its original 2026-09-27
-20:19:12 UTC assembly,
-the frozen 77-module parent `c2809532ab73025867cb24b8b80d9e67da069d2d`
-and its 73/75 predecessors were unaccepted. Its later scoped independent review
-`5d8e1855fdd7aa2f1aab97157dd745b7e9f484be` approved the mathematical,
-API, provenance and registration increment. Full 79-module CI607 on
-`d443e034746972593ec0c91f64268771a3013b5a` succeeded at 21:37:56 UTC;
-the owner inspected its complete both-target build and private-inclusive
-standard-axiom evidence. Its documentation-only reconciliation normally merged
-accepted 77-module main `f15cc3d61ceb85e259b936eb49c1f644d04f88c1`,
-preserving all 79 Lean blobs, both roots, eleven package objects and CI inputs.
-Full CI643 on corrected `f950b52d57e87efb70f4c8adb6d84856248520e9`
-succeeded on 2026-09-28 at 00:18:28 UTC. After complete owner evidence intake,
-independent final review and separate main/prep/public decisions and protected
-integration, official GitHub release
-`ca6684a3b2eaa21a9e415175ceda61d9a4ac75c8` was verified at 00:28:20 UTC.
-These are the 79-module contribution's own decisions, not acceptance of 81
-or a source-coverage decision.
-
-The historical source-only 77-module registration preserved both native-cylinder Lean
-leaves from `194e6310aad7205ff53e33cc73e9ba16b5f9398d` and all eleven
-dependency objects. At its original 2026-09-27 19:11:29 UTC assembly, the frozen
-75-module parent `c45c1713bf3e8457c02730fddf09d810dfae7027` was unaccepted.
-Full 77-module CI590 on `c2809532ab73025867cb24b8b80d9e67da069d2d`
-subsequently succeeded at 20:37:50 UTC; the owner inspected its complete
-both-target build and private-inclusive standard-axiom evidence. Its
-documentation-only reconciliation normally merged accepted 75-module main
-`efcfeae07fa909b9c1d20bdd665cf733eb11cb4d`, preserving all 77 Lean blobs,
-both roots, eleven package objects and CI inputs. Full CI633 on corrected
-`f15cc3d61ceb85e259b936eb49c1f644d04f88c1` succeeded at 23:30:34 UTC.
-After complete owner evidence intake, independent final review and separate
-main/prep/public decisions and protected integration, official GitHub release
-`361c79281381d75d3c3c2195947ff8cb3a29c39f` was verified at 23:41:14 UTC.
-These are the 77-module contribution's own decisions, not acceptance of 79
-or a source-coverage decision.
-
-The historical 75-module registration preserved the two transferred native-restriction
-Lean leaves from `b9496a1ded04552f9619acdcda5f6257b5c9ebe1` and all eleven
-dependency objects. At its original 2026-09-27 assembly, the frozen 73-module
-parent `e570bfbb0a56dd38c43e9ed1c10057205e6088aa` was unaccepted.
-The full 75-module CI check on `c45c1713bf3e8457c02730fddf09d810dfae7027`
-subsequently succeeded at 19:45:26 UTC, and its complete build and
-private-inclusive standard-axiom evidence was inspected by the owner.
-Its documentation-only reconciliation normally merged accepted 73-module
-main `3b5513ba8420573af260339c5edfb5bbaae20f2c`, preserving all 75 Lean blobs,
-both roots, eleven package objects and CI inputs. Full CI621 on corrected
-`efcfeae07fa909b9c1d20bdd665cf733eb11cb4d` succeeded at 22:20:06 UTC.
-After complete owner evidence intake, independent final review and separate
-main/prep/public decisions and protected integration, official GitHub release
-`57decc6d5106fe32dc57f9684de38f6e10534de5` was verified at 22:30:32 UTC.
-These are the 75-module contribution's own decisions, not acceptance of 77
-or a source-coverage decision.
-
-At the historical 2026-09-27 17:05 UTC assembly snapshot, the source-only 73-module
-registration was not an accepted combined graph. Its frozen 71-module predecessor
-`7aa59f0e087045625022cc448d14fa96458725ab` and the 69-module predecessor
-`7c0510d5c17de07b78b0bedce5f9b9783a72027e` still had separate acceptance
-and release gates. This paragraph records that snapshot, not live branch status.
-CI538 had succeeded at 17:03:22 UTC, but complete owner intake of its artifact
-was still pending at that snapshot. Following that later evidence intake, the
-independently reviewed 69-module tree was owner-accepted, integrated and verified
-on official GitHub at
-`062370b8657c0691a02bfd01d43f6095383f4487` on 2026-09-27 at 17:28:53 UTC.
-The corrected 71-module documentation snapshot
-`64efb52e27eba493fcf2f13123bb75cbe4929b87` subsequently passed CI566
-at 19:18:10 UTC and, after its separate owner evidence intake, acceptance
-and protected main/prep/public integration, was verified on official GitHub as
-`75d708bf56eeec2de6c599b16cb96c82c961c9fe` at 19:26:30 UTC.
-The corrected 73-module successor normally merged that accepted ancestry and
-preserved all 73 Lean files, roots and eleven dependency objects of its original
-`e570bfbb0a56dd38c43e9ed1c10057205e6088aa` candidate. After full CI600 succeeded
-at 21:06:08 UTC and complete owner intake, independent final review and separate
-main/prep/public decisions, its official GitHub release
-`6aa8528f28264d9b44de0f31e72696d8d95ce97d` was verified at 21:19:58 UTC.
-These predecessor decisions did not themselves accept the 75-module successor;
-its own later decisions are recorded above. The earlier
-67-module tree at `e2b368027e83268263317b87bdd9b9e210db8021` was independently
-reviewed, accepted and integrated after complete CI524 build and private-inclusive
-standard-axiom evidence, and verified on official GitHub as
-`509357b3ba10be716b28d83b07c90831af1259a0` with the same tree. The earlier
-65-module base `4a3e01420c1a15e74019eeca96a50d07dd8a0348` was independently
-reviewed, accepted and integrated after complete CI492 build and private-inclusive
-standard-axiom evidence, and verified on official GitHub as
-`abf9086d46dcfe221e60bc6cf6884bd71ed0e2b6` with the same tree.
-At its original assembly, the 73-module chosen native-limit global-section
-leaves had focused author checks against the unchanged eleven-package graph;
-the aggregate imports are changed computational
-inputs. Neither those checks nor predecessor checks certify this combined graph.
-Final destination/release review, applicable combined checks, owner acceptance
-and verified publication are separate revision-specific requirements for that
-successor; that assembly snapshot did not certify their later completion or
-acceptance of the historical 84-module candidate or this 85-module successor.
-Later complete aggregate evidence and separate release decisions supported the
-73 release; every successor still needs its own applicable evidence and decisions.
-
-Authors: Formal Frontier Agents. Original project contributions are licensed
-under [Apache-2.0](LICENSE). The library builds on independently reviewed
-mathematical developments; it does not claim that any complete mathematical
-source is formalized. The Lake package declares version `0.1.0`;
-the `v0.4` in `formalization.yaml` identifies the metadata schema, not a release.
-
-## Mathematical scope
-
-The ring counterpart of additive coefficient forgetting preserves every
-same-universe cofiltered native limit of commutative-ring sheafed spaces via
-the canonical original pullback mate, filtered sheaf-colimit comparison and
-actual projection-mate cocone. For original spectral stage spaces and
-transitions, an actual native limiting cone has a ring-section colimit
-comparison whose legs are exactly the original projections; this comparison
-is invertible, and every vertex section comes from some stage. The former
-theorem does not require spectrality; the latter requires the explicit
-spectral/filtered hypotheses, with no nonempty-stage or fixed-stage
-surjectivity claim. See the [focused API guides](docs/README.md).
-
-The initial units prove that evaluation of sheaves valued in a suitable
-concrete category on a compact open preserves filtered colimits. They define
-quasi-flasque sheaves categorically, show that this is exactly surjectivity of
-the restriction maps for set-valued sheaves, and prove that same-size filtered
-colimits preserve quasi-flasqueness on compact prespectral quasi-separated
-spaces. The resulting set-valued theorem currently has a common universe for
-the space, coefficient types, and indexing category; no independently varying
-universe wrapper is claimed.
-
-For abelian sheaves, the library identifies degree-zero sheaf cohomology
-naturally with global sections and transfers the preservation theorem across
-that identification. For short exact sequences with quasi-flasque kernel, it
-proves surjectivity on sections over compact opens; in particular, global
-sections are exact on compact prespectral quasi-separated spaces. It also shows
-that quasi-flasque sheaves are closed under quotients in such short exact
-sequences. These exactness results currently follow mathlib's same-universe
-topological-sheaf API. The compact-open implementation exposes the canonical
-sheafification-colimit comparison needed for these and later cohomological
-applications.
-
-For spaces and coefficients in a common universe, the library also constructs
-a flasque injective envelope as a product of injective skyscraper sheaves and
-uses its quasi-flasque cokernel for dimension shifting. This proves that
-quasi-flasque abelian sheaves on compact prespectral quasi-separated spaces
-have trivial positive-degree sheaf cohomology. The accepted compact-open
-exactness interface couples the space and coefficient universes; this result
-does not provide a wrapper for independently varying universes.
-
-The library also constructs a functorial stalk-skyscraper flasque resolution,
-proves its augmentation is a quasi-isomorphism, and compares positive-degree
-sheaf cohomology with the homology of terminal-open sections. Its one-step
-dimension-shift comparison is natural in the input sheaf. This API currently
-uses universe zero (`TopCat.{0}` and the corresponding small coefficient and
-Ext types) in its sheaf-specific construction. On
-compact prespectral quasi-separated spaces, the resolution is also packaged as
-an Ext-acyclic resolution, functorially in the input sheaf. The degree-zero Ext
-complex of this package is naturally identified with the complex of sections
-of the flasque resolution on the terminal open, including the induced homology
-identification.
-
-For a continuous map, the library also packages the Ext-based cohomology
-presheaf on the source as a local-cohomology presheaf on the target and defines
-its functorial sheafification with the canonical sheafification map. The
-library identifies the value of the cohomology presheaf on an open with the
-cohomology of the restricted sheaf on its over-site. Its intrinsic over-site
-restriction maps satisfy identity and composition and agree with the maps of
-the cohomology presheaf under this identification. In positive degree, the
-sheafified local-cohomology functor is naturally isomorphic to right-derived
-pushforward. The open-over-site and positive right-derived comparison APIs use
-a common universe parameter for spaces, coefficients, and Ext groups; the
-comparison does not cover degree zero or
-independently varying universes.
-
-For a spectral map from a prespectral quasi-separated space to a prespectral
-space, right-derived pushforward preserves filtered colimits in every natural
-degree. The public API identifies the comparison with the literal
-`CategoryTheory.Limits.colimit.post` morphism and records its equation on each
-stage of the filtered diagram. The proof treats degree zero through compact-open
-sections and positive degrees through sheafified local cohomology. It currently
-uses universe zero for spaces, coefficients, diagrams, and Ext groups;
-it assumes neither sobriety nor Noetherian or finite-cohomological-dimension
-hypotheses.
-
-The library also exposes canonical identity and composition comparisons for
-pullback of sheaves, including both identity triangles and the
-triple-composition coherence law. This supports diagrams transported across
-varying topological spaces without treating pullback as strictly functorial.
-This interface retains mathlib's current requirement that the space universe
-also contain coefficient carriers and morphisms; the coefficient category's
-object universe remains independent.
-
-For a continuous map and an open subspace of its target, the library constructs
-the canonical inverse-image open square and the direct- and inverse-image
-comparisons for sheaves of types. It proves that these comparisons are mates
-and exposes the resulting counit equation. No surjectivity assumption is made;
-the construction applies equally to empty and whole opens and spaces.
-
-For any continuous map between topological spaces in a common universe, the
-underlying-Type-sheaf functor commutes with additive-sheaf pullback via the
-canonical native-adjunction mate. This **particular** arrow is natural and
-invertible, and satisfies the native identity and composition equations. For
-any small filtered diagram in that universe, forgetting additive structure
-preserves its colimit: the comparison is the literal `colimit.post` with its
-stage-leg equation under the ordinary colimit instances. Neither result
-requires spectral or nonempty-space hypotheses. These theorems do not supply a
-universe-crossing wrapper or prove a complete source result.
-
-For a commuting square of continuous maps and a pullback stage morphism,
-the library constructs the canonical counit-defined transition between
-pushforwards. Its adjoint is the forward strict pushforward comparison;
-transitions are natural in the stage target and respect identities and
-arbitrary two-square pasting. Coefficients satisfy the native concrete-category
-pullback-adjunction assumptions, with the space universe containing their
-carriers and morphisms. No spectral or nonempty-space hypothesis is required.
-This generic square API does not yet assert compatibility with forgetting
-abelian structure.
-
-For any native contravariant sheafed-space diagram and **any** cone of its
-underlying spaces, `SheafCohomology.ConePullback` pulls the stage sheaves back
-to the cone vertex; stage maps are mates of the diagram's actual arrows.
-This does not require a limiting, filtered or nonempty cone, but does require
-the concrete coefficient category's native pullback-adjunction assumptions,
-including limits and colimits, forgetful preservation of limits and filtered
-colimits, and reflection of isomorphisms. The native
-`SheafCohomology.AbelianForget.SheafedSpace` functor forgets additive structure
-via `mapPresheaf` and proves the actual-arrow mate law for same-universe
-additive sheafed spaces. `SheafCohomology.AbelianForget.ConePullback`
-identifies the two resulting native pullback diagrams by a natural
-isomorphism over the **same** cone vertex and projections, with the canonical
-forward and inverse components. This needs no limiting, filtered, nonempty,
-spectral, geometric or stage-isomorphism premise. It claims no cone-level colimit
-comparison, final additive or Ringed endpoint or source coverage.
-See the [native sheafed-space guide](docs/SheafedSpace.md).
-
-`SheafCohomology.ConePullbackCocone` constructs the sheaf cocone induced by
-an actual native sheafed-space cone. Its point is the vertex sheaf and its
-legs are the inverse-image mates of the native projections. The cone need
-not be limiting; the resulting cocone is not asserted to be colimiting.
-See the [projection-mate cocone guide](docs/ConePullbackCocone.md).
-
-`SheafCohomology.AbelianForget.ConePullbackCocone` identifies the Type-valued
-projection-mate legs with the forgotten additive legs through the canonical
-cone-wise comparison. With precisely three ordinary colimit witnesses, it
-proves that this comparison commutes with the two desc maps to the vertex
-sheaves. Neither desc map is asserted invertible, and neither cocone is
-asserted colimiting. See the
-[forgetful cocone guide](docs/AbelianForgetConePullbackCocone.md) for the exact
-equation, universes and private Fin 3/empty-carrier clients.
-
-`SheafCohomology.DiagramPushforward` transports a native sheafed-space diagram
-along a natural family of continuous maps and transports compatible native
-cones. These direct-image constructors require only a coefficient category;
-the formulas for their inverse-image mates require the native pullback
-adjunction's stronger hypotheses. The stage and projection maps use their
-actual strict squares, with no Cartesian, limiting or invertibility premise.
-See the [diagram-pushforward guide](docs/DiagramPushforward.md) for the exact
-variance, universe assumptions and Type/Ab/empty-index clients.
-
-`SheafCohomology.AbelianForget.DiagramPushforward` compares forgetting
-coefficients before and after these varying-base direct images. It supplies
-strict equality of native diagrams and an identity-vertex isomorphism of
-compatible cones after diagram transport, together with the canonical
-additive-to-Type comparison for actual mates. No limit, filteredness or stage-isomorphism premise is
-needed. See the [coefficient-diagram guide](docs/AbelianForgetDiagramPushforward.md)
-for the exact equality transports, shared universe and private clients.
-
-`SheafCohomology.ConeOfPullbackCocone` constructs a native sheafed-space cone
-from an actual underlying-space cone and a cocone of its pullback sheaves.
-The adjunction-defined projections have exactly the supplied mates; forgetting
-recovers the whole space cone literally, and the forward construction recovers
-the supplied cocone after that equality transport. No limiting or colimiting
-property is asserted. See the [cone-reconstruction guide](docs/ConeOfPullbackCocone.md)
-for the base-equation converse, universes and private Type/Ab/empty-index clients.
-
-`SheafCohomology.ConePullbackLimit` proves that an actual native cone is
-limiting when its actual underlying-space cone is limiting and its actual
-projection-mate sheaf cocone is colimiting. It also proves the corresponding
-criterion for the reconstructed cone above. The native lift, projection
-equations and uniqueness are derived, not assumed. Coefficients satisfy the
-native concrete-category pullback-adjunction hypotheses; the index object
-and morphism universes are independent. No filteredness, nonemptiness or
-stage-isomorphism premise is imposed. The empty-index client is conditional
-on an actual sheaf-colimit witness: no global `HasLimits` or initial-sheaf
-instance for the separate `TopCat.Sheaf` wrapper is supplied. See the
-[native cone-limit guide](docs/ConePullbackLimit.md) for exact assumptions,
-base-change transport and Type/Ab/private clients.
-
-`SheafCohomology.ConePullbackLimitConverse` supplies the converse over the
-**same actual base cone**. Given both `IsLimit C` and
-`IsLimit ((SheafedSpace.forget A).mapCone C)`, it constructs
-`IsColimit (SheafedSpace.conePullbackCocone A S C)` by descent to arbitrary
-competing cocones and native-limit uniqueness. The companion `Nonempty` iff
-reuses the forward criterion. This adds no sheaf-colimit existence,
-weak-sheafification, filteredness or nonemptiness premise, but retains the
-native concrete-coefficient assumptions and independent index universes.
-It does not reflect limits without the separate actual base-limit witness
-or install a global instance. See the
-[fixed-base converse guide](docs/SheafedSpaceConePullbackLimitConverse.md).
-
-`SheafCohomology.LimitConstruction` constructs a native `LimitCone` from an
-actual limiting cone of underlying spaces. In addition to the predecessor's
-concrete-coefficient hypotheses, it requires colimits of the actual index
-shape in the coefficient category and weak sheafification at the chosen cone
-vertex. It installs the existing site-sheaf colimit instance locally, constructs
-the actual pullback-sheaf colimit cocone and applies the limit criterion.
-The base, sheaf and projection-mate readbacks identify the actual selected
-objects and colimit legs. `hasLimitOfHasLimitForget` is a named witness, not
-a global instance. Private Type/Ab `Fin 3` clients and a genuine empty-index
-limit exercise the construction without assuming its conclusion. See the
-[limit-construction guide](docs/SheafedSpaceLimitConstruction.md) for the exact
-shape, sheafification and universe boundaries.
-
-`SheafCohomology.LimitPreservation` supplies the named witnesses
-`preservesLimitForgetOfSpaceCone` and `preservesLimitForgetOfHasLimit`.
-The first constructs a genuine native limit above an actual limiting space
-cone and identifies its whole forgotten cone with that base; mathlib's
-single-cone criterion then proves ordinary preservation for every limiting
-native cone of the diagram. The second chooses the space limit. Coefficient
-shape-colimits, local weak sheafification and the construction's universe
-boundaries remain explicit. No global instance, reflection or coefficient-
-forgetting preservation is claimed. See the
-[limit-preservation guide](docs/SheafedSpaceLimitPreservation.md).
-
-`SheafCohomology.AbelianForget.LimitPreservation` proves preservation of native
-limits for additive diagrams indexed by `Jᵒᵖ`, with same-universe
-`[SmallCategory J]` and `[IsFiltered J]`. The proof transports the actual
-projection-mate sheaf colimit through coefficient forgetting, then applies the
-native limit criterion to a genuinely constructed limit. The named
-`preservesCofilteredLimit` and `preservesCofilteredLimitsOfShape` witnesses
-apply to all limiting cones of those diagrams; neither is a global instance.
-The chosen-base helper keeps its local weak-sheafification hypothesis explicit.
-There is no claim for empty or arbitrary index shapes. See the
-[cofiltered coefficient-forgetting guide](docs/AbelianSheafedSpaceCofilteredLimits.md).
-
-This repository is organized around reusable mathematics. Source-specific
-interpretation, provenance, correspondence, and coverage remain in the relevant
-source-metadata repositories. Anchor is responsible for the initial integration
-on behalf of the Source-maintainers team.
-
-Project repository: `https://github.com/FormalFrontier/sheaf-cohomology`.
-Access is subject to the repository's permissions; this URL does not imply
-public visibility.
-
-## Public entry points
-
-Use `import SheafCohomology` for the aggregate API, or a subject module for a
-smaller import. The module-system readiness assembly re-exports the existing
-interfaces; implementation helpers remain private.
-
-For the new ring API import
-`SheafCohomology.CommRingForget.LimitPreservation` or
-`SheafCohomology.NativeCommRingGlobalSections` independently, or use the
-aggregate `SheafCohomology` root. The ordinary-import example
-`SheafCohomologyExamples.CommRingForgetLimitPreservation` supplies the
-named public `uniqueLift` client against the actual forgotten projections.
-See [CommRingForget](docs/CommRingForget.md) and
-[NativeCommRingGlobalSections](docs/NativeCommRingGlobalSections.md) for
-the full same-universe, filtered and spectral assumptions.
-
-For the forgetful functor and its comparisons, import
-`SheafCohomology.AbelianForget.Pullback` and/or
-`SheafCohomology.AbelianForget.FilteredColimits`, or import
-`SheafCohomology.AbelianForget.SquareTransition` for compatibility with the
-native square transition; these import the needed forgetful and square APIs. The
-[`AbelianForget` declaration guide](docs/AbelianForget.md) gives exact
-hypotheses and links to shipped code. A root-import example in
-`SheafCohomologyExamples/AbelianForgetPullback.lean` specializes
-`TopCat.Sheaf.AbelianForget.canonicalComponent_isIso` to the empty space;
-`SheafCohomologyExamples/AbelianForgetFilteredColimits.lean` specializes
-`preservesFilteredColimits` to `ℕ`. These are private named examples.
-Five further private clients in
-`SheafCohomologyExamples/AbelianForgetSquareTransition.lean` exercise arbitrary
-additive stages, target postcomposition, identity, the empty space and pasted
-squares. The square law compares the actual additive and Type-valued native
-transitions, not an arbitrary choice of transport or an additive endpoint.
-
-For generic commuting-square transitions, import
-`SheafCohomology.SquareTransition` or the aggregate root. The
-[SquareTransition guide](docs/SquareTransition.md) documents the forward mate,
-target naturality, identities and arbitrary pasting with exact coefficient
-assumptions; eleven focused private examples cover Type, abelian groups and
-empty spaces.
-
-| Subject | Module and representative interface |
-| --- | --- |
-| Compact-open sections | `CompactOpenSections`: canonical section comparison and colimit preservation |
-| Quasi-flasqueness | `QuasiFlasque`: `TopCat.Sheaf.IsQuasiFlasque` and its set-valued criterion |
-| Degree zero | `DegreeZero`: `SheafCohomology.DegreeZero.functorHZeroIsoSections` |
-| Acyclic resolutions | `AcyclicResolution`, `FlasqueResolution`, `FlasqueAcyclicResolution` |
-| Local and open cohomology | `LocalCohomology`, `OpenCohomology`: presheaf maps and intrinsic over-site restriction |
-| Positive derived comparison | `OpenCohomologyRightDerived`: `TopCat.Sheaf.RightDerivedPushforward.sheafifiedLocalCohomologyFunctorIsoRightDerived` |
-| Higher-image colimits | `HigherDirectImageFilteredColimit`: canonical comparison and stage equation in every natural degree |
-| Pullback and open base change | `PullbackCoherence`, `OpenBaseChange`: coherent comparisons and the open-square mate |
-| Commuting-square transitions | `SquareTransition`: canonical transition, forward strict mate, naturality and pasting |
-| Forgetful square transitions | `AbelianForget.SquareTransition`: strict pushforward compatibility and additive-to-Type native transition equation |
-| Native sheafed-space cones | `ConePullback`: arbitrary underlying-space cones and actual-arrow mates |
-| Sections across native cones | `ConePullbackSections`: literal units, restricted adjoint triangles, the native global-section transformation and ordinary colimit stage law |
-| Native inverse-image local sections | `PullbackLocalSections`: actual-unit stalk comparison, local representations, equality neighborhoods and finite compact-source-open covers |
-| Native stage-section equality | `NativeStageSectionEquality`: equality under an actual limit-projection unit descends to one stage on compact opens and native global sections |
-| Native whole-stage section lifting | `NativeStageSectionLifting`: each cone-pullback global section lifts from a native global section after a filtered transition |
-| Native section-colimit comparison | `NativeStageSectionColimit`: the actual `colimMap` of `ConePullbackSections.coneSections` is an isomorphism under the spectral-limit hypotheses |
-| Global sections of a chosen native limit | `NativeLimitGlobalSections`: the actual native projection comparison factors through moving-stage and fixed-base section comparisons and is an isomorphism under spectral-limit hypotheses |
-| Native restriction to inverse-image opens | `NativeOpenRestriction`: category-generic native restriction arrows, their inclusion/identity/composition laws and actual global-section component equations |
-| Native limits of principal-tail open cylinders | `NativeCylinderLimit`: actual restricted native diagram, cone and limit, derived from an arbitrary original native limit |
-| Chosen native cylinder limits and original-stage sections | `NativeCylinderComparison`: chosen native-limit isomorphism, projection/base laws and actual section comparison with explicit casts |
-| Spectral restricted cylinders | `NativeSpectralCylinder`: coefficient-generic spectrality of actual restricted stages and maps over compact, possibly empty opens, without a cone or limit assumption |
-| Compact-open native spectral-cylinder sections | `NativeSpectralCylinderSections`: invertibility of the actual restricted-cylinder comparison from original-stage spectrality and compactness of the chosen open |
-| Native additive global sections | `NativeAdditiveGlobalSections`: original-cone additive section comparison, literal stage law, spectral-limit invertibility and genuine later-stage equality detection |
-| Native additive cylinder sections | `NativeAdditiveCylinderSections`: preorder-only additive restricted-cylinder comparison and both arrow laws; locally filtered, constructed-limit spectral IsIso endpoint |
-| Native projection-mate cocones | `ConePullbackCocone`: sheaf cocone from an actual native sheafed-space cone |
-| Native cone reconstruction | `ConeOfPullbackCocone`: reconstruct a native cone from actual space-cone and sheaf-cocone data |
-| Native cone-limit criterion | `ConePullbackLimit`: derive a native limit from the actual underlying-space limit and projection-mate sheaf colimit |
-| Fixed-base native-limit converse | `ConePullbackLimitConverse`: actual native and underlying-space limits imply the actual projection-mate sheaf colimit |
-| Native limit construction | `LimitConstruction`: construct the sheaf colimit locally and a native limiting cone over an actual base limit |
-| Native-to-space limit preservation | `LimitPreservation`: named ordinary preservation witnesses over an actual or chosen limiting space cone |
-| Cofiltered coefficient-forgetting limits | `AbelianForget.LimitPreservation`: named preservation for same-universe additive diagrams on filtered `J` opposite |
-| Forgetful sheafed spaces | `AbelianForget.SheafedSpace`: strict coefficient forgetting and native arrow mate |
-| Cone-wise forgetting | `AbelianForget.ConePullback`: canonical natural isomorphism of native pullback diagrams |
-| Forgetful native cocones | `AbelianForget.ConePullbackCocone`: actual projection-mate legs and ordinary-colimit desc compatibility |
-| Varying-base direct images | `DiagramPushforward`: native diagrams, compatible cones and actual-arrow mate formulas |
-| Forgetful varying-base direct images | `AbelianForget.DiagramPushforward`: strict diagram equality, transported-cone comparison and canonical mate compatibility |
-
-All module names in the table are prefixed by `SheafCohomology.`. Consult their
-declaration types for the precise category, sheafification, Ext and universe
-assumptions. In particular, a common universe parameter is different from a
-construction fixed at universe zero, and a positive-degree comparison is not
-an all-degree comparison. Quasi-flasqueness only controls restriction from the
-terminal open to compact opens; it is weaker than flasqueness.
-
-The [module and assumptions guide](docs/Guide.md) covers all shipped subject
-modules. The [historical native-generated API signatures](docs/API.md) cover
-the original 26-module source snapshot (including the then-unmodified roots);
-the [lightweight AbelianForget guide](docs/AbelianForget.md) and
-[SquareTransition guide](docs/SquareTransition.md) cover the five subjects
-in that historical supplement group; the
-[native sheafed-space guide](docs/SheafedSpace.md) documents three further
-subjects, and the [projection-mate cocone guide](docs/ConePullbackCocone.md)
-documents one more. The
-[forgetful cocone guide](docs/AbelianForgetConePullbackCocone.md) covers the
-three public laws of the tenth new subject; the
-[diagram-pushforward guide](docs/DiagramPushforward.md) covers the eleventh;
-the [coefficient-diagram guide](docs/AbelianForgetDiagramPushforward.md)
-covers the twelfth; the [cone-reconstruction guide](docs/ConeOfPullbackCocone.md)
-covers the thirteenth; the [native cone-limit guide](docs/ConePullbackLimit.md)
-covers the fourteenth; the
-[limit-construction guide](docs/SheafedSpaceLimitConstruction.md) covers the
-fifteenth; the
-[limit-preservation guide](docs/SheafedSpaceLimitPreservation.md) covers the
-sixteenth; the
-[cofiltered coefficient-forgetting guide](docs/AbelianSheafedSpaceCofilteredLimits.md)
-covers the seventeenth; and the
-[fixed-base converse guide](docs/SheafedSpaceConePullbackLimitConverse.md)
-covers the eighteenth; the
-[cone-pullback sections guide](docs/ConePullbackSections.md) covers the nineteenth;
-the [local-pullback guide](docs/PullbackLocalSections.md) covers the twentieth;
-the [native stage-equality guide](docs/NativeStageSectionEquality.md) covers
-the twenty-first. The latter uses a same-universe small filtered index category,
-an actual limiting underlying-space cone, spectral stages and spectral transition
-maps. It assumes no inhabited stage or surjective map, and proves neither
-gluing nor invertibility of a colimit comparison. The
-[native stage-lifting guide](docs/NativeStageSectionLifting.md) covers the
-twenty-second subject. Under the same spectral-limit hypotheses, it proves a
-later-stage lift by finite whole-stage descent and native sheaf gluing, without
-assuming an inhabited stage or an invertible colimit comparison.
-The [native stage-colimit guide](docs/NativeStageSectionColimit.md) covers the
-twenty-third subject: a named `IsIso` theorem for the literal `colimMap` from
-native stage global sections to cone-pullback sections. It combines the
-equality and lifting results, without a desired-isomorphism premise or global
-instance. This is not the separate chosen native-limit global-section comparison.
-The [chosen native-limit global-section guide](docs/NativeLimitGlobalSections.md)
-covers the twenty-fourth subject. For `Q = limitConeOfSpaceCone (Type v) N c hc`,
-the comparison is the actual `colimit.desc` of `Γ` applied to Q's projections.
-Its factorization uses the same locally installed sheaf-colimit instance as Q;
-the named `isIso_nativeGlobalSectionsComparison` combines moving-stage and
-fixed-base comparisons under the same-universe small filtered, actual-limit
-and spectral-stage/map hypotheses. It assumes no desired isomorphism or
-inhabited stage and adds no global instance or source endpoint claim.
-The [native open-restriction guide](docs/NativeOpenRestriction.md) covers the
-twenty-fifth new subject. For `SheafedSpace.{v+1,v,v} C` with
-`{C : Type (v + 1)} [Category.{v} C]`, it uses the
-existing open-immersion lift and identifies the underlying map with the
-official open-base-change map. Named-open and composition equations retain
-explicit equality transports. Its section equation uses the actual `Γ.map`,
-with no limit, spectrality, nonemptiness or desired-isomorphism premise.
-Type and additive coefficients use the same API; both ordinary-import clients
-retain the explicit casts in the composed section-component equation.
-The [native cylinder-limit guide](docs/NativeCylinderLimit.md) covers the
-twenty-sixth new subject. For a directed preorder, an explicit index and an
-arbitrary stage open, it constructs the opposite-tail restriction diagram and
-the corresponding native limiting cone from the original native limit witness
-for any `C : Type (v + 1)` with `Category.{v} C`. The Type and additive private
-ordinary-import clients recover the original projection equation for any
-restricted cone using the same constructor. Empty spaces and opens are
-allowed; no restricted-limit
-premise, spectral transfer or chosen-limit section comparison is added by this unit.
-The [native cylinder-comparison guide](docs/NativeCylinderComparison.md) covers
-the twenty-seventh new subject. It compares the chosen native limit with the
-literal restriction, proves both native projection and base identities, and
-reads the actual colimit comparison on original-stage sections. The inverse
-native isomorphism is used contravariantly by `Γ`; both equality transports
-remain explicit. Any stage open, including the empty open, is allowed.
-This unit does not assert spectral invertibility of that comparison.
-The [native spectral-cylinder sections guide](docs/NativeSpectralCylinderSections.md)
-covers the twenty-eighth new subject. Under the same directed-preorder,
-explicit-index and original native-limit hypotheses, spectral original stages
-and transitions and a compact possibly-empty stage open make that existing
-comparison invertible. The restricted spectral stages/maps are derived using
-the actual inclusion square and published subspace API. The private client
-uses injectivity to detect equality of transported stage coprojections from
-their original projection sections, retaining both casts.
-The [native additive global-sections guide](docs/NativeAdditiveGlobalSections.md)
-covers the twenty-ninth new subject. It retains the original arbitrary additive
-cone and its projections, compares actual global sections by `colimit.desc`,
-and proves invertibility under the original limiting/spectral hypotheses via
-the forward forgetting comparison. The private client derives eventual equality;
-neither it nor this contribution assumes the desired comparison is invertible.
-Generic additive restriction is supplied separately by `NativeOpenRestriction`;
-the additive compact-cylinder extension is supplied by the separate
-[`NativeAdditiveCylinderSections` guide](docs/NativeAdditiveCylinderSections.md),
-covering the thirty-first new subject together with the generic spectral helper
-as the thirtieth. That guide details the two additive arrow laws, constructed
-restricted limit, possibly empty opens, original-projection client and casts.
-The section-transport supplement uses the existing `N.rightOp` composed with global sections and the
-actual unit at the top open; it supplies no colimit-map invertibility or
-finite-stage gluing theorem.
-Of the old 556 native display sites,
-399 carry source docstrings; the other 157 explicitly mark their absence and
-point generically to the source and module guide, not separately authored
-per-site explanations. These pointers do not certify complete semantic
-documentation of the API. The native display inventory is separate from the
-private and generated declaration inventory needed for proof verification.
-Import the aggregate root or only the required subject module; importing
-`SheafCohomologyExamples` is unnecessary.
-
-`SheafCohomologyExamples.lean` is the public-root example target of the
-readiness assembly and imports thirty-one additional example leaves. The root
-and twenty-eight leaves use named private declarations, including the native
-stage-lifting, stage-colimit, chosen native-limit, open-restriction, cylinder-limit,
-cylinder-comparison, spectral-cylinder, additive restriction, additive cylinder-limit,
-additive global-section and additive cylinder-section clients; the
-`ConePullbackSections` leaf contains five named public ordinary-import clients,
-`PullbackLocalSections` contains four more named public ordinary-import clients,
-and `NativeStageSectionEquality` contains two public distinguishability clients.
-All are included in proof verification, with no duplicate implementation API.
-No client should import or unfold private implementation helpers.
-
-## Build and checks
-
-Use elan with `leanprover/lean4:v4.34.0-rc2`, exactly as recorded in
-`lean-toolchain`. Direct dependencies are mathlib at
-`83abb3e776bdefcbc447a1e44d0debe4010039e5` and the official published
-`spectral-stone-duality` at `452b7b7be1bea76434cd083b1019a26f96b4ab30`.
-The latter brings official `ideal-completion` at
-`001e3b7508184ecd51e0d86177cb1d54508bf59d`; `lake-manifest.json` pins the
-complete eleven-package graph. No incubator or source-research checkout is
-required. Dependency URLs are upstream GitHub URLs, not internal services;
-access to the currently private Formal Frontier dependencies requires authorized
-GitHub access and does not imply public visibility.
-
-From the repository root, fetch the matching dependency cache successfully before
-building. Do not use a source rebuild as an implicit substitute for a failed cache
-fetch:
+Use the repository-pinned `leanprover/lean4:v4.34.0-rc2`, mathlib
+`83abb3e776bdefcbc447a1e44d0debe4010039e5`, and official
+`spectral-stone-duality` commit
+`452b7b7be1bea76434cd083b1019a26f96b4ab30` (bringing official
+`ideal-completion` at `001e3b7508184ecd51e0d86177cb1d54508bf59d`).
+`lean-toolchain`, `lakefile.toml` and `lake-manifest.json` bind the complete
+resolved inputs. Access to the published dependencies currently requires
+authorized access to their private GitHub repositories; importing this
+library does not require a source-research or incubator checkout.
 
 ```sh
+elan toolchain install leanprover/lean4:v4.34.0-rc2
 lake exe cache get
 lake --wfail build
-lake --wfail build SheafCohomologyExamples
 ```
 
-The default build includes the library and example target. Exact check
-results and independent review must bind the final combined revision; author
-checks of an earlier input are not independent approval of the assembly.
-In particular, these instructions have **not** been executed for the new
-97-module transfer candidate; donor-only proof checks are not destination
-both-root or relocated-theorem evidence.
+Run these from the repository root; the matching precompiled mathlib cache
+must be fetched successfully *before* the build. The default targets contain
+both the library and ordinary-import examples. For release acceptance,
+a successful applicable build and a complete transitive axiom audit of all
+repository declarations, including generated and private declarations and
+examples, are required. Only `propext`, `Classical.choice` and `Quot.sound` are
+permitted. A source grep, a selected public-declaration sample or a separate
+stored-proof replay is not a substitute for those checks. Reuse existing
+applicable evidence when checking inputs have not changed; this prose
+contribution makes no new build, axiom-audit or performance claim.
 
-The computational release checks are a successful build with the pinned Lean
-and dependency graph and a complete transitive axiom audit in the built
-environment. The audit covers every repository declaration, including private
-declarations and examples, and dependencies reached from them. Only `propext`,
-`Classical.choice`, and `Quot.sound` are permitted; `sorryAx` and any additional
-axiom fail. Use actual Lean `#print axioms` or `Lean.collectAxioms` output, not a
-source grep or a selected list that omits declarations. Applicable results can
-be reused when their Lean, build and dependency inputs are unchanged; docs-only
-edits do not require another build. The ordinary Lean build checks the proofs;
-a separate stored-body replay is not an additional release prerequisite.
+Historical resource observations are scoped to *different*, older workloads:
+for the 26-module documentation baseline in a four-CPU, 15 GiB cgroup, the
+author reported 1m24s for cache fetch, 16m26s for a 2,373-job default
+build and 1m13s for the doc-generator build. The native documentation batch
+spanned 2m28s in retained start/end timestamps; the other three reported
+durations lack separate timestamped command ledgers. The cgroup's peak
+included filesystem cache, and 1,735 `memory.events max` events were *not*
+OOM or kill events. A later expanded workload took about 9m02s for 2,378
+jobs in another cache state. The recorded `LAKE_JOBS=2` setting is not
+an effective Lake scheduling control; `LEAN_NUM_THREADS` is not a global
+memory bound. None of these historical observations establishes a measured
+minimum or limit for this 103-module tree. See the precise frozen
+[documentation and cost record](docs/README.md).
 
-The [generation instructions](docs/README.md) explain the native documentation
-tool and pinned source binding. Existing applicable documentation is reused and
-inspected; generating it is neither proof checking nor release acceptance.
-See [credits and third-party provenance](docs/CREDITS.md).
+## References and credits
 
-## References, attribution and status
-
-The library uses Lean and mathlib's native categories, limits, sheafification,
-stalks, Ext groups, injective resolutions and right-derived functors. Mathematical
-background includes classical sheaf cohomology and the compact-open and
-quasi-flasque arguments motivating the development in Kazuhiro Fujiwara and
-Fumiharu Kato, *Foundations of Rigid Geometry I*,
-[arXiv:1308.4734v5](https://arxiv.org/abs/1308.4734v5). These references concern
-mathematical ideas; no source PDF or substantial source excerpt is bundled.
-
-Formal Frontier AI agents developed the Lean code, examples and documentation,
-with distinct agent executions providing independent development review. Anchor
-has coordinated this library; Beacon, Lattice, Atlas and the attributed
-formalization-worker executions have contributed reviews or development recorded
-in the repository history. This is not a claim of human or source-author approval.
-Collective project author credit does not identify a copyright holder or replace
-applicable third-party credit and license terms.
-
-The exact accepted development `main` at
-`a9f1a38787d33205c469ff89710563fffb4974fd` includes separately reviewed
-module/public-use and metadata readiness work (issue 34, ordinary review 3006,
-owner 34-40581 and protected integration 40588; verification 40654/40674).
-Those historical bounded checks are distinct from revision-specific release
-assessment. The latter combines the applicable build and complete standard-axiom
-audit with independent inspection of source correspondence, API claims,
-documentation, metadata, code organization, licensing and attribution, file
-hygiene, exact dependency pins, and release-tree/history requirements. Promotion
-and verification of the mirrored commit, ref and destination are separate
-publication operations. See `formalization.yaml` for the bounded self-report;
-schema validity is not mathematical or legal certification.
+The mathematical background includes Kazuhiro Fujiwara and Fumiharu Kato,
+*Foundations of Rigid Geometry I*,
+[arXiv:1308.4734v5](https://arxiv.org/abs/1308.4734v5), alongside Lean,
+mathlib and the declared formal dependencies. Formal Frontier AI agents
+wrote and independently reviewed the original development, with Anchor
+coordinating and other credited contributors and reviewers documented in
+[credits](docs/CREDITS.md) and repository history. Andrew Yang's Apache-2.0
+mathlib open-immersion work is reused and credited there. Collective author
+credit does not assert copyright ownership, third-party relicensing, source
+author endorsement, human review or complete formal coverage of a source.
+For original project material, the header credit is literally
+`Authors: Formal Frontier Agents` with
+`SPDX-License-Identifier: Apache-2.0`; the full
+[Apache-2.0 license](LICENSE) accompanies this library. These are authorship
+and license statements, not a claim of copyright ownership or a license to
+relabel authentic upstream material.
+`formalization.yaml` records concise candidate-specific public metadata;
+exact release acceptance and publication evidence remain separate.

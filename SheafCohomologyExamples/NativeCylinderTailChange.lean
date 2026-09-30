@@ -1,10 +1,10 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: worker-b Hive Task hive-request-a52411214e83b3e8cc82da1235a39fa07761c413, UID 53f2275c-67d7-4642-adfe-75d218c8d1a9
-Planning: worker-a Hive Task hive-request-4fa22ae4ca0e9c3b33a75a991b29940ba8a3b7eb, UID 3903dc2f-29a0-4761-a886-cee3408f2c3e
-Dependencies: native cylinder and open naturality by their credited upstream authors
+Example for the native cylinder tail-change API.
 -/
+
+
 module
 import SheafCohomology.NativeCylinderTailChange
 

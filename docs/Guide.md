@@ -2,9 +2,8 @@
 
 This guide describes the 103-module library, including generic cylinder
 open naturality, actual transition-pullback principal-tail changes,
-original-open commutative-ring cylinders and the results of its previously
-accepted, published 101-module predecessor, not a complete
-formalization of a source.
+original-open commutative-ring cylinders and the earlier sheaf/cohomology
+results. This reusable library is not a claim of complete source coverage.
 Import `SheafCohomology` for the aggregate public interface, or import a
 subject module directly. The native
 [historical API reference](API.md) supplies declaration-level displayed hypotheses
@@ -141,28 +140,9 @@ transition on the canonically compared stage. See the
 
 ## Module inventory
 
-The original 24 subject leaves below are included in the frozen native API
-reference. Nine new `AbelianForget` leaves, `SquareTransition`,
-`ConePullback`, `ConePullbackCocone`, `ConeOfPullbackCocone`, `ConePullbackLimit`,
-`ConePullbackLimitConverse`, `LimitConstruction`, `LimitPreservation`, and
-`DiagramPushforward`, `ConePullbackSections`, `PullbackLocalSections`,
-`NativeStageSectionEquality`, `NativeStageSectionLifting`, `NativeStageSectionColimit`
-and `NativeLimitGlobalSections`, `NativeOpenRestriction`, `NativeCylinderLimit`,
-`NativeCylinderComparison`, `NativeSpectralCylinder`,
-`NativeSpectralCylinderSections`, `NativeAdditiveGlobalSections`, and
-`NativeAdditiveCylinderSections`
-are documented in supplements;
-the earlier 55 subjects, thirty-one client leaves and two roots form the
-historical 88-file baseline. The accepted 97-module release adds seven
-`CommRingForget` subjects and one `NativeCommRingGlobalSections` subject,
-one example leaf and keeps the two roots: 63 producer leaves and 32 example
-leaves. The 99-module library also includes one ring-cylinder producer leaf and
-one ordinary-import private example leaf, for 64 producers, 33 examples and two
-roots.
-The stage-representative theorem is inside the endpoint producer, not a separate
-example leaf. Prefix producer subject names with `SheafCohomology.`. These
-descriptions identify navigation, **not** a claim that every declaration has
-the same hypotheses.
+Prefix producer subject names with `SheafCohomology.`; example
+modules live under `SheafCohomologyExamples`. The table is navigation,
+not a replacement for the exact declarations and their hypotheses.
 
 | Module | Purpose |
 | --- | --- |
@@ -493,65 +473,7 @@ colimits or successive-tail coherence is claimed.
 The `SheafCohomologyExamples` target demonstrates the intended imports
 for compact-open colimits, quasi-flasqueness, the resolution interfaces, local
 cohomology, higher direct images, open base change and native section transport.
-The original 2026-09-28 source-only 88-module registration starts from static adapter
-`a476ccbaf62a401b1cc8b464bfe04da27dfab46e` on frozen **unaccepted** parent
-`651f8223c7dbb2df870f3f594077365bf6767d7f`. The two public producer
-imports and one ordinary private-client import change the aggregate roots;
-all 86 nonroot Lean blobs and eleven complete dependency objects remain fixed.
-At the 02:31 UTC owner checkpoint, actual 79 was privately published and final
-81 CI648 was owner-intaken without acceptance/release; actual 85 CI655 supplied
-metadata-only evidence, not yet owner-intaken. None then certified the changed
-88 graph; ordered 81→83→84→85 releases remained separate.
 
-The frozen 88 head `1ded7c974bdb6cd753e393fbc8d09bb2782c69e9`
-subsequently passed full both-target/private-inclusive CI665/artifact121236
-(owner intake #34/55987), and its mathematical/API/provenance/registration
-scope was independently approved at `eed9f975efd4dd17cbace2d3a40d4d041319b67f`
-(native4411, owner intake #34/55894). Neither is a metadata-only pass or
-acceptance of the changed-header actual-parent 88 successor.
-
-At its original 2026-09-28 assembly, the source-only 85-module aggregate had
-no combined build or private-inclusive axiom evidence. Donor seven-module
-evidence and old 84 CI637/artifact112464 did not certify its changed closure.
-Frozen 85 `651f8223c7dbb2df870f3f594077365bf6767d7f` subsequently passed
-full both-target/private-inclusive CI655 (issue #34/comment 55824); scoped
-review first requested a collective-credit correction (native4404) and then
-approved the exact repaired original (native4405). Actual 81 and 83 each
-completed their own official release at `b743039857ca8c206b6a8cdb99afe7c7e8ce0c25`
-and `6793f2ff8469d1cab23a98ac2da22a3286d22f8e`, respectively. Full
-changed-header CI674 and independent final review supported actual accepted 84
-main/release-prep `36e49294f84208fa678872e84b6bdbd96c603188` and private
-release `e5d7d6e60243da2ec9a2af243fac3f3a3bf7dc37`, verified on 2026-09-28
-(issue #34/comment 56186). At that dated checkpoint the **unaccepted 85** successor merged actual
-84 main ancestry and inherits four reversible collective-credit headers. Final
-review `abee8bb69fb0ace5d5256dc11fafcbfd2bd6485a` requested changes on
-PR141/147/148 (native4434/4435/4436) for nine further inherited worker-only
-author headers, not for the unchanged mathematics or fourteen headerless files.
-That successor repaired those nine labels; 13 headers differ from frozen 85,
-while every module-onward byte remains fixed. Neither original CI655 nor the
-CI678/679/680 executions on the prior candidate certify these changed inputs.
-At that checkpoint, applicable 85 evidence and fresh independent review
-remained; the header repair alone was not an approval or acceptance.
-Subsequent full CI685/artifact131785, author-distinct consolidated review
-`fc9bb966ca2c9f9426fd817341f787e851351bcd` (native4442–4444), separate
-owner gates and protected integrations completed actual 85: accepted main
-`25e596baca25cf582aa2f6d9ba22d7833de74ec7`, official private release
-`2c7b5e3e2e94704b9aa825c1aed88a880cf78dae` (#34/56450).
-This still **unaccepted 88** successor merges the accepted 85 development
-commit into frozen 88, inheriting 13 complete collective-credit headers but
-preserving all 88 Lean module-onward bodies, imports, options and both roots.
-Neither original full CI665 nor 85 CI685 checks the thirteen changed 88-header
-inputs. Applicable both-target/private-inclusive successor 88 CI and a fresh
-author-distinct consolidated final main/prep/public review remain before
-separate owner acceptance, protected integration and verified publication;
-neither source coverage nor incubator conversion follows.
-Private example names are not public API, including the native stage-lifting,
-stage-colimit, chosen native-limit and
-Type/additive open-restriction, Type/additive cylinder-limit, cylinder-comparison,
-spectral-cylinder and additive clients; the section-transport, local-pullback
-and native stage-equality clients are public named examples. Inspect the sample's
-actual binders when adapting a result:
-the positive/zero-degree split and universe-zero restrictions are essential.
-Review actual source hypotheses and typeclass instances rather than guessing
-them from the abstract's subject labels. External research records are not
-required to build or import this library.
+Inspect the relevant declaration and its explicit universes before applying
+a result; private ordinary-import clients demonstrate use without adding a
+public mathematical API.

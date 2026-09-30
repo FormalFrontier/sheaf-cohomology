@@ -1,8 +1,8 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Formal Frontier worker-b Hive Task hive-request-4c216dbec01d4be3c9179c965656f0054d638fb8
 -/
+
 module
 public import SheafCohomology.NativeStageSectionColimit
 public import SheafCohomology.LimitConstruction

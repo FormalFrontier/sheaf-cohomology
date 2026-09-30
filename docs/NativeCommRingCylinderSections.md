@@ -64,27 +64,7 @@ even at `i0`. The result concerns sheafed spaces valued in commutative rings,
 not locally ringed spaces, scheme structure, or a chosen substitute for the
 original cone.
 
-The original-open transport follows this library's
-[additive-cylinder pattern](../SheafCohomology/NativeAdditiveCylinderSections.lean)
-of worker-b Task `hive-request-581a9584fa061c70e8f8581b23cc51bae1d3f5bf`
-(UID `0eb3d3fc-0bb3-4098-ab2f-892fe8a763f4`); the generic native
-cylinder is by worker-a Task `hive-request-27d70680c0e69c147294098e3ac13b1c7092c0e1`
-(UID `bfe6acf9-1385-4602-a9b8-1e88f6908b1a`), the spectral
-restriction by worker-b Task `hive-request-e8a25d6c5328e70c571fe96c3ac0b8102530eaa1`
-(UID `ddcebc71-0a10-45a6-b8cf-9606083d850e`), and the ring-global
-theorem by worker-a Task `hive-request-1c0851150518e166978e650f8b077bcdd9311334`
-(UID `6ed601e1-657b-408f-bf75-7df21b10a83a`). The latter adapts
-additive-global work by `hive-request-0b67e8c17f9041202a7550e7a7703f53d6bb4004`
-(UID `7b289efe-e184-4c33-9723-7ef39e977b59`) and the CommRingForget
-bridge by `hive-request-c57c813632815e9d350373cdfa7741657fb4852a`
-(UID `2717d143-2755-441e-83fb-8f9190fbe8f1`). The API assessment is by
-worker-b Task `hive-request-d3c2586e89c15b535aecaa643cab3e9cbdb8b549`
-(UID `fc541648-a37d-4749-b741-30000d4baef2`). Named native-open
-restrictions also reuse work of worker-a Tasks
-`hive-request-dae0d04e8618b53de43730479c4033d21488695b` and
-`hive-request-30271b71e726fc52aa0a7c7670ba0eca5de6eaac`;
-the underlying ring-global plan was by
-`hive-request-c122a6d40799b53667ffc3699a7642ef15453985`
-(UID `911c1933-e837-4a1c-85cd-2dce903e2357`). This ring-cylinder
-adaptation is by worker-a Task `hive-request-88dfae1c142ae9a97c6e943836f56272654fa848`
-(UID `91101cdb-86bf-42a6-984d-2bd74e2d112a`).
+The ring construction adapts the
+[additive cylinder](NativeAdditiveCylinderSections.md) and the
+[generic restricted-cylinder](NativeCylinderLimit.md) APIs, with ring
+coefficients and the same actual original projections.

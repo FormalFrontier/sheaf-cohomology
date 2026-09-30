@@ -1,8 +1,8 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Formal Frontier worker-b Hive Task hive-request-e5e544a630e9b84215130384682791cdebd0aea0
 -/
+
 module
 public import SheafCohomology.NativeStageSectionEquality
 public import SheafCohomology.ConePullbackSections

@@ -1,8 +1,8 @@
 /-
 SPDX-License-Identifier: Apache-2.0
 Authors: Formal Frontier Agents
-Contributor: Formal Frontier worker-a Hive Task hive-request-dae0d04e8618b53de43730479c4033d21488695b
 -/
+
 module
 import SheafCohomology.NativeOpenRestriction
 
