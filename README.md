@@ -136,17 +136,43 @@ signatures. Examples under
 [`SheafCohomologyExamples`](SheafCohomologyExamples.lean) demonstrate ordinary
 imports; many example declarations are intentionally private.
 
-## Build and verification
+## Using the library
 
-Use the repository-pinned `leanprover/lean4:v4.34.0-rc2`, mathlib
+Add the library to your `lakefile.toml`:
+
+```toml
+[[require]]
+name = "sheaf-cohomology"
+git = "https://github.com/FormalFrontier/sheaf-cohomology.git"
+rev = "main"
+```
+
+GitHub `main` contains reviewed releases. Lake records the resolved commit in
+`lake-manifest.json` and keeps it until you update the dependency. For a fixed
+release, replace `main` with its full commit from the GitHub history. Libraries
+used together must resolve a common mathlib revision and compatible toolchains.
+
+Import the aggregate API:
+
+```lean
+import SheafCohomology
+```
+
+For smaller imports, use the subject modules linked above. The
+[`SheafCohomologyExamples`](SheafCohomologyExamples.lean) root collects
+ordinary-import examples of these APIs.
+
+## Building
+
+For a checkout of this library, use the repository-pinned
+`leanprover/lean4:v4.34.0-rc2`, mathlib
 `83abb3e776bdefcbc447a1e44d0debe4010039e5`, and official
 `spectral-stone-duality` commit
 `452b7b7be1bea76434cd083b1019a26f96b4ab30` (bringing official
 `ideal-completion` at `001e3b7508184ecd51e0d86177cb1d54508bf59d`).
 `lean-toolchain`, `lakefile.toml` and `lake-manifest.json` bind the complete
-resolved inputs. Access to the published dependencies currently requires
-authorized access to their private GitHub repositories; importing this
-library does not require a source-research or incubator checkout.
+resolved inputs. Importing the library does not require a source-research or
+incubator checkout.
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
@@ -156,28 +182,8 @@ lake --wfail build
 
 Run these from the repository root; the matching precompiled mathlib cache
 must be fetched successfully *before* the build. The default targets contain
-both the library and ordinary-import examples. For release acceptance,
-a successful applicable build and a complete transitive axiom audit of all
-repository declarations, including generated and private declarations and
-examples, are required. Only `propext`, `Classical.choice` and `Quot.sound` are
-permitted. A source grep, a selected public-declaration sample or a separate
-stored-proof replay is not a substitute for those checks. Reuse existing
-applicable evidence when checking inputs have not changed; this prose
-contribution makes no new build, axiom-audit or performance claim.
-
-Historical resource observations are scoped to *different*, older workloads:
-for the 26-module documentation baseline in a four-CPU, 15 GiB cgroup, the
-author reported 1m24s for cache fetch, 16m26s for a 2,373-job default
-build and 1m13s for the doc-generator build. The native documentation batch
-spanned 2m28s in retained start/end timestamps; the other three reported
-durations lack separate timestamped command ledgers. The cgroup's peak
-included filesystem cache, and 1,735 `memory.events max` events were *not*
-OOM or kill events. A later expanded workload took about 9m02s for 2,378
-jobs in another cache state. The recorded `LAKE_JOBS=2` setting is not
-an effective Lake scheduling control; `LEAN_NUM_THREADS` is not a global
-memory bound. None of these historical observations establishes a measured
-minimum or limit for this 103-module tree. See the precise frozen
-[documentation and cost record](docs/README.md).
+both the library and ordinary-import examples. The historical API reference
+has a separate, optional [reproduction guide](docs/README.md#optional-historical-reproduction).
 
 ## References and credits
 
@@ -197,5 +203,3 @@ For original project material, the header credit is literally
 [Apache-2.0 license](LICENSE) accompanies this library. These are authorship
 and license statements, not a claim of copyright ownership or a license to
 relabel authentic upstream material.
-`formalization.yaml` records concise candidate-specific public metadata;
-exact release acceptance and publication evidence remain separate.

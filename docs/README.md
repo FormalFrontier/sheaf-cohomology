@@ -59,8 +59,7 @@ project pin files, native JSON/HTML records and the **original**, pre-editorial
 `docs/API.md` digest. The original complete generated file and **all 29 exact
 input bytes** occur in the [first official public-release history snapshot
 `802bfcb6a00c` (September 26, 2026)](https://github.com/FormalFrontier/sheaf-cohomology/tree/802bfcb6a00c82a07058be385a5a18d8ec69dbad).
-That public-release history may remain access-controlled while the GitHub mirror
-is private; this link does not assert public visibility today. Its tree
+Its tree
 `0760e54bc22e850c51a3b98f39ad39adb478b95a` equals the historical
 pre-transfer development tree `3a7204971fbbbb0a130335eda04b9d9d2b157267`.
 The source originally analyzed by doc-gen4 was
@@ -68,14 +67,14 @@ The source originally analyzed by doc-gen4 was
 native `sourceUri` identifies provenance, not a claim that its URL is publicly
 reachable.
 
-The 24 original subject files **still match** their manifest hashes byte for
-byte in this 103-file checkout, so all relative `Frozen source` line links in
-[API.md](API.md) refer to the same original source lines here. The aggregate
-root, example root, `lakefile.toml` and `lake-manifest.json` differ from their
-historical inputs; the pinned `lean-toolchain` still matches. The two roots
-have no native declaration display sites. New headers in other modules do not
-change any of the frozen source-link targets. Do not use this checkout's
-changed roots or dependency graph to claim reproduction of the old output.
+The manifest's subject-file hashes and the historical API's `Frozen source`
+line references describe that exact snapshot. Current subject files can differ
+from those historical inputs; consult the snapshot for the corresponding source
+lines. The aggregate root, example root, `lakefile.toml` and `lake-manifest.json`
+differ from their historical inputs; the pinned `lean-toolchain` still matches.
+The two historical roots have no native declaration display sites.
+Do not use this checkout's changed roots or dependency graph to claim
+reproduction of the old output.
 The manifest's `api_sha256` deliberately remains the hash of the **original**
 generated Markdown in the historical snapshot, not the editorial introduction
 of this checkout. These useful historical bindings are not release/build/axiom
