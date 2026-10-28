@@ -265,7 +265,8 @@ lemma HPrimeIsoGlobalResolutionHomComplexHomology_hom_open_naturality
         HomologicalComplex.homologyMap
           (globalResolutionHomComplexOpenMap i G) q := by
   ext x
-  exact CategoryTheory.Abelian.Ext.AcyclicResolution.injectiveExtPositiveIsoHomology_source_naturality
+  exact
+    CategoryTheory.Abelian.Ext.AcyclicResolution.injectiveExtPositiveIsoHomology_source_naturality
       (injectiveResolution G) (globalCohomologySourceFunctor.map i) q hq x
 
 omit [(Opens.grothendieckTopology X).WEqualsLocallyBijective
@@ -1253,7 +1254,8 @@ lemma HPrimeIsoPushforwardResolutionHomologyPresheafObj_hom_coefficient_naturali
   rw [← Category.assoc, ← Category.assoc,
     HPrimeIsoGlobalResolutionSectionsHomology_hom_coefficient_naturality]
   simp only [Category.assoc]
-  rw [globalResolutionSectionsIsoPushforwardResolutionSectionsHomology_hom_coefficient_naturality_assoc]
+  rw [
+  globalResolutionSectionsIsoPushforwardResolutionSectionsHomology_hom_coefficient_naturality_assoc]
   rw [pushforwardResolutionSectionsHomologyIso_hom_coefficient_naturality]
 
 /-- The positive local-cohomology/pushed-forward-resolution presheaf

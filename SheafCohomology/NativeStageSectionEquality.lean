@@ -13,7 +13,6 @@ public section
 set_option warningAsError true
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
-set_option linter.style.haveILetI false
 
 /-!
 # Eventual equality of native stage sections
@@ -109,10 +108,10 @@ theorem exists_stage_eq_of_pullback_unit_eq (i : J)
     rw [hnat a, hnat b]
     exact congrArg ((N.map g.op).hom.c.app (op E)) (by simpa only [SheafedSpace.sheaf]
       using hsections)
-  haveI : IsIso (homOfLE hmapEV).op := by
-    letI : IsIso (homOfLE hmapEV) := homOfLE_isIso_of_eq hmapEV hStage
+  have : IsIso (homOfLE hmapEV).op := by
+    let : IsIso (homOfLE hmapEV) := homOfLE_isIso_of_eq hmapEV hStage
     infer_instance
-  haveI : IsIso ((N.obj (op j)).presheaf.map (homOfLE hmapEV).op) := inferInstance
+  have : IsIso ((N.obj (op j)).presheaf.map (homOfLE hmapEV).op) := inferInstance
   exact ⟨j, g, (asIso ((N.obj (op j)).presheaf.map
     (homOfLE hmapEV).op)).toEquiv.injective heqMap⟩
 
@@ -130,7 +129,7 @@ theorem exists_Γ_eq_of_pullback_unit_eq (i : J)
     ∃ (j : J) (g : i ⟶ j),
       (N.rightOp ⋙ SheafedSpace.Γ).map g a =
         (N.rightOp ⋙ SheafedSpace.Γ).map g b := by
-  letI : SpectralSpace (N.obj (op i)) := hstage (op i)
+  let : SpectralSpace (N.obj (op i)) := hstage (op i)
   have hcompact : IsCompact ((⊤ : Opens (N.obj (op i))) : Set (N.obj (op i))) :=
     isCompact_univ
   obtain ⟨j, g, hab⟩ := exists_stage_eq_of_pullback_unit_eq

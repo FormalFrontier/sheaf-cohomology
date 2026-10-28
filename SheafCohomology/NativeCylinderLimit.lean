@@ -11,7 +11,6 @@ public import Mathlib.CategoryTheory.Limits.Final
 public section
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
 
@@ -188,7 +187,7 @@ private theorem coneComponent_naturality (m : Cone N) (U0 : Opens (N.obj (op i0)
     {i j : (Set.Ici i0)ᵒᵖ} (f : i ⟶ j) :
     coneComponent N i0 m U0 (unop i) ≫ stageMap N i0 U0 f =
       coneComponent N i0 m U0 (unop j) := by
-  haveI : Mono ((inclusion N i0 U0).app j) := by
+  have : Mono ((inclusion N i0 U0).app j) := by
     change Mono ((N.obj (op (unop j).1)).ofRestrict
       (stageOpen N i0 U0 (unop j)).isOpenEmbedding)
     infer_instance
@@ -286,7 +285,7 @@ def restrictedLift (m : Cone N) (hm : IsLimit m)
     t.pt ⟶ m.pt.restrict (coneOpen N i0 m U0).isOpenEmbedding := by
   let inclusion := (m.pt.ofRestrict (coneOpen N i0 m U0).isOpenEmbedding).hom
   let composite := (originalLift N i0 m hm U0 t).hom
-  haveI : PresheafedSpace.IsOpenImmersion inclusion := by
+  have : PresheafedSpace.IsOpenImmersion inclusion := by
     dsimp [inclusion]
     infer_instance
   exact InducedCategory.homMk (PresheafedSpace.IsOpenImmersion.lift
@@ -304,7 +303,6 @@ theorem restrictedLift_fac (m : Cone N) (hm : IsLimit m)
   exact PresheafedSpace.IsOpenImmersion.lift_fac _ _
     (originalLift_range N i0 m hm U0 t)
 
-set_option maxHeartbeats 1200000 in
 theorem restrictedLift_component (m : Cone N) (hm : IsLimit m)
     (U0 : Opens (N.obj (op i0))) (t : Cone (restricted N i0 U0))
     (i : Set.Ici i0) :
@@ -312,7 +310,7 @@ theorem restrictedLift_component (m : Cone N) (hm : IsLimit m)
   let inclusionArrow := m.pt.ofRestrict (coneOpen N i0 m U0).isOpenEmbedding
   let stageInclusion := (N.obj (op i.1)).ofRestrict
     (stageOpen N i0 U0 i).isOpenEmbedding
-  haveI : Mono stageInclusion := by dsimp [stageInclusion]; infer_instance
+  have : Mono stageInclusion := by dsimp [stageInclusion]; infer_instance
   have hcomponent : coneComponent N i0 m U0 i ≫ stageInclusion =
       inclusionArrow ≫ m.π.app (op i.1) := coneComponent_fac N i0 m U0 i
   have hfactor : restrictedLift N i0 m hm U0 t ≫ inclusionArrow =

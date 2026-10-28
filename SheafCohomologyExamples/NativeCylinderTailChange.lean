@@ -9,7 +9,6 @@ module
 import SheafCohomology.NativeCylinderTailChange
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,7 +33,7 @@ private theorem genericTailCoprojection
       (cylinderSectionsTailColimitIso S i0 j h U).hom =
     (cylinderSectionsTailIso S i0 j h U).hom.app k ≫
       colimit.ι (cylinderSections S i0 U) ((betweenTailInclusion i0 j h).obj k) := by
-  letI := hasColimit_cylinderSections_betweenTail S i0 j h U
+  let := hasColimit_cylinderSections_betweenTail S i0 j h U
   exact colimit_ι_cylinderSectionsTailColimitIso S i0 j h U k
 
 private theorem genericConeStageSquare
@@ -56,7 +55,7 @@ private theorem genericConeStageSquare
       cylinderSectionsComparison S j m (stageOpen S i0 U (⟨j, h⟩ : Set.Ici i0)) ≫
       eqToHom (congrArg (fun W : Opens m.pt => m.pt.presheaf.obj (op W))
         (coneOpen_betweenTail S i0 j h U m)) := by
-  letI := hasColimit_cylinderSections_betweenTail S i0 j h U
+  let := hasColimit_cylinderSections_betweenTail S i0 j h U
   simpa only [Category.assoc] using congrArg
     (fun arrow => eqToHom (AlgebraicGeometry.SheafedSpace.restrict_Γ_obj
       (S.obj (op k.1)) (stageOpen S j

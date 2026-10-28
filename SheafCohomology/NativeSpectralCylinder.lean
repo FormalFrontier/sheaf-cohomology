@@ -12,7 +12,6 @@ public import Mathlib.Topology.Constructible
 public section
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,7 +44,7 @@ theorem spectralStage
       IsSpectralMap ((N ⋙ SheafedSpace.forget C).map f))
     (hU0 : IsCompact (U0 : Set (N.obj (op i0)))) (i : (Set.Ici i0)ᵒᵖ) :
     SpectralSpace ((restricted N i0 U0 ⋙ SheafedSpace.forget C).obj i) := by
-  letI : SpectralSpace (N.obj (op (unop i).1)) := hstage (op (unop i).1)
+  let : SpectralSpace (N.obj (op (unop i).1)) := hstage (op (unop i).1)
   have hc : IsCompact (stageOpen N i0 U0 (unop i) : Set (N.obj (op (unop i).1))) := by
     let base : Set.Ici i0 := ⟨i0, le_refl i0⟩
     let f : i ⟶ op base := (homOfLE (show base ≤ unop i from (unop i).2)).op
@@ -58,7 +57,7 @@ theorem spectralStage
   have hcarrier : ((restricted N i0 U0 ⋙ SheafedSpace.forget C).obj i) =
       (Opens.toTopCat (N.obj (op (unop i).1))).obj (stageOpen N i0 U0 (unop i)) := rfl
   rw [hcarrier]
-  letI : CompactSpace ((Opens.toTopCat (N.obj (op (unop i).1))).obj
+  let : CompactSpace ((Opens.toTopCat (N.obj (op (unop i).1))).obj
       (stageOpen N i0 U0 (unop i))) :=
     isCompact_univ_iff.mp
       ((stageOpen N i0 U0 (unop i)).isOpenEmbedding.isCompact_iff.mpr (by
@@ -74,8 +73,8 @@ theorem spectralStageMap
     (hU0 : IsCompact (U0 : Set (N.obj (op i0))))
     {i j : (Set.Ici i0)ᵒᵖ} (f : i ⟶ j) :
     IsSpectralMap ((restricted N i0 U0 ⋙ SheafedSpace.forget C).map f) := by
-  letI : SpectralSpace (N.obj (op (unop i).1)) := hstage (op (unop i).1)
-  letI : SpectralSpace (N.obj (op (unop j).1)) := hstage (op (unop j).1)
+  let : SpectralSpace (N.obj (op (unop i).1)) := hstage (op (unop i).1)
+  let : SpectralSpace (N.obj (op (unop j).1)) := hstage (op (unop j).1)
   have hc : IsCompact (stageOpen N i0 U0 (unop i) : Set (N.obj (op (unop i).1))) := by
     let base : Set.Ici i0 := ⟨i0, le_refl i0⟩
     let f0 : i ⟶ op base := (homOfLE (show base ≤ unop i from (unop i).2)).op

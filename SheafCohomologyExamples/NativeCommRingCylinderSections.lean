@@ -7,7 +7,6 @@ module
 import SheafCohomology.NativeCommRingCylinderSections
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 
 open CategoryTheory CategoryTheory.Limits Opposite TopologicalSpace
 
@@ -54,7 +53,7 @@ private theorem detect_original_projection_equality (hm : IsLimit m)
         (fun W : Opens m.pt => m.pt.presheaf.obj (op W))
         (coneOpen_eq_stage S i0 m U0 i).symm)
   let comparison := nativeCommRingCylinderSectionsComparison S i0 m U0
-  letI : IsIso comparison :=
+  let : IsIso comparison :=
     isIso_nativeCommRingCylinderSectionsComparison S i0 m U0
       hm hstage htransition hU0
   have hinjective : Function.Injective comparison := by

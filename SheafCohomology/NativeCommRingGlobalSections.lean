@@ -15,7 +15,6 @@ public import Mathlib.Algebra.Category.Ring.FilteredColimits
 public section
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency.types false
 
@@ -113,7 +112,7 @@ theorem isIso_nativeCommRingGlobalSectionsComparison (hm : IsLimit m)
   let F := CategoryTheory.forget CommRingCat.{v}
   let N := S ⋙ U
   let c := (SheafedSpace.forget (Type v)).mapCone (U.mapCone m)
-  letI : PreservesLimit S (SheafedSpace.forget CommRingCat.{v}) :=
+  let : PreservesLimit S (SheafedSpace.forget CommRingCat.{v}) :=
     SheafedSpace.preservesLimitForgetOfHasLimit CommRingCat.{v} S
   have hspace : IsLimit ((SheafedSpace.forget CommRingCat.{v}).mapCone m) :=
     isLimitOfPreserves (SheafedSpace.forget CommRingCat.{v}) hm
@@ -121,7 +120,7 @@ theorem isIso_nativeCommRingGlobalSectionsComparison (hm : IsLimit m)
     change IsLimit ((SheafedSpace.forget (Type v)).mapCone (U.mapCone m))
     rw [CommRingForget.underlying_mapCone_forget S m]
     exact hspace
-  letI : PreservesLimit S U := CommRingForget.preservesCofilteredLimit S
+  let : PreservesLimit S U := CommRingForget.preservesCofilteredLimit S
   have hN : IsLimit (U.mapCone m) := isLimitOfPreserves U hm
   let Q := SheafedSpace.limitConeOfSpaceCone (Type v) N c hc
   let e : U.obj m.pt ≅ Q.cone.pt := hN.conePointUniqueUpToIso Q.isLimit
@@ -184,12 +183,12 @@ theorem isIso_nativeCommRingGlobalSectionsComparison (hm : IsLimit m)
   have hH : IsIso H := by
     rw [hcomparison]
     exact isIso_nativeGlobalSectionsComparison N c hc hstageN htransitionN
-  haveI : IsIso (colimit.post A F) := inferInstance
-  haveI : IsIso (F.map (nativeCommRingGlobalSectionsComparison S m)) := by
+  have : IsIso (colimit.post A F) := inferInstance
+  have : IsIso (F.map (nativeCommRingGlobalSectionsComparison S m)) := by
     let g := (SheafedSpace.Γ (C := Type v)).map e.inv.op
-    haveI : IsIso g := inferInstance
+    have : IsIso g := inferInstance
     have h₁ : IsIso ((F.map (nativeCommRingGlobalSectionsComparison S m) ≫ t.hom) ≫ g) := by
-      haveI : IsIso ((q.inv ≫ colimit.post A F) ≫
+      have : IsIso ((q.inv ≫ colimit.post A F) ≫
           ((F.map (nativeCommRingGlobalSectionsComparison S m) ≫ t.hom) ≫ g)) := by
         simpa only [H, g, Category.assoc] using hH
       exact IsIso.of_isIso_comp_left (q.inv ≫ colimit.post A F) _
@@ -210,7 +209,7 @@ theorem exists_nativeCommRingGlobalSections_stage (hm : IsLimit m)
   let A := S.rightOp ⋙ SheafedSpace.Γ
   let F := CategoryTheory.forget CommRingCat.{v}
   let g := nativeCommRingGlobalSectionsComparison S m
-  letI : IsIso g := isIso_nativeCommRingGlobalSectionsComparison S m hm hstage htransition
+  let : IsIso g := isIso_nativeCommRingGlobalSectionsComparison S m hm hstage htransition
   have hcolimit : IsColimit (F.mapCocone (colimit.cocone A)) :=
     Classical.choice ((inferInstance : PreservesColimit A F).preserves (colimit.isColimit A))
   obtain ⟨i, a, ha⟩ := Types.jointly_surjective_of_isColimit hcolimit (inv g r)

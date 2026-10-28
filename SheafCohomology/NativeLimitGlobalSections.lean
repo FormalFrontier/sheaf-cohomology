@@ -12,7 +12,6 @@ public import Mathlib.Topology.QuasiSeparated
 public section
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency.types false
 
@@ -83,7 +82,7 @@ theorem nativeGlobalSectionsComparison_eq_colimMap_post :
       colimMap (SheafCohomology.ConePullbackSections.coneSections N c) ≫
         colimit.post (conePullback (Type v) N c)
           (SheafCohomology.CompactOpenSections.sectionsOf (⊤ : Opens c.pt)) := by
-  letI : HasColimitsOfShape J (c.pt.Sheaf (Type v)) :=
+  let : HasColimitsOfShape J (c.pt.Sheaf (Type v)) :=
     CategoryTheory.Sheaf.instHasColimitsOfShape
   let S : J ⥤ Type v := N.rightOp ⋙ SheafedSpace.Γ
   let R : J ⥤ c.pt.Sheaf (Type v) := conePullback (Type v) N c
@@ -148,7 +147,7 @@ private theorem compactSpace_conePoint
     CompactSpace c.pt := by
   let e := TopCat.homeoOfIso (hc.conePointUniqueUpToIso
     (TopCat.limitConeIsLimit (N ⋙ SheafedSpace.forget (Type v))))
-  letI := SpectralStoneDuality.compactSpace_limit_of_spectral
+  let := SpectralStoneDuality.compactSpace_limit_of_spectral
     (N ⋙ SheafedSpace.forget (Type v)) hstage htransition
   exact e.symm.compactSpace
 
@@ -160,7 +159,7 @@ private theorem prespectralSpace_conePoint
     PrespectralSpace c.pt := by
   let e := TopCat.homeoOfIso (hc.conePointUniqueUpToIso
     (TopCat.limitConeIsLimit (N ⋙ SheafedSpace.forget (Type v))))
-  letI := SpectralStoneDuality.prespectralSpace_limit_of_spectral
+  let := SpectralStoneDuality.prespectralSpace_limit_of_spectral
     (N ⋙ SheafedSpace.forget (Type v)) hstage htransition
   exact e.isOpenEmbedding.prespectralSpace
 
@@ -172,7 +171,7 @@ private theorem quasiSeparatedSpace_conePoint
     QuasiSeparatedSpace c.pt := by
   let e := TopCat.homeoOfIso (hc.conePointUniqueUpToIso
     (TopCat.limitConeIsLimit (N ⋙ SheafedSpace.forget (Type v))))
-  letI := SpectralStoneDuality.quasiSeparatedSpace_limit_of_spectral
+  let := SpectralStoneDuality.quasiSeparatedSpace_limit_of_spectral
     (N ⋙ SheafedSpace.forget (Type v)) hstage htransition
   exact e.isOpenEmbedding.quasiSeparatedSpace
 
@@ -183,11 +182,11 @@ theorem isIso_nativeGlobalSectionsComparison
     (htransition : ∀ {k l : Jᵒᵖ} (f : k ⟶ l),
       IsSpectralMap ((N ⋙ SheafedSpace.forget (Type v)).map f)) :
     IsIso (nativeGlobalSectionsComparison N c hc) := by
-  letI : HasColimitsOfShape J (c.pt.Sheaf (Type v)) :=
+  let : HasColimitsOfShape J (c.pt.Sheaf (Type v)) :=
     CategoryTheory.Sheaf.instHasColimitsOfShape
-  letI : CompactSpace c.pt := compactSpace_conePoint N c hc hstage htransition
-  letI : PrespectralSpace c.pt := prespectralSpace_conePoint N c hc hstage htransition
-  letI : QuasiSeparatedSpace c.pt := quasiSeparatedSpace_conePoint N c hc hstage htransition
+  let : CompactSpace c.pt := compactSpace_conePoint N c hc hstage htransition
+  let : PrespectralSpace c.pt := prespectralSpace_conePoint N c hc hstage htransition
+  let : QuasiSeparatedSpace c.pt := quasiSeparatedSpace_conePoint N c hc hstage htransition
   rw [nativeGlobalSectionsComparison_eq_colimMap_post]
   exact IsIso.comp_isIso' (isIso_colimMap_coneSections N c hc hstage htransition)
     (SheafCohomology.CompactOpenSections.canonicalSectionsComparison_isIso

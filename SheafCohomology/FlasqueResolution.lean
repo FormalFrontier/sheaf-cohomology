@@ -657,14 +657,16 @@ arbitrary-sheaf envelope segment applied to the `n`th quotient iterate. -/
   refine ShortComplex.isoMk (Iso.refl _) (Iso.refl _) (Iso.refl _) ?_ ?_
   · change
       𝟙 _ ≫ _ = _ ≫ 𝟙 _
-    simp
+    simp only [coequalizer_as_cokernel, HomologicalComplex.shortComplexFunctor'_obj_f,
+      Functor.mapHomologicalComplex_obj_d, HomologicalComplex.asFunctor_obj_d]
     change _ = (terminalSectionsFunctor (X := X)).map
       ((flasqueResolution F).d n (n + 1))
     rw [flasqueResolution_d_succ]
     rfl
   · change
       𝟙 _ ≫ _ = _ ≫ 𝟙 _
-    simp
+    simp only [coequalizer_as_cokernel, HomologicalComplex.shortComplexFunctor'_obj_g,
+      Functor.mapHomologicalComplex_obj_d, HomologicalComplex.asFunctor_obj_d]
     change _ = (terminalSectionsFunctor (X := X)).map
       ((flasqueResolution F).d (n + 1) (n + 2))
     rw [flasqueResolution_d_succ]

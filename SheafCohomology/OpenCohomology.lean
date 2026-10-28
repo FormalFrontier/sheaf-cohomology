@@ -211,7 +211,6 @@ noncomputable instance overForgetOpLan_preservesFiniteLimits :
       comp_preservesLimitsOfShape W colim
     exact preservesLimitsOfShape_of_natIso
       (lanEvaluationIsoColim AddCommGrpCat.{u} (Over.forget U).op V).symm
-
   · let _ := overLanIndexIsEmpty U V hVU
     let W := (Functor.whiskeringLeft _ _ AddCommGrpCat.{u}).obj
       (CostructuredArrow.proj (Over.forget U).op V)
@@ -297,6 +296,25 @@ instance restrictToOver_preservesEpimorphisms :
     (restrictToOver U).PreservesEpimorphisms where
   preserves a _ := restrictToOver_epi U a
 
+omit
+  [HasSheafify (Opens.grothendieckTopology X) AddCommGrpCat.{u}]
+  [HasSheafify ((Opens.grothendieckTopology X).over U) AddCommGrpCat.{u}] in
+/-- Restriction to an open over-site is additive, since it is induced by
+precomposition. -/
+instance restrictToOver_additive : (restrictToOver U).Additive := by
+  dsimp only [restrictToOver, GrothendieckTopology.overPullback,
+    Functor.sheafPushforwardContinuous]
+  infer_instance
+
+omit
+  [HasSheafify (Opens.grothendieckTopology X) AddCommGrpCat.{u}]
+  [HasSheafify ((Opens.grothendieckTopology X).over U) AddCommGrpCat.{u}] in
+/-- The chosen left adjoint of restriction to an open over-site is additive
+whenever it exists. -/
+instance restrictToOver_leftAdjoint_additive [(restrictToOver U).IsRightAdjoint] :
+    (restrictToOver U).leftAdjoint.Additive :=
+  (Adjunction.ofIsRightAdjoint (restrictToOver U)).left_adjoint_additive
+
 /-- Restriction to an open over-site preserves finite colimits. -/
 noncomputable instance restrictToOver_preservesFiniteColimits :
     PreservesFiniteColimits (restrictToOver U) := by
@@ -329,6 +347,17 @@ restriction to the over-site at `U`. -/
     (restrictToOver U).additive_of_preserves_binary_products
   exact Adjunction.extEquiv (Adjunction.ofIsRightAdjoint (restrictToOver U))
 
+/-- Applying `overExtEquiv` is the Ext equivalence of the extension-restriction
+adjunction. -/
+lemma overExtEquiv_apply
+    (F : CategoryTheory.Sheaf
+      ((Opens.grothendieckTopology X).over U) AddCommGrpCat.{u})
+    (G : CategoryTheory.Sheaf
+      (Opens.grothendieckTopology X) AddCommGrpCat.{u}) (n : ℕ)
+    (x : Abelian.Ext ((restrictToOver U).leftAdjoint.obj F) G n) :
+    overExtEquiv U F G n x =
+      (Adjunction.ofIsRightAdjoint (restrictToOver U)).extEquiv x := rfl
+
 /-- Ext transport along `cohomologySourceIsoOverConstantSource`. -/
 @[expose] noncomputable def cohomologySourceExtIso
     (G : CategoryTheory.Sheaf
@@ -350,6 +379,18 @@ cohomology of the restricted sheaf on the over-site at `U`. -/
       ((constantSheaf ((Opens.grothendieckTopology X).over U)
         AddCommGrpCat.{u}).obj ↧(ULift ℤ)) G n)
 
+/-- Applying `HPrimeEquivHOver` transports the cohomology source and then
+applies the Ext adjunction for restriction to the over-site. -/
+lemma HPrimeEquivHOver_apply
+    (G : CategoryTheory.Sheaf
+      (Opens.grothendieckTopology X) AddCommGrpCat.{u}) (n : ℕ)
+    (x : CategoryTheory.Sheaf.H' G n U) :
+    HPrimeEquivHOver U G n x =
+      overExtEquiv U
+        ((constantSheaf ((Opens.grothendieckTopology X).over U)
+          AddCommGrpCat.{u}).obj ↧(ULift ℤ)) G n
+        (cohomologySourceExtIso U G n x) := rfl
+
 set_option backward.isDefEq.respectTransparency false in
 /-- Naturality of `HPrimeEquivHOver` in the coefficient sheaf. -/
 theorem HPrimeEquivHOver_naturality
@@ -365,8 +406,8 @@ theorem HPrimeEquivHOver_naturality
     (restrictToOver U).leftAdjoint.additive_of_preserves_binary_products
   let : (restrictToOver U).Additive :=
     (restrictToOver U).additive_of_preserves_binary_products
-  simp [HPrimeEquivHOver, cohomologySourceExtIso, overExtEquiv,
-    CategoryTheory.Sheaf.H.map_apply]
+  rw [CategoryTheory.Sheaf.H.map_apply]
+  simp only [HPrimeEquivHOver_apply, overExtEquiv_apply]
   rw [← (Adjunction.ofIsRightAdjoint
     (restrictToOver U)).extEquiv_naturality_right₀]
   congr 1
@@ -446,6 +487,14 @@ noncomputable instance inclusionRestrict_preservesEpimorphisms :
     (inclusionRestrict i).PreservesEpimorphisms where
   preserves a _ := inclusionRestrict_epi i a
 
+omit overUSheafify overVSheafify in
+/-- Restriction along an inclusion of open over-sites is additive, since it
+is induced by precomposition. -/
+instance inclusionRestrict_additive : (inclusionRestrict i).Additive := by
+  dsimp only [inclusionRestrict, GrothendieckTopology.overMapPullback,
+    Functor.sheafPushforwardContinuous]
+  infer_instance
+
 /-- Restriction along an inclusion of open over-sites preserves finite
 colimits. -/
 noncomputable instance inclusionRestrict_preservesFiniteColimits :
@@ -510,6 +559,19 @@ isomorphisms. -/
               (add_zero n)
       map_zero' := by simp
       map_add' := by simp }
+
+omit globalSheafify globalExt in
+/-- Applying `HOverMap` restricts the Ext class and transports its constant
+source and coefficient sheaf through the canonical comparison isomorphisms. -/
+lemma HOverMap_apply
+    (G : CategoryTheory.Sheaf (Opens.grothendieckTopology X)
+      AddCommGrpCat.{u}) (n : ℕ)
+    (x : CategoryTheory.Sheaf.H (G.over U) n) :
+    HOverMap i G n x =
+      ((Abelian.Ext.mk₀ (constantRestrictIso i ↧(ULift ℤ)).hom).comp
+        (x.mapExactFunctor (inclusionRestrict i)) (zero_add n)).comp
+          (Abelian.Ext.mk₀ ((restrictToOverCompIso i).app G).hom)
+          (add_zero n) := rfl
 
 set_option backward.isDefEq.respectTransparency false in
 omit globalSheafify overUSheafify overVSheafify
@@ -577,11 +639,12 @@ theorem restrictToOverCompIso_id
       ((Opens.grothendieckTopology X).overMapPullbackId
         AddCommGrpCat.{u} U).hom.app (G.over U) := by
   ext W x
-  simp [restrictToOverCompIso,
-    GrothendieckTopology.overMapPullbackId,
-    Functor.sheafPushforwardContinuousId']
-  rw [← G.obj.map_id]
-  congr
+  simp only [Functor.comp_obj, Iso.app_hom,
+    GrothendieckTopology.overMapPullbackId_hom_app_hom_app,
+    Functor.sheafPushforwardContinuous_obj_obj_map, Over.forget_obj, Over.map_obj_left,
+    Quiver.Hom.unop_op, Over.forget_map, Over.mapId_inv_app_left, op_id, Functor.map_id]
+  exact ConcreteCategory.congr_hom
+    (CategoryTheory.Sheaf.pushforwardOverMapIso_hom_hom_app G (𝟙 U) W) x
 
 set_option backward.isDefEq.respectTransparency false in
 omit globalSheafify globalExt in
@@ -594,14 +657,7 @@ theorem HOverMap_id
   let : (inclusionRestrict (X := X) (𝟙 U)).Additive :=
     (inclusionRestrict (X := X) (𝟙 U)).additive_of_preserves_binary_products
   ext x
-  change
-    ((Abelian.Ext.mk₀
-      (constantRestrictIso (X := X) (𝟙 U) ↧(ULift ℤ)).hom).comp
-        (x.mapExactFunctor (inclusionRestrict (X := X) (𝟙 U)))
-        (zero_add n)).comp
-      (Abelian.Ext.mk₀
-        ((restrictToOverCompIso (X := X) (𝟙 U)).app G).hom)
-      (add_zero n) = x
+  rw [HOverMap_apply]
   rw [constantRestrictIso_id, restrictToOverCompIso_id]
   rw [Abelian.Ext.comp_assoc_of_third_deg_zero]
   rw [Abelian.Ext.mapExactFunctor_comp_mk₀_natTransApp]
@@ -640,8 +696,12 @@ theorem restrictToOverCompIso_comp
           ((restrictToOverCompIso (X := X) i).app G).hom ≫
         ((restrictToOverCompIso (X := X) j).app G).hom := by
   ext Z x
-  simp [restrictToOverCompIso,
-    GrothendieckTopology.overMapPullbackComp]
+  simp only [Functor.comp_obj, Iso.app_hom, ObjectProperty.FullSubcategory.comp_hom,
+    NatTrans.comp_app, GrothendieckTopology.overMapPullbackComp_inv_app_hom_app,
+    Functor.sheafPushforwardContinuous_obj_obj_map, Over.forget_obj, Over.map_obj_left,
+    Quiver.Hom.unop_op, Over.forget_map, Over.mapComp_inv_app_left, op_id, Functor.map_id,
+    Functor.sheafPushforwardContinuous_map_hom_app, AddCommGrpCat.hom_comp,
+    AddMonoidHom.coe_comp, Function.comp_apply]
   change x = x
   rfl
 
@@ -673,10 +733,15 @@ theorem constantRestrictIso_comp (M : AddCommGrpCat.{u}) :
   rw [toSheafify_constantRestrictIso (i := j)]
   apply NatTrans.ext
   funext Z
-  simp [GrothendieckTopology.overMapPullbackComp]
+  simp only [Functor.const_obj_obj, Functor.comp_obj, Functor.op_obj,
+    Functor.whiskeringLeft_obj_obj, NatTrans.comp_app,
+    Functor.constCompWhiskeringLeftIso_inv_app_app, Functor.whiskerLeft_app,
+    Category.id_comp, Category.assoc, Functor.sheafPushforwardContinuous_map_hom_app,
+    GrothendieckTopology.overMapPullbackComp_hom_app_hom_app]
   have hinner := NatTrans.congr_app (toSheafify_constantRestrictIso
     (X := X) (i := i) M) (.op ((Over.map j).obj Z.unop))
-  simp at hinner
+  simp only [NatTrans.comp_app, Functor.constCompWhiskeringLeftIso_inv_app_app,
+    Functor.whiskerLeft_app] at hinner
   rw [← Category.assoc, hinner]
   exact (toSheafify ((Opens.grothendieckTopology X).over U)
     ((Functor.const (Over U)ᵒᵖ).obj M)).naturality
@@ -697,11 +762,8 @@ theorem HOverMap_comp
   let : (inclusionRestrict (X := X) (j ≫ i)).Additive :=
     (inclusionRestrict (X := X) (j ≫ i)).additive_of_preserves_binary_products
   ext x
-  dsimp [HOverMap]
-  rw [constantRestrictIso_comp]
-  have hamb := restrictToOverCompIso_comp (X := X) (i := i) (j := j) G
-  change (restrictToOverCompIso (X := X) (j ≫ i)).hom.app G = _ at hamb
-  rw [hamb]
+  simp only [AddMonoidHom.comp_apply, HOverMap_apply]
+  rw [constantRestrictIso_comp, restrictToOverCompIso_comp]
   rw [Abelian.Ext.mapExactFunctor_comp]
   rw [Abelian.Ext.mapExactFunctor_comp]
   simp only [Abelian.Ext.mapExactFunctor_mk₀]
@@ -1178,14 +1240,33 @@ theorem HPrimeEquivHOver_map
     (restrictToOver V).leftAdjoint.additive_of_preserves_binary_products
   let : (restrictToOver V).Additive :=
     (restrictToOver V).additive_of_preserves_binary_products
-  simp [HOverMap, HPrimeEquivHOver,
-    cohomologySourceExtIso, overExtEquiv]
-  simp only [Adjunction.extEquiv_apply]
+  let e : Abelian.Ext (cohomologySource U) G n := x
+  let eU : Abelian.Ext (overConstantSource U) G n :=
+    (Abelian.Ext.mk₀ (cohomologySourceIsoOverConstantSource U).inv).comp e (zero_add n)
+  let eV : Abelian.Ext (overConstantSource V) G n :=
+    (Abelian.Ext.mk₀ (cohomologySourceIsoOverConstantSource V).inv).comp
+      ((Abelian.Ext.mk₀ (globalCohomologySourceFunctor.map i)).comp e (zero_add n))
+      (zero_add n)
+  change
+    ((Abelian.Ext.mk₀ (constantRestrictIso i ↧(ULift ℤ)).hom).comp
+      (((Abelian.Ext.mk₀
+        ((Adjunction.ofIsRightAdjoint (restrictToOver U)).unit.app
+          ((constantSheaf ((Opens.grothendieckTopology X).over U)
+            AddCommGrpCat.{u}).obj ↧(ULift ℤ)))).comp
+        (eU.mapExactFunctor (restrictToOver U)) (zero_add n)).mapExactFunctor
+          (inclusionRestrict i)) (zero_add n)).comp
+        (Abelian.Ext.mk₀ ((restrictToOverCompIso i).app G).hom) (add_zero n) =
+      (Abelian.Ext.mk₀
+        ((Adjunction.ofIsRightAdjoint (restrictToOver V)).unit.app
+          ((constantSheaf ((Opens.grothendieckTopology X).over V)
+            AddCommGrpCat.{u}).obj ↧(ULift ℤ)))).comp
+        (eV.mapExactFunctor (restrictToOver V)) (zero_add n)
   rw [Abelian.Ext.mapExactFunctor_comp]
   rw [Abelian.Ext.mapExactFunctor_mk₀]
   rw [← Abelian.Ext.comp_mapExactFunctor]
-  rw [Abelian.Ext.comp_assoc_of_third_deg_zero]
-  rw [Abelian.Ext.mapExactFunctor_comp_mk₀_natTransApp]
+  simp only [Iso.app_hom, Abelian.Ext.comp_assoc_of_third_deg_zero]
+  rw [Abelian.Ext.mapExactFunctor_comp_mk₀_natTransApp
+    eU (restrictToOverCompIso i).hom]
   simp only [Abelian.Ext.mk₀_comp_mk₀_assoc]
   have hm :
       (constantRestrictIso i ↧(ULift ℤ)).hom ≫
@@ -1214,37 +1295,9 @@ theorem HPrimeEquivHOver_map
   rw [← Abelian.Ext.mapExactFunctor_mk₀]
   rw [← Abelian.Ext.mapExactFunctor_comp]
   congr 1
-  change
-    (Abelian.Ext.mk₀ (overConstantSourceMap i ↧(ULift ℤ))).comp
-      ((((Abelian.extFunctor n).mapIso
-          (cohomologySourceIsoOverConstantSource U).op).symm.app
-            G).addCommGroupIsoToAddEquiv x)
-        (zero_add n) =
-      (((Abelian.extFunctor n).mapIso
-          (cohomologySourceIsoOverConstantSource V).op).symm.app
-            G).addCommGroupIsoToAddEquiv
-        ((((Abelian.extFunctor n).map
-          (globalCohomologySourceFunctor.map i).op).app G) x)
+  dsimp only [eU, eV]
   rw [globalCohomologySourceFunctor_map (X := X) i]
-  simp
-  change
-    (Abelian.Ext.mk₀ (overConstantSourceMap i ↧(ULift ℤ))).comp
-        ((Abelian.Ext.mk₀
-          (cohomologySourceIsoOverConstantSource U).inv).comp
-            x (zero_add n)) (zero_add n) =
-      (Abelian.Ext.mk₀
-        (cohomologySourceIsoOverConstantSource V).inv).comp
-          ((Abelian.Ext.mk₀
-            (cohomologySourceIsoOverConstantSource V).hom).comp
-              ((Abelian.Ext.mk₀
-                (overConstantSourceMap i ↧(ULift ℤ))).comp
-                  ((Abelian.Ext.mk₀
-                    (cohomologySourceIsoOverConstantSource U).inv).comp
-                      x (zero_add n)) (zero_add n))
-              (zero_add n))
-          (zero_add n)
-  simp only [Abelian.Ext.mk₀_comp_mk₀_assoc,
-    Iso.inv_hom_id_assoc]
+  simp only [Abelian.Ext.mk₀_comp_mk₀_assoc, Iso.inv_hom_id_assoc]
 
 end OpenComparison
 

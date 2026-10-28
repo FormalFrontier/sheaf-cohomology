@@ -392,8 +392,9 @@ private theorem pullbackSquare_conjugate {X Y : TopCat.{v}}
           (TopCat.Sheaf.pullbackPushforwardAdjunction (Type v)
             (firstMap ≫ secondMap))
           (pushforwardCompIso firstMap secondMap) := rfl
-  simp [pullbackSquare, pullbackSquareIso, pushforwardSquare,
-    pushforwardSquareIso, hPullbackComp]
+  simp only [pullbackSquare, pullbackSquareIso, pushforwardSquare,
+    pushforwardSquareIso, hPullbackComp, Iso.symm_hom, Iso.symm_inv,
+    Iso.trans_hom, Iso.trans_inv, eqToIso.hom, eqToIso.inv, Category.assoc]
   rw [← Category.assoc]
   rw [← conjugateEquiv_comp
     ((TopCat.Sheaf.pullbackPushforwardAdjunction (Type v) f).comp
@@ -412,7 +413,7 @@ private theorem pullbackSquare_conjugate {X Y : TopCat.{v}}
     ((TopCat.Sheaf.pullbackPushforwardAdjunction (Type v) V.inclusion').comp
       (TopCat.Sheaf.pullbackPushforwardAdjunction (Type v)
         (preimageMap f V)))]
-  simp
+  simp only [conjugateEquiv_leftAdjointCompIso_inv, conjugateEquiv_comp, Iso.cancel_iso_hom_left]
   rw [← conjugateEquiv_comp
     (TopCat.Sheaf.pullbackPushforwardAdjunction (Type v)
       (((Opens.map f).obj V).inclusion' ≫ f))
@@ -421,7 +422,7 @@ private theorem pullbackSquare_conjugate {X Y : TopCat.{v}}
     ((TopCat.Sheaf.pullbackPushforwardAdjunction (Type v) V.inclusion').comp
       (TopCat.Sheaf.pullbackPushforwardAdjunction (Type v)
         (preimageMap f V)))]
-  simp [CategoryTheory.Adjunction.leftAdjointCompIso]
+  rw [leftAdjointCompIso_hom, leftAdjointCompNatTrans, Equiv.apply_symm_apply]
   rw [conjugateEquiv_pullback_eqToHom
     (preimageMap_comp_inclusion f V).symm]
 
@@ -490,7 +491,5 @@ theorem baseChangeIso_hom_app_comp_counit
     (baseChangeSquare f V) F
   rw [baseChangeSquare_inv_mate] at h
   exact h
-
-#print axioms baseChangeIso_eq_privateConstruction
 
 end TopCat.Sheaf.OpenBaseChange

@@ -7,7 +7,6 @@ module
 import SheafCohomology.NativeStageSectionColimit
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 
 open CategoryTheory CategoryTheory.Limits Opposite TopologicalSpace
 
@@ -47,7 +46,7 @@ theorem conePullback_coprojection_inverse (i : J)
   let P : J ⥤ Type v := AlgebraicGeometry.SheafedSpace.conePullback (Type v) N c ⋙
     SheafCohomology.CompactOpenSections.sectionsOf (⊤ : Opens c.pt)
   let η : S ⟶ P := SheafCohomology.ConePullbackSections.coneSections N c
-  letI : IsIso (colimMap η) :=
+  let : IsIso (colimMap η) :=
     AlgebraicGeometry.SheafedSpace.isIso_colimMap_coneSections
       N c hc hstage htransition
   refine ⟨inv (colimMap η) (colimit.ι P i s), ?_⟩

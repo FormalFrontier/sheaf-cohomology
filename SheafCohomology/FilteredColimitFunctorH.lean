@@ -291,7 +291,8 @@ open sections. -/
 
 /-- The additive equivalence computing positive-degree Ext from an acyclic
 resolution, packaged as an isomorphism with the exact bundled source object. -/
-@[expose] noncomputable def _root_.CategoryTheory.Abelian.Ext.AcyclicResolution.extPositiveIsoHomologyIso
+@[expose]
+noncomputable def _root_.CategoryTheory.Abelian.Ext.AcyclicResolution.extPositiveIsoHomologyIso
     (R : Abelian.Ext.AcyclicResolution
       ((constantSheaf (Opens.grothendieckTopology X) AddCommGrpCat.{0}).obj
         ↧(ULift ℤ)) A)
@@ -305,7 +306,8 @@ resolution, packaged as an isomorphism with the exact bundled source object. -/
 
 /-- Positive-degree cohomology computed by an acyclic resolution is the
 homology of that resolution after taking terminal-open sections. -/
-@[expose] noncomputable def _root_.CategoryTheory.Abelian.Ext.AcyclicResolution.positiveIsoSectionsHomology
+@[expose]
+noncomputable def _root_.CategoryTheory.Abelian.Ext.AcyclicResolution.positiveIsoSectionsHomology
     (R : Abelian.Ext.AcyclicResolution
       ((constantSheaf (Opens.grothendieckTopology X) AddCommGrpCat.{0}).obj
         ↧(ULift ℤ)) A)
@@ -483,8 +485,13 @@ theorem filteredFlasqueResolutionDiagramAugmentation_evaluation (i : I) :
   cases n with
   | zero =>
       change (toFlasqueEnvelope (X := X)).app (F.obj i) = _
-      simp [filteredFlasqueResolutionComplexDiagramEvalIso,
-        toFlasqueResolution_f_zero]
+      simp only [Functor.id_obj, Functor.comp_obj, evaluation_obj_obj,
+        HomologicalComplex.comp_f, Functor.mapHomologicalComplex_obj_X,
+        CochainComplex.single₀_obj_zero, Functor.whiskeringLeft_obj_obj,
+        HomologicalComplex.singleMapHomologicalComplex_hom_app_self,
+        CochainComplex.single₀ObjXSelf, Iso.refl_hom, evaluation_obj_map, NatTrans.id_app,
+        Iso.refl_inv, Category.comp_id, toFlasqueResolution_f_zero,
+        filteredFlasqueResolutionComplexDiagramEvalIso_inv_f, Category.id_comp]
       change _ = _ ≫ 𝟙 _
       simp
   | succ n => rfl

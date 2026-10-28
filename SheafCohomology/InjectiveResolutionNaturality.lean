@@ -227,7 +227,6 @@ lemma injectiveCyclesDimensionShiftIterate_symm_source_naturality
     AddEquiv.apply_symm_apply]
 
 set_option backward.isDefEq.respectTransparency false in
-set_option maxHeartbeats 800000 in
 /-- The connecting isomorphism from a degree-zero cokernel to degree-one Ext
 is contravariantly natural in the source object. -/
 lemma covariantCokernelIso_source_naturality_apply {S : ShortComplex C}
@@ -366,14 +365,11 @@ the native acyclic-resolution comparison. -/
 lemma injectiveCyclesCokernelIso_inv_source_naturality_apply_native
     (n : ℕ) (x : Ext X (I.cocomplex.cycles n) 1)
     [Subsingleton (Ext X
-      ((AcyclicResolution.ofInjectiveResolution X I
-        ).cyclesShortComplex n).X₂ 1)]
+      ((AcyclicResolution.ofInjectiveResolution X I).cyclesShortComplex n).X₂ 1)]
     [Subsingleton (Ext X'
-      ((AcyclicResolution.ofInjectiveResolution X I
-        ).cyclesShortComplex n).X₂ 1)]
+      ((AcyclicResolution.ofInjectiveResolution X I).cyclesShortComplex n).X₂ 1)]
     [Subsingleton (Ext X'
-      ((AcyclicResolution.ofInjectiveResolution X' I
-        ).cyclesShortComplex n).X₂ 1)] :
+      ((AcyclicResolution.ofInjectiveResolution X' I).cyclesShortComplex n).X₂ 1)] :
     ((AcyclicResolution.ofInjectiveResolution X' I
       ).cyclesCokernelIso n).addCommGroupIsoToAddEquiv.symm
         ((Ext.mk₀ g).comp x (zero_add 1)) =
@@ -674,8 +670,7 @@ lemma injectiveExtZeroHomologyIsoHomology_hom_source_naturality (n : ℕ) :
 
 lemma injectiveExtZeroHomologyIsoHomology_hom_source_naturality_apply
     (n : ℕ)
-    (z : ↑((AcyclicResolution.ofInjectiveResolution X I
-      ).extZeroComplex.homology n)) :
+    (z : ↑((AcyclicResolution.ofInjectiveResolution X I).extZeroComplex.homology n)) :
     ((AcyclicResolution.ofInjectiveResolution X' I
       ).extZeroHomologyIsoHomology n).addCommGroupIsoToAddEquiv
         (HomologicalComplex.homologyMap
@@ -717,8 +712,7 @@ lemma injectiveExtIsoCyclesZero_source_naturality
 
 lemma injectiveExtZeroHomology_eqToIso_source_naturality_apply
     {m n : ℕ} (h : m = n)
-    (z : ↑((AcyclicResolution.ofInjectiveResolution X I
-      ).extZeroComplex.homology m)) :
+    (z : ↑((AcyclicResolution.ofInjectiveResolution X I).extZeroComplex.homology m)) :
     (eqToIso (congrArg (fun i =>
       (AcyclicResolution.ofInjectiveResolution X' I
         ).extZeroComplex.homology i) h)).addCommGroupIsoToAddEquiv
@@ -769,8 +763,8 @@ lemma injectiveExtPositiveIsoHomology_source_naturality
   rw [injectiveCyclesCokernelIso_inv_source_naturality_apply_native]
   rw [injectiveExtZeroCokernelIsoHomology_hom_source_naturality_apply_native]
   rw [injectiveExtZeroHomology_eqToIso_source_naturality_apply]
-  rw [injectiveExtZeroHomologyIsoHomology_hom_source_naturality_apply]
-  · rfl
+  · rw [injectiveExtZeroHomologyIsoHomology_hom_source_naturality_apply]
+    rfl
   · omega
 
 end AcyclicResolution

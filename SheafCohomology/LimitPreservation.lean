@@ -39,7 +39,7 @@ include FA CA
 
 /-- Forgetting sheafed spaces preserves a diagram's limit when an actual limiting
 space cone admits the native limit construction over its vertex. -/
-theorem preservesLimitForgetOfSpaceCone (S : Jᵒᵖ ⥤ SheafedSpace.{u,w,w} A)
+theorem preservesLimitForgetOfSpaceCone (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} A)
     (c : Cone (S ⋙ forget A)) (hc : IsLimit c)
     [HasWeakSheafify (Opens.grothendieckTopology c.pt) A] :
     PreservesLimit S (forget A) := by
@@ -53,7 +53,7 @@ theorem preservesLimitForgetOfSpaceCone (S : Jᵒᵖ ⥤ SheafedSpace.{u,w,w} A)
 
 /-- A chosen limit of the space diagram and sheafification at its vertex give a
 named preservation witness, without registering an instance for all diagrams. -/
-theorem preservesLimitForgetOfHasLimit (S : Jᵒᵖ ⥤ SheafedSpace.{u,w,w} A)
+theorem preservesLimitForgetOfHasLimit (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} A)
     [HasLimit (S ⋙ forget A)]
     [HasWeakSheafify (Opens.grothendieckTopology
       ((limit (S ⋙ forget A)) : TopCat)) A] :

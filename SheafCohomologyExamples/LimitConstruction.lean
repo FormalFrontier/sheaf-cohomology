@@ -80,7 +80,7 @@ private theorem typeFinite_mate_colimit_ι
   SheafedSpace.limitConeOfSpaceCone_π_mate_colimit_ι (Type v) S c hc i
 
 private theorem typeFinite_hasLimit
-    (S : (Fin 3)ᵒᵖ ⥤ SheafedSpace.{v+1,v,v} (Type v)) : HasLimit S :=
+    (S : (Fin 3)ᵒᵖ ⥤ SheafedSpace.{v + 1, v, v} (Type v)) : HasLimit S :=
   SheafedSpace.hasLimitOfHasLimitForget (Type v) S
 
 private noncomputable def additiveFiniteCone
@@ -132,7 +132,7 @@ private theorem additiveFinite_mate_colimit_ι
   SheafedSpace.limitConeOfSpaceCone_π_mate_colimit_ι AddCommGrpCat.{v} S c hc i
 
 private theorem additiveFinite_hasLimit
-    (S : (Fin 3)ᵒᵖ ⥤ SheafedSpace.{v+1,v,v} AddCommGrpCat.{v}) : HasLimit S :=
+    (S : (Fin 3)ᵒᵖ ⥤ SheafedSpace.{v + 1, v, v} AddCommGrpCat.{v}) : HasLimit S :=
   SheafedSpace.hasLimitOfHasLimitForget AddCommGrpCat.{v} S
 
 private def emptyDiagram : PEmptyᵒᵖ ⥤ SheafedSpace (Type 0) where

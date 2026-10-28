@@ -27,7 +27,6 @@ universe v
 noncomputable section
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
-set_option linter.style.haveILetI false
 namespace TopCat.Sheaf.PullbackLocalSections
 variable {X Y : TopCat.{v}} (f : X ⟶ Y) (F : Y.Sheaf (Type v))
 
@@ -82,7 +81,8 @@ private theorem native_unit_eq_constructed :
 private theorem native_unit_app (V : Opens Y) (a : F.1.obj (op V)) :
     ((TopCat.Sheaf.pullbackPushforwardAdjunction (Type v) f).unit.app F).hom.app (op V) a =
       (pullbackPresheafMap f F).app (op ((Opens.map f).obj V))
-        (((TopCat.Presheaf.pullbackPushforwardAdjunction (Type v) f).unit.app F.1).app (op V) a) := by
+        (((TopCat.Presheaf.pullbackPushforwardAdjunction (Type v) f).unit.app F.1).app
+          (op V) a) := by
   calc
     _ = ((CategoryTheory.Functor.sheafPullbackConstruction.sheafAdjunctionContinuous
         (Opens.map f) (Type v) (Opens.grothendieckTopology Y)
@@ -124,9 +124,9 @@ private instance pullbackPresheafMap_stalk_isIso (x : X) :
       (pullbackPresheafMap f F)) := by
   unfold pullbackPresheafMap
   rw [Functor.map_comp]
-  letI := TopCat.Presheaf.stalkFunctor_map_unit_toSheafify_isIso x (Type v)
+  let := TopCat.Presheaf.stalkFunctor_map_unit_toSheafify_isIso x (Type v)
     ((TopCat.Presheaf.pullback (Type v) f).obj F.1)
-  letI : IsIso (((TopCat.Sheaf.pullbackIso (Type v) f).inv.app F).hom) := by
+  let : IsIso (((TopCat.Sheaf.pullbackIso (Type v) f).inv.app F).hom) := by
     change IsIso ((TopCat.Sheaf.forget (Type v) X).map
       ((TopCat.Sheaf.pullbackIso (Type v) f).inv.app F))
     infer_instance
@@ -134,9 +134,9 @@ private instance pullbackPresheafMap_stalk_isIso (x : X) :
 
 private instance nativeStalkHom_isIso (x : X) : IsIso (nativeStalkHom f F x) := by
   rw [nativeStalkHom_eq]
-  letI : IsIso ((TopCat.Presheaf.stalkPullbackIso (Type v) f F.1 x).hom) :=
+  let : IsIso ((TopCat.Presheaf.stalkPullbackIso (Type v) f F.1 x).hom) :=
     (TopCat.Presheaf.stalkPullbackIso (Type v) f F.1 x).isIso_hom
-  letI : IsIso ((TopCat.Presheaf.stalkFunctor (Type v) x).map
+  let : IsIso ((TopCat.Presheaf.stalkFunctor (Type v) x).map
       (pullbackPresheafMap f F)) := pullbackPresheafMap_stalk_isIso f F x
   infer_instance
 

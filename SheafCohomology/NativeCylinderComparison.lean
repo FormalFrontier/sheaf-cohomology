@@ -12,7 +12,6 @@ public import Mathlib.CategoryTheory.Sites.LeftExact
 public section
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,7 +51,7 @@ topological limit, by the published preservation theorem. -/
 @[expose] def restrictedSpaceIsLimit :
     IsLimit ((SheafedSpace.forget (Type v)).mapCone (restrictedCone N i0 m U0)) := by
   let R := restricted N i0 U0
-  letI : PreservesLimit R (SheafedSpace.forget (Type v)) :=
+  let : PreservesLimit R (SheafedSpace.forget (Type v)) :=
     SheafedSpace.preservesLimitForgetOfHasLimit (Type v) R
   exact isLimitOfPreserves (SheafedSpace.forget (Type v))
     (restrictedIsLimit N i0 m hm U0)
@@ -158,7 +157,7 @@ theorem originalStage_restrictedGlobalSectionsComparison (i : Set.Ici i0) :
       SheafedSpace.restrictOnNamedPreimage (m.π.app (op i.1))
         (stageOpen N i0 U0 i) (coneOpen N i0 m U0)
         (coneOpen_eq_stage N i0 m U0 i) := by
-    haveI : Mono ((N.obj (op i.1)).ofRestrict
+    have : Mono ((N.obj (op i.1)).ofRestrict
         (stageOpen N i0 U0 i).isOpenEmbedding) := inferInstance
     apply (cancel_mono ((N.obj (op i.1)).ofRestrict
       (stageOpen N i0 U0 i).isOpenEmbedding)).1

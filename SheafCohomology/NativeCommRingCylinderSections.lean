@@ -14,7 +14,6 @@ public import SheafCohomology.NativeSpectralCylinder
 public section
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
 
@@ -74,7 +73,7 @@ theorem originalStage_nativeCommRingCylinderSectionsComparison (i : Set.Ici i0) 
       SheafedSpace.restrictOnNamedPreimage (m.π.app (op i.1))
         (stageOpen S i0 U0 i) (coneOpen S i0 m U0)
         (coneOpen_eq_stage S i0 m U0 i) := by
-    haveI : Mono ((S.obj (op i.1)).ofRestrict
+    have : Mono ((S.obj (op i.1)).ofRestrict
         (stageOpen S i0 U0 i).isOpenEmbedding) := inferInstance
     apply (cancel_mono ((S.obj (op i.1)).ofRestrict
       (stageOpen S i0 U0 i).isOpenEmbedding)).1
@@ -111,9 +110,9 @@ theorem isIso_nativeCommRingCylinderSectionsComparison (hm : IsLimit m)
       IsSpectralMap ((S ⋙ SheafedSpace.forget CommRingCat.{v}).map f))
     (hU0 : IsCompact (U0 : Set (S.obj (op i0)))) :
     IsIso (nativeCommRingCylinderSectionsComparison S i0 m U0) := by
-  letI : Nonempty (Set.Ici i0) := ⟨⟨i0, le_refl i0⟩⟩
-  letI : IsDirectedOrder (Set.Ici i0) := tailDirectedOrder i0
-  letI : IsFiltered (Set.Ici i0) := inferInstance
+  let : Nonempty (Set.Ici i0) := ⟨⟨i0, le_refl i0⟩⟩
+  let : IsDirectedOrder (Set.Ici i0) := tailDirectedOrder i0
+  let : IsFiltered (Set.Ici i0) := inferInstance
   let R := restricted S i0 U0
   let mR := restrictedCone S i0 m U0
   have hmR : IsLimit mR := restrictedIsLimit S i0 m hm U0
@@ -143,9 +142,9 @@ theorem exists_nativeCommRingCylinderSections_stage (hm : IsLimit m)
         eqToHom (congrArg
           (fun W : Opens m.pt => m.pt.presheaf.obj (op W))
           (coneOpen_eq_stage S i0 m U0 i).symm)) a = r := by
-  letI : Nonempty (Set.Ici i0) := ⟨⟨i0, le_refl i0⟩⟩
-  letI : IsDirectedOrder (Set.Ici i0) := tailDirectedOrder i0
-  letI : IsFiltered (Set.Ici i0) := inferInstance
+  let : Nonempty (Set.Ici i0) := ⟨⟨i0, le_refl i0⟩⟩
+  let : IsDirectedOrder (Set.Ici i0) := tailDirectedOrder i0
+  let : IsFiltered (Set.Ici i0) := inferInstance
   let R := restricted S i0 U0
   let mR := restrictedCone S i0 m U0
   have hmR : IsLimit mR := restrictedIsLimit S i0 m hm U0

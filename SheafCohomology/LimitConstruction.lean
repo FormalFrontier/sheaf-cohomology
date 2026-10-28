@@ -122,7 +122,7 @@ theorem limitConeOfSpaceCone_π_mate_colimit_ι (S : Jᵒᵖ ⥤ SheafedSpace A)
 include FA CA
 
 /-- With a chosen space limit, obtain a named limit of the native diagram. -/
-theorem hasLimitOfHasLimitForget (S : Jᵒᵖ ⥤ SheafedSpace.{u,w,w} A)
+theorem hasLimitOfHasLimitForget (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} A)
     [HasLimit (S ⋙ forget A)]
     [HasWeakSheafify (Opens.grothendieckTopology
       ((limit (S ⋙ forget A)) : TopCat)) A] :

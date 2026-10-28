@@ -63,7 +63,8 @@ theorem sheafMate_id (X : SheafedSpace A) :
     rw [Adjunction.leftAdjointUniq_inv_app]
     simpa using
       (Adjunction.homEquiv_leftAdjointUniq_hom_app adjDirect Adjunction.id X.sheaf)
-  apply ((TopCat.Sheaf.pullbackPushforwardAdjunction A (𝟙 X : X ⟶ X).hom.base).homEquiv _ _).injective
+  apply ((TopCat.Sheaf.pullbackPushforwardAdjunction A
+    (𝟙 X : X ⟶ X).hom.base).homEquiv _ _).injective
   rw [sheafMate_adjoint]
   calc
     (⟨(𝟙 X : X ⟶ X).hom.c⟩ : X.sheaf ⟶ X.sheaf) = 𝟙 X.sheaf := hId
@@ -133,8 +134,10 @@ theorem triangleMap_id {W X : TopCat.{w}} (p : W ⟶ X) (F : X.Sheaf A) :
     triangleMap A (Category.comp_id p) (TopCat.Sheaf.pullbackIdHom A X F) =
       𝟙 ((TopCat.Sheaf.pullback A p).obj F) := by
   change triangleMap A (rfl : p ≫ 𝟙 X = p) (TopCat.Sheaf.pullbackIdHom A X F) = _
-  simp [triangleMap, TopCat.Sheaf.pullbackCompInv,
-    TopCat.Sheaf.pullbackCompIso_id_comp, TopCat.Sheaf.pullbackIdHom]
+  simp only [triangleMap, TopCat.Sheaf.pullbackCompInv,
+    TopCat.Sheaf.pullbackCompIso_id_comp, TopCat.Sheaf.pullbackIdHom,
+    Iso.trans_inv, NatTrans.comp_app, Functor.leftUnitor_inv_app,
+    Functor.isoWhiskerRight_inv, Functor.whiskerRight_app, Category.id_comp]
   refine ((TopCat.Sheaf.pullback A p).map_comp _ _).symm.trans ?_
   rw [Iso.inv_hom_id_app]
   exact (TopCat.Sheaf.pullback A p).map_id F

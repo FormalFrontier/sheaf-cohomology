@@ -58,9 +58,4 @@ theorem preimage_coherent_classes [PrespectralSpace X]
     ⟨preimageCompactSpace hf V hV⟩,
     ⟨preimageQuasiSeparatedSpace hf V⟩⟩
 
-#print axioms preimagePrespectralSpace
-#print axioms preimageCompactSpace
-#print axioms preimageQuasiSeparatedSpace
-#print axioms preimage_coherent_classes
-
 end SheafCohomology.HigherDirectImageFilteredColimit

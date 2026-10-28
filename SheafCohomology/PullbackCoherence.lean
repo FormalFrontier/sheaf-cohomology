@@ -163,7 +163,10 @@ private theorem pushforwardCompIso_id_comp (f : X ⟶ Y) :
   ext F
   apply CategoryTheory.Sheaf.hom_ext
   ext U
-  simp [pushforwardCompIso, pushforwardIdIso]
+  simp only [Functor.comp_obj, pushforward_obj_val, Presheaf.pushforward_obj_obj,
+    TopologicalSpace.Opens.map_comp_obj, Iso.trans_hom, Functor.isoWhiskerRight_hom,
+    NatTrans.comp_app, Functor.id_obj, Functor.whiskerRight_app, Functor.leftUnitor_hom_app,
+    Category.comp_id, pushforward_map, Presheaf.pushforward_map_app]
   change 𝟙 _ = 𝟙 _
   rfl
 
@@ -198,7 +201,9 @@ private theorem pushforwardCompIso_assoc
           (pushforward A h) ≪≫
         pushforwardCompIso A (f ≫ g) h := by
   ext F
-  simp [pushforwardCompIso]
+  simp only [Functor.comp_obj, Iso.trans_hom, Functor.isoWhiskerLeft_hom, NatTrans.comp_app,
+    Functor.whiskerLeft_app, Iso.symm_hom, Functor.isoWhiskerRight_hom, Functor.associator_inv_app,
+    Functor.whiskerRight_app, Category.id_comp]
   erw [Category.comp_id]
 
 /-- The two canonical comparisons from a triple iterated pullback to pullback
@@ -214,8 +219,5 @@ theorem pullbackCompIso_assoc
         pullbackCompIso A f (g ≫ h) :=
   Adjunction.leftAdjointCompIso_assoc _ _ _ _ _ _ _ _ _ _
     (pushforwardCompIso_assoc A f g h)
-
-#print axioms pullbackCompIso_eq_privateConstruction
-#print axioms pullbackIdIso_eq_privateConstruction
 
 end TopCat.Sheaf

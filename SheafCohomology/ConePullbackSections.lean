@@ -80,8 +80,9 @@ theorem restrictedAdjointSectionMap_restrict_source
     exact congrArg G.1.map (Subsingleton.elim _ _)
   unfold restrictedAdjointSectionMap adjointSectionMap
   rw [hopen, G.1.map_comp, ← hpush]
-  exact ((TopCat.Sheaf.pullbackPushforwardAdjunction (Type v) f).homEquiv F G a).hom.naturality_assoc
-    (homOfLE hU).op (G.1.map (homOfLE hV).op) |>.symm
+  exact
+    ((TopCat.Sheaf.pullbackPushforwardAdjunction (Type v) f).homEquiv F G a).hom.naturality_assoc
+      (homOfLE hU).op (G.1.map (homOfLE hV).op) |>.symm
 
 /-- An adjoint section map respects restriction on the target open. -/
 theorem restrictedAdjointSectionMap_restrict_target

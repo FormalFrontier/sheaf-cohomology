@@ -11,7 +11,6 @@ public import SheafCohomology.NativeCylinderOpenNaturality
 public section
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,7 +45,7 @@ omit [IsDirectedOrder ι] in
 /-- The later principal tail is final in the earlier one. -/
 instance betweenTailInclusion_final (i0 j : ι) (h : i0 ≤ j) :
     (betweenTailInclusion i0 j h).Final := by
-  letI : IsDirectedOrder (Set.Ici j) := tailDirectedOrder j
+  let : IsDirectedOrder (Set.Ici j) := tailDirectedOrder j
   change (show Monotone (fun k : Set.Ici j =>
       (⟨k.1, h.trans k.2⟩ : Set.Ici i0)) from fun _ _ hk => hk).functor.Final
   rw [Monotone.final_functor_iff]
@@ -123,14 +122,15 @@ theorem namedRestrictCast_fac (X : SheafedSpace.{v + 1, v, v} C)
     exact Subsingleton.elim _ _
   let target := (S.obj (op (unop b).1)).ofRestrict
     (stageOpen S i0 U (F.obj (unop b))).isOpenEmbedding
-  haveI : Mono target := inferInstance
+  have : Mono target := inferInstance
   apply (cancel_mono target).1
   simp only [eqToIso.hom, Functor.comp_map, restricted]
   rw [Category.assoc, namedRestrictCast_fac, stageMap_fac]
-  dsimp only [target]
-  have hfac := stageMap_fac S i0 U (F.op.map f)
-  simp only [F, Functor.op_obj, unop_op, betweenTailInclusion_val] at hfac
-  rw [Category.assoc, hfac, ← Category.assoc, namedRestrictCast_fac, hmap]
+  focus
+    dsimp only [target]
+    have hfac := stageMap_fac S i0 U (F.op.map f)
+    simp only [F, Functor.op_obj, unop_op, betweenTailInclusion_val] at hfac
+    rw [Category.assoc, hfac, ← Category.assoc, namedRestrictCast_fac, hmap]
   all_goals first
     | simpa only [Functor.op_obj, unop_op] using
         stageOpen_betweenTail S i0 j h U (unop a)
@@ -205,7 +205,7 @@ theorem hasColimit_cylinderSections_betweenTail
     [HasColimit (cylinderSections S i0 U)] :
     HasColimit (cylinderSections S j
       (stageOpen S i0 U (⟨j, h⟩ : Set.Ici i0))) := by
-  letI : HasColimit (betweenTailInclusion i0 j h ⋙ cylinderSections S i0 U) :=
+  let : HasColimit (betweenTailInclusion i0 j h ⋙ cylinderSections S i0 U) :=
     inferInstance
   exact hasColimit_of_iso (cylinderSectionsTailIso S i0 j h U)
 
@@ -214,7 +214,7 @@ theorem hasColimit_cylinderSections_of_betweenTail
     [HasColimit (cylinderSections S j
       (stageOpen S i0 U (⟨j, h⟩ : Set.Ici i0)))] :
     HasColimit (cylinderSections S i0 U) := by
-  letI : HasColimit (betweenTailInclusion i0 j h ⋙ cylinderSections S i0 U) :=
+  let : HasColimit (betweenTailInclusion i0 j h ⋙ cylinderSections S i0 U) :=
     hasColimit_of_iso (cylinderSectionsTailIso S i0 j h U).symm
   exact Functor.Final.hasColimit_of_comp (betweenTailInclusion i0 j h)
 
@@ -227,7 +227,7 @@ and finality of the tail inclusion. Only this pair of diagrams needs a colimit. 
     colimit (cylinderSections S j
       (stageOpen S i0 U (⟨j, h⟩ : Set.Ici i0))) ≅
       colimit (cylinderSections S i0 U) := by
-  letI := hasColimit_cylinderSections_betweenTail S i0 j h U
+  let := hasColimit_cylinderSections_betweenTail S i0 j h U
   exact HasColimit.isoOfNatIso (cylinderSectionsTailIso S i0 j h U) ≪≫
     Functor.Final.colimitIso (betweenTailInclusion i0 j h) (cylinderSections S i0 U)
 
@@ -240,7 +240,7 @@ theorem colimit_ι_cylinderSectionsTailColimitIso
       (cylinderSectionsTailColimitIso S i0 j h U).hom =
     (cylinderSectionsTailIso S i0 j h U).hom.app k ≫
       colimit.ι (cylinderSections S i0 U) ((betweenTailInclusion i0 j h).obj k) := by
-  letI := hasColimit_cylinderSections_betweenTail S i0 j h U
+  let := hasColimit_cylinderSections_betweenTail S i0 j h U
   simp only [cylinderSectionsTailColimitIso, Iso.trans_hom]
   rw [← Category.assoc,
     HasColimit.ι_isoOfNatIso_hom (cylinderSectionsTailIso S i0 j h U) k,
@@ -260,12 +260,12 @@ theorem cylinderSectionsComparison_betweenTail
         (coneOpen_betweenTail S i0 j h U m)) := by
   let V := stageOpen S i0 U (⟨j, h⟩ : Set.Ici i0)
   let F := betweenTailInclusion i0 j h
-  letI := hasColimit_cylinderSections_betweenTail S i0 j h U
+  let := hasColimit_cylinderSections_betweenTail S i0 j h U
   apply colimit.hom_ext
   intro k
   let stageSource := eqToHom (SheafedSpace.restrict_Γ_obj
     (S.obj (op k.1)) (stageOpen S j V k)).symm
-  haveI : Epi stageSource := inferInstance
+  have : Epi stageSource := inferInstance
   apply (cancel_epi stageSource).1
   calc
     stageSource ≫ colimit.ι (cylinderSections S j V) k ≫

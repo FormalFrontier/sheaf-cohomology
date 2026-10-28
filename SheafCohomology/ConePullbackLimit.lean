@@ -45,7 +45,14 @@ theorem triangleMap_baseChange {W X Y Z : TopCat.{w}}
       TopCat.Sheaf.pullbackCompHom A r p F ≫
         triangleMap A (show (r ≫ q) ≫ g = r ≫ p by rw [Category.assoc, hp]) a := by
   subst p
-  simp [triangleMap]
+  suffices
+      (TopCat.Sheaf.pullback A r).map (TopCat.Sheaf.pullbackCompInv A q g F) ≫
+          (TopCat.Sheaf.pullback A r).map ((TopCat.Sheaf.pullback A q).map a) ≫
+          TopCat.Sheaf.pullbackCompHom A r q G =
+        TopCat.Sheaf.pullbackCompHom A r (q ≫ g) F ≫
+          TopCat.Sheaf.pullbackCompInv A (r ≫ q) g F ≫
+          (TopCat.Sheaf.pullback A (r ≫ q)).map a by
+    simpa [triangleMap, Functor.map_comp, Category.assoc] using this
   conv_lhs =>
     rw [TopCat.Sheaf.pullbackCompHom_naturality]
   have hbase :

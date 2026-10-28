@@ -6,7 +6,6 @@ module
 import SheafCohomology.NativeSpectralCylinderSections
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 
 open CategoryTheory CategoryTheory.Limits Opposite TopologicalSpace AlgebraicGeometry
 open AlgebraicGeometry.SheafedSpace.NativeCylinderLimit
@@ -42,7 +41,7 @@ private theorem originalStage_detects_transported_coprojection
     (eqToHom (SheafedSpace.restrict_Γ_obj
         (N.obj (op i.1)) (stageOpen N i0 U0 i)).symm ≫
       colimit.ι ((restricted N i0 U0).rightOp ⋙ SheafedSpace.Γ) i) section₂ := by
-  letI : IsIso (restrictedGlobalSectionsComparison N i0 m hm U0) :=
+  let : IsIso (restrictedGlobalSectionsComparison N i0 m hm U0) :=
     isIso_restrictedGlobalSectionsComparison N i0 m hm U0 hstage htransition hU0
   have hinjective : Function.Injective (restrictedGlobalSectionsComparison N i0 m hm U0) :=
     ((CategoryTheory.isIso_iff_bijective _).mp inferInstance).1

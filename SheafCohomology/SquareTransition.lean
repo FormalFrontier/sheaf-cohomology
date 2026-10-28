@@ -329,38 +329,38 @@ theorem adjoint_transition (p : Xj ⟶ Xi) (q : Yj ⟶ Yi)
   simp only [Functor.map_comp, Category.assoc]
   rw [← Category.assoc]
   rw [← CategoryTheory.unit_conjugateEquiv]
-  rw [Category.assoc]
-  erw [← Functor.map_comp]
-  rw [← (conjugateEquiv
-    ((pullbackPushforwardAdjunction A fi).comp
-      (pullbackPushforwardAdjunction A p))
-    ((pullbackPushforwardAdjunction A q).comp
-      (pullbackPushforwardAdjunction A fj))
-    (pullbackSquareIso A p q fi fj h).hom).naturality]
-  rw [← Category.assoc]
-  change
-    ((((pullbackPushforwardAdjunction A fi).comp
-      (pullbackPushforwardAdjunction A p)).homEquiv _ _)
-        ((pullback A p).map
-          ((pullbackPushforwardAdjunction A fi).counit.app F) ≫ a)) ≫ _ = _
-  rw [Adjunction.comp_homEquiv]
-  change
-    ((pullbackPushforwardAdjunction A fi).homEquiv _ _
-      ((pullbackPushforwardAdjunction A p).homEquiv _ _
-        ((pullback A p).map
-          ((pullbackPushforwardAdjunction A fi).counit.app F) ≫ a))) ≫ _ = _
-  rw [(pullbackPushforwardAdjunction A p).homEquiv_naturality_left]
-  rw [(pullbackPushforwardAdjunction A fi).homEquiv_naturality_right]
-  have hcounit :
-      ((pullbackPushforwardAdjunction A fi).homEquiv _ _)
-        ((pullbackPushforwardAdjunction A fi).counit.app F) = 𝟙 _ := by
-    rw [← (pullbackPushforwardAdjunction A fi).homEquiv_symm_id F]
-    exact ((pullbackPushforwardAdjunction A fi).homEquiv _ _).apply_symm_apply (𝟙 _)
-  rw [hcounit, Category.id_comp]
-  rw [← Category.assoc]
-  rw [← Functor.map_comp]
-  rw [← Adjunction.homEquiv_unit]
-  rfl
+  · rw [Category.assoc]
+    erw [← Functor.map_comp]
+    rw [← (conjugateEquiv
+      ((pullbackPushforwardAdjunction A fi).comp
+        (pullbackPushforwardAdjunction A p))
+      ((pullbackPushforwardAdjunction A q).comp
+        (pullbackPushforwardAdjunction A fj))
+      (pullbackSquareIso A p q fi fj h).hom).naturality]
+    rw [← Category.assoc]
+    change
+      ((((pullbackPushforwardAdjunction A fi).comp
+        (pullbackPushforwardAdjunction A p)).homEquiv _ _)
+          ((pullback A p).map
+            ((pullbackPushforwardAdjunction A fi).counit.app F) ≫ a)) ≫ _ = _
+    rw [Adjunction.comp_homEquiv]
+    change
+      ((pullbackPushforwardAdjunction A fi).homEquiv _ _
+        ((pullbackPushforwardAdjunction A p).homEquiv _ _
+          ((pullback A p).map
+            ((pullbackPushforwardAdjunction A fi).counit.app F) ≫ a))) ≫ _ = _
+    rw [(pullbackPushforwardAdjunction A p).homEquiv_naturality_left]
+    rw [(pullbackPushforwardAdjunction A fi).homEquiv_naturality_right]
+    have hcounit :
+        ((pullbackPushforwardAdjunction A fi).homEquiv _ _)
+          ((pullbackPushforwardAdjunction A fi).counit.app F) = 𝟙 _ := by
+      rw [← (pullbackPushforwardAdjunction A fi).homEquiv_symm_id F]
+      exact ((pullbackPushforwardAdjunction A fi).homEquiv _ _).apply_symm_apply (𝟙 _)
+    rw [hcounit, Category.id_comp]
+    rw [← Category.assoc]
+    rw [← Functor.map_comp]
+    rw [← Adjunction.homEquiv_unit]
+    rfl
 
 /-- Naturality of the square transition in its target sheaf. -/
 theorem transition_comp (p : Xj ⟶ Xi) (q : Yj ⟶ Yi)
@@ -498,35 +498,5 @@ theorem transition_composite
   erw [Functor.comp_map]
   rw [Category.assoc]
   rfl
-
-#print axioms adjoint
-#print axioms adjoint_eq_homEquiv
-#print axioms identity
-#print axioms composite
-#print axioms pullbackEqIso
-#print axioms pullbackEqIso_hom
-#print axioms pushforwardEqIso
-#print axioms pushforwardEqIso_hom
-#print axioms pushforwardCompIso
-#print axioms pullbackSquareIso
-#print axioms pullbackComparison
-#print axioms pullbackComparison_eq_iso_app
-#print axioms pushforwardSquareMateIso
-#print axioms pushforwardSquareIso
-#print axioms pushforwardSquareIso_hom_eq
-#print axioms pullbackCompIso_inv_mate
-#print axioms pullbackCompIso_hom_mate
-#print axioms mapEqIso_mate
-#print axioms pushforwardSquareMateIso_eq
-#print axioms mate
-#print axioms transition
-#print axioms transition_adjoint
-#print axioms transition_proof_irrel
-#print axioms adjoint_transition
-#print axioms transition_comp
-#print axioms adjoint_identity
-#print axioms adjoint_composite
-#print axioms transition_identity
-#print axioms transition_composite
 
 end TopCat.Sheaf.SquareTransition

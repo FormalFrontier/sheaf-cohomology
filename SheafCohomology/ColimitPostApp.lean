@@ -58,7 +58,4 @@ theorem colimit_post_app_isIso_of_preserves
   rw [colimit_post_app_eq]
   infer_instance
 
-#print axioms colimit_post_app_eq
-#print axioms colimit_post_app_isIso_of_preserves
-
 end SheafCohomology.HigherDirectImageFilteredColimit

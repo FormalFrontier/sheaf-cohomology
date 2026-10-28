@@ -89,8 +89,4 @@ theorem presheafToSheaf_map_isIso_of_isBasis
     rw [← S.map_comp, ← S.map_comp, toSheafify_naturality]
   exact IsIso.of_isIso_fac_left heq.symm
 
-#print axioms stalkFunctor_map_surjective_of_isBasis
-#print axioms stalkFunctor_map_bijective_of_isBasis
-#print axioms presheafToSheaf_map_isIso_of_isBasis
-
 end SheafCohomology.HigherDirectImageFilteredColimit

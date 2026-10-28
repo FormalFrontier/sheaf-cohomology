@@ -42,6 +42,4 @@ theorem colimMap_whiskerLeft_comp_colimit_post
     colimit.ι_post_assoc]
   exact (α.naturality (colimit.ι F j)).symm
 
-#print axioms colimMap_whiskerLeft_comp_colimit_post
-
 end SheafCohomology.HigherDirectImageFilteredColimit

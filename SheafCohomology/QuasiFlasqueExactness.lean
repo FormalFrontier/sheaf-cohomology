@@ -29,7 +29,7 @@ noncomputable section
 open CategoryTheory CategoryTheory.Limits Opposite
 open TopologicalSpace TopCat Presheaf
 
-universe u
+universe u v
 
 namespace TopCat.Sheaf.IsQuasiFlasque
 
@@ -132,9 +132,10 @@ theorem exists_lift_sup
         (restrict_restrict (inc 1).le (sup_le hUT hVT) s₃).symm
 
 omit [QuasiSeparatedSpace X] in
-private theorem isCompact_finset_sup {ι : Type*} [DecidableEq ι] (A : Finset ι)
+private theorem isCompact_finset_sup {ι : Type*} (A : Finset ι)
     (U : ι → Opens X) (hU : ∀ i ∈ A, IsCompact (U i : Set X)) :
     IsCompact ((A.sup U : Opens X) : Set X) := by
+  classical
   induction A using Finset.induction_on with
   | empty => simp
   | @insert a A ha ih =>
@@ -142,9 +143,10 @@ private theorem isCompact_finset_sup {ι : Type*} [DecidableEq ι] (A : Finset �
       rw [Opens.coe_sup]
       exact (hU a (by simp)).union (ih fun i hi ↦ hU i (by simp [hi]))
 
-/-- A compatible family of local lifts on finitely many compact opens can be
-corrected and glued to a lift on their union. -/
-theorem exists_lift_finset {ι : Type*} [DecidableEq ι]
+/-- Given local lifts of a section on finitely many compact opens, there is a lift on their
+union. The local lifts need not be compatible, and the resulting lift need not restrict to the
+given local lifts. -/
+theorem exists_lift_on_finset {ι : Type v}
     {S : ShortComplex (Sheaf AddCommGrpCat X)} (hS : S.ShortExact)
     [IsQuasiFlasque S.X₁]
     (T : Opens X) (A : Finset ι) (U : ι → Opens X)
@@ -200,6 +202,24 @@ theorem exists_lift_finset {ι : Type*} [DecidableEq ι]
           rw [← Functor.map_comp_apply]
           exact congrArg (fun k ↦ S.X₃.obj.map k s₃) (Subsingleton.elim _ _)
 
+set_option linter.unusedDecidableInType false in
+/-- Finite-compact-open lifting for a decidable indexing type. -/
+@[deprecated exists_lift_on_finset (since := "2026-10-24")]
+theorem exists_lift_finset {ι : Type*} [DecidableEq ι]
+    {S : ShortComplex (Sheaf AddCommGrpCat X)} (hS : S.ShortExact)
+    [IsQuasiFlasque S.X₁]
+    (T : Opens X) (A : Finset ι) (U : ι → Opens X)
+    (hUT : ∀ i ∈ A, U i ≤ T)
+    (hUc : ∀ i ∈ A, IsCompact (U i : Set X))
+    (s₃ : S.X₃.obj.obj (op T))
+    (sU : (i : ι) → S.X₂.obj.obj (op (U i)))
+    (hsU : ∀ i (hi : i ∈ A),
+      S.g.hom.app (op (U i)) (sU i) = restrictOpen s₃ (U i) (hUT i hi)) :
+    ∃ s : S.X₂.obj.obj (op (A.sup U)),
+      S.g.hom.app (op (A.sup U)) s =
+        restrictOpen s₃ (A.sup U) (Finset.sup_le fun i hi ↦ hUT i hi) := by
+  exact exists_lift_on_finset hS T A U hUT hUc s₃ sU hsU
+
 /-- In a prespectral quasi-separated space, a short exact sequence whose
 kernel is quasi-flasque is surjective on every compact open. -/
 theorem epi_app_of_shortExact
@@ -239,7 +259,7 @@ theorem epi_app_of_shortExact
       simp only [Set.mem_iUnion] at hx'
       obtain ⟨i, hi, hxi⟩ := hx'
       exact Finset.le_sup (f := V) hi hxi
-  obtain ⟨s, hs⟩ := exists_lift_finset hS T A V
+  obtain ⟨s, hs⟩ := exists_lift_on_finset hS T A V
     (fun i _ ↦ hVT i) (fun i _ ↦ hVc i) s₃ sV (fun i _ ↦ hsV i)
   let e := (eqToHom hsup.symm).op
   refine ⟨S.X₂.obj.map e s, ?_⟩

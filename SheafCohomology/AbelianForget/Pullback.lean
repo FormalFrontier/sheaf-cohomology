@@ -140,7 +140,8 @@ private theorem sheafification_unit_bridge (Q : X.Presheaf AddCommGrpCat.{v})
       ρ.inv ≫ whiskerRight
         ((sheafificationAdjunction (Opens.grothendieckTopology X) AddCommGrpCat.{v}).unit.app Q)
           (CategoryTheory.forget AddCommGrpCat.{v}) := by
-  have hUnit := (sheafificationAdjunction (Opens.grothendieckTopology X) (Type v)).unit.naturality ρ.inv
+  have hUnit :=
+    (sheafificationAdjunction (Opens.grothendieckTopology X) (Type v)).unit.naturality ρ.inv
   have hCompose := sheafComposeNatTrans_fac (Opens.grothendieckTopology X)
     (CategoryTheory.forget AddCommGrpCat.{v})
     (sheafificationAdjunction (Opens.grothendieckTopology X) AddCommGrpCat.{v})
@@ -207,7 +208,7 @@ private theorem constructedAddUnit_forget (A : Y.Sheaf AddCommGrpCat.{v}) :
   have unit_eq := adj.map_restrictFullyFaithful_unit_app
     (fullyFaithfulSheafToPresheaf (Opens.grothendieckTopology Y) AddCommGrpCat.{v})
     (Functor.FullyFaithful.id _) commLeft commRight A
-  simp [adj, commLeft, commRight, Adjunction.comp_unit_app] at unit_eq
+  simp only [ObjectProperty.ι_obj] at unit_eq
   exact unit_eq
 
 private theorem constructedTypeUnit_forget (A : Y.Sheaf (Type v)) :
@@ -236,7 +237,7 @@ private theorem constructedTypeUnit_forget (A : Y.Sheaf (Type v)) :
   have unit_eq := adj.map_restrictFullyFaithful_unit_app
     (fullyFaithfulSheafToPresheaf (Opens.grothendieckTopology Y) (Type v))
     (Functor.FullyFaithful.id _) commLeft commRight A
-  simp [adj, commLeft, commRight, Adjunction.comp_unit_app] at unit_eq
+  simp only [ObjectProperty.ι_obj] at unit_eq
   exact unit_eq
 
 set_option backward.defeqAttrib.useBackward true in
@@ -270,7 +271,8 @@ private theorem construction_unit_bridge (A : Y.Sheaf AddCommGrpCat.{v}) :
   rw [Functor.lanAdjunction_unit, Functor.lanAdjunction_unit]
   rw [presheafPullbackForget_unit]
   change ((Opens.map g).op.lanUnit.app
-      (((TopCat.Sheaf.forget AddCommGrpCat.{v} Y).obj A) ⋙ CategoryTheory.forget AddCommGrpCat.{v}) ≫
+      (((TopCat.Sheaf.forget AddCommGrpCat.{v} Y).obj A) ⋙
+        CategoryTheory.forget AddCommGrpCat.{v}) ≫
         whiskerLeft (Opens.map g).op
           ((presheafPullbackForgetIso g).app
             ((TopCat.Sheaf.forget AddCommGrpCat.{v} Y).obj A)).inv) ≫
@@ -356,14 +358,16 @@ private theorem canonicalComponent_eq_construction (A : Y.Sheaf AddCommGrpCat.{v
           (Opens.grothendieckTopology X)).unit.app ((underlyingSheaf Y).obj A) ≫
         (TopCat.Sheaf.pushforward (Type v) g).map (constructionComparisonIso g A).hom ≫
           (TopCat.Sheaf.pushforward (Type v) g).map
-            ((underlyingSheaf X).map ((TopCat.Sheaf.pullbackIso AddCommGrpCat.{v} g).inv.app A)) := by
+            ((underlyingSheaf X).map
+              ((TopCat.Sheaf.pullbackIso AddCommGrpCat.{v} g).inv.app A)) := by
             rw [← Category.assoc, abstractTypeUnit_toConstruction]
     _ = (underlyingSheaf Y).map
           ((Functor.sheafPullbackConstruction.sheafAdjunctionContinuous (Opens.map g)
             AddCommGrpCat.{v} (Opens.grothendieckTopology Y)
             (Opens.grothendieckTopology X)).unit.app A) ≫
           (TopCat.Sheaf.pushforward (Type v) g).map
-            ((underlyingSheaf X).map ((TopCat.Sheaf.pullbackIso AddCommGrpCat.{v} g).inv.app A)) := by
+            ((underlyingSheaf X).map
+              ((TopCat.Sheaf.pullbackIso AddCommGrpCat.{v} g).inv.app A)) := by
             rw [← Category.assoc, ← construction_unit_bridge]
     _ = (underlyingSheaf Y).map
           ((Functor.sheafPullbackConstruction.sheafAdjunctionContinuous (Opens.map g)

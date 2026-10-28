@@ -150,7 +150,8 @@ private theorem sheafification_unit_bridge (Q : X.Presheaf CommRingCat.{v})
       ρ.inv ≫ whiskerRight
         ((sheafificationAdjunction (Opens.grothendieckTopology X) CommRingCat.{v}).unit.app Q)
           (CategoryTheory.forget CommRingCat.{v}) := by
-  have hUnit := (sheafificationAdjunction (Opens.grothendieckTopology X) (Type v)).unit.naturality ρ.inv
+  have hUnit :=
+    (sheafificationAdjunction (Opens.grothendieckTopology X) (Type v)).unit.naturality ρ.inv
   have hCompose := sheafComposeNatTrans_fac (Opens.grothendieckTopology X)
     (CategoryTheory.forget CommRingCat.{v})
     (sheafificationAdjunction (Opens.grothendieckTopology X) CommRingCat.{v})
@@ -217,7 +218,7 @@ private theorem constructedRingUnit_forget (A : Y.Sheaf CommRingCat.{v}) :
   have unit_eq := adj.map_restrictFullyFaithful_unit_app
     (fullyFaithfulSheafToPresheaf (Opens.grothendieckTopology Y) CommRingCat.{v})
     (Functor.FullyFaithful.id _) commLeft commRight A
-  simp [adj, commLeft, commRight, Adjunction.comp_unit_app] at unit_eq
+  simp only [ObjectProperty.ι_obj] at unit_eq
   exact unit_eq
 
 private theorem constructedTypeUnit_forget (A : Y.Sheaf (Type v)) :
@@ -246,7 +247,7 @@ private theorem constructedTypeUnit_forget (A : Y.Sheaf (Type v)) :
   have unit_eq := adj.map_restrictFullyFaithful_unit_app
     (fullyFaithfulSheafToPresheaf (Opens.grothendieckTopology Y) (Type v))
     (Functor.FullyFaithful.id _) commLeft commRight A
-  simp [adj, commLeft, commRight, Adjunction.comp_unit_app] at unit_eq
+  simp only [ObjectProperty.ι_obj] at unit_eq
   exact unit_eq
 
 set_option backward.defeqAttrib.useBackward true in

@@ -14,7 +14,6 @@ public section
 set_option warningAsError true
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
-set_option linter.style.haveILetI false
 
 /-!
 # Native lifting of sections to a filtered stage
@@ -45,14 +44,14 @@ omit [IsFiltered J] in
 private theorem compactSpace_conePoint : CompactSpace c.pt := by
   let e := TopCat.homeoOfIso (hc.conePointUniqueUpToIso
     (TopCat.limitConeIsLimit (N ⋙ SheafedSpace.forget (Type v))))
-  letI := SpectralStoneDuality.compactSpace_limit_of_spectral
+  let := SpectralStoneDuality.compactSpace_limit_of_spectral
     (N ⋙ SheafedSpace.forget (Type v)) hstage htransition
   exact e.symm.compactSpace
 
 private theorem prespectralSpace_conePoint : PrespectralSpace c.pt := by
   let e := TopCat.homeoOfIso (hc.conePointUniqueUpToIso
     (TopCat.limitConeIsLimit (N ⋙ SheafedSpace.forget (Type v))))
-  letI := SpectralStoneDuality.prespectralSpace_limit_of_spectral
+  let := SpectralStoneDuality.prespectralSpace_limit_of_spectral
     (N ⋙ SheafedSpace.forget (Type v)) hstage htransition
   exact e.isOpenEmbedding.prespectralSpace
 
@@ -121,7 +120,7 @@ private theorem exists_native_global_gluing_of_unit_compatible_cover
         (N.obj (op j)).presheaf.map (homOfLE (le_top : B ≤ ⊤)).op t =
           (N.map g.op).hom.c.app (op (V a)) (s a) := by
   classical
-  letI : SpectralSpace (N.obj (op i)) := hstage (op i)
+  let : SpectralSpace (N.obj (op i)) := hstage (op i)
   let W : α × α → Opens (N.obj (op i)) := fun pair => V pair.1 ⊓ V pair.2
   let left : (pair : α × α) → (N.obj (op i)).presheaf.obj (op (W pair)) :=
     fun pair => (N.obj (op i)).presheaf.map
@@ -486,8 +485,8 @@ theorem exists_native_stage_section_lift (i : J)
         (SheafedSpace.conePullback (Type v) N c ⋙
           SheafCohomology.CompactOpenSections.sectionsOf (⊤ : Opens c.pt)).map g s := by
   classical
-  letI : CompactSpace c.pt := compactSpace_conePoint N c hc hstage htransition
-  letI : PrespectralSpace c.pt := prespectralSpace_conePoint N c hc hstage htransition
+  let : CompactSpace c.pt := compactSpace_conePoint N c hc hstage htransition
+  let : PrespectralSpace c.pt := prespectralSpace_conePoint N c hc hstage htransition
   have htop : IsCompact ((⊤ : Opens c.pt) : Set c.pt) := isCompact_univ
   obtain ⟨G, W, A, a, hWU, hWA, hFull, hData⟩ :=
     TopCat.Sheaf.PullbackLocalSections.exists_finite_compact_representation

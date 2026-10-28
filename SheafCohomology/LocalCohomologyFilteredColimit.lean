@@ -54,8 +54,6 @@ theorem restrictToOver_preservesColimits :
   let _ : (restrictToOver U).IsLeftAdjoint := overPullbackAdj.isLeftAdjoint
   infer_instance
 
-#print axioms restrictToOver_preservesColimits
-
 variable [HasSheafify
   (Opens.grothendieckTopology X) AddCommGrpCat.{u}]
 variable [HasSheafify
@@ -91,8 +89,6 @@ the open carries the constant integral sheaf to the constant integral sheaf. -/
       (constantSheafAdj (Opens.grothendieckTopology (TopCat.of U))
         AddCommGrpCat.{u} hT')).app ↧(ULift ℤ)
 
-#print axioms overConstantIso
-
 /-- Cohomology on an open over-site agrees additively with cohomology after
 transport to the corresponding topological subspace. -/
 @[expose] noncomputable def HOverEquivHSubspace
@@ -124,10 +120,7 @@ transport to the corresponding topological subspace. -/
       (E.functor.obj G)).addCommGroupIsoToAddEquiv
   exact e₁.trans (e₂.trans e₃)
 
-#print axioms HOverEquivHSubspace
-
 set_option backward.isDefEq.respectTransparency false in
-set_option maxHeartbeats 800000 in
 omit [HasSheafify (Opens.grothendieckTopology X) AddCommGrpCat.{u}]
   [(Opens.grothendieckTopology X).WEqualsLocallyBijective
     AddCommGrpCat.{u}]
@@ -213,10 +206,7 @@ theorem HOverEquivHSubspace_naturality
         (H₁.map (E.unitIso.hom.app G') (H₁.map f x)))
   rw [h₃, h₂, h₁]
 
-#print axioms HOverEquivHSubspace_naturality
-
 set_option backward.isDefEq.respectTransparency false in
-set_option maxHeartbeats 800000 in
 omit [HasSheafify (Opens.grothendieckTopology X) AddCommGrpCat.{u}]
   [(Opens.grothendieckTopology X).WEqualsLocallyBijective
     AddCommGrpCat.{u}]
@@ -238,9 +228,6 @@ subspace agree as functors of the coefficient sheaf. -/
       ext x
       exact (HOverEquivHSubspace_naturality U f n x).symm)
 
-#print axioms functorHOverIsoFunctorHSubspace
-
-set_option synthInstance.maxHeartbeats 800000 in
 /-- Evaluation of the cohomology presheaf on an open agrees naturally with
 cohomology on the corresponding topological subspace.  This is the composite
 of the open-over-site comparison and the dense-subsite equivalence. -/
@@ -255,8 +242,6 @@ of the open-over-site comparison and the dense-subsite equivalence. -/
   HPrimeIsoHOver U n ≪≫
     Functor.isoWhiskerLeft (restrictToOver U)
       (functorHOverIsoFunctorHSubspace U n)
-
-#print axioms cohomologyPresheafEvaluationIsoHSubspace
 
 section SmallUniversePreservation
 
@@ -367,10 +352,6 @@ theorem cohomologyPresheafEvaluation_colimitPost_transport_stage
   dsimp only
   rw [← Category.assoc, ι_colimMap, Category.assoc, colimit.ι_post]
   rfl
-
-#print axioms cohomologyPresheafEvaluation_preservesColimit
-#print axioms cohomologyPresheafEvaluation_colimitPost_transport
-#print axioms cohomologyPresheafEvaluation_colimitPost_transport_stage
 
 end SmallUniversePreservation
 

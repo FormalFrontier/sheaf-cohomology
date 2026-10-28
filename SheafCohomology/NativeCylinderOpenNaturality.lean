@@ -12,7 +12,6 @@ public import SheafCohomology.NativeAdditiveCylinderSections
 public section
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
 
@@ -98,7 +97,7 @@ private theorem stageMap_eq_named (W : Opens (S.obj (op i0)))
     stageMap S i0 W f = SheafedSpace.restrictOnNamedPreimage
       ((tailDiagram S i0).map f) (stageOpen S i0 W (unop j))
       (stageOpen S i0 W (unop i)) (stageOpen_map S i0 W f) := by
-  haveI : Mono ((S.obj (op (unop j).1)).ofRestrict
+  have : Mono ((S.obj (op (unop j).1)).ofRestrict
       (stageOpen S i0 W (unop j)).isOpenEmbedding) := inferInstance
   apply (cancel_mono ((S.obj (op (unop j).1)).ofRestrict
     (stageOpen S i0 W (unop j)).isOpenEmbedding)).1
@@ -135,9 +134,9 @@ private theorem stageMap_sections (W : Opens (S.obj (op i0)))
   app i := stageSectionRestriction S i0 U V h i
   naturality := by
     intro i j f
-    haveI : Epi (eqToHom (SheafedSpace.restrict_Γ_obj
+    have : Epi (eqToHom (SheafedSpace.restrict_Γ_obj
         (S.obj (op i.1)) (stageOpen S i0 V i)).symm) := inferInstance
-    haveI : Mono (eqToHom (SheafedSpace.restrict_Γ_obj
+    have : Mono (eqToHom (SheafedSpace.restrict_Γ_obj
         (S.obj (op j.1)) (stageOpen S i0 U j))) := inferInstance
     apply (cancel_epi (eqToHom (SheafedSpace.restrict_Γ_obj
       (S.obj (op i.1)) (stageOpen S i0 V i)).symm)).1
@@ -229,7 +228,7 @@ private theorem coneComponent_eq_named (W : Opens (S.obj (op i0)))
     coneComponent S i0 m W i = SheafedSpace.restrictOnNamedPreimage
       (m.π.app (op i.1)) (stageOpen S i0 W i)
       (coneOpen S i0 m W) (coneOpen_eq_stage S i0 m W i) := by
-  haveI : Mono ((S.obj (op i.1)).ofRestrict
+  have : Mono ((S.obj (op i.1)).ofRestrict
       (stageOpen S i0 W i).isOpenEmbedding) := inferInstance
   apply (cancel_mono ((S.obj (op i.1)).ofRestrict
     (stageOpen S i0 W i).isOpenEmbedding)).1
@@ -313,7 +312,7 @@ theorem cylinderSectionsComparison_restrict (U V : Opens (S.obj (op i0)))
       m.pt.presheaf.map (homOfLE (coneOpen_mono S i0 m h)).op := by
   apply colimit.hom_ext
   intro i
-  haveI : Epi (eqToHom (SheafedSpace.restrict_Γ_obj
+  have : Epi (eqToHom (SheafedSpace.restrict_Γ_obj
       (S.obj (op i.1)) (stageOpen S i0 V i)).symm) := inferInstance
   apply (cancel_epi (eqToHom (SheafedSpace.restrict_Γ_obj
     (S.obj (op i.1)) (stageOpen S i0 V i)).symm)).1
@@ -392,7 +391,7 @@ theorem ringCylinderSectionsComparison_restrict
         nativeCommRingCylinderSectionsComparison R i cone U =
       nativeCommRingCylinderSectionsComparison R i cone V ≫
         cone.pt.presheaf.map (homOfLE (coneOpen_mono R i cone h)).op := by
-  letI : ∀ W : Opens (R.obj (op i)), HasColimit (cylinderSections R i W) :=
+  let : ∀ W : Opens (R.obj (op i)), HasColimit (cylinderSections R i W) :=
     fun _ => inferInstance
   rw [ringCylinderSectionsComparison_eq R i cone U,
     ringCylinderSectionsComparison_eq R i cone V]
@@ -407,7 +406,7 @@ theorem additiveCylinderSectionsComparison_restrict
         nativeAdditiveCylinderSectionsComparison A i cone U =
       nativeAdditiveCylinderSectionsComparison A i cone V ≫
         cone.pt.presheaf.map (homOfLE (coneOpen_mono A i cone h)).op := by
-  letI : ∀ W : Opens (A.obj (op i)), HasColimit (cylinderSections A i W) :=
+  let : ∀ W : Opens (A.obj (op i)), HasColimit (cylinderSections A i W) :=
     fun _ => inferInstance
   rw [additiveCylinderSectionsComparison_eq A i cone U,
     additiveCylinderSectionsComparison_eq A i cone V]

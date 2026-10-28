@@ -11,7 +11,6 @@ public import SheafCohomology.OpenBaseChange
 public section
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,7 +47,7 @@ Its defining property is the commuting square with the restriction inclusions. -
       Y.restrict V.isOpenEmbedding := by
   let inclusion := (Y.ofRestrict V.isOpenEmbedding).hom
   let composite := (X.ofRestrict ((Opens.map g.hom.base).obj V).isOpenEmbedding ≫ g).hom
-  haveI : PresheafedSpace.IsOpenImmersion inclusion := by
+  have : PresheafedSpace.IsOpenImmersion inclusion := by
     dsimp [inclusion]
     infer_instance
   exact InducedCategory.homMk (PresheafedSpace.IsOpenImmersion.lift
@@ -80,7 +79,7 @@ theorem restrictOnPreimage_unique (g : X ⟶ Y) (V : Opens Y)
 theorem restrictOnPreimage_base (g : X ⟶ Y) (V : Opens Y) :
     (restrictOnPreimage g V).hom.base =
       TopCat.Sheaf.OpenBaseChange.preimageMap g.hom.base V := by
-  haveI : Mono V.inclusion' := (TopCat.mono_iff_injective _).mpr V.isOpenEmbedding.injective
+  have : Mono V.inclusion' := (TopCat.mono_iff_injective _).mpr V.isOpenEmbedding.injective
   apply (cancel_mono V.inclusion').1
   exact (congrArg (fun arrow => arrow.hom.base) (restrictOnPreimage_fac g V)).trans
     (TopCat.Sheaf.OpenBaseChange.preimageMap_comp_inclusion g.hom.base V).symm
@@ -176,7 +175,7 @@ theorem restrictOnPreimage_Γ_map (g : X ⟶ Y) (V : Opens Y) :
     ((TopCat.Presheaf.pushforward C (restrictOnPreimage g V).hom.base).obj
       (X.restrict ((Opens.map g.hom.base).obj V).isOpenEmbedding).presheaf).map
       (eqToHom (congrArg op hV.symm))
-  haveI : Mono tail := by
+  have : Mono tail := by
     dsimp [tail]
     infer_instance
   have key :
