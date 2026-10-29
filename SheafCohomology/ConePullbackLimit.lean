@@ -226,7 +226,7 @@ theorem sheafMate_ext {X Y : SheafedSpace A} (f g : X ⟶ Y)
 
 /-- A cone of sheafed spaces is limiting when its actual cone of spaces is
 limiting and its actual inverse-image sheaf cocone is colimiting. -/
-@[expose] noncomputable def isLimit_of_isLimit_forget_of_isColimit_conePullbackCocone
+@[expose] noncomputable def isLimitOfIsLimitForgetOfIsColimitConePullbackCocone
     (S : Jᵒᵖ ⥤ SheafedSpace A) (C : Cone S)
     (hbase : IsLimit ((forget A).mapCone C))
     (hsheaf : IsColimit (conePullbackCocone A S C)) : IsLimit C := by
@@ -283,7 +283,7 @@ noncomputable def coneOfPullbackCoconeIsLimit (S : Jᵒᵖ ⥤ SheafedSpace A)
     (c : Cone (S ⋙ forget A)) (K : Cocone (conePullback A S c))
     (hc : IsLimit c) (hK : IsColimit K) :
     IsLimit (coneOfPullbackCocone A S c K) := by
-  apply isLimit_of_isLimit_forget_of_isColimit_conePullbackCocone A S
+  apply isLimitOfIsLimitForgetOfIsColimitConePullbackCocone A S
   · rw [coneOfPullbackCocone_forget]
     exact hc
   · have hrecover := conePullbackCocone_coneOfPullbackCocone A S c K
@@ -293,5 +293,13 @@ noncomputable def coneOfPullbackCoconeIsLimit (S : Jᵒᵖ ⥤ SheafedSpace A)
       exact hK
     cases coneOfPullbackCocone_forget A S c K
     exact htransport
+
+/-- A cone of sheafed spaces is limiting when its actual cone of spaces is
+limiting and its actual inverse-image sheaf cocone is colimiting. -/
+@[nolint defsWithUnderscore,
+  deprecated isLimitOfIsLimitForgetOfIsColimitConePullbackCocone (since := "2026-10-27")]
+noncomputable abbrev
+    isLimit_of_isLimit_forget_of_isColimit_conePullbackCocone.{vA, uA, vJ, uJ, uFA} :=
+  @isLimitOfIsLimitForgetOfIsColimitConePullbackCocone.{vA, uA, vJ, uJ, uFA}
 
 end AlgebraicGeometry.SheafedSpace

@@ -80,7 +80,7 @@ theorem underlying_diagramPushforward (N : Jᵒᵖ ⥤ SheafedSpace AddCommGrpCa
   exact underlying_diagramPushforwardHom (N.map a) (Y.map a)
     (f.app j) (f.app i) (SheafedSpace.diagramPushforward_square AddCommGrpCat.{v} N Y f a)
 
-@[simp] theorem underlying_diagramPushforward_obj_carrier
+theorem underlying_diagramPushforward_obj_carrier
     (N : Jᵒᵖ ⥤ SheafedSpace AddCommGrpCat.{v})
     (Y : Jᵒᵖ ⥤ TopCat.{v}) (f : N ⋙ SheafedSpace.forget AddCommGrpCat.{v} ⟶ Y)
     (i : Jᵒᵖ) :
@@ -158,7 +158,7 @@ theorem underlying_diagramPushforward_map_mate
 /-- The native forgotten cone and the Type-valued pushed cone agree after
 postcomposition by the equality transport of the strict diagram equality.
 The vertex comparison is the identity on the actual direct-image object. -/
-@[expose] def underlying_diagramPushforwardConeIso
+@[expose] def underlyingDiagramPushforwardConeIso
     (N : Jᵒᵖ ⥤ SheafedSpace AddCommGrpCat.{v})
     (Y : Jᵒᵖ ⥤ TopCat.{v}) (f : N ⋙ SheafedSpace.forget AddCommGrpCat.{v} ⟶ Y)
     (c : Cone N) (d : Cone Y) (g : (c.pt : TopCat) ⟶ d.pt)
@@ -239,6 +239,32 @@ theorem underlying_diagramPushforwardCone_projection
     (Y : Jᵒᵖ ⥤ TopCat.{v}) (f : N ⋙ SheafedSpace.forget AddCommGrpCat.{v} ⟶ Y)
     (c : Cone N) (d : Cone Y) (g : (c.pt : TopCat) ⟶ d.pt)
     (h : ∀ i, (c.π.app i).hom.base ≫ f.app i = g ≫ d.π.app i) :
-    (underlying_diagramPushforwardConeIso N Y f c d g h).hom.hom = 𝟙 _ := rfl
+    (underlyingDiagramPushforwardConeIso N Y f c d g h).hom.hom = 𝟙 _ := rfl
+
+/-- The native forgotten cone and the Type-valued pushed cone agree after
+postcomposition by the equality transport of the strict diagram equality.
+The vertex comparison is the identity on the actual direct-image object. -/
+@[nolint defsWithUnderscore,
+  deprecated underlyingDiagramPushforwardConeIso (since := "2026-10-27")]
+noncomputable abbrev underlying_diagramPushforwardConeIso.{uCoeff, vJ, uJ} :=
+  @underlyingDiagramPushforwardConeIso.{uCoeff, vJ, uJ}
+
+end AlgebraicGeometry.SheafedSpace.AbelianForget
+
+namespace AlgebraicGeometry.SheafedSpace.AbelianForget
+
+-- Simplify the underlying pushforward before its structure projections reduce.
+attribute [-simp] underlying_diagramPushforward_obj_sheaf
+  underlying_diagramPushforward_map_base
+  underlying_diagramPushforwardCone_vertex
+  underlying_diagramPushforwardCone_carrier
+  underlying_diagramPushforwardCone_sheaf
+  underlying_diagramPushforwardCone_projection_base
+attribute [simp↓] underlying_diagramPushforward_obj_sheaf
+  underlying_diagramPushforward_map_base
+  underlying_diagramPushforwardCone_vertex
+  underlying_diagramPushforwardCone_carrier
+  underlying_diagramPushforwardCone_sheaf
+  underlying_diagramPushforwardCone_projection_base
 
 end AlgebraicGeometry.SheafedSpace.AbelianForget

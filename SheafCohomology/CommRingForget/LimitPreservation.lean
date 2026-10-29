@@ -55,7 +55,7 @@ variable {J : Type v} [SmallCategory J] [IsFiltered J]
 
 /-- Forgetting coefficients and transporting the inverse-image diagram preserves
 the colimit of the actual projection-mate cocone of an ring native cone. -/
-noncomputable def isColimit_conePullbackCocone_underlying
+noncomputable def isColimitConePullbackCoconeUnderlying
     (S : Jᵒᵖ ⥤ SheafedSpace CommRingCat.{v}) (C : Cone S)
     (hK : IsColimit (SheafedSpace.conePullbackCocone CommRingCat.{v} S C)) :
     IsColimit (SheafedSpace.conePullbackCocone (Type v) (S ⋙ underlying)
@@ -86,7 +86,7 @@ theorem preservesLimit_fromSpaceCone
   let K := SheafedSpace.conePullbackColimitCocone CommRingCat.{v} S c
   let C := (SheafedSpace.limitConeOfSpaceCone CommRingCat.{v} S c hc).cone
   have hK : IsColimit K :=
-    SheafedSpace.conePullbackColimitCocone_isColimit CommRingCat.{v} S c
+    SheafedSpace.conePullbackColimitCoconeIsColimit CommRingCat.{v} S c
   have hC : IsColimit (SheafedSpace.conePullbackCocone CommRingCat.{v} S C) := by
     change IsColimit (SheafedSpace.conePullbackCocone CommRingCat.{v} S
       (SheafedSpace.coneOfPullbackCocone CommRingCat.{v} S c K))
@@ -100,9 +100,9 @@ theorem preservesLimit_fromSpaceCone
     rw [underlying_mapCone_forget S C]
     rw [SheafedSpace.limitConeOfSpaceCone_forget CommRingCat.{v} S c hc]
     exact hc
-  have hSheaf := isColimit_conePullbackCocone_underlying S C hC
+  have hSheaf := isColimitConePullbackCoconeUnderlying S C hC
   have hType : IsLimit (underlying.mapCone C) :=
-    SheafedSpace.isLimit_of_isLimit_forget_of_isColimit_conePullbackCocone
+    SheafedSpace.isLimitOfIsLimitForgetOfIsColimitConePullbackCocone
       (Type v) (S ⋙ underlying) (underlying.mapCone C) hBase hSheaf
   exact preservesLimit_of_preserves_limit_cone
     (SheafedSpace.limitConeOfSpaceCone CommRingCat.{v} S c hc).isLimit hType
@@ -120,5 +120,12 @@ theorem preservesCofilteredLimit
 theorem preservesCofilteredLimitsOfShape :
     PreservesLimitsOfShape Jᵒᵖ underlying.{v} :=
   ⟨fun {S} ↦ preservesCofilteredLimit S⟩
+
+/-- Forgetting coefficients and transporting the inverse-image diagram preserves
+the colimit of the actual projection-mate cocone of an ring native cone. -/
+@[nolint defsWithUnderscore,
+  deprecated isColimitConePullbackCoconeUnderlying (since := "2026-10-27")]
+noncomputable abbrev isColimit_conePullbackCocone_underlying :=
+  @isColimitConePullbackCoconeUnderlying
 
 end AlgebraicGeometry.SheafedSpace.CommRingForget

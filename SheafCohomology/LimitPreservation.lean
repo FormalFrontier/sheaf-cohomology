@@ -53,13 +53,26 @@ theorem preservesLimitForgetOfSpaceCone (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} 
 
 /-- A chosen limit of the space diagram and sheafification at its vertex give a
 named preservation witness, without registering an instance for all diagrams. -/
-theorem preservesLimitForgetOfHasLimit (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} A)
-    [HasLimit (S ⋙ forget A)]
-    [HasWeakSheafify (Opens.grothendieckTopology
-      ((limit (S ⋙ forget A)) : TopCat)) A] :
+theorem preservesLimitForgetOfHasLimitCompForget (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} A)
+    [HasLimit (S ⋙ forget A)] :
     PreservesLimit S (forget A) := by
   let c : Cone (S ⋙ forget A) := limit.cone (S ⋙ forget A)
   let hc : IsLimit c := limit.isLimit (S ⋙ forget A)
   exact preservesLimitForgetOfSpaceCone (FA := FA) (CA := CA) A S c hc
+
+
+/--
+Compatibility bridge for `preservesLimitForgetOfHasLimitCompForget`.
+Implemented on 2026-10-27; public availability is not yet recorded. Retain this bridge
+for at least three calendar months after actual public availability; the annotation
+date does not establish availability.
+-/
+@[deprecated preservesLimitForgetOfHasLimitCompForget (since := "2026-10-27")]
+theorem preservesLimitForgetOfHasLimit (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} A)
+    [HasLimit (S ⋙ forget A)]
+    [HasWeakSheafify (Opens.grothendieckTopology
+      ((limit (S ⋙ forget A)) : TopCat)) A] :
+    PreservesLimit S (forget A) :=
+  preservesLimitForgetOfHasLimitCompForget A S
 
 end AlgebraicGeometry.SheafedSpace

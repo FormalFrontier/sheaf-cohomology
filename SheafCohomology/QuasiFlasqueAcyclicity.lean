@@ -47,7 +47,8 @@ namespace TopCat.Sheaf
 
 variable {X : TopCat.{u}}
 
-local instance (x : X) (U : Opens X) : Decidable (x ∈ U) := Classical.dec _
+/-- Decidability of membership in an open subset of `X`. -/
+local instance decidableMemOpens (x : X) (U : Opens X) : Decidable (x ∈ U) := Classical.dec _
 
 private lemma piMap_epi {ι : Type u} {A B : ι → AddCommGrpCat.{u}}
     [HasProduct A] [HasProduct B] (f : ∀ i, A i ⟶ B i)
@@ -393,5 +394,11 @@ theorem subsingleton_H_succ [CompactSpace X] [QuasiSeparatedSpace X]
       exact Abelian.Ext.zero_comp _ _ _ _ _
 
 end IsQuasiFlasque
+
+/-- Decidability of membership in an open subset of `X`. -/
+@[nolint defsWithUnderscore,
+  deprecated decidableMemOpens (since := "2026-10-27")]
+noncomputable abbrev instDecidableMemCarrierOpens_sheafCohomology :=
+  @decidableMemOpens
 
 end TopCat.Sheaf

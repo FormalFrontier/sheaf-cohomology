@@ -57,20 +57,13 @@ certifies elaboration-ready signatures, private declarations or kernel axioms.
 The fixed [input manifest](api-manifest.json) binds 26 Lean files and three
 project pin files, native JSON/HTML records and the **original**, pre-editorial
 `docs/API.md` digest. The original complete generated file and **all 29 exact
-input bytes** occur in the [first official public-release history snapshot
-`802bfcb6a00c` (September 26, 2026)](https://github.com/FormalFrontier/sheaf-cohomology/tree/802bfcb6a00c82a07058be385a5a18d8ec69dbad).
-Its tree
-`0760e54bc22e850c51a3b98f39ad39adb478b95a` equals the historical
-pre-transfer development tree `3a7204971fbbbb0a130335eda04b9d9d2b157267`.
-The source originally analyzed by doc-gen4 was
-`a9f1a38787d33205c469ff89710563fffb4974fd`; the analyzed commit's
-native `sourceUri` identifies provenance, not a claim that its URL is publicly
-reachable.
+input bytes** occur in the [immutable documentation snapshot
+`802bfcb6a00c`](https://github.com/FormalFrontier/sheaf-cohomology/tree/802bfcb6a00c82a07058be385a5a18d8ec69dbad).
 
 The manifest's subject-file hashes and the historical API's `Frozen source`
 line references describe that exact snapshot. Current subject files can differ
-from those historical inputs; consult the snapshot for the corresponding source
-lines. The aggregate root, example root, `lakefile.toml` and `lake-manifest.json`
+from those historical inputs. Historical source links may be unavailable; consult
+the snapshot for the corresponding source lines. The aggregate root, example root, `lakefile.toml` and `lake-manifest.json`
 differ from their historical inputs; the pinned `lean-toolchain` still matches.
 The two historical roots have no native declaration display sites.
 Do not use this checkout's changed roots or dependency graph to claim
@@ -82,8 +75,8 @@ attestations for the current library.
 
 ## Optional historical reproduction
 
-Use a separate checkout of the exact official historical snapshot above (or
-its byte-identical pre-transfer development tree), not current main. Keep an
+Use a separate checkout of the immutable documentation snapshot above,
+not current main. Keep an
 unchanged separate doc-gen4 checkout at
 `97d4ecdfc8e09e7f511724c25e303d448de6a3db` with its own toolchain
 and manifest. In the historical sheaf checkout, install its pinned Lean,

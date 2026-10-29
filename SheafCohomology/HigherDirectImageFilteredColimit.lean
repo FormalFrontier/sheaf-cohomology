@@ -359,14 +359,5 @@ theorem rightDerivedPushforward_colimitPost_ι (q : ℕ) (i : I) :
 
 end RightDerived
 
-#print axioms presheafPushforwardColimitComparison_app
-#print axioms presheafPushforwardColimitComparison_app_isIso
-#print axioms explicitPushforwardColimitComparison_isIso
-#print axioms explicitPushforwardColimitComparison_eq_canonical
-#print axioms pushforward_colimitPost_isIso
-#print axioms rightDerived_colimitPost_isIso_zero
-#print axioms rightDerivedPushforward_preservesColimit
-#print axioms rightDerivedPushforward_colimitPost_isIso
-#print axioms rightDerivedPushforward_colimitPost_ι
 
 end SheafCohomology.HigherDirectImageFilteredColimit

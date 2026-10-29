@@ -113,7 +113,7 @@ theorem isIso_nativeCommRingGlobalSectionsComparison (hm : IsLimit m)
   let N := S ⋙ U
   let c := (SheafedSpace.forget (Type v)).mapCone (U.mapCone m)
   let : PreservesLimit S (SheafedSpace.forget CommRingCat.{v}) :=
-    SheafedSpace.preservesLimitForgetOfHasLimit CommRingCat.{v} S
+    SheafedSpace.preservesLimitForgetOfHasLimitCompForget CommRingCat.{v} S
   have hspace : IsLimit ((SheafedSpace.forget CommRingCat.{v}).mapCone m) :=
     isLimitOfPreserves (SheafedSpace.forget CommRingCat.{v}) hm
   have hc : IsLimit c := by

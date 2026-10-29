@@ -181,8 +181,8 @@ lake --wfail build
 ```
 
 Run these from the repository root; the matching precompiled mathlib cache
-must be fetched successfully *before* the build. The default targets contain
-both the library and ordinary-import examples. The historical API reference
+must be fetched successfully *before* the build. The default targets build
+the library, ordinary-import examples, and regression tests. The historical API reference
 has a separate, optional [reproduction guide](docs/README.md#optional-historical-reproduction).
 
 ## References and credits

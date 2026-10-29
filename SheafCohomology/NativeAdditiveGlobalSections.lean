@@ -107,7 +107,7 @@ theorem isIso_nativeAdditiveGlobalSectionsComparison (hm : IsLimit m)
   let N := S ⋙ U
   let c := (SheafedSpace.forget (Type v)).mapCone (U.mapCone m)
   let : PreservesLimit S (SheafedSpace.forget AddCommGrpCat.{v}) :=
-    SheafedSpace.preservesLimitForgetOfHasLimit AddCommGrpCat.{v} S
+    SheafedSpace.preservesLimitForgetOfHasLimitCompForget AddCommGrpCat.{v} S
   have hspace : IsLimit ((SheafedSpace.forget AddCommGrpCat.{v}).mapCone m) :=
     isLimitOfPreserves (SheafedSpace.forget AddCommGrpCat.{v}) hm
   have hc : IsLimit c := by

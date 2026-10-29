@@ -362,6 +362,7 @@ lemma injectiveCyclesCokernelIso_inv_source_naturality_apply
 set_option backward.isDefEq.respectTransparency false in
 /-- Source naturality of the inverse cycle-cokernel comparison, stated with
 the native acyclic-resolution comparison. -/
+@[deprecated injectiveCyclesCokernelIso_inv_source_naturality_apply (since := "2026-10-28")]
 lemma injectiveCyclesCokernelIso_inv_source_naturality_apply_native
     (n : ℕ) (x : Ext X (I.cocomplex.cycles n) 1)
     [Subsingleton (Ext X
@@ -376,12 +377,6 @@ lemma injectiveCyclesCokernelIso_inv_source_naturality_apply_native
       injectiveCyclesCokernelSourceMap I g n
         (((AcyclicResolution.ofInjectiveResolution X I
           ).cyclesCokernelIso n).addCommGroupIsoToAddEquiv.symm x) := by
-  change
-    (injectiveCyclesCokernelIso I X' n).addCommGroupIsoToAddEquiv.symm
-        ((Ext.mk₀ g).comp x (zero_add 1)) =
-      injectiveCyclesCokernelSourceMap I g n
-        ((injectiveCyclesCokernelIso I X n
-          ).addCommGroupIsoToAddEquiv.symm x)
   exact injectiveCyclesCokernelIso_inv_source_naturality_apply I g n x
 
 set_option backward.isDefEq.respectTransparency false in
@@ -760,7 +755,15 @@ lemma injectiveExtPositiveIsoHomology_source_naturality
   rw [injectiveExtIsoCyclesZero_source_naturality]
   rw [cast_source]
   rw [injectiveCyclesDimensionShiftIterate_symm_source_naturality]
-  rw [injectiveCyclesCokernelIso_inv_source_naturality_apply_native]
+  have hsource (z : Ext X (I.cocomplex.cycles (q - 1)) 1) :
+      ((AcyclicResolution.ofInjectiveResolution X' I
+        ).cyclesCokernelIso (q - 1)).addCommGroupIsoToAddEquiv.symm
+          ((Ext.mk₀ g).comp z (zero_add 1)) =
+        injectiveCyclesCokernelSourceMap I g (q - 1)
+          (((AcyclicResolution.ofInjectiveResolution X I
+            ).cyclesCokernelIso (q - 1)).addCommGroupIsoToAddEquiv.symm z) := by
+    exact injectiveCyclesCokernelIso_inv_source_naturality_apply I g (q - 1) z
+  rw [hsource]
   rw [injectiveExtZeroCokernelIsoHomology_hom_source_naturality_apply_native]
   rw [injectiveExtZeroHomology_eqToIso_source_naturality_apply]
   · rw [injectiveExtZeroHomologyIsoHomology_hom_source_naturality_apply]

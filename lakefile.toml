@@ -1,6 +1,13 @@
 name = "sheaf-cohomology"
 version = "0.1.0"
-defaultTargets = ["SheafCohomology", "SheafCohomologyExamples"]
+defaultTargets = ["SheafCohomology", "SheafCohomologyExamples", "SheafCohomologyTests"]
+lintDriver = "batteries/runLinter"
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+weak.linter.style.header = false
 
 [[require]]
 name = "mathlib"
@@ -16,4 +23,111 @@ rev = "452b7b7be1bea76434cd083b1019a26f96b4ab30"
 name = "SheafCohomology"
 
 [[lean_lib]]
+name = "SheafCohomologyTests"
+roots = [
+  "SheafCohomologyTests.NativeStageSectionColimit",
+  "SheafCohomologyTests.AbelianForgetConePullbackCocone",
+  "SheafCohomologyTests.AbelianForgetDiagramPushforward",
+  "SheafCohomologyTests.AbelianForgetLimitPreservation",
+  "SheafCohomologyTests.NativeAdditiveGlobalSections",
+  "SheafCohomologyTests.LimitConstruction",
+  "SheafCohomologyTests.LimitPreservation",
+  "SheafCohomologyTests.NativeCylinderLimitAdditive",
+  "SheafCohomologyTests.NativeSpectralCylinderSections",
+  "SheafCohomologyTests.NativeAdditiveCylinderSections",
+  "SheafCohomologyTests.NativeCylinderOpenNaturality",
+  "SheafCohomologyTests.NativeCylinderTailChange",
+  "SheafCohomologyTests.ConePullbackLimit",
+  "SheafCohomologyTests.NativeCommRingCylinderSections",
+  "SheafCohomologyTests.ConePullbackLimitConverse",
+  "SheafCohomologyTests.DiagramPushforward",
+  "SheafCohomologyTests.NativeCylinderComparison",
+  "SheafCohomologyTests.AbelianForgetConePullback",
+  "SheafCohomologyTests.NativeLimitGlobalSections",
+  "SheafCohomologyTests.NativeOpenRestriction",
+  "SheafCohomologyTests.NativeOpenRestrictionAdditive",
+  "SheafCohomologyTests.NativeCylinderLimit",
+  "SheafCohomologyTests.ConePullbackCocone",
+  "SheafCohomologyTests.NativeStageSectionLifting",
+  "SheafCohomologyTests.AbelianForgetFilteredColimits",
+  "SheafCohomologyTests.AbelianForgetSquareTransition",
+  "SheafCohomologyTests.ConePullback",
+  "SheafCohomologyTests.ConeOfPullbackCocone",
+  "SheafCohomologyTests.AbelianForgetSheafedSpace",
+  "SheafCohomologyTests.ResolutionInterfaces"
+]
+globs = [
+  "SheafCohomologyTests.NativeStageSectionColimit",
+  "SheafCohomologyTests.AbelianForgetConePullbackCocone",
+  "SheafCohomologyTests.AbelianForgetDiagramPushforward",
+  "SheafCohomologyTests.AbelianForgetLimitPreservation",
+  "SheafCohomologyTests.NativeAdditiveGlobalSections",
+  "SheafCohomologyTests.LimitConstruction",
+  "SheafCohomologyTests.LimitPreservation",
+  "SheafCohomologyTests.NativeCylinderLimitAdditive",
+  "SheafCohomologyTests.NativeSpectralCylinderSections",
+  "SheafCohomologyTests.NativeAdditiveCylinderSections",
+  "SheafCohomologyTests.NativeCylinderOpenNaturality",
+  "SheafCohomologyTests.NativeCylinderTailChange",
+  "SheafCohomologyTests.ConePullbackLimit",
+  "SheafCohomologyTests.NativeCommRingCylinderSections",
+  "SheafCohomologyTests.ConePullbackLimitConverse",
+  "SheafCohomologyTests.DiagramPushforward",
+  "SheafCohomologyTests.NativeCylinderComparison",
+  "SheafCohomologyTests.AbelianForgetConePullback",
+  "SheafCohomologyTests.NativeLimitGlobalSections",
+  "SheafCohomologyTests.NativeOpenRestriction",
+  "SheafCohomologyTests.NativeOpenRestrictionAdditive",
+  "SheafCohomologyTests.NativeCylinderLimit",
+  "SheafCohomologyTests.ConePullbackCocone",
+  "SheafCohomologyTests.NativeStageSectionLifting",
+  "SheafCohomologyTests.AbelianForgetFilteredColimits",
+  "SheafCohomologyTests.AbelianForgetSquareTransition",
+  "SheafCohomologyTests.ConePullback",
+  "SheafCohomologyTests.ConeOfPullbackCocone",
+  "SheafCohomologyTests.AbelianForgetSheafedSpace",
+  "SheafCohomologyTests.ResolutionInterfaces"
+]
+leanOptions = { weak.linter.privateModule = false }
+
+[[lean_lib]]
 name = "SheafCohomologyExamples"
+roots = ["SheafCohomologyExamples"]
+globs = [
+  "SheafCohomologyExamples",
+  "SheafCohomologyExamples.AbelianForgetConePullback",
+  "SheafCohomologyExamples.AbelianForgetConePullbackCocone",
+  "SheafCohomologyExamples.AbelianForgetDiagramPushforward",
+  "SheafCohomologyExamples.AbelianForgetFilteredColimits",
+  "SheafCohomologyExamples.AbelianForgetLimitPreservation",
+  "SheafCohomologyExamples.AbelianForgetPullback",
+  "SheafCohomologyExamples.AbelianForgetSheafedSpace",
+  "SheafCohomologyExamples.AbelianForgetSquareTransition",
+  "SheafCohomologyExamples.CommRingForgetLimitPreservation",
+  "SheafCohomologyExamples.ConeOfPullbackCocone",
+  "SheafCohomologyExamples.ConePullback",
+  "SheafCohomologyExamples.ConePullbackCocone",
+  "SheafCohomologyExamples.ConePullbackLimit",
+  "SheafCohomologyExamples.ConePullbackLimitConverse",
+  "SheafCohomologyExamples.ConePullbackSections",
+  "SheafCohomologyExamples.DiagramPushforward",
+  "SheafCohomologyExamples.LimitConstruction",
+  "SheafCohomologyExamples.LimitPreservation",
+  "SheafCohomologyExamples.NativeAdditiveCylinderSections",
+  "SheafCohomologyExamples.NativeAdditiveGlobalSections",
+  "SheafCohomologyExamples.NativeCommRingCylinderSections",
+  "SheafCohomologyExamples.NativeCylinderComparison",
+  "SheafCohomologyExamples.NativeCylinderLimit",
+  "SheafCohomologyExamples.NativeCylinderLimitAdditive",
+  "SheafCohomologyExamples.NativeCylinderOpenNaturality",
+  "SheafCohomologyExamples.NativeCylinderTailChange",
+  "SheafCohomologyExamples.NativeLimitGlobalSections",
+  "SheafCohomologyExamples.NativeOpenRestriction",
+  "SheafCohomologyExamples.NativeOpenRestrictionAdditive",
+  "SheafCohomologyExamples.NativeSpectralCylinderSections",
+  "SheafCohomologyExamples.NativeStageSectionColimit",
+  "SheafCohomologyExamples.NativeStageSectionEquality",
+  "SheafCohomologyExamples.NativeStageSectionLifting",
+  "SheafCohomologyExamples.PullbackLocalSections",
+  "SheafCohomologyExamples.SquareTransition",
+]

@@ -49,7 +49,7 @@ The site-sheaf colimit instance is installed only within this definition. -/
   exact colimit.cocone _
 
 /-- The chosen cocone is colimiting by the native site-sheaf colimit instance. -/
-noncomputable def conePullbackColimitCocone_isColimit
+noncomputable def conePullbackColimitCoconeIsColimit
     (S : Jᵒᵖ ⥤ SheafedSpace A) (c : Cone (S ⋙ forget A))
     [HasWeakSheafify (Opens.grothendieckTopology c.pt) A] :
     IsColimit (conePullbackColimitCocone A S c) := by
@@ -64,7 +64,7 @@ using the actual colimit of the pulled-back sheaf diagram. -/
     [HasWeakSheafify (Opens.grothendieckTopology c.pt) A] : LimitCone S :=
   ⟨coneOfPullbackCocone A S c (conePullbackColimitCocone A S c),
     coneOfPullbackCoconeIsLimit A S c (conePullbackColimitCocone A S c)
-      hc (conePullbackColimitCocone_isColimit A S c)⟩
+      hc (conePullbackColimitCoconeIsColimit A S c)⟩
 
 /-- The native limit's underlying space is literally the selected base. -/
 @[simp] theorem limitConeOfSpaceCone_carrier (S : Jᵒᵖ ⥤ SheafedSpace A)
@@ -122,14 +122,41 @@ theorem limitConeOfSpaceCone_π_mate_colimit_ι (S : Jᵒᵖ ⥤ SheafedSpace A)
 include FA CA
 
 /-- With a chosen space limit, obtain a named limit of the native diagram. -/
-theorem hasLimitOfHasLimitForget (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} A)
-    [HasLimit (S ⋙ forget A)]
-    [HasWeakSheafify (Opens.grothendieckTopology
-      ((limit (S ⋙ forget A)) : TopCat)) A] :
+theorem hasLimitOfHasLimitCompForget (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} A)
+    [HasLimit (S ⋙ forget A)] :
     HasLimit S := by
   let c : Cone (S ⋙ forget A) := limit.cone (S ⋙ forget A)
   let hc : IsLimit c := limit.isLimit (S ⋙ forget A)
   exact HasLimit.mk (F := S)
     (limitConeOfSpaceCone (FA := FA) (CA := CA) A S c hc)
+
+/-- The chosen cocone is colimiting by the native site-sheaf colimit instance. -/
+@[nolint defsWithUnderscore,
+  deprecated conePullbackColimitCoconeIsColimit (since := "2026-10-27")]
+noncomputable abbrev conePullbackColimitCocone_isColimit.{vA, uA, vJ, uJ, uFA} :=
+  @conePullbackColimitCoconeIsColimit.{vA, uA, vJ, uJ, uFA}
+
+
+/--
+Compatibility bridge for `hasLimitOfHasLimitCompForget`.
+Implemented on 2026-10-27; public availability is not yet recorded. Retain this bridge
+for at least three calendar months after actual public availability; the annotation
+date does not establish availability.
+-/
+@[deprecated hasLimitOfHasLimitCompForget (since := "2026-10-27")]
+theorem hasLimitOfHasLimitForget (S : Jᵒᵖ ⥤ SheafedSpace.{u, w, w} A)
+    [HasLimit (S ⋙ forget A)]
+    [HasWeakSheafify (Opens.grothendieckTopology
+      ((limit (S ⋙ forget A)) : TopCat)) A] :
+    HasLimit S :=
+  hasLimitOfHasLimitCompForget A S
+
+end AlgebraicGeometry.SheafedSpace
+
+namespace AlgebraicGeometry.SheafedSpace
+
+-- Simplify the forgotten cone before expanding the forgetful functor.
+attribute [-simp] limitConeOfSpaceCone_forget
+attribute [simp↓] limitConeOfSpaceCone_forget
 
 end AlgebraicGeometry.SheafedSpace

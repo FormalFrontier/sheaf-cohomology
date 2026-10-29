@@ -27,6 +27,7 @@ namespace SheafCohomology.HigherDirectImageFilteredColimit
 variable {X : Type uX} {Y : Type uY}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 
+/-- The type of points whose images under `f` lie in the open subset `V`. -/
 abbrev preimageOpenType (f : X → Y) (V : Opens Y) :=
   {x : X // f x ∈ V}
 

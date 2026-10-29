@@ -35,6 +35,7 @@ namespace TopCat.Sheaf
 
 variable {X : TopCat.{0}}
 
+/-- Decidability of membership in an open subset of `X`. -/
 local instance (x : X) (U : Opens X) : Decidable (x ∈ U) := Classical.dec _
 
 private theorem isFlasque_of_iso {F G : Presheaf AddCommGrpCat X}
@@ -120,7 +121,7 @@ noncomputable abbrev toFlasqueEnvelopeQuotient :
       flasqueEnvelopeQuotientFunctor (X := X) :=
   cokernel.π (toFlasqueEnvelope (X := X))
 
-@[reassoc (attr := simp)]
+@[reassoc]
 theorem toFlasqueEnvelope_comp_toFlasqueEnvelopeQuotient :
     toFlasqueEnvelope (X := X) ≫
       toFlasqueEnvelopeQuotient (X := X) = 0 :=
@@ -878,5 +879,13 @@ natural in the input sheaf. -/
         _ _ _ hExt _ _ (flasqueEnvelopeShortExact A)
           (flasqueEnvelopeShortExact B) (flasqueEnvelopeShortComplexMap f)
             _ (q + 1) x)
+
+end TopCat.Sheaf
+
+namespace TopCat.Sheaf
+
+-- Simplify the differential before projecting the complex-valued functor.
+attribute [-simp] flasqueResolution_d_succ
+attribute [simp↓] flasqueResolution_d_succ
 
 end TopCat.Sheaf

@@ -299,7 +299,7 @@ omit [HasColimits A] [HasLimits A] in
         (diagramPushforward_square A N Y f a) := rfl
 
 omit [HasColimits A] [HasLimits A] in
-@[simp] theorem diagramPushforward_obj_carrier (N : Jᵒᵖ ⥤ SheafedSpace A)
+theorem diagramPushforward_obj_carrier (N : Jᵒᵖ ⥤ SheafedSpace A)
     (Y : Jᵒᵖ ⥤ TopCat.{w}) (f : N ⋙ forget A ⟶ Y) (i : Jᵒᵖ) :
     ((diagramPushforward A N Y f).obj i : TopCat) = Y.obj i := rfl
 
@@ -434,5 +434,20 @@ theorem diagramPushforwardCone_projection_mate (N : Jᵒᵖ ⥤ SheafedSpace A)
       TopCat.Sheaf.SquareTransition.transition A (c.π.app i).hom.base
         (d.π.app i) (f.app i) g (h i) (sheafMate A (c.π.app i)) :=
   diagramPushforwardHom_mate A (c.π.app i) (d.π.app i) (f.app i) g (h i)
+
+end AlgebraicGeometry.SheafedSpace
+
+namespace AlgebraicGeometry.SheafedSpace
+
+end AlgebraicGeometry.SheafedSpace
+
+attribute [simp] AlgebraicGeometry.SheafedSpace.forget
+  AlgebraicGeometry.SheafedSpace.diagramPushforwardObj_sheaf
+
+namespace AlgebraicGeometry.SheafedSpace
+
+-- Simplify the base map before expanding the pushed-forward morphism.
+attribute [-simp] diagramPushforward_map_base
+attribute [simp↓] diagramPushforward_map_base
 
 end AlgebraicGeometry.SheafedSpace

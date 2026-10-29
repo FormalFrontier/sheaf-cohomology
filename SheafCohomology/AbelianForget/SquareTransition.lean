@@ -108,9 +108,5 @@ theorem canonicalComponent_transition (p : Xj ⟶ Xi) (q : Yj ⟶ Yi)
         ← SquareTransition.adjoint_eq_homEquiv (Type v) q]
       exact (SquareTransition.adjoint_transition (Type v) p q fi fj h _).symm
 
-#print axioms underlyingSheaf_pushforward_obj
-#print axioms underlyingSheaf_pushforward_map
-#print axioms underlyingSheaf_pushforwardSquareIso_hom_app
-#print axioms canonicalComponent_transition
 
 end TopCat.Sheaf.AbelianForget

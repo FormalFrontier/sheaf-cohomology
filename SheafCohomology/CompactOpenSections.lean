@@ -297,7 +297,6 @@ omit [IsFiltered I] [UnivLE.{u, v}]
   [HasWeakSheafify (Opens.grothendieckTopology X) C]
   [(Opens.grothendieckTopology X).WEqualsLocallyBijective
     C] in
-@[simp]
 theorem underlyingPresheafColimit_map_representative_ι
     (U : Opens X) (i : I) (s : ToType ((F.obj i).obj.obj (op U)))
     {V : Opens X} (f : V ⟶ U) :

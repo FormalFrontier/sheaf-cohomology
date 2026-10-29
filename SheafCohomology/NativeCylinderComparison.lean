@@ -52,7 +52,7 @@ topological limit, by the published preservation theorem. -/
     IsLimit ((SheafedSpace.forget (Type v)).mapCone (restrictedCone N i0 m U0)) := by
   let R := restricted N i0 U0
   let : PreservesLimit R (SheafedSpace.forget (Type v)) :=
-    SheafedSpace.preservesLimitForgetOfHasLimit (Type v) R
+    SheafedSpace.preservesLimitForgetOfHasLimitCompForget (Type v) R
   exact isLimitOfPreserves (SheafedSpace.forget (Type v))
     (restrictedIsLimit N i0 m hm U0)
 

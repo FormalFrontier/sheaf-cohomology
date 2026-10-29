@@ -59,7 +59,7 @@ private theorem triangleMap_id_first {X Y : TopCat.{w}} (p : X ⟶ Y)
 
 /-- A native limit over a limiting space cone forces the canonical cocone
 of inverse-image sheaves to be colimiting. -/
-noncomputable def isColimit_conePullbackCocone_of_isLimit
+noncomputable def isColimitConePullbackCoconeOfIsLimit
     (S : Jᵒᵖ ⥤ SheafedSpace A) (C : Cone S)
     (hbase : IsLimit ((forget A).mapCone C)) (hC : IsLimit C) :
     IsColimit (conePullbackCocone A S C) := by
@@ -173,9 +173,16 @@ theorem nonempty_isLimit_iff_isColimit_conePullbackCocone
     Nonempty (IsLimit C) ↔ Nonempty (IsColimit (conePullbackCocone A S C)) := by
   constructor
   · rintro ⟨hC⟩
-    exact ⟨isColimit_conePullbackCocone_of_isLimit A S C hbase hC⟩
+    exact ⟨isColimitConePullbackCoconeOfIsLimit A S C hbase hC⟩
   · rintro ⟨hK⟩
-    exact ⟨isLimit_of_isLimit_forget_of_isColimit_conePullbackCocone
+    exact ⟨isLimitOfIsLimitForgetOfIsColimitConePullbackCocone
       A S C hbase hK⟩
+
+/-- A native limit over a limiting space cone forces the canonical cocone
+of inverse-image sheaves to be colimiting. -/
+@[nolint defsWithUnderscore,
+  deprecated isColimitConePullbackCoconeOfIsLimit (since := "2026-10-27")]
+noncomputable abbrev isColimit_conePullbackCocone_of_isLimit.{vA, uA, vJ, uJ, uFA} :=
+  @isColimitConePullbackCoconeOfIsLimit.{vA, uA, vJ, uJ, uFA}
 
 end AlgebraicGeometry.SheafedSpace

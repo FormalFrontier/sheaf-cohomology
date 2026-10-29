@@ -156,8 +156,11 @@ lemma covariantCokernelIso_inv_naturality
 /-- A nonnegative resolution whose terms are acyclic for `Ext X -` in
 positive degrees. -/
 structure AcyclicResolution (X A : C) where
+  /-- The nonnegative cochain complex underlying the resolution. -/
   cocomplex : CochainComplex C ℕ
   [hasHomology : ∀ n, cocomplex.HasHomology n]
+  /-- The morphism from the complex concentrated in degree zero at the resolved object
+  to the resolution complex. -/
   ι : (CochainComplex.single₀ C).obj A ⟶ cocomplex
   quasiIso : QuasiIso ι := by infer_instance
   extAcyclic : ∀ n q, 0 < q → Subsingleton (Ext X (cocomplex.X n) q)
@@ -172,6 +175,7 @@ variable {B : C} (R' : AcyclicResolution X B)
 
 /-- A map of acyclic resolutions above a map of resolved objects. -/
 structure Hom (f : A ⟶ B) where
+  /-- The morphism between the underlying cochain complexes. -/
   hom : R.cocomplex ⟶ R'.cocomplex
   ι_f_zero_comp_hom_f_zero :
     R.ι.f 0 ≫ hom.f 0 = ((CochainComplex.single₀ C).map f).f 0 ≫ R'.ι.f 0
@@ -716,3 +720,13 @@ end AcyclicResolution
 end SameUniverse
 
 end CategoryTheory.Abelian.Ext
+
+namespace CategoryTheory.Abelian.Ext.AcyclicResolution
+
+-- Simplify the induced cycle map before expanding the Ext functor action.
+attribute [-simp] extZeroCyclesIso_hom_map_iCycles
+  extZeroCyclesIso_hom_map_iCycles_assoc
+attribute [simp↓] extZeroCyclesIso_hom_map_iCycles
+  extZeroCyclesIso_hom_map_iCycles_assoc
+
+end CategoryTheory.Abelian.Ext.AcyclicResolution

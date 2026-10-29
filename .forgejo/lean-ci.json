@@ -6,7 +6,8 @@
       "path": ".",
       "targets": [
         "SheafCohomology",
-        "SheafCohomologyExamples"
+        "SheafCohomologyExamples",
+        "SheafCohomologyTests"
       ]
     }
   ],

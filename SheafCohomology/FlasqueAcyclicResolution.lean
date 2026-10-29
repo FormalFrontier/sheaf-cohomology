@@ -71,4 +71,25 @@ acyclic resolutions above every map of sheaves. -/
       Functor.id_obj, Functor.id_map] using
         ((toFlasqueEnvelope (X := X)).naturality f).symm
 
+/-- The cocomplex underlying the flasque acyclic resolution is the flasque resolution. -/
+public theorem flasqueAcyclicResolution_cocomplex
+    {X : TopCat.{0}} [CompactSpace X] [QuasiSeparatedSpace X]
+    [PrespectralSpace X]
+    [HasSheafify (Opens.grothendieckTopology X) AddCommGrpCat.{0}]
+    [hE : HasExt.{0} (X.Sheaf AddCommGrpCat.{0})]
+    (F : X.Sheaf AddCommGrpCat.{0}) :
+    @CategoryTheory.Abelian.Ext.AcyclicResolution.cocomplex.{0, 0, 1}
+      (X.Sheaf AddCommGrpCat.{0}) _ _ hE _ _
+      (@TopCat.Sheaf.flasqueAcyclicResolution X _ _ _ _ hE F) =
+      TopCat.Sheaf.flasqueResolution F :=
+  rfl
+
+end TopCat.Sheaf
+
+namespace TopCat.Sheaf
+
+-- Simplify the zero-degree map before projecting the complex-valued functor.
+attribute [-simp] flasqueResolutionNat_map_f_zero
+attribute [simp↓] flasqueResolutionNat_map_f_zero
+
 end TopCat.Sheaf

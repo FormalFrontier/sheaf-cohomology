@@ -183,12 +183,5 @@ theorem localCohomologyPresheaf_colimitPost_factorization_rightDerived
   exact (sheafifiedLocalCohomology_colimitPost_transport_rightDerived
     f F q hq).symm
 
-#print axioms localCohomologyPresheaf_colimitPost_app_isIso
-#print axioms sheafifiedLocalCohomology_colimitPost_map_isIso
-#print axioms sheafifiedLocalCohomology_preservesColimit
-#print axioms rightDerivedPushforward_preservesColimit_positive
-#print axioms localCohomologyPresheaf_colimitPost_sheafification_factorization
-#print axioms sheafifiedLocalCohomology_colimitPost_transport_rightDerived
-#print axioms localCohomologyPresheaf_colimitPost_factorization_rightDerived
 
 end SheafCohomology.HigherDirectImageFilteredColimit
